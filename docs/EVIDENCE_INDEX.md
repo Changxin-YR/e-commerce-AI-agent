@@ -1,3 +1,9 @@
+# 持续开发接续记录
+
+2026-11-02用户已授权D4—D9连续推进与必要时切换新对话。当前D4尚待开始，未新增业务PASS。授权/上下文在docs/CONTINUOUS_EXECUTION.md；本次Git/不可变检查与对话创建回执保存到D:/codex产出/电商智能体_持续开发收尾/缓存。以下D3证据索引完整保留。
+
+---
+
 # D3 实际证据索引
 
 日期：2026-11-02（Asia/Shanghai）。D3 工程验证PASS，READY_FOR_USER_ACCEPTANCE；D2原索引在 docs/evidence/d3/D2_EVIDENCE_INDEX_ARCHIVE.md，既有证据保留。
