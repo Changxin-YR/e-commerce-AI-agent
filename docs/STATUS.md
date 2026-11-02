@@ -1,13 +1,14 @@
-# 电商智能体开发状态（V1.5 功能优先）
+# 电商智能体开发状态（V1.5 FEATURE_FIRST）
 
-- **更新时间**：2026-11-02（Asia/Shanghai）；原位项目已从用户提供的 V1.5 ZIP 解压并实际开发。
-- **项目交接**：55 项不可变资料检查 PASS。FastAPI 健康接口、SQLite/Alembic 基线、Vue 连接页和管理命令已实现。
-- **当前阶段**：`D0_READY_FOR_USER_ACCEPTANCE`；工程验证 PASS、用户验收 PENDING。下一步为 D1，必须等待用户授权，D1—D9 仍为 NOT_STARTED。
-- **验证**：31 pytest、8 Vitest、2 真实 Edge Playwright、TypeScript/Vite 构建、迁移、默认端口启动、数据库完整性及锁文件安装通过。第一次 pytest 失败及修复保留证据。
-- **Git**：已初始化新仓库，尚无 commit；SHA=null，不伪造版本号。源码交付包含独立 SHA256 清单。
-- **进程**：自动验证创建的服务已停止；使用 README 中两个启动命令即可重新运行。
-- **已知限制**：4 个 npm 间接开发依赖 moderate 告警；生产依赖 audit 为 0。Starlette 测试客户端有 1 个弃用警告，当前测试通过。
-- **论文正文**：`DEFERRED_BY_USER`，不撰写；正式冻结实验：`DEFERRED_UNTIL_FEATURE_ACCEPTANCE_AND_USER_APPROVAL`。
-- **数据与模型**：UCI 文件未取得/未导入，业务数据 SHA=null；数据库只有两个工程表。模型未接入，外部模型调用 0，无付费授权。
+更新时间：2026-11-02T18:04:32.353141+08:00。
 
-状态以 `docs/STATUS.json` 为机器唯一来源，开发真实证据保存在 `docs/EVIDENCE_INDEX.md`，每完成一个阶段同步本文件。`handoff_check=PASS` 不代表业务通过。
+- 当前阶段：**D1_READY_FOR_USER_ACCEPTANCE**。D0 收尾与 D1 工程核验 PASS，等待用户验收；D2—D9 仍为 NOT_STARTED。
+- D0：111 个源码哈希与原封存一致，25 份命令输出存在，31 pytest / 8 Vitest / 2 Edge 原始结果核实。新增 httpx2 后 31 pytest 回归无警告；4 项 npm moderate 全部为间接开发依赖，生产 audit 为 0。
+- D1：官方 ZIP/XLSX 均已取得且 SHA 与历史参考一致；541909 行、8 字段，530104 正向 + 9288 取消 + 2517 其他 + 0 无效。
+- 价格：4 条 0.001 GBP 保留；51170 条微小表示尾差，最大 7E-13 GBP，全部符合 1E-9 容差；原文件和原始 XML 表示保留。
+- 验证：两份独立审计输出与旧版除执行时间外完全一致；33 项交叉核对通过；最终 70 pytest（含 39 项 D1）通过，无警告。损坏、哈希不符、文件缺失、精度丢失均有明确失败测试。
+- Git：D0 基线 `0740bf439c37dc344885d2f7c26568c157dd9571`；D1 最终本地提交见交付 git-receipt.json 与 git log，未推送。原始数据、.env、密钥、数据库、依赖目录不入 Git。
+- 数据库：只有 D0 工程表，未导入交易；模型调用为 0，无付费授权。论文、正式学术实验与人工 gold 均未开始。
+- 交付目录：`D:/codex产出/电商智能体_D1真实数据审计/交付`。下一步 D2 必须等待用户明确授权，输入说明见 docs/D2_DATA_INPUT.md。
+
+机器状态以 docs/STATUS.json 为准；handoff_check 只验证不可变交接资料，不代表业务功能验收。

@@ -1,6 +1,6 @@
 # D0 收尾核查（2026-11-02）
 
-本轮用户明确授权 D0 收尾和 D1；D0 历史交付保持原样。111 个源码文件与 D0 SOURCE_MANIFEST.json 的 SHA-256 全部一致，27 份命令记录的 stdout/stderr 可定位。保存的 smoke 输出包含 31 pytest、8 Vitest；Edge results.json 为 expected=2、unexpected=0、skipped=0。核查原始结果见 D1 缓存 d0-review.json。
+本轮用户明确授权 D0 收尾和 D1；D0 历史交付保持原样。111 个源码文件与 D0 SOURCE_MANIFEST.json 的 SHA-256 全部一致，25 份命令记录的 stdout/stderr 可定位。保存的 smoke 输出包含 31 pytest、8 Vitest；Edge results.json 为 expected=2、unexpected=0、skipped=0。核查原始结果见 D1 缓存 d0-review.json。
 
 ## npm 依赖审计
 

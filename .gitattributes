@@ -1,3 +1,3 @@
 # Preserve source bytes, including the immutable handoff's SHA-256 records.
 # Do not let Windows core.autocrlf rewrite evidence at commit/checkout time.
-* -text
+* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

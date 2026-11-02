@@ -1,18 +1,24 @@
 {
   "project_id": "ecommerce-agent-thesis",
-  "updated_at": "2026-11-02T16:19:17+08:00",
+  "updated_at": "2026-11-02T18:04:32.353141+08:00",
   "implementation_ready": {
     "status": "PARTIAL",
     "blocker_code": null,
-    "scope": "D0 engineering foundation passed; D1-D9 remain NOT_STARTED",
+    "scope": "D0 engineering and D1 acquisition/audit passed; D2-D9 NOT_STARTED",
     "evidence": [
-      "docs/EVIDENCE_INDEX.md"
+      "docs/EVIDENCE_INDEX.md",
+      "docs/D1_DELIVERY.md"
     ]
   },
   "real_data_ready": {
-    "status": "NOT_STARTED",
+    "status": "PASS",
     "blocker_code": null,
-    "evidence": []
+    "scope": "Raw source acquired, identity verified and independently audited; database import NOT_STARTED",
+    "evidence": [
+      "data/manifest.json",
+      "docs/data-quality.md",
+      "docs/evidence/d1/verification.json"
+    ]
   },
   "live_model_verified": {
     "status": "NOT_STARTED",
@@ -40,23 +46,25 @@
     "evidence": []
   },
   "handoff_version": "1.5",
-  "handoff_status": "HANDOFF_CHECK_PASS_D0_VERIFIED_BUSINESS_NOT_IMPLEMENTED",
-  "implementation_status": "D0_READY_FOR_USER_ACCEPTANCE",
+  "handoff_status": "D1_AUDITED_READY_FOR_USER_ACCEPTANCE",
+  "implementation_status": "D1_READY_FOR_USER_ACCEPTANCE",
   "execution_mode": "FEATURE_FIRST",
-  "current_dev_step": "D0",
+  "current_dev_step": "D1",
   "paper_work_mode": "DEFERRED_BY_USER",
   "formal_experiment_mode": "DEFERRED_UNTIL_FEATURE_ACCEPTANCE_AND_USER_APPROVAL",
-  "last_verified_dev_step": "D0",
-  "next_dev_step": "D1",
+  "last_verified_dev_step": "D1",
+  "next_dev_step": "D2",
   "next_step_requires_user_approval": true,
-  "user_acceptance": "PENDING",
+  "user_acceptance": "PENDING_D1",
   "git": {
     "initialized": true,
-    "sha": null,
-    "head": "UNBORN",
-    "reason": "New empty workspace; repository initialized without creating a commit."
+    "baseline_sha": "0740bf439c37dc344885d2f7c26568c157dd9571",
+    "baseline_scope": "Verified D0 plus closeout",
+    "delivery_commit_receipt": "D:/codex产出/电商智能体_D1真实数据审计/交付/git-receipt.json",
+    "pushed": false,
+    "note": "Final D1 commit is recorded outside the commit to avoid a self-referencing SHA."
   },
-  "artifact_root": "D:/codex产出/电商智能体_D0工程初始化",
+  "artifact_root": "D:/codex产出/电商智能体_D1真实数据审计",
   "d0": {
     "status": "READY_FOR_USER_ACCEPTANCE",
     "engineering_validation": "PASS",
@@ -79,22 +87,42 @@
       "high": 0,
       "critical": 0
     },
-    "test_warnings": [
-      "Starlette TestClient deprecates httpx; current locked stack passes."
-    ],
+    "test_warnings": [],
     "evidence": [
       "docs/EVIDENCE_INDEX.md",
       "docs/D0_DELIVERY.md"
     ],
-    "runtime_services": "STOPPED_AFTER_VALIDATION"
+    "runtime_services": "STOPPED_AFTER_VALIDATION",
+    "closeout": {
+      "status": "PASS",
+      "source_files_matched": 111,
+      "saved_command_records_verified": 25,
+      "saved_test_counts": {
+        "pytest": 31,
+        "vitest": 8,
+        "edge": 2
+      },
+      "httpx2_warning_fix": "PASS: 31 regression tests without warning",
+      "user_authorized_d1": true,
+      "evidence": "docs/D0_CLOSEOUT.md"
+    }
   },
   "data": {
-    "status": "NOT_ACQUIRED",
-    "business_data_sha256": null,
+    "status": "ACQUIRED_AND_AUDITED_NOT_IMPORTED",
+    "business_data_sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
     "engineering_database_contains": [
       "alembic_version",
       "app_metadata"
-    ]
+    ],
+    "container_sha256": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
+    "raw_row_count": 541909,
+    "primary_class_counts": {
+      "INVALID": 0,
+      "POSITIVE": 530104,
+      "CANCELLATION": 9288,
+      "EXCLUDED_OTHER": 2517
+    },
+    "manifest": "data/manifest.json"
   },
   "model": {
     "status": "NOT_RUN",
@@ -102,8 +130,8 @@
     "paid_model_calls_authorized": false
   },
   "stage_statuses": {
-    "D0": "READY_FOR_USER_ACCEPTANCE",
-    "D1": "NOT_STARTED",
+    "D0": "VERIFIED_USER_AUTHORIZED_D1",
+    "D1": "READY_FOR_USER_ACCEPTANCE",
     "D2": "NOT_STARTED",
     "D3": "NOT_STARTED",
     "D4": "NOT_STARTED",
@@ -112,5 +140,23 @@
     "D7": "NOT_STARTED",
     "D8": "NOT_STARTED",
     "D9": "NOT_STARTED"
+  },
+  "d1": {
+    "status": "READY_FOR_USER_ACCEPTANCE",
+    "engineering_validation": "PASS",
+    "source_download": "PASS",
+    "historical_sha_match": true,
+    "independent_audit_comparison": "PASS_NO_DIFFERENCES_EXCEPT_TIMESTAMP",
+    "cross_checks_passed": 33,
+    "pytest_passed": 70,
+    "pytest_d1_cases": 39,
+    "pytest_warnings": 0,
+    "data_import": "NOT_STARTED",
+    "evidence": [
+      "data/manifest.json",
+      "docs/data-quality.md",
+      "docs/D1_DELIVERY.md",
+      "docs/evidence/d1/verification.json"
+    ]
   }
 }

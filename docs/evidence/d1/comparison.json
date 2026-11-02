@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "audited_at_utc": "2026-11-02T09:24:26.327526+00:00",
+  "source_xlsx_sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+  "excluded_comparison_fields": [
+    "audited_at_utc"
+  ],
+  "environment": {
+    "python": "3.12.15",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "pandas": "2.2.3",
+    "numpy": "2.5.4",
+    "openpyxl": "3.1.5",
+    "python-dateutil": "4.0.0"
+  },
+  "results": [
+    {
+      "name": "audit_retail",
+      "exit_code": 0,
+      "original_script_sha256": "20f5fe5d655ee9f07c6323c5c892ff98579707a0adb872a064029d63fbd18936",
+      "adapted_script_sha256": "2c0664a13e853f455314ec1c0fde1143bf957517e85d6527d901682c2169b30e",
+      "only_adaptation": {
+        "old": "source = BASE / 'Online_Retail.xlsx'",
+        "new": "source = Path('C:\\\\Users\\\\27363\\\\Desktop\\\\毕业论文\\\\电商智能体的实现\\\\ecommerce-agent-thesis\\\\data\\\\raw\\\\Online_Retail.xlsx')"
+      },
+      "reference_sha256": "dd0506e78b0991360bb3c0556e1da4c2e0f5f89aa0730b2e30649009549f5f6d",
+      "result_sha256": "fe15ba8a50e036308a5c498e557af60c9491fba025666b83c559c2fcc6f0f226",
+      "differences": []
+    },
+    {
+      "name": "audit_normalization_and_reference",
+      "exit_code": 0,
+      "original_script_sha256": "a92568a894aac06ba29ad93c97775275355c722859a3d0140b0d84a92a79c408",
+      "adapted_script_sha256": "a4275e499b66f12701fa401c0705ae1421428b4a526ca6e088d9ba67d28d381e",
+      "only_adaptation": {
+        "old": "SOURCE = BASE / 'Online_Retail.xlsx'",
+        "new": "SOURCE = Path('C:\\\\Users\\\\27363\\\\Desktop\\\\毕业论文\\\\电商智能体的实现\\\\ecommerce-agent-thesis\\\\data\\\\raw\\\\Online_Retail.xlsx')"
+      },
+      "reference_sha256": "a2bc487474251318aeedcd5a74dd71af591696b1a17ee008c254f2d3df844ac6",
+      "result_sha256": "e9ab15b8f40ddcbd7db5d015bb4d6870b70efe81957ac1d29d37316ed1901647",
+      "differences": []
+    }
+  ]
+}

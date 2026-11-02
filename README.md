@@ -1,6 +1,10 @@
-# 电商经营数据分析智能体 · D0
+# 当前进度：D1 已取得并审计真实 UCI 数据
 
-已实现可运行的 FastAPI + SQLite/Alembic 后端、Vue 3 + TypeScript + Vite 健康连接页及管理命令。当前只完成 D0 工程基础，等待用户验收；经营数据、导入、统计、Agent 和报告属于 D1—D9，尚未实现。论文与正式学术实验继续延期。
+最新状态见 `docs/STATUS.json`，本轮交付见 `docs/D1_DELIVERY.md`。原始文件仅在本地 `data/raw/`，来源与哈希在 `data/manifest.json`。D1 完成后等待用户验收，D2 数据库导入尚未开始；复跑方法见 `docs/D2_DATA_INPUT.md`。下文 D0 启动方法继续适用。
+
+# 电商经营数据分析智能体 · D0 启动说明
+
+已实现可运行的 FastAPI + SQLite/Alembic 后端、Vue 3 + TypeScript + Vite 健康连接页及管理命令。D0 工程基础与 D1 原始数据审计已完成；数据库导入、统计、Agent 和报告属于 D2—D9，尚未实现。论文与正式学术实验继续延期。
 
 本机项目根目录是 `C:\Users\27363\Desktop\毕业论文\电商智能体的实现\ecommerce-agent-thesis`，请在该目录执行以下命令。源文件保留在工作区，额外交付位于 `D:\codex产出\电商智能体_D0工程初始化\交付`，日志、测试数据库和构建位于同任务的 `缓存` 目录。
 

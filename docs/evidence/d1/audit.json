@@ -1,0 +1,1669 @@
+{
+  "status": "PASS",
+  "method": "Direct OOXML strings and Decimal; date-only conversion uses openpyxl. Audit only, no database.",
+  "transform_version": "uci352-ooxml-milligbp-v1",
+  "rows": 541909,
+  "columns": [
+    "InvoiceNo",
+    "StockCode",
+    "Description",
+    "Quantity",
+    "InvoiceDate",
+    "UnitPrice",
+    "CustomerID",
+    "Country"
+  ],
+  "sheet_names": [
+    "Online Retail"
+  ],
+  "sheet_xml": "xl/worksheets/sheet1.xml",
+  "xlsx_members": [
+    {
+      "name": "[Content_Types].xml",
+      "bytes": 1168,
+      "compressed_bytes": 350
+    },
+    {
+      "name": "_rels/.rels",
+      "bytes": 588,
+      "compressed_bytes": 244
+    },
+    {
+      "name": "xl/_rels/workbook.xml.rels",
+      "bytes": 698,
+      "compressed_bytes": 243
+    },
+    {
+      "name": "xl/workbook.xml",
+      "bytes": 1165,
+      "compressed_bytes": 564
+    },
+    {
+      "name": "xl/sharedStrings.xml",
+      "bytes": 310131,
+      "compressed_bytes": 71028
+    },
+    {
+      "name": "xl/theme/theme1.xml",
+      "bytes": 6798,
+      "compressed_bytes": 1683
+    },
+    {
+      "name": "xl/styles.xml",
+      "bytes": 2484,
+      "compressed_bytes": 782
+    },
+    {
+      "name": "xl/worksheets/sheet1.xml",
+      "bytes": 184640367,
+      "compressed_bytes": 23636759
+    },
+    {
+      "name": "docProps/core.xml",
+      "bytes": 603,
+      "compressed_bytes": 317
+    },
+    {
+      "name": "docProps/app.xml",
+      "bytes": 792,
+      "compressed_bytes": 400
+    }
+  ],
+  "date_epoch": "1900",
+  "source_timezone": "UNSPECIFIED",
+  "date_min": "2010-12-01 08:26:00",
+  "date_max": "2011-12-09 12:50:00",
+  "per_month_rows": {
+    "2010-12": 42481,
+    "2011-01": 35147,
+    "2011-02": 27707,
+    "2011-03": 36748,
+    "2011-04": 29916,
+    "2011-05": 37030,
+    "2011-06": 36874,
+    "2011-07": 39518,
+    "2011-08": 35284,
+    "2011-09": 50226,
+    "2011-10": 60742,
+    "2011-11": 84711,
+    "2011-12": 25525
+  },
+  "invoice_unique_count": 25900,
+  "stock_code_unique_count": 4070,
+  "country_unique_count": 38,
+  "null_counts": {
+    "InvoiceNo": 0,
+    "StockCode": 0,
+    "Description": 1454,
+    "Quantity": 0,
+    "InvoiceDate": 0,
+    "UnitPrice": 0,
+    "CustomerID": 135080,
+    "Country": 0
+  },
+  "primary_class_counts": {
+    "INVALID": 0,
+    "POSITIVE": 530104,
+    "CANCELLATION": 9288,
+    "EXCLUDED_OTHER": 2517
+  },
+  "row_reconciliation": true,
+  "quality_flags_overlap": true,
+  "quality_flags": {
+    "C_PREFIX": 9288,
+    "DUPLICATE_CANDIDATE_AFTER_FIRST": 5268,
+    "MISSING_CUSTOMER_ID": 135080,
+    "MISSING_DESCRIPTION": 1454,
+    "NEGATIVE_PRICE": 2,
+    "NEGATIVE_QUANTITY": 10624,
+    "NON_C_NEGATIVE_QUANTITY": 1336,
+    "PRICE_0_001_GBP": 4,
+    "PRICE_REPRESENTATION_TAIL": 51170,
+    "STOCK_CODE_OUTSIDE_5_DIGITS_OPTIONAL_SUFFIX": 3385,
+    "ZERO_PRICE": 2515
+  },
+  "exclusion_and_invalid_reasons": {
+    "ZERO_PRICE": 2515,
+    "NON_C_NEGATIVE_QUANTITY": 1336,
+    "NEGATIVE_PRICE": 2
+  },
+  "duplicates_policy": "Retain every source row; parsed eight-field duplicate candidates are quality labels only.",
+  "duplicate_candidate_rows_after_first": 5268,
+  "rows_in_duplicate_groups": 10147,
+  "invoice_time_consistency": {
+    "multiple_timestamp_invoice_count": 43,
+    "multiple_date_invoice_count": 0,
+    "multiple_month_invoice_count": 0
+  },
+  "quantity_min": -80995,
+  "quantity_max": 80995,
+  "unit_price_min_raw_decimal": "-11062.06",
+  "unit_price_max_raw_decimal": "38970",
+  "formula_cells": 0,
+  "normalization": {
+    "quantum_gbp": "0.001",
+    "rounding": "ROUND_HALF_UP",
+    "allowed_representation_difference_gbp": "1E-9",
+    "rows_with_any_difference": 51170,
+    "max_absolute_difference_gbp": "7E-13",
+    "price_0_001_rows": 4,
+    "raw_decimal_scale_counts": {
+      "0": 4503,
+      "1": 26731,
+      "2": 459501,
+      "3": 4,
+      "13": 20,
+      "14": 72,
+      "15": 342,
+      "16": 38542,
+      "17": 12185,
+      "18": 9
+    },
+    "raw_representation_retained": "Original XLSX OOXML cell <v> text plus row-addressed examples; never rewritten."
+  },
+  "int64_check": {
+    "max_abs_unit_price_milli_gbp": 38970000,
+    "max_abs_line_amount_milli_gbp": 168469600,
+    "sum_absolute_line_amount_milli_gbp": 11585621154,
+    "limit": 9223372036854775807,
+    "safe": true
+  },
+  "examples": {
+    "POSITIVE": [
+      {
+        "source_row_num": 2,
+        "raw_values": {
+          "InvoiceNo": "536365",
+          "StockCode": "85123A",
+          "Description": "WHITE HANGING HEART T-LIGHT HOLDER",
+          "Quantity": "6",
+          "InvoiceDate": "40513.351388888892",
+          "UnitPrice": "2.5499999999999998",
+          "CustomerID": "17850",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 08:26:00",
+        "primary_class": "POSITIVE",
+        "reasons": [],
+        "quantity": 6,
+        "unit_price_milli_gbp": 2550,
+        "normalized_price": "2.550",
+        "representation_difference_gbp": "2E-16",
+        "line_amount_milli_gbp": 15300
+      },
+      {
+        "source_row_num": 3,
+        "raw_values": {
+          "InvoiceNo": "536365",
+          "StockCode": "71053",
+          "Description": "WHITE METAL LANTERN",
+          "Quantity": "6",
+          "InvoiceDate": "40513.351388888892",
+          "UnitPrice": "3.39",
+          "CustomerID": "17850",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 08:26:00",
+        "primary_class": "POSITIVE",
+        "reasons": [],
+        "quantity": 6,
+        "unit_price_milli_gbp": 3390,
+        "normalized_price": "3.390",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 20340
+      },
+      {
+        "source_row_num": 4,
+        "raw_values": {
+          "InvoiceNo": "536365",
+          "StockCode": "84406B",
+          "Description": "CREAM CUPID HEARTS COAT HANGER",
+          "Quantity": "8",
+          "InvoiceDate": "40513.351388888892",
+          "UnitPrice": "2.75",
+          "CustomerID": "17850",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 08:26:00",
+        "primary_class": "POSITIVE",
+        "reasons": [],
+        "quantity": 8,
+        "unit_price_milli_gbp": 2750,
+        "normalized_price": "2.750",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 22000
+      },
+      {
+        "source_row_num": 5,
+        "raw_values": {
+          "InvoiceNo": "536365",
+          "StockCode": "84029G",
+          "Description": "KNITTED UNION FLAG HOT WATER BOTTLE",
+          "Quantity": "6",
+          "InvoiceDate": "40513.351388888892",
+          "UnitPrice": "3.39",
+          "CustomerID": "17850",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 08:26:00",
+        "primary_class": "POSITIVE",
+        "reasons": [],
+        "quantity": 6,
+        "unit_price_milli_gbp": 3390,
+        "normalized_price": "3.390",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 20340
+      },
+      {
+        "source_row_num": 6,
+        "raw_values": {
+          "InvoiceNo": "536365",
+          "StockCode": "84029E",
+          "Description": "RED WOOLLY HOTTIE WHITE HEART.",
+          "Quantity": "6",
+          "InvoiceDate": "40513.351388888892",
+          "UnitPrice": "3.39",
+          "CustomerID": "17850",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 08:26:00",
+        "primary_class": "POSITIVE",
+        "reasons": [],
+        "quantity": 6,
+        "unit_price_milli_gbp": 3390,
+        "normalized_price": "3.390",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 20340
+      }
+    ],
+    "PRICE_REPRESENTATION_TAIL": [
+      {
+        "source_row_num": 2,
+        "raw_values": {
+          "InvoiceNo": "536365",
+          "StockCode": "85123A",
+          "Description": "WHITE HANGING HEART T-LIGHT HOLDER",
+          "Quantity": "6",
+          "InvoiceDate": "40513.351388888892",
+          "UnitPrice": "2.5499999999999998",
+          "CustomerID": "17850",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 08:26:00",
+        "primary_class": "POSITIVE",
+        "reasons": [],
+        "quantity": 6,
+        "unit_price_milli_gbp": 2550,
+        "normalized_price": "2.550",
+        "representation_difference_gbp": "2E-16",
+        "line_amount_milli_gbp": 15300
+      },
+      {
+        "source_row_num": 18,
+        "raw_values": {
+          "InvoiceNo": "536367",
+          "StockCode": "22622",
+          "Description": "BOX OF VINTAGE ALPHABET BLOCKS",
+          "Quantity": "2",
+          "InvoiceDate": "40513.356944444444",
+          "UnitPrice": "9.9499999999999993",
+          "CustomerID": "13047",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 08:34:00",
+        "primary_class": "POSITIVE",
+        "reasons": [],
+        "quantity": 2,
+        "unit_price_milli_gbp": 9950,
+        "normalized_price": "9.950",
+        "representation_difference_gbp": "7E-16",
+        "line_amount_milli_gbp": 19900
+      },
+      {
+        "source_row_num": 48,
+        "raw_values": {
+          "InvoiceNo": "536371",
+          "StockCode": "22086",
+          "Description": "PAPER CHAIN KIT 50'S CHRISTMAS ",
+          "Quantity": "80",
+          "InvoiceDate": "40513.375",
+          "UnitPrice": "2.5499999999999998",
+          "CustomerID": "13748",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 09:00:00",
+        "primary_class": "POSITIVE",
+        "reasons": [],
+        "quantity": 80,
+        "unit_price_milli_gbp": 2550,
+        "normalized_price": "2.550",
+        "representation_difference_gbp": "2E-16",
+        "line_amount_milli_gbp": 204000
+      },
+      {
+        "source_row_num": 51,
+        "raw_values": {
+          "InvoiceNo": "536373",
+          "StockCode": "85123A",
+          "Description": "WHITE HANGING HEART T-LIGHT HOLDER",
+          "Quantity": "6",
+          "InvoiceDate": "40513.376388888886",
+          "UnitPrice": "2.5499999999999998",
+          "CustomerID": "17850",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 09:02:00",
+        "primary_class": "POSITIVE",
+        "reasons": [],
+        "quantity": 6,
+        "unit_price_milli_gbp": 2550,
+        "normalized_price": "2.550",
+        "representation_difference_gbp": "2E-16",
+        "line_amount_milli_gbp": 15300
+      },
+      {
+        "source_row_num": 62,
+        "raw_values": {
+          "InvoiceNo": "536373",
+          "StockCode": "82494L",
+          "Description": "WOODEN FRAME ANTIQUE WHITE ",
+          "Quantity": "6",
+          "InvoiceDate": "40513.376388888886",
+          "UnitPrice": "2.5499999999999998",
+          "CustomerID": "17850",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 09:02:00",
+        "primary_class": "POSITIVE",
+        "reasons": [],
+        "quantity": 6,
+        "unit_price_milli_gbp": 2550,
+        "normalized_price": "2.550",
+        "representation_difference_gbp": "2E-16",
+        "line_amount_milli_gbp": 15300
+      }
+    ],
+    "STOCK_CODE_OUTSIDE_5_DIGITS_OPTIONAL_SUFFIX": [
+      {
+        "source_row_num": 47,
+        "raw_values": {
+          "InvoiceNo": "536370",
+          "StockCode": "POST",
+          "Description": "POSTAGE",
+          "Quantity": "3",
+          "InvoiceDate": "40513.364583333336",
+          "UnitPrice": "18",
+          "CustomerID": "12583",
+          "Country": "France"
+        },
+        "invoice_date_source": "2010-12-01 08:45:00",
+        "primary_class": "POSITIVE",
+        "reasons": [],
+        "quantity": 3,
+        "unit_price_milli_gbp": 18000,
+        "normalized_price": "18.000",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 54000
+      },
+      {
+        "source_row_num": 134,
+        "raw_values": {
+          "InvoiceNo": "536381",
+          "StockCode": "15056BL",
+          "Description": "EDWARDIAN PARASOL BLACK",
+          "Quantity": "2",
+          "InvoiceDate": "40513.40347222222",
+          "UnitPrice": "5.95",
+          "CustomerID": "15311",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 09:41:00",
+        "primary_class": "POSITIVE",
+        "reasons": [],
+        "quantity": 2,
+        "unit_price_milli_gbp": 5950,
+        "normalized_price": "5.950",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 11900
+      },
+      {
+        "source_row_num": 143,
+        "raw_values": {
+          "InvoiceNo": "C536379",
+          "StockCode": "D",
+          "Description": "Discount",
+          "Quantity": "-1",
+          "InvoiceDate": "40513.40347222222",
+          "UnitPrice": "27.5",
+          "CustomerID": "14527",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 09:41:00",
+        "primary_class": "CANCELLATION",
+        "reasons": [],
+        "quantity": -1,
+        "unit_price_milli_gbp": 27500,
+        "normalized_price": "27.500",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": -27500
+      },
+      {
+        "source_row_num": 283,
+        "raw_values": {
+          "InvoiceNo": "536396",
+          "StockCode": "15056BL",
+          "Description": "EDWARDIAN PARASOL BLACK",
+          "Quantity": "6",
+          "InvoiceDate": "40513.45208333333",
+          "UnitPrice": "4.95",
+          "CustomerID": "17850",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 10:51:00",
+        "primary_class": "POSITIVE",
+        "reasons": [],
+        "quantity": 6,
+        "unit_price_milli_gbp": 4950,
+        "normalized_price": "4.950",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 29700
+      },
+      {
+        "source_row_num": 388,
+        "raw_values": {
+          "InvoiceNo": "536403",
+          "StockCode": "POST",
+          "Description": "POSTAGE",
+          "Quantity": "1",
+          "InvoiceDate": "40513.477083333331",
+          "UnitPrice": "15",
+          "CustomerID": "12791",
+          "Country": "Netherlands"
+        },
+        "invoice_date_source": "2010-12-01 11:27:00",
+        "primary_class": "POSITIVE",
+        "reasons": [],
+        "quantity": 1,
+        "unit_price_milli_gbp": 15000,
+        "normalized_price": "15.000",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 15000
+      }
+    ],
+    "C_PREFIX": [
+      {
+        "source_row_num": 143,
+        "raw_values": {
+          "InvoiceNo": "C536379",
+          "StockCode": "D",
+          "Description": "Discount",
+          "Quantity": "-1",
+          "InvoiceDate": "40513.40347222222",
+          "UnitPrice": "27.5",
+          "CustomerID": "14527",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 09:41:00",
+        "primary_class": "CANCELLATION",
+        "reasons": [],
+        "quantity": -1,
+        "unit_price_milli_gbp": 27500,
+        "normalized_price": "27.500",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": -27500
+      },
+      {
+        "source_row_num": 156,
+        "raw_values": {
+          "InvoiceNo": "C536383",
+          "StockCode": "35004C",
+          "Description": "SET OF 3 COLOURED  FLYING DUCKS",
+          "Quantity": "-1",
+          "InvoiceDate": "40513.40902777778",
+          "UnitPrice": "4.6500000000000004",
+          "CustomerID": "15311",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 09:49:00",
+        "primary_class": "CANCELLATION",
+        "reasons": [],
+        "quantity": -1,
+        "unit_price_milli_gbp": 4650,
+        "normalized_price": "4.650",
+        "representation_difference_gbp": "4E-16",
+        "line_amount_milli_gbp": -4650
+      },
+      {
+        "source_row_num": 237,
+        "raw_values": {
+          "InvoiceNo": "C536391",
+          "StockCode": "22556",
+          "Description": "PLASTERS IN TIN CIRCUS PARADE ",
+          "Quantity": "-12",
+          "InvoiceDate": "40513.433333333334",
+          "UnitPrice": "1.65",
+          "CustomerID": "17548",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 10:24:00",
+        "primary_class": "CANCELLATION",
+        "reasons": [],
+        "quantity": -12,
+        "unit_price_milli_gbp": 1650,
+        "normalized_price": "1.650",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": -19800
+      },
+      {
+        "source_row_num": 238,
+        "raw_values": {
+          "InvoiceNo": "C536391",
+          "StockCode": "21984",
+          "Description": "PACK OF 12 PINK PAISLEY TISSUES ",
+          "Quantity": "-24",
+          "InvoiceDate": "40513.433333333334",
+          "UnitPrice": "0.28999999999999998",
+          "CustomerID": "17548",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 10:24:00",
+        "primary_class": "CANCELLATION",
+        "reasons": [],
+        "quantity": -24,
+        "unit_price_milli_gbp": 290,
+        "normalized_price": "0.290",
+        "representation_difference_gbp": "2E-17",
+        "line_amount_milli_gbp": -6960
+      },
+      {
+        "source_row_num": 239,
+        "raw_values": {
+          "InvoiceNo": "C536391",
+          "StockCode": "21983",
+          "Description": "PACK OF 12 BLUE PAISLEY TISSUES ",
+          "Quantity": "-24",
+          "InvoiceDate": "40513.433333333334",
+          "UnitPrice": "0.28999999999999998",
+          "CustomerID": "17548",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 10:24:00",
+        "primary_class": "CANCELLATION",
+        "reasons": [],
+        "quantity": -24,
+        "unit_price_milli_gbp": 290,
+        "normalized_price": "0.290",
+        "representation_difference_gbp": "2E-17",
+        "line_amount_milli_gbp": -6960
+      }
+    ],
+    "NEGATIVE_QUANTITY": [
+      {
+        "source_row_num": 143,
+        "raw_values": {
+          "InvoiceNo": "C536379",
+          "StockCode": "D",
+          "Description": "Discount",
+          "Quantity": "-1",
+          "InvoiceDate": "40513.40347222222",
+          "UnitPrice": "27.5",
+          "CustomerID": "14527",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 09:41:00",
+        "primary_class": "CANCELLATION",
+        "reasons": [],
+        "quantity": -1,
+        "unit_price_milli_gbp": 27500,
+        "normalized_price": "27.500",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": -27500
+      },
+      {
+        "source_row_num": 156,
+        "raw_values": {
+          "InvoiceNo": "C536383",
+          "StockCode": "35004C",
+          "Description": "SET OF 3 COLOURED  FLYING DUCKS",
+          "Quantity": "-1",
+          "InvoiceDate": "40513.40902777778",
+          "UnitPrice": "4.6500000000000004",
+          "CustomerID": "15311",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 09:49:00",
+        "primary_class": "CANCELLATION",
+        "reasons": [],
+        "quantity": -1,
+        "unit_price_milli_gbp": 4650,
+        "normalized_price": "4.650",
+        "representation_difference_gbp": "4E-16",
+        "line_amount_milli_gbp": -4650
+      },
+      {
+        "source_row_num": 237,
+        "raw_values": {
+          "InvoiceNo": "C536391",
+          "StockCode": "22556",
+          "Description": "PLASTERS IN TIN CIRCUS PARADE ",
+          "Quantity": "-12",
+          "InvoiceDate": "40513.433333333334",
+          "UnitPrice": "1.65",
+          "CustomerID": "17548",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 10:24:00",
+        "primary_class": "CANCELLATION",
+        "reasons": [],
+        "quantity": -12,
+        "unit_price_milli_gbp": 1650,
+        "normalized_price": "1.650",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": -19800
+      },
+      {
+        "source_row_num": 238,
+        "raw_values": {
+          "InvoiceNo": "C536391",
+          "StockCode": "21984",
+          "Description": "PACK OF 12 PINK PAISLEY TISSUES ",
+          "Quantity": "-24",
+          "InvoiceDate": "40513.433333333334",
+          "UnitPrice": "0.28999999999999998",
+          "CustomerID": "17548",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 10:24:00",
+        "primary_class": "CANCELLATION",
+        "reasons": [],
+        "quantity": -24,
+        "unit_price_milli_gbp": 290,
+        "normalized_price": "0.290",
+        "representation_difference_gbp": "2E-17",
+        "line_amount_milli_gbp": -6960
+      },
+      {
+        "source_row_num": 239,
+        "raw_values": {
+          "InvoiceNo": "C536391",
+          "StockCode": "21983",
+          "Description": "PACK OF 12 BLUE PAISLEY TISSUES ",
+          "Quantity": "-24",
+          "InvoiceDate": "40513.433333333334",
+          "UnitPrice": "0.28999999999999998",
+          "CustomerID": "17548",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 10:24:00",
+        "primary_class": "CANCELLATION",
+        "reasons": [],
+        "quantity": -24,
+        "unit_price_milli_gbp": 290,
+        "normalized_price": "0.290",
+        "representation_difference_gbp": "2E-17",
+        "line_amount_milli_gbp": -6960
+      }
+    ],
+    "CANCELLATION": [
+      {
+        "source_row_num": 143,
+        "raw_values": {
+          "InvoiceNo": "C536379",
+          "StockCode": "D",
+          "Description": "Discount",
+          "Quantity": "-1",
+          "InvoiceDate": "40513.40347222222",
+          "UnitPrice": "27.5",
+          "CustomerID": "14527",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 09:41:00",
+        "primary_class": "CANCELLATION",
+        "reasons": [],
+        "quantity": -1,
+        "unit_price_milli_gbp": 27500,
+        "normalized_price": "27.500",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": -27500
+      },
+      {
+        "source_row_num": 156,
+        "raw_values": {
+          "InvoiceNo": "C536383",
+          "StockCode": "35004C",
+          "Description": "SET OF 3 COLOURED  FLYING DUCKS",
+          "Quantity": "-1",
+          "InvoiceDate": "40513.40902777778",
+          "UnitPrice": "4.6500000000000004",
+          "CustomerID": "15311",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 09:49:00",
+        "primary_class": "CANCELLATION",
+        "reasons": [],
+        "quantity": -1,
+        "unit_price_milli_gbp": 4650,
+        "normalized_price": "4.650",
+        "representation_difference_gbp": "4E-16",
+        "line_amount_milli_gbp": -4650
+      },
+      {
+        "source_row_num": 237,
+        "raw_values": {
+          "InvoiceNo": "C536391",
+          "StockCode": "22556",
+          "Description": "PLASTERS IN TIN CIRCUS PARADE ",
+          "Quantity": "-12",
+          "InvoiceDate": "40513.433333333334",
+          "UnitPrice": "1.65",
+          "CustomerID": "17548",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 10:24:00",
+        "primary_class": "CANCELLATION",
+        "reasons": [],
+        "quantity": -12,
+        "unit_price_milli_gbp": 1650,
+        "normalized_price": "1.650",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": -19800
+      },
+      {
+        "source_row_num": 238,
+        "raw_values": {
+          "InvoiceNo": "C536391",
+          "StockCode": "21984",
+          "Description": "PACK OF 12 PINK PAISLEY TISSUES ",
+          "Quantity": "-24",
+          "InvoiceDate": "40513.433333333334",
+          "UnitPrice": "0.28999999999999998",
+          "CustomerID": "17548",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 10:24:00",
+        "primary_class": "CANCELLATION",
+        "reasons": [],
+        "quantity": -24,
+        "unit_price_milli_gbp": 290,
+        "normalized_price": "0.290",
+        "representation_difference_gbp": "2E-17",
+        "line_amount_milli_gbp": -6960
+      },
+      {
+        "source_row_num": 239,
+        "raw_values": {
+          "InvoiceNo": "C536391",
+          "StockCode": "21983",
+          "Description": "PACK OF 12 BLUE PAISLEY TISSUES ",
+          "Quantity": "-24",
+          "InvoiceDate": "40513.433333333334",
+          "UnitPrice": "0.28999999999999998",
+          "CustomerID": "17548",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 10:24:00",
+        "primary_class": "CANCELLATION",
+        "reasons": [],
+        "quantity": -24,
+        "unit_price_milli_gbp": 290,
+        "normalized_price": "0.290",
+        "representation_difference_gbp": "2E-17",
+        "line_amount_milli_gbp": -6960
+      }
+    ],
+    "DUPLICATE_CANDIDATE_AFTER_FIRST": [
+      {
+        "source_row_num": 519,
+        "raw_values": {
+          "InvoiceNo": "536409",
+          "StockCode": "21866",
+          "Description": "UNION JACK FLAG LUGGAGE TAG",
+          "Quantity": "1",
+          "InvoiceDate": "40513.489583333336",
+          "UnitPrice": "1.25",
+          "CustomerID": "17908",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 11:45:00",
+        "primary_class": "POSITIVE",
+        "reasons": [],
+        "quantity": 1,
+        "unit_price_milli_gbp": 1250,
+        "normalized_price": "1.250",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 1250
+      },
+      {
+        "source_row_num": 529,
+        "raw_values": {
+          "InvoiceNo": "536409",
+          "StockCode": "22866",
+          "Description": "HAND WARMER SCOTTY DOG DESIGN",
+          "Quantity": "1",
+          "InvoiceDate": "40513.489583333336",
+          "UnitPrice": "2.1",
+          "CustomerID": "17908",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 11:45:00",
+        "primary_class": "POSITIVE",
+        "reasons": [],
+        "quantity": 1,
+        "unit_price_milli_gbp": 2100,
+        "normalized_price": "2.100",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 2100
+      },
+      {
+        "source_row_num": 539,
+        "raw_values": {
+          "InvoiceNo": "536409",
+          "StockCode": "22900",
+          "Description": " SET 2 TEA TOWELS I LOVE LONDON ",
+          "Quantity": "1",
+          "InvoiceDate": "40513.489583333336",
+          "UnitPrice": "2.95",
+          "CustomerID": "17908",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 11:45:00",
+        "primary_class": "POSITIVE",
+        "reasons": [],
+        "quantity": 1,
+        "unit_price_milli_gbp": 2950,
+        "normalized_price": "2.950",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 2950
+      },
+      {
+        "source_row_num": 541,
+        "raw_values": {
+          "InvoiceNo": "536409",
+          "StockCode": "22111",
+          "Description": "SCOTTIE DOG HOT WATER BOTTLE",
+          "Quantity": "1",
+          "InvoiceDate": "40513.489583333336",
+          "UnitPrice": "4.95",
+          "CustomerID": "17908",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 11:45:00",
+        "primary_class": "POSITIVE",
+        "reasons": [],
+        "quantity": 1,
+        "unit_price_milli_gbp": 4950,
+        "normalized_price": "4.950",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 4950
+      },
+      {
+        "source_row_num": 557,
+        "raw_values": {
+          "InvoiceNo": "536412",
+          "StockCode": "22327",
+          "Description": "ROUND SNACK BOXES SET OF 4 SKULLS",
+          "Quantity": "1",
+          "InvoiceDate": "40513.492361111108",
+          "UnitPrice": "2.95",
+          "CustomerID": "17920",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 11:49:00",
+        "primary_class": "POSITIVE",
+        "reasons": [],
+        "quantity": 1,
+        "unit_price_milli_gbp": 2950,
+        "normalized_price": "2.950",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 2950
+      }
+    ],
+    "EXCLUDED_OTHER": [
+      {
+        "source_row_num": 624,
+        "raw_values": {
+          "InvoiceNo": "536414",
+          "StockCode": "22139",
+          "Description": null,
+          "Quantity": "56",
+          "InvoiceDate": "40513.494444444441",
+          "UnitPrice": "0",
+          "CustomerID": null,
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 11:52:00",
+        "primary_class": "EXCLUDED_OTHER",
+        "reasons": [
+          "ZERO_PRICE"
+        ],
+        "quantity": 56,
+        "unit_price_milli_gbp": 0,
+        "normalized_price": "0.000",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 0
+      },
+      {
+        "source_row_num": 1972,
+        "raw_values": {
+          "InvoiceNo": "536545",
+          "StockCode": "21134",
+          "Description": null,
+          "Quantity": "1",
+          "InvoiceDate": "40513.605555555558",
+          "UnitPrice": "0",
+          "CustomerID": null,
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 14:32:00",
+        "primary_class": "EXCLUDED_OTHER",
+        "reasons": [
+          "ZERO_PRICE"
+        ],
+        "quantity": 1,
+        "unit_price_milli_gbp": 0,
+        "normalized_price": "0.000",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 0
+      },
+      {
+        "source_row_num": 1973,
+        "raw_values": {
+          "InvoiceNo": "536546",
+          "StockCode": "22145",
+          "Description": null,
+          "Quantity": "1",
+          "InvoiceDate": "40513.606249999997",
+          "UnitPrice": "0",
+          "CustomerID": null,
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 14:33:00",
+        "primary_class": "EXCLUDED_OTHER",
+        "reasons": [
+          "ZERO_PRICE"
+        ],
+        "quantity": 1,
+        "unit_price_milli_gbp": 0,
+        "normalized_price": "0.000",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 0
+      },
+      {
+        "source_row_num": 1974,
+        "raw_values": {
+          "InvoiceNo": "536547",
+          "StockCode": "37509",
+          "Description": null,
+          "Quantity": "1",
+          "InvoiceDate": "40513.606249999997",
+          "UnitPrice": "0",
+          "CustomerID": null,
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 14:33:00",
+        "primary_class": "EXCLUDED_OTHER",
+        "reasons": [
+          "ZERO_PRICE"
+        ],
+        "quantity": 1,
+        "unit_price_milli_gbp": 0,
+        "normalized_price": "0.000",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 0
+      },
+      {
+        "source_row_num": 1989,
+        "raw_values": {
+          "InvoiceNo": "536549",
+          "StockCode": "85226A",
+          "Description": null,
+          "Quantity": "1",
+          "InvoiceDate": "40513.606944444444",
+          "UnitPrice": "0",
+          "CustomerID": null,
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 14:34:00",
+        "primary_class": "EXCLUDED_OTHER",
+        "reasons": [
+          "ZERO_PRICE"
+        ],
+        "quantity": 1,
+        "unit_price_milli_gbp": 0,
+        "normalized_price": "0.000",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 0
+      }
+    ],
+    "MISSING_DESCRIPTION": [
+      {
+        "source_row_num": 624,
+        "raw_values": {
+          "InvoiceNo": "536414",
+          "StockCode": "22139",
+          "Description": null,
+          "Quantity": "56",
+          "InvoiceDate": "40513.494444444441",
+          "UnitPrice": "0",
+          "CustomerID": null,
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 11:52:00",
+        "primary_class": "EXCLUDED_OTHER",
+        "reasons": [
+          "ZERO_PRICE"
+        ],
+        "quantity": 56,
+        "unit_price_milli_gbp": 0,
+        "normalized_price": "0.000",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 0
+      },
+      {
+        "source_row_num": 1972,
+        "raw_values": {
+          "InvoiceNo": "536545",
+          "StockCode": "21134",
+          "Description": null,
+          "Quantity": "1",
+          "InvoiceDate": "40513.605555555558",
+          "UnitPrice": "0",
+          "CustomerID": null,
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 14:32:00",
+        "primary_class": "EXCLUDED_OTHER",
+        "reasons": [
+          "ZERO_PRICE"
+        ],
+        "quantity": 1,
+        "unit_price_milli_gbp": 0,
+        "normalized_price": "0.000",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 0
+      },
+      {
+        "source_row_num": 1973,
+        "raw_values": {
+          "InvoiceNo": "536546",
+          "StockCode": "22145",
+          "Description": null,
+          "Quantity": "1",
+          "InvoiceDate": "40513.606249999997",
+          "UnitPrice": "0",
+          "CustomerID": null,
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 14:33:00",
+        "primary_class": "EXCLUDED_OTHER",
+        "reasons": [
+          "ZERO_PRICE"
+        ],
+        "quantity": 1,
+        "unit_price_milli_gbp": 0,
+        "normalized_price": "0.000",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 0
+      },
+      {
+        "source_row_num": 1974,
+        "raw_values": {
+          "InvoiceNo": "536547",
+          "StockCode": "37509",
+          "Description": null,
+          "Quantity": "1",
+          "InvoiceDate": "40513.606249999997",
+          "UnitPrice": "0",
+          "CustomerID": null,
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 14:33:00",
+        "primary_class": "EXCLUDED_OTHER",
+        "reasons": [
+          "ZERO_PRICE"
+        ],
+        "quantity": 1,
+        "unit_price_milli_gbp": 0,
+        "normalized_price": "0.000",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 0
+      },
+      {
+        "source_row_num": 1989,
+        "raw_values": {
+          "InvoiceNo": "536549",
+          "StockCode": "85226A",
+          "Description": null,
+          "Quantity": "1",
+          "InvoiceDate": "40513.606944444444",
+          "UnitPrice": "0",
+          "CustomerID": null,
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 14:34:00",
+        "primary_class": "EXCLUDED_OTHER",
+        "reasons": [
+          "ZERO_PRICE"
+        ],
+        "quantity": 1,
+        "unit_price_milli_gbp": 0,
+        "normalized_price": "0.000",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 0
+      }
+    ],
+    "ZERO_PRICE": [
+      {
+        "source_row_num": 624,
+        "raw_values": {
+          "InvoiceNo": "536414",
+          "StockCode": "22139",
+          "Description": null,
+          "Quantity": "56",
+          "InvoiceDate": "40513.494444444441",
+          "UnitPrice": "0",
+          "CustomerID": null,
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 11:52:00",
+        "primary_class": "EXCLUDED_OTHER",
+        "reasons": [
+          "ZERO_PRICE"
+        ],
+        "quantity": 56,
+        "unit_price_milli_gbp": 0,
+        "normalized_price": "0.000",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 0
+      },
+      {
+        "source_row_num": 1972,
+        "raw_values": {
+          "InvoiceNo": "536545",
+          "StockCode": "21134",
+          "Description": null,
+          "Quantity": "1",
+          "InvoiceDate": "40513.605555555558",
+          "UnitPrice": "0",
+          "CustomerID": null,
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 14:32:00",
+        "primary_class": "EXCLUDED_OTHER",
+        "reasons": [
+          "ZERO_PRICE"
+        ],
+        "quantity": 1,
+        "unit_price_milli_gbp": 0,
+        "normalized_price": "0.000",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 0
+      },
+      {
+        "source_row_num": 1973,
+        "raw_values": {
+          "InvoiceNo": "536546",
+          "StockCode": "22145",
+          "Description": null,
+          "Quantity": "1",
+          "InvoiceDate": "40513.606249999997",
+          "UnitPrice": "0",
+          "CustomerID": null,
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 14:33:00",
+        "primary_class": "EXCLUDED_OTHER",
+        "reasons": [
+          "ZERO_PRICE"
+        ],
+        "quantity": 1,
+        "unit_price_milli_gbp": 0,
+        "normalized_price": "0.000",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 0
+      },
+      {
+        "source_row_num": 1974,
+        "raw_values": {
+          "InvoiceNo": "536547",
+          "StockCode": "37509",
+          "Description": null,
+          "Quantity": "1",
+          "InvoiceDate": "40513.606249999997",
+          "UnitPrice": "0",
+          "CustomerID": null,
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 14:33:00",
+        "primary_class": "EXCLUDED_OTHER",
+        "reasons": [
+          "ZERO_PRICE"
+        ],
+        "quantity": 1,
+        "unit_price_milli_gbp": 0,
+        "normalized_price": "0.000",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 0
+      },
+      {
+        "source_row_num": 1989,
+        "raw_values": {
+          "InvoiceNo": "536549",
+          "StockCode": "85226A",
+          "Description": null,
+          "Quantity": "1",
+          "InvoiceDate": "40513.606944444444",
+          "UnitPrice": "0",
+          "CustomerID": null,
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 14:34:00",
+        "primary_class": "EXCLUDED_OTHER",
+        "reasons": [
+          "ZERO_PRICE"
+        ],
+        "quantity": 1,
+        "unit_price_milli_gbp": 0,
+        "normalized_price": "0.000",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 0
+      }
+    ],
+    "MISSING_CUSTOMER_ID": [
+      {
+        "source_row_num": 624,
+        "raw_values": {
+          "InvoiceNo": "536414",
+          "StockCode": "22139",
+          "Description": null,
+          "Quantity": "56",
+          "InvoiceDate": "40513.494444444441",
+          "UnitPrice": "0",
+          "CustomerID": null,
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 11:52:00",
+        "primary_class": "EXCLUDED_OTHER",
+        "reasons": [
+          "ZERO_PRICE"
+        ],
+        "quantity": 56,
+        "unit_price_milli_gbp": 0,
+        "normalized_price": "0.000",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 0
+      },
+      {
+        "source_row_num": 1445,
+        "raw_values": {
+          "InvoiceNo": "536544",
+          "StockCode": "21773",
+          "Description": "DECORATIVE ROSE BATHROOM BOTTLE",
+          "Quantity": "1",
+          "InvoiceDate": "40513.605555555558",
+          "UnitPrice": "2.5099999999999998",
+          "CustomerID": null,
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 14:32:00",
+        "primary_class": "POSITIVE",
+        "reasons": [],
+        "quantity": 1,
+        "unit_price_milli_gbp": 2510,
+        "normalized_price": "2.510",
+        "representation_difference_gbp": "2E-16",
+        "line_amount_milli_gbp": 2510
+      },
+      {
+        "source_row_num": 1446,
+        "raw_values": {
+          "InvoiceNo": "536544",
+          "StockCode": "21774",
+          "Description": "DECORATIVE CATS BATHROOM BOTTLE",
+          "Quantity": "2",
+          "InvoiceDate": "40513.605555555558",
+          "UnitPrice": "2.5099999999999998",
+          "CustomerID": null,
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 14:32:00",
+        "primary_class": "POSITIVE",
+        "reasons": [],
+        "quantity": 2,
+        "unit_price_milli_gbp": 2510,
+        "normalized_price": "2.510",
+        "representation_difference_gbp": "2E-16",
+        "line_amount_milli_gbp": 5020
+      },
+      {
+        "source_row_num": 1447,
+        "raw_values": {
+          "InvoiceNo": "536544",
+          "StockCode": "21786",
+          "Description": "POLKADOT RAIN HAT ",
+          "Quantity": "4",
+          "InvoiceDate": "40513.605555555558",
+          "UnitPrice": "0.85",
+          "CustomerID": null,
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 14:32:00",
+        "primary_class": "POSITIVE",
+        "reasons": [],
+        "quantity": 4,
+        "unit_price_milli_gbp": 850,
+        "normalized_price": "0.850",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 3400
+      },
+      {
+        "source_row_num": 1448,
+        "raw_values": {
+          "InvoiceNo": "536544",
+          "StockCode": "21787",
+          "Description": "RAIN PONCHO RETROSPOT",
+          "Quantity": "2",
+          "InvoiceDate": "40513.605555555558",
+          "UnitPrice": "1.66",
+          "CustomerID": null,
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 14:32:00",
+        "primary_class": "POSITIVE",
+        "reasons": [],
+        "quantity": 2,
+        "unit_price_milli_gbp": 1660,
+        "normalized_price": "1.660",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 3320
+      }
+    ],
+    "NON_C_NEGATIVE_QUANTITY": [
+      {
+        "source_row_num": 2408,
+        "raw_values": {
+          "InvoiceNo": "536589",
+          "StockCode": "21777",
+          "Description": null,
+          "Quantity": "-10",
+          "InvoiceDate": "40513.701388888891",
+          "UnitPrice": "0",
+          "CustomerID": null,
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-01 16:50:00",
+        "primary_class": "EXCLUDED_OTHER",
+        "reasons": [
+          "ZERO_PRICE",
+          "NON_C_NEGATIVE_QUANTITY"
+        ],
+        "quantity": -10,
+        "unit_price_milli_gbp": 0,
+        "normalized_price": "0.000",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 0
+      },
+      {
+        "source_row_num": 4349,
+        "raw_values": {
+          "InvoiceNo": "536764",
+          "StockCode": "84952C",
+          "Description": null,
+          "Quantity": "-38",
+          "InvoiceDate": "40514.612500000003",
+          "UnitPrice": "0",
+          "CustomerID": null,
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-02 14:42:00",
+        "primary_class": "EXCLUDED_OTHER",
+        "reasons": [
+          "ZERO_PRICE",
+          "NON_C_NEGATIVE_QUANTITY"
+        ],
+        "quantity": -38,
+        "unit_price_milli_gbp": 0,
+        "normalized_price": "0.000",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 0
+      },
+      {
+        "source_row_num": 7190,
+        "raw_values": {
+          "InvoiceNo": "536996",
+          "StockCode": "22712",
+          "Description": null,
+          "Quantity": "-20",
+          "InvoiceDate": "40515.645833333336",
+          "UnitPrice": "0",
+          "CustomerID": null,
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-03 15:30:00",
+        "primary_class": "EXCLUDED_OTHER",
+        "reasons": [
+          "ZERO_PRICE",
+          "NON_C_NEGATIVE_QUANTITY"
+        ],
+        "quantity": -20,
+        "unit_price_milli_gbp": 0,
+        "normalized_price": "0.000",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 0
+      },
+      {
+        "source_row_num": 7191,
+        "raw_values": {
+          "InvoiceNo": "536997",
+          "StockCode": "22028",
+          "Description": null,
+          "Quantity": "-20",
+          "InvoiceDate": "40515.645833333336",
+          "UnitPrice": "0",
+          "CustomerID": null,
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-03 15:30:00",
+        "primary_class": "EXCLUDED_OTHER",
+        "reasons": [
+          "ZERO_PRICE",
+          "NON_C_NEGATIVE_QUANTITY"
+        ],
+        "quantity": -20,
+        "unit_price_milli_gbp": 0,
+        "normalized_price": "0.000",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 0
+      },
+      {
+        "source_row_num": 7192,
+        "raw_values": {
+          "InvoiceNo": "536998",
+          "StockCode": "85067",
+          "Description": null,
+          "Quantity": "-6",
+          "InvoiceDate": "40515.645833333336",
+          "UnitPrice": "0",
+          "CustomerID": null,
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2010-12-03 15:30:00",
+        "primary_class": "EXCLUDED_OTHER",
+        "reasons": [
+          "ZERO_PRICE",
+          "NON_C_NEGATIVE_QUANTITY"
+        ],
+        "quantity": -6,
+        "unit_price_milli_gbp": 0,
+        "normalized_price": "0.000",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 0
+      }
+    ],
+    "PRICE_0_001_GBP": [
+      {
+        "source_row_num": 157197,
+        "raw_values": {
+          "InvoiceNo": "550193",
+          "StockCode": "PADS",
+          "Description": "PADS TO MATCH ALL CUSHIONS",
+          "Quantity": "1",
+          "InvoiceDate": "40648.393750000003",
+          "UnitPrice": "1E-3",
+          "CustomerID": "13952",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2011-04-15 09:27:00",
+        "primary_class": "POSITIVE",
+        "reasons": [],
+        "quantity": 1,
+        "unit_price_milli_gbp": 1,
+        "normalized_price": "0.001",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 1
+      },
+      {
+        "source_row_num": 279047,
+        "raw_values": {
+          "InvoiceNo": "561226",
+          "StockCode": "PADS",
+          "Description": "PADS TO MATCH ALL CUSHIONS",
+          "Quantity": "1",
+          "InvoiceDate": "40750.425694444442",
+          "UnitPrice": "1E-3",
+          "CustomerID": "15618",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2011-07-26 10:13:00",
+        "primary_class": "POSITIVE",
+        "reasons": [],
+        "quantity": 1,
+        "unit_price_milli_gbp": 1,
+        "normalized_price": "0.001",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 1
+      },
+      {
+        "source_row_num": 359873,
+        "raw_values": {
+          "InvoiceNo": "568200",
+          "StockCode": "PADS",
+          "Description": "PADS TO MATCH ALL CUSHIONS",
+          "Quantity": "1",
+          "InvoiceDate": "40811.623611111114",
+          "UnitPrice": "1E-3",
+          "CustomerID": "16198",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2011-09-25 14:58:00",
+        "primary_class": "POSITIVE",
+        "reasons": [],
+        "quantity": 1,
+        "unit_price_milli_gbp": 1,
+        "normalized_price": "0.001",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 1
+      },
+      {
+        "source_row_num": 361743,
+        "raw_values": {
+          "InvoiceNo": "568375",
+          "StockCode": "BANK CHARGES",
+          "Description": "Bank Charges",
+          "Quantity": "1",
+          "InvoiceDate": "40812.709027777775",
+          "UnitPrice": "1E-3",
+          "CustomerID": "13405",
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2011-09-26 17:01:00",
+        "primary_class": "POSITIVE",
+        "reasons": [],
+        "quantity": 1,
+        "unit_price_milli_gbp": 1,
+        "normalized_price": "0.001",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": 1
+      }
+    ],
+    "NEGATIVE_PRICE": [
+      {
+        "source_row_num": 299985,
+        "raw_values": {
+          "InvoiceNo": "A563186",
+          "StockCode": "B",
+          "Description": "Adjust bad debt",
+          "Quantity": "1",
+          "InvoiceDate": "40767.618750000001",
+          "UnitPrice": "-11062.06",
+          "CustomerID": null,
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2011-08-12 14:51:00",
+        "primary_class": "EXCLUDED_OTHER",
+        "reasons": [
+          "NEGATIVE_PRICE"
+        ],
+        "quantity": 1,
+        "unit_price_milli_gbp": -11062060,
+        "normalized_price": "-11062.060",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": -11062060
+      },
+      {
+        "source_row_num": 299986,
+        "raw_values": {
+          "InvoiceNo": "A563187",
+          "StockCode": "B",
+          "Description": "Adjust bad debt",
+          "Quantity": "1",
+          "InvoiceDate": "40767.619444444441",
+          "UnitPrice": "-11062.06",
+          "CustomerID": null,
+          "Country": "United Kingdom"
+        },
+        "invoice_date_source": "2011-08-12 14:52:00",
+        "primary_class": "EXCLUDED_OTHER",
+        "reasons": [
+          "NEGATIVE_PRICE"
+        ],
+        "quantity": 1,
+        "unit_price_milli_gbp": -11062060,
+        "normalized_price": "-11062.060",
+        "representation_difference_gbp": "0.000",
+        "line_amount_milli_gbp": -11062060
+      }
+    ]
+  },
+  "audited_at_utc": "2026-11-02T09:22:00.468770+00:00",
+  "source_url": "https://archive.ics.uci.edu/static/public/352/online%2Bretail.zip",
+  "files": {
+    "zip": {
+      "path": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\data\\raw\\online_retail_uci352.zip",
+      "bytes": 23715478,
+      "sha256": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b"
+    },
+    "xlsx": {
+      "path": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\data\\raw\\Online_Retail.xlsx",
+      "bytes": 23715344,
+      "sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d"
+    }
+  },
+  "zip_members": [
+    {
+      "name": "Online Retail.xlsx",
+      "bytes": 23715344,
+      "compressed_bytes": 23715344,
+      "crc32": "911c7ee5"
+    }
+  ],
+  "historical_workbook_hash_match": true,
+  "version_status": "HISTORICAL_BASELINE",
+  "environment": {
+    "python": "3.12.15",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "openpyxl": "3.1.5"
+  },
+  "script_sha256": "6c716aec58c65d56db4ea9c59caeec12aabd132043931afb2da02097eb389d48",
+  "git_sha_at_run": "0740bf439c37dc344885d2f7c26568c157dd9571"
+}

@@ -1,0 +1,10 @@
+{
+  "checked_at_utc": "2026-11-02T09:56:01.275853+00:00",
+  "requested_url": "https://archive.ics.uci.edu/static/public/352/online%2Bretail.zip",
+  "method": "HEAD",
+  "status": 200,
+  "final_url": "https://archive.ics.uci.edu/static/public/352/online%2Bretail.zip",
+  "headers": {
+    "Date": "Mon, 02 Nov 2026 09:56:03 GMT"
+  }
+}

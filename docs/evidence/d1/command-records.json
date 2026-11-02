@@ -1,0 +1,668 @@
+{
+  "scope": "D0 closeout and D1 actual command records before delivery commit; commit and packaging receipt are external",
+  "records": [
+    {
+      "label": "handoff-initial",
+      "started_at": "2026-11-02T08:50:06.763699+00:00",
+      "finished_at": "2026-11-02T08:50:06.997559+00:00",
+      "duration_seconds": 0.235,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "scripts/handoff_check.py"
+      ],
+      "exit_code": 0,
+      "stdout_file": "20261102T085006763699Z_handoff-initial.stdout.txt",
+      "stderr_file": "20261102T085006763699Z_handoff-initial.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T085006763699Z_handoff-initial.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T085006763699Z_handoff-initial.json",
+      "record_sha256": "3d7a4e8cc0f647f45856461800cc1ad0daedd6f9ff4acd1fd10a57b720d8b598"
+    },
+    {
+      "label": "npm-audit-full",
+      "started_at": "2026-11-02T08:50:48.678735+00:00",
+      "finished_at": "2026-11-02T08:50:56.174769+00:00",
+      "duration_seconds": 7.5,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend",
+      "argv": [
+        "npm.cmd",
+        "audit",
+        "--json"
+      ],
+      "exit_code": 1,
+      "stdout_file": "20261102T085048678735Z_npm-audit-full.stdout.txt",
+      "stderr_file": "20261102T085048678735Z_npm-audit-full.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T085048678735Z_npm-audit-full.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T085048678735Z_npm-audit-full.json",
+      "record_sha256": "ad8c38ed381712aef42649d11a0fed944c1e45d5e15739a282ed2748894d8871"
+    },
+    {
+      "label": "httpx2-plan",
+      "started_at": "2026-11-02T08:54:49.139949+00:00",
+      "finished_at": "2026-11-02T08:56:04.968687+00:00",
+      "duration_seconds": 75.844,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "install",
+        "--dry-run",
+        "--report",
+        "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\httpx2-plan.json",
+        "-c",
+        "requirements.lock",
+        "httpx2"
+      ],
+      "exit_code": 0,
+      "stdout_file": "20261102T085449139949Z_httpx2-plan.stdout.txt",
+      "stderr_file": "20261102T085449139949Z_httpx2-plan.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T085449139949Z_httpx2-plan.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T085449139949Z_httpx2-plan.json",
+      "record_sha256": "be5fb68de64b72c51e3e069eaad605c82f0a9f0181a100b11ecbd3eea0ea237a"
+    },
+    {
+      "label": "d0-evidence-review",
+      "started_at": "2026-11-02T08:56:55.791335+00:00",
+      "finished_at": "2026-11-02T08:56:56.002249+00:00",
+      "duration_seconds": 0.218,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\review_d0.py"
+      ],
+      "exit_code": 0,
+      "stdout_file": "20261102T085655791335Z_d0-evidence-review.stdout.txt",
+      "stderr_file": "20261102T085655791335Z_d0-evidence-review.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T085655791335Z_d0-evidence-review.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T085655791335Z_d0-evidence-review.json",
+      "record_sha256": "5070eacf7454e34ac88a109720f7cfee11d213cea8328acaa95efb4b2e259422"
+    },
+    {
+      "label": "dependency-tree",
+      "started_at": "2026-11-02T08:58:24.964067+00:00",
+      "finished_at": "2026-11-02T08:58:25.964571+00:00",
+      "duration_seconds": 1.0,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend",
+      "argv": [
+        "npm.cmd",
+        "ls",
+        "glob",
+        "minimatch",
+        "js-beautify",
+        "editorconfig",
+        "--all"
+      ],
+      "exit_code": 0,
+      "stdout_file": "20261102T085824964067Z_dependency-tree.stdout.txt",
+      "stderr_file": "20261102T085824964067Z_dependency-tree.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T085824964067Z_dependency-tree.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T085824964067Z_dependency-tree.json",
+      "record_sha256": "cb18803859952d7802af590799768e46f41e04082200313aba92d0fa5f8dd0ae"
+    },
+    {
+      "label": "npm-audit-retry",
+      "started_at": "2026-11-02T08:58:24.964067+00:00",
+      "finished_at": "2026-11-02T08:58:45.276727+00:00",
+      "duration_seconds": 20.312,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend",
+      "argv": [
+        "npm.cmd",
+        "audit",
+        "--json"
+      ],
+      "exit_code": 1,
+      "stdout_file": "20261102T085824964067Z_npm-audit-retry.stdout.txt",
+      "stderr_file": "20261102T085824964067Z_npm-audit-retry.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T085824964067Z_npm-audit-retry.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T085824964067Z_npm-audit-retry.json",
+      "record_sha256": "0da5df8039b6e101e03c7022c47ac527011e1d2e68b584664a8c887d03b9f373"
+    },
+    {
+      "label": "httpx2-install",
+      "started_at": "2026-11-02T09:03:15.784681+00:00",
+      "finished_at": "2026-11-02T09:03:34.811259+00:00",
+      "duration_seconds": 19.015,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "install",
+        "-c",
+        "requirements.lock",
+        "httpx2==2.16.0",
+        "httpcore2==2.16.0",
+        "truststore==0.10.5"
+      ],
+      "exit_code": 0,
+      "stdout_file": "20261102T090315784681Z_httpx2-install.stdout.txt",
+      "stderr_file": "20261102T090315784681Z_httpx2-install.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T090315784681Z_httpx2-install.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T090315784681Z_httpx2-install.json",
+      "record_sha256": "00da4b594c04f16a85fb9269e2229aa1e55c15ba8bfff7b8db91b7d73b10e05d"
+    },
+    {
+      "label": "d0-pytest-after-httpx2",
+      "started_at": "2026-11-02T09:08:47.204059+00:00",
+      "finished_at": "2026-11-02T09:08:49.723503+00:00",
+      "duration_seconds": 2.515,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "scripts/manage.py",
+        "test",
+        "--scope",
+        "backend"
+      ],
+      "exit_code": 0,
+      "stdout_file": "20261102T090847204059Z_d0-pytest-after-httpx2.stdout.txt",
+      "stderr_file": "20261102T090847204059Z_d0-pytest-after-httpx2.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T090847204059Z_d0-pytest-after-httpx2.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T090847204059Z_d0-pytest-after-httpx2.json",
+      "record_sha256": "8bc2d8cc35caca289744132ae91f5918ed7016186861fe6cebb541aba44dc263"
+    },
+    {
+      "label": "npm-audit-production",
+      "started_at": "2026-11-02T09:09:33.589112+00:00",
+      "finished_at": "2026-11-02T09:09:37.472297+00:00",
+      "duration_seconds": 3.89,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend",
+      "argv": [
+        "npm.cmd",
+        "audit",
+        "--omit=dev",
+        "--json"
+      ],
+      "exit_code": 0,
+      "stdout_file": "20261102T090933589112Z_npm-audit-production.stdout.txt",
+      "stderr_file": "20261102T090933589112Z_npm-audit-production.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T090933589112Z_npm-audit-production.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T090933589112Z_npm-audit-production.json",
+      "record_sha256": "226bb52cd7180e199a849221ad05a98ae571aa977c6cba3c74eed3c01dbc3902"
+    },
+    {
+      "label": "pip-check-d0",
+      "started_at": "2026-11-02T09:09:33.590656+00:00",
+      "finished_at": "2026-11-02T09:09:34.281081+00:00",
+      "duration_seconds": 0.703,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "exit_code": 0,
+      "stdout_file": "20261102T090933590656Z_pip-check-d0.stdout.txt",
+      "stderr_file": "20261102T090933590656Z_pip-check-d0.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T090933590656Z_pip-check-d0.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T090933590656Z_pip-check-d0.json",
+      "record_sha256": "2b8c7c57d02131ee8a8a583a57e73837a4a244f33e77c04e639801fc1abf4251"
+    },
+    {
+      "label": "git-safety-d0",
+      "started_at": "2026-11-02T09:13:49.055511+00:00",
+      "finished_at": "2026-11-02T09:13:49.450103+00:00",
+      "duration_seconds": 0.391,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\check_git_safety.py"
+      ],
+      "exit_code": 1,
+      "stdout_file": "20261102T091349055511Z_git-safety-d0.stdout.txt",
+      "stderr_file": "20261102T091349055511Z_git-safety-d0.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T091349055511Z_git-safety-d0.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T091349055511Z_git-safety-d0.json",
+      "record_sha256": "849e5be73b0c1445311613703194936a533c4484e9686219349f2ccd6b011d84"
+    },
+    {
+      "label": "git-safety-d0-fixed",
+      "started_at": "2026-11-02T09:16:04.048613+00:00",
+      "finished_at": "2026-11-02T09:16:04.335372+00:00",
+      "duration_seconds": 0.282,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\check_git_safety.py"
+      ],
+      "exit_code": 0,
+      "stdout_file": "20261102T091604048613Z_git-safety-d0-fixed.stdout.txt",
+      "stderr_file": "20261102T091604048613Z_git-safety-d0-fixed.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T091604048613Z_git-safety-d0-fixed.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T091604048613Z_git-safety-d0-fixed.json",
+      "record_sha256": "ca1c61b972e1ad1f96c149d9b065f5931c6e56e020eea593202a59c8603ecacb"
+    },
+    {
+      "label": "git-baseline",
+      "started_at": "2026-11-02T09:17:20.127253+00:00",
+      "finished_at": "2026-11-02T09:17:20.838393+00:00",
+      "duration_seconds": 0.704,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        "git",
+        "-c",
+        "user.name=Codex",
+        "-c",
+        "user.email=codex@localhost",
+        "commit",
+        "-m",
+        "chore: establish verified D0 baseline and close out dependency warnings"
+      ],
+      "exit_code": 0,
+      "stdout_file": "20261102T091720127253Z_git-baseline.stdout.txt",
+      "stderr_file": "20261102T091720127253Z_git-baseline.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T091720127253Z_git-baseline.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T091720127253Z_git-baseline.json",
+      "record_sha256": "d6d0280843aa28a9b330b615d1cbe40caa82451e2ce6a06b60a65d104fb12ea9"
+    },
+    {
+      "label": "audit-deps-install",
+      "started_at": "2026-11-02T09:17:36.189852+00:00",
+      "finished_at": "2026-11-02T09:19:04.386291+00:00",
+      "duration_seconds": 88.187,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "install",
+        "-c",
+        "requirements.lock",
+        "pandas==2.2.3",
+        "openpyxl==3.1.5"
+      ],
+      "exit_code": 0,
+      "stdout_file": "20261102T091736189852Z_audit-deps-install.stdout.txt",
+      "stderr_file": "20261102T091736189852Z_audit-deps-install.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T091736189852Z_audit-deps-install.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T091736189852Z_audit-deps-install.json",
+      "record_sha256": "5b45d0873edbe55fa0ce0cc6863da273f82758c1c4ae5f22cdb59762e7214319"
+    },
+    {
+      "label": "uci-download",
+      "started_at": "2026-11-02T09:17:36.189852+00:00",
+      "finished_at": "2026-11-02T09:18:48.890067+00:00",
+      "duration_seconds": 72.687,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "scripts/download_source_data.py",
+        "--download"
+      ],
+      "exit_code": 0,
+      "stdout_file": "20261102T091736189852Z_uci-download.stdout.txt",
+      "stderr_file": "20261102T091736189852Z_uci-download.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T091736189852Z_uci-download.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T091736189852Z_uci-download.json",
+      "record_sha256": "d0f45eb356a91a5e1f05507410a55de4e3c74d44bc6ddd6edbcd9b60facdd37f"
+    },
+    {
+      "label": "source-audit",
+      "started_at": "2026-11-02T09:21:34.228781+00:00",
+      "finished_at": "2026-11-02T09:22:00.745393+00:00",
+      "duration_seconds": 26.516,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "scripts/audit_source_data.py",
+        "--zip",
+        "data/raw/online_retail_uci352.zip",
+        "--xlsx",
+        "data/raw/Online_Retail.xlsx",
+        "--output",
+        "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\source-audit"
+      ],
+      "exit_code": 0,
+      "stdout_file": "20261102T092134228781Z_source-audit.stdout.txt",
+      "stderr_file": "20261102T092134228781Z_source-audit.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T092134228781Z_source-audit.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T092134228781Z_source-audit.json",
+      "record_sha256": "0701d210f4acae2e43b5b8f765b645a93ec0e4c19dc304f9edf154f6e891a223"
+    },
+    {
+      "label": "independent-audits",
+      "started_at": "2026-11-02T09:23:06.387232+00:00",
+      "finished_at": "2026-11-02T09:24:26.470686+00:00",
+      "duration_seconds": 80.094,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "scripts/run_independent_audits.py",
+        "--source",
+        "data/raw/Online_Retail.xlsx",
+        "--output",
+        "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\independent-audits"
+      ],
+      "exit_code": 0,
+      "stdout_file": "20261102T092306387232Z_independent-audits.stdout.txt",
+      "stderr_file": "20261102T092306387232Z_independent-audits.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T092306387232Z_independent-audits.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T092306387232Z_independent-audits.json",
+      "record_sha256": "cc5a78cf3148b080ea9a716ff46c322da50fb12c5ae1020c536ec6858098e972"
+    },
+    {
+      "label": "audit_retail",
+      "started_at": "2026-11-02T09:23:06.650251+00:00",
+      "finished_at": "2026-11-02T09:24:00.483974+00:00",
+      "duration_seconds": 53.844,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\.venv\\Scripts\\python.exe",
+        "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\independent-audits\\audit_retail.py"
+      ],
+      "exit_code": 0,
+      "stdout_file": "20261102T092306650251Z_audit_retail.stdout.txt",
+      "stderr_file": "20261102T092306650251Z_audit_retail.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\independent-audits\\commands\\20261102T092306650251Z_audit_retail.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\independent-audits\\commands\\20261102T092306650251Z_audit_retail.json",
+      "record_sha256": "b527a5c143a8776b18fb4b4c94854ddc8b9dc8ee062ab4bb04842fa1d38c3ef8"
+    },
+    {
+      "label": "audit_normalization_and_reference",
+      "started_at": "2026-11-02T09:24:00.631560+00:00",
+      "finished_at": "2026-11-02T09:24:26.300489+00:00",
+      "duration_seconds": 25.672,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\.venv\\Scripts\\python.exe",
+        "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\independent-audits\\audit_normalization_and_reference.py"
+      ],
+      "exit_code": 0,
+      "stdout_file": "20261102T092400631560Z_audit_normalization_and_reference.stdout.txt",
+      "stderr_file": "20261102T092400631560Z_audit_normalization_and_reference.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\independent-audits\\commands\\20261102T092400631560Z_audit_normalization_and_reference.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\independent-audits\\commands\\20261102T092400631560Z_audit_normalization_and_reference.json",
+      "record_sha256": "1e58da92106e64a301f77fa056a8c3c2f0c8a030366956fb078abbe288318485"
+    },
+    {
+      "label": "pytest-d1",
+      "started_at": "2026-11-02T09:24:22.892480+00:00",
+      "finished_at": "2026-11-02T09:24:31.136000+00:00",
+      "duration_seconds": 8.234,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "scripts/manage.py",
+        "test",
+        "--scope",
+        "backend"
+      ],
+      "exit_code": 0,
+      "stdout_file": "20261102T092422892480Z_pytest-d1.stdout.txt",
+      "stderr_file": "20261102T092422892480Z_pytest-d1.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T092422892480Z_pytest-d1.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T092422892480Z_pytest-d1.json",
+      "record_sha256": "32082be5e8bec3db49348969357dfd35f4f68fe929a82192c2c7a8ea45d7a232"
+    },
+    {
+      "label": "source-http",
+      "started_at": "2026-11-02T09:26:30.010933+00:00",
+      "finished_at": "2026-11-02T09:26:46.010718+00:00",
+      "duration_seconds": 16.0,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\record_source_http.py"
+      ],
+      "exit_code": 2,
+      "stdout_file": "20261102T092630010933Z_source-http.stdout.txt",
+      "stderr_file": "20261102T092630010933Z_source-http.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T092630010933Z_source-http.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T092630010933Z_source-http.json",
+      "record_sha256": "863149cac416ae3a4559fd35b784fc89c46929be7533177bd5b2776d16938068"
+    },
+    {
+      "label": "d1-cross-verification",
+      "started_at": "2026-11-02T09:29:31.202552+00:00",
+      "finished_at": "2026-11-02T09:29:31.555211+00:00",
+      "duration_seconds": 0.359,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "scripts/verify_d1_evidence.py",
+        "--output",
+        "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\d1-verification.json"
+      ],
+      "exit_code": 0,
+      "stdout_file": "20261102T092931202552Z_d1-cross-verification.stdout.txt",
+      "stderr_file": "20261102T092931202552Z_d1-cross-verification.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T092931202552Z_d1-cross-verification.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T092931202552Z_d1-cross-verification.json",
+      "record_sha256": "eaa3710b6414d7bb021500973cb0c872284f07a5b904bbfd1e17ebf755a0dc0c"
+    },
+    {
+      "label": "verify-existing-zip",
+      "started_at": "2026-11-02T09:55:22.185285+00:00",
+      "finished_at": "2026-11-02T09:55:22.509967+00:00",
+      "duration_seconds": 0.328,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "scripts/download_source_data.py",
+        "--verify-zip",
+        "data/raw/online_retail_uci352.zip"
+      ],
+      "exit_code": 0,
+      "stdout_file": "20261102T095522185285Z_verify-existing-zip.stdout.txt",
+      "stderr_file": "20261102T095522185285Z_verify-existing-zip.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T095522185285Z_verify-existing-zip.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T095522185285Z_verify-existing-zip.json",
+      "record_sha256": "96ffae46b34050a4a9acc0c4ae53e9f8240cbb2c384b77a72a55e00b6ab37527"
+    },
+    {
+      "label": "verify-existing-xlsx",
+      "started_at": "2026-11-02T09:55:22.608425+00:00",
+      "finished_at": "2026-11-02T09:55:22.771366+00:00",
+      "duration_seconds": 0.172,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "scripts/download_source_data.py",
+        "--verify-xlsx",
+        "data/raw/Online_Retail.xlsx"
+      ],
+      "exit_code": 0,
+      "stdout_file": "20261102T095522608425Z_verify-existing-xlsx.stdout.txt",
+      "stderr_file": "20261102T095522608425Z_verify-existing-xlsx.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T095522608425Z_verify-existing-xlsx.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T095522608425Z_verify-existing-xlsx.json",
+      "record_sha256": "6caafee5894f36f185a36030146cf855fb957a807a748fb2aceb764a3b311462"
+    },
+    {
+      "label": "missing-data-rejected",
+      "started_at": "2026-11-02T09:55:22.865605+00:00",
+      "finished_at": "2026-11-02T09:55:23.136774+00:00",
+      "duration_seconds": 0.265,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "scripts/verify_d1_evidence.py",
+        "--xlsx",
+        "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\missing_source.xlsx",
+        "--output",
+        "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\missing-data-result.json"
+      ],
+      "exit_code": 2,
+      "stdout_file": "20261102T095522865605Z_missing-data-rejected.stdout.txt",
+      "stderr_file": "20261102T095522865605Z_missing-data-rejected.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T095522865605Z_missing-data-rejected.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T095522865605Z_missing-data-rejected.json",
+      "record_sha256": "797848825201bba9273ec41f76273a69e4bbb221838b81b10698c09c62924fb5"
+    },
+    {
+      "label": "pip-lock-d1",
+      "started_at": "2026-11-02T09:56:01.036985+00:00",
+      "finished_at": "2026-11-02T09:56:02.383489+00:00",
+      "duration_seconds": 1.343,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "install",
+        "--disable-pip-version-check",
+        "-r",
+        "requirements.lock"
+      ],
+      "exit_code": 0,
+      "stdout_file": "20261102T095601036985Z_pip-lock-d1.stdout.txt",
+      "stderr_file": "20261102T095601036985Z_pip-lock-d1.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T095601036985Z_pip-lock-d1.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T095601036985Z_pip-lock-d1.json",
+      "record_sha256": "37a8bc7eb452ff7b58c850b386f2da2a842ffcc9cfd69f360cd6da2b04c86e83"
+    },
+    {
+      "label": "source-head-retry",
+      "started_at": "2026-11-02T09:56:01.113119+00:00",
+      "finished_at": "2026-11-02T09:56:04.734039+00:00",
+      "duration_seconds": 3.625,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\source_head_retry.py"
+      ],
+      "exit_code": 0,
+      "stdout_file": "20261102T095601113119Z_source-head-retry.stdout.txt",
+      "stderr_file": "20261102T095601113119Z_source-head-retry.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T095601113119Z_source-head-retry.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T095601113119Z_source-head-retry.json",
+      "record_sha256": "612bd5721e3cc617e2a6d0a8178cc49b9c5ac314f7e932294e69cc36c20400ae"
+    },
+    {
+      "label": "pytest-final",
+      "started_at": "2026-11-02T10:00:28.819317+00:00",
+      "finished_at": "2026-11-02T10:00:34.011202+00:00",
+      "duration_seconds": 5.187,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests",
+        "-v",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\pytest\\final",
+        "--junitxml",
+        "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\pytest-final.xml"
+      ],
+      "exit_code": 0,
+      "stdout_file": "20261102T100028819317Z_pytest-final.stdout.txt",
+      "stderr_file": "20261102T100028819317Z_pytest-final.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T100028819317Z_pytest-final.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T100028819317Z_pytest-final.json",
+      "record_sha256": "a80b1461a21a6b17fee2b166661f62b0aa8f925bbab5f66f19b4a346f534fbf2"
+    },
+    {
+      "label": "corrupt-file-rejected",
+      "started_at": "2026-11-02T10:06:07.393240+00:00",
+      "finished_at": "2026-11-02T10:06:07.526288+00:00",
+      "duration_seconds": 0.125,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "scripts/download_source_data.py",
+        "--verify-zip",
+        "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\test_fixture_corrupt.zip"
+      ],
+      "exit_code": 2,
+      "stdout_file": "20261102T100607393240Z_corrupt-file-rejected.stdout.txt",
+      "stderr_file": "20261102T100607393240Z_corrupt-file-rejected.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T100607393240Z_corrupt-file-rejected.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T100607393240Z_corrupt-file-rejected.json",
+      "record_sha256": "965741634a2dbc5995789428330386198b3e7845160d2d33ddb45f81b295faa0"
+    },
+    {
+      "label": "handoff-final",
+      "started_at": "2026-11-02T10:06:40.725197+00:00",
+      "finished_at": "2026-11-02T10:06:41.014864+00:00",
+      "duration_seconds": 0.281,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "scripts/handoff_check.py"
+      ],
+      "exit_code": 0,
+      "stdout_file": "20261102T100640725197Z_handoff-final.stdout.txt",
+      "stderr_file": "20261102T100640725197Z_handoff-final.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T100640725197Z_handoff-final.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T100640725197Z_handoff-final.json",
+      "record_sha256": "d4c7b8e2c94eb6799fa5029bec39e6882487d9112508450411c6357384abf564"
+    },
+    {
+      "label": "git-safety-d1",
+      "started_at": "2026-11-02T10:06:40.729407+00:00",
+      "finished_at": "2026-11-02T10:06:41.172531+00:00",
+      "duration_seconds": 0.453,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\check_git_safety.py"
+      ],
+      "exit_code": 0,
+      "stdout_file": "20261102T100640729407Z_git-safety-d1.stdout.txt",
+      "stderr_file": "20261102T100640729407Z_git-safety-d1.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T100640729407Z_git-safety-d1.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T100640729407Z_git-safety-d1.json",
+      "record_sha256": "1272d0979b5321cf099538c6f1bc909032540618daeb6bded14d7a06373323c7"
+    },
+    {
+      "label": "pip-check-final",
+      "started_at": "2026-11-02T10:06:41.104563+00:00",
+      "finished_at": "2026-11-02T10:06:41.848093+00:00",
+      "duration_seconds": 0.75,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "exit_code": 0,
+      "stdout_file": "20261102T100641104563Z_pip-check-final.stdout.txt",
+      "stderr_file": "20261102T100641104563Z_pip-check-final.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T100641104563Z_pip-check-final.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T100641104563Z_pip-check-final.json",
+      "record_sha256": "82171d68d60f9fa235f4ddf9863997082cad1b28f7e93bc8f03c74a66abf6c93"
+    },
+    {
+      "label": "diff-check-d1",
+      "started_at": "2026-11-02T10:06:41.262000+00:00",
+      "finished_at": "2026-11-02T10:06:41.393044+00:00",
+      "duration_seconds": 0.141,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 2,
+      "stdout_file": "20261102T100641262000Z_diff-check-d1.stdout.txt",
+      "stderr_file": "20261102T100641262000Z_diff-check-d1.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T100641262000Z_diff-check-d1.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T100641262000Z_diff-check-d1.json",
+      "record_sha256": "fc7a38931eb4e5f9b7b3e4a3bd3d0e733418fe1eca2fbe1781304bcc5b5c3e14"
+    },
+    {
+      "label": "diff-check-d1-fixed",
+      "started_at": "2026-11-02T10:07:37.197524+00:00",
+      "finished_at": "2026-11-02T10:07:37.258680+00:00",
+      "duration_seconds": 0.062,
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout_file": "20261102T100737197524Z_diff-check-d1-fixed.stdout.txt",
+      "stderr_file": "20261102T100737197524Z_diff-check-d1-fixed.stderr.txt",
+      "record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T100737197524Z_diff-check-d1-fixed.json",
+      "delivery_record_path": "D:\\codex产出\\电商智能体_D1真实数据审计\\交付\\证据\\commands\\20261102T100737197524Z_diff-check-d1-fixed.json",
+      "record_sha256": "bc042e6ecf38fc10f949cecfaead666486009ee4a8ec3315390d095901870c8a"
+    }
+  ]
+}

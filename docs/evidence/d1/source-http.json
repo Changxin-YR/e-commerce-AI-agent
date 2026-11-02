@@ -1,0 +1,25 @@
+{
+  "checked_at_utc": "2026-11-02T09:26:30.137509+00:00",
+  "requests": [
+    {
+      "requested_url": "https://archive.ics.uci.edu/dataset/352/online%2Bretail",
+      "method": "GET",
+      "status": 200,
+      "final_url": "https://archive.ics.uci.edu/dataset/352/online%2Bretail",
+      "headers": {
+        "Date": "Mon, 02 Nov 2026 09:26:31 GMT",
+        "Content-Type": "text/html",
+        "Content-Length": "174303",
+        "etag": "\"1smhh13\""
+      },
+      "sha256": "92f168c5bd71a7f08e03b14f490231e97a0c18bbf3505513e3fe879589221ed7",
+      "bytes": 174303,
+      "saved_as": "dataset_page.html"
+    },
+    {
+      "requested_url": "https://archive.ics.uci.edu/static/public/352/online%2Bretail.zip",
+      "method": "HEAD",
+      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>"
+    }
+  ]
+}

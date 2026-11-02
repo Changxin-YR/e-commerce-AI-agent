@@ -1,0 +1,142 @@
+{
+  "manifest_version": "1.0",
+  "dataset": "UCI Online Retail",
+  "uci_id": 352,
+  "verified_at": "2026-11-02T18:04:32.353141+08:00",
+  "status": "ACQUIRED_AND_AUDITED",
+  "import_status": "NOT_STARTED",
+  "acquired_at_utc": "2026-11-02T09:18:48.890067+00:00",
+  "source": {
+    "dataset_url": "https://archive.ics.uci.edu/dataset/352/online%2Bretail",
+    "download_url": "https://archive.ics.uci.edu/static/public/352/online%2Bretail.zip",
+    "citation": "Chen, D. (2015). Online Retail [Dataset]. UCI Machine Learning Repository.",
+    "doi": "10.24432/C5BW33",
+    "license": "CC BY 4.0",
+    "acquisition_method": "scripts/download_source_data.py --download",
+    "command_record": "D:\\codex产出\\电商智能体_D1真实数据审计\\缓存\\commands\\20261102T091736189852Z_uci-download.json",
+    "command_record_sha256": "d0f45eb356a91a5e1f05507410a55de4e3c74d44bc6ddd6edbcd9b60facdd37f",
+    "download_exit_code": 0
+  },
+  "files": {
+    "zip": {
+      "path": "data/raw/online_retail_uci352.zip",
+      "bytes": 23715478,
+      "sha256": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b"
+    },
+    "xlsx": {
+      "path": "data/raw/Online_Retail.xlsx",
+      "bytes": 23715344,
+      "sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d"
+    }
+  },
+  "zip_members": [
+    {
+      "name": "Online Retail.xlsx",
+      "bytes": 23715344,
+      "compressed_bytes": 23715344,
+      "crc32": "911c7ee5"
+    }
+  ],
+  "workbook": {
+    "sheet_names": [
+      "Online Retail"
+    ],
+    "columns": [
+      "InvoiceNo",
+      "StockCode",
+      "Description",
+      "Quantity",
+      "InvoiceDate",
+      "UnitPrice",
+      "CustomerID",
+      "Country"
+    ],
+    "row_count": 541909,
+    "data_excel_row_range": [
+      2,
+      541910
+    ],
+    "source_time_min": "2010-12-01 08:26:00",
+    "source_time_max": "2011-12-09 12:50:00",
+    "source_timezone": "UNSPECIFIED",
+    "date_epoch": "1900",
+    "currency": "GBP"
+  },
+  "historical_reference": {
+    "workbook_hash_match": true,
+    "container_hash_match": true,
+    "comparison_status": "PASS",
+    "differences": [],
+    "ignored_fields": [
+      "audited_at_utc"
+    ],
+    "human_gold_reviewed": false
+  },
+  "classification": {
+    "counts": {
+      "INVALID": 0,
+      "POSITIVE": 530104,
+      "CANCELLATION": 9288,
+      "EXCLUDED_OTHER": 2517
+    },
+    "reconciled": true,
+    "quality_flags_can_overlap": true,
+    "retain_duplicate_candidates": true
+  },
+  "normalization": {
+    "quantum_gbp": "0.001",
+    "rounding": "ROUND_HALF_UP",
+    "allowed_representation_difference_gbp": "1E-9",
+    "rows_with_any_difference": 51170,
+    "max_absolute_difference_gbp": "7E-13",
+    "price_0_001_rows": 4,
+    "raw_decimal_scale_counts": {
+      "0": 4503,
+      "1": 26731,
+      "2": 459501,
+      "3": 4,
+      "13": 20,
+      "14": 72,
+      "15": 342,
+      "16": 38542,
+      "17": 12185,
+      "18": 9
+    },
+    "raw_representation_retained": "Original XLSX OOXML cell <v> text plus row-addressed examples; never rewritten."
+  },
+  "int64_check": {
+    "max_abs_unit_price_milli_gbp": 38970000,
+    "max_abs_line_amount_milli_gbp": 168469600,
+    "sum_absolute_line_amount_milli_gbp": 11585621154,
+    "limit": 9223372036854775807,
+    "safe": true
+  },
+  "transform_version": "uci352-ooxml-milligbp-v1",
+  "evidence": {
+    "docs/evidence/d1/audit.json": "a6bb66d14ee3468cbacf8281df5057d34df1f024cade8b5de36bea4696230d5c",
+    "docs/evidence/d1/audit_normalization_and_reference.json": "e9ab15b8f40ddcbd7db5d015bb4d6870b70efe81957ac1d29d37316ed1901647",
+    "docs/evidence/d1/audit_retail.json": "fe15ba8a50e036308a5c498e557af60c9491fba025666b83c559c2fcc6f0f226",
+    "docs/evidence/d1/command-records.json": "6d27a23543ff191bdf25bd020a1b2bdca0f4e70af409d43ac0911bf540abfa3e",
+    "docs/evidence/d1/comparison.json": "67dcc243fd0e70633255cb2c652378878c90c947418e567506ce2f6cf14bed51",
+    "docs/evidence/d1/d0-review.json": "442798cfd98ecab257a4072d84df52e20d123a471f3570e31eb248ff479b5c48",
+    "docs/evidence/d1/D0_EVIDENCE_INDEX_ARCHIVE.md": "c007496d7e784d39d9a7b2cd48bb136753b9a6390f2782d8d19539d4b11fb9d0",
+    "docs/evidence/d1/pytest-final.xml": "db334c97ddeb49f1bc74b9581a46e5a38819b6ad7db1e911b9f3ab883ea183eb",
+    "docs/evidence/d1/source-head-retry.json": "6ded73e4396aeabde9e4fedc5e36421b30e2a2bd18240ddf8ee1c3baf90750e2",
+    "docs/evidence/d1/source-http.json": "6c04d7692cfc3f4b551e6a0d130aeca39f13daf682de999ac32ffca0e956fc4b",
+    "docs/evidence/d1/verification.json": "e97fe6537c7f8940fe352302b325e8e89ac7e705a9856eec0f293d32259a31b1"
+  },
+  "script_sha256": {
+    "scripts/download_source_data.py": "facc25730e086ba5c3dba55cb1b961ba2c38a5082c9fdd2166e4685ad37e2db0",
+    "scripts/audit_source_data.py": "6c716aec58c65d56db4ea9c59caeec12aabd132043931afb2da02097eb389d48",
+    "scripts/run_independent_audits.py": "0b7a45a5281faeb1203bd15eb5c21d007033587d4a6b259716cac848c020718b",
+    "scripts/verify_d1_evidence.py": "4dd98afddfa4e4587550c3f4841b8cbe8d9577ab2ae49e28ab92c2113459f641"
+  },
+  "documentation": [
+    "docs/data-source.md",
+    "docs/data-dictionary.md",
+    "docs/data-quality.md",
+    "docs/D2_DATA_INPUT.md"
+  ],
+  "git_baseline_sha": "0740bf439c37dc344885d2f7c26568c157dd9571",
+  "raw_files_git_policy": "Ignored; raw ZIP/XLSX retained only in local data/raw; excluded from source delivery archive."
+}

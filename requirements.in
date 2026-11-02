@@ -9,3 +9,6 @@ uvicorn>=0.30,<1
 httpx>=0.27,<1
 httpx2==2.16.0
 pytest>=8,<10
+# D1 read-only audit dependencies; same parser versions as the independent reference.
+pandas==2.2.3
+openpyxl==3.1.5
