@@ -1,12 +1,11 @@
-# 当前检查点：D8工程验证完成，继续D9
+# 最终检查点：D9工程已交付，等待用户验收/真实模型授权
 
-持续授权见CONTINUOUS_EXECUTION.md，不逐阶段等待，不创建子代理。实际仓库C:/Users/27363/Desktop/毕业论文/电商智能体的实现/ecommerce-agent-thesis；命令显式cwd。D8产出D:/codex产出/电商智能体_D8安全稳定。
+仓库C:/Users/27363/Desktop/毕业论文/电商智能体的实现/ecommerce-agent-thesis。源码留原位，交付D:/codex产出/电商智能体_D9最终工程交付/交付，最终提交见外部git-receipt.json。不要重新从D0开发或自动继续论文。
 
-1. D0—D8完成。D8新增backend/app/security.py、tests/test_security.py、scripts/audit_release.py，修复JSON大小/期限、重复Origin、字典键脱敏、Markdown CR、防嵌套头与前端D7写死问题。API0.8.0/D8，schema0004_agent_runtime。
-2. 最终263 pytest、28 Vitest、完整9 Edge与构建通过；真实UCI 15个scripted任务/114恢复断言，报表158/月度21独立SQL。首次失败全部保留。真实模型0、BLOCKED_AUTHORIZATION；付费false，真实预算0。
-3. .env指向D8缓存/runtime/app.sqlite3及配套app.checkpoints.sqlite3，541909交易、48任务/48报告。D7两库SHA未变。所有验证服务已停止。最终SHA在D8交付/git-receipt.json。D8缓存finalize_d8.py/seal_stage.py可作归档参考。
-4. Python68依赖pip-audit2.10.1未发现已知漏洞；npm生产0、开发4moderate，fix dry-run没有可应用变更，K01保留。CSV/Excel导出不存在为N/A。55份不可变资料不改。
-5. 下一步docs/dev/steps/09_09_ACCEPTANCE.md，FEATURE_ACCEPTANCE、13_ECOMMERCE_BUILD_CONTRACT、16_SECURITY_AND_PRIVACY都已读。D9必须干净依赖安装与迁移、真实数据导入/八工具/页面/重启/所有F01—F16和E01—E10有实测证据或明确BLOCKED；修README严重过时D3说明，完成接口/安装/操作/演示/恢复文档。
-6. D9另复制D8运行两库保留封存；干净复现可在D9缓存/reproduction解包源码、创建新.venv/npm ci、新数据库迁移和导入，不改已有依赖/库。额外交付缓存全在D盘。
-7. manage.py test --scope all已可自动设置E2E_SOURCE_DATABASE为当前Settings数据库；测试source副本隔离，business.spec还会完整重新导入官方ZIP。只需已有data/raw/Online_Retail.xlsx与online_retail_uci352.zip。脚本verify_import/metrics/tools/agent/reports可复用，输出目录必须新建，非学术实验。
-8. 最终仅READY_FOR_USER_ACCEPTANCE并标模型阻断；不写论文、不跑正式实验、不远程推送、不自授USER_ACCEPTED。源码ZIP排除.env、原ZIP/XLSX、库和依赖。当前只有两个窗口backend/frontend+Ctrl+C，别写不存在的start/stop命令。
+1. D0—D9离线工程与全新依赖/空库复现完成，263 pytest、28 Vitest、完整9 Edge及构建通过。实际矩阵docs/D9_ACCEPTANCE.md与evidence/d9/acceptance-matrix.json，12项READY、F06—F09实际模型BLOCKED_AUTHORIZATION，E01—E10 PASS。
+2. 独立导入41、月度85、八工具265/57HTTP、15脚本任务/114恢复断言、默认8000/5173启动/B0/重启23检查、默认报告92与浏览器158/月度21独立SQL。真实外部调用0、付费false、真实预算0；不得把scripted说成真实模型。
+3. API0.9.0/D9、schema0004_agent_runtime。.env使用D9缓存/runtime/app.sqlite3及配套checkpoint，541909交易、63任务/63报告（60scripted+3B0）。clean-runtime独立新库只有1条查询、1份B0、无模型尝试。D8两库SHA保留，所有本轮服务已停止。
+4. 干净源码/依赖在D9缓存/ecommerce-agent-thesis，最初reproduction目录改名以满足不可变项目名。Python68锁完全一致，npm ci成功；可执行代码逐文件一致。最终浏览器目录缓存/playwright/2026-11-02T16-59-09-574Z-56368。失败保留，详见索引。
+5. README、D9_OPERATIONS、D9_API提供安装/使用/演示/恢复/接口。npm4项开发moderate保留，生产0；D8 Python审计68项无已知漏洞，同锁未变。55份不可变资料不改，源码ZIP不含.env/原ZIP-XLSX/库/依赖。
+6. 用户原“持续开发直到收尾”授权的工程工作已完成。下一步用户本人实机验收，或另给明确模型预算授权/凭据/模型ID后真实B1/B2冒烟。当前不重复开新对话继续开发，不自动写论文/做gold/正式实验/公网部署/远程推送，不自授USER_ACCEPTED。
+7. 若后续发现实际缺陷，在此基线修复并新建证据，保留封存原件；D9缓存finalize_d9.py/seal_stage.py记录归档逻辑。清理缓存之前保留配对运行数据。

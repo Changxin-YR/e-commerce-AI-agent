@@ -1,0 +1,53 @@
+RUN D:\codex产出\电商智能体_D9最终工程交付\缓存\ecommerce-agent-thesis\.venv\Scripts\python.exe -m pytest tests -q -p no:cacheprovider --basetemp D:\codex产出\电商智能体_D9最终工程交付\缓存\pytest\20261102T165810808856
+........................................................................ [ 27%]
+........................................................................ [ 54%]
+........................................................................ [ 82%]
+...............................................                          [100%]
+263 passed in 50.49s
+RUN D:\依赖\Node.js\node-v24.22.0-win-x64\npm.cmd run test
+
+> ecommerce-agent-frontend@0.1.0 test
+> vitest run --configLoader runner
+
+
+ RUN  v4.1.12 D:/codex产出/电商智能体_D9最终工程交付/缓存/ecommerce-agent-thesis/frontend
+
+
+ Test Files  3 passed (3)
+      Tests  28 passed (28)
+   Start at  00:59:04
+   Duration  1.09s (transform 585ms, setup 0ms, import 882ms, tests 289ms, environment 1.50s)
+
+RUN D:\依赖\Node.js\node-v24.22.0-win-x64\npm.cmd run build
+
+> ecommerce-agent-frontend@0.1.0 build
+> vue-tsc --noEmit && vite build --configLoader runner
+
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 21 modules transformed.
+rendering chunks...
+computing gzip size...
+../../frontend-dist/index.html                   0.54 kB │ gzip:  0.37 kB
+../../frontend-dist/assets/index-DgRZ2qjE.css   13.36 kB │ gzip:  3.56 kB
+../../frontend-dist/assets/index-BSlov01e.js   116.88 kB │ gzip: 43.59 kB
+✓ built in 484ms
+RUN D:\依赖\Node.js\node-v24.22.0-win-x64\npm.cmd run test:e2e
+
+> ecommerce-agent-frontend@0.1.0 test:e2e
+> node e2e/run.mjs
+
+
+Running 9 tests using 1 worker
+
+  ok 1 e2e\business.spec.ts:169:3 › D4 real business workflow › official ZIP uploads in UI, progresses, survives refresh and deduplicates XLSX (2.5m)
+  ok 2 e2e\business.spec.ts:209:3 › D4 real business workflow › September and October values match real API and independent SQL; refresh and restart use saved GET (4.3s)
+  ok 3 e2e\business.spec.ts:257:3 › D4 real business workflow › partial, no-data, empty-filter, corrupt upload and real backend outage are explicit (4.3s)
+  ok 4 e2e\health.spec.ts:174:3 › D0 real local service › page receives real health JSON and remains connected after reload (498ms)
+  ok 5 e2e\health.spec.ts:201:3 › D0 real local service › stopping and restarting the real backend shows failure and recovery (3.3s)
+  ok 6 e2e\reports.spec.ts:176:3 › D7 real data reports and scripted clarification › real upload reuse -> B0 comparison -> exact report -> downloads -> GET history after restart (5.5s)
+  ok 7 e2e\reports.spec.ts:221:3 › D7 real data reports and scripted clarification › partial and empty reports keep distinct states (1.9s)
+  ok 8 e2e\reports.spec.ts:240:3 › D7 real data reports and scripted clarification › scripted B2 clarification survives restart, replies in the same run and exports cited real values (8.1s)
+  ok 9 e2e\reports.spec.ts:272:3 › D7 real data reports and scripted clarification › D8 browser escapes stored questions and rejects an actual foreign-origin form (2.1s)
+
+  9 passed (3.3m)

@@ -1,13 +1,13 @@
 {
   "project_id": "ecommerce-agent-thesis",
-  "updated_at": "2026-11-03T00:44:34.848706+08:00",
+  "updated_at": "2026-11-03T01:11:43.723508+08:00",
   "implementation_ready": {
     "status": "PARTIAL",
-    "blocker_code": null,
-    "scope": "D0-D8 engineering verified; live model blocked; D9 clean reproduction pending",
+    "blocker_code": "BLOCKED_AUTHORIZATION",
+    "scope": "D0-D9 offline engineering and clean reproduction PASS; real model F06-F09 and final user acceptance pending",
     "evidence": [
-      "docs/D8_DELIVERY.md",
-      "docs/EVIDENCE_INDEX.md"
+      "docs/D9_ACCEPTANCE.md",
+      "docs/evidence/d9/verification.json"
     ]
   },
   "real_data_ready": {
@@ -23,9 +23,9 @@
   "live_model_verified": {
     "status": "BLOCKED",
     "blocker_code": "BLOCKED_AUTHORIZATION",
-    "scope": "Paid flag false, real budgets zero; scripted browser scenarios are explicit engineering fixtures.",
+    "scope": "Real external calls zero; F06-F09 blocked, scripted evidence proves engineering mechanisms only.",
     "evidence": [
-      "docs/D7_DELIVERY.md",
+      "docs/D9_ACCEPTANCE.md",
       "docs/D6_AGENT.md"
     ]
   },
@@ -50,31 +50,32 @@
     "evidence": []
   },
   "handoff_version": "1.5",
-  "handoff_status": "CONTINUOUS_DEVELOPMENT_FROM_D9",
-  "implementation_status": "D8_ENGINEERING_VERIFIED_CONTINUE_D9",
+  "handoff_status": "READY_FOR_USER_ACCEPTANCE",
+  "implementation_status": "D9_ENGINEERING_COMPLETE_LIVE_MODEL_BLOCKED",
   "execution_mode": "FEATURE_FIRST",
   "current_dev_step": "D9",
   "paper_work_mode": "DEFERRED_BY_USER",
   "formal_experiment_mode": "DEFERRED_UNTIL_FEATURE_ACCEPTANCE_AND_USER_APPROVAL",
-  "last_verified_dev_step": "D8",
-  "next_dev_step": "D9",
-  "next_step_requires_user_approval": false,
+  "last_verified_dev_step": "D9",
+  "next_dev_step": null,
+  "next_step_requires_user_approval": true,
   "user_acceptance": "PENDING_FINAL_USER_ACCEPTANCE",
   "git": {
     "initialized": true,
     "baseline_sha": "0740bf439c37dc344885d2f7c26568c157dd9571",
     "baseline_scope": "Verified D0 plus closeout",
-    "delivery_commit_receipt": "D:/codex产出/电商智能体_D8安全稳定/交付/git-receipt.json",
+    "delivery_commit_receipt": "D:/codex产出/电商智能体_D9最终工程交付/交付/git-receipt.json",
     "pushed": false,
-    "note": "D8 commit recorded outside Git to avoid self-reference.",
+    "note": "Final D9 commit is recorded outside Git to avoid self-reference.",
     "d1_sha": "bf92c1f5672f0ecbc05169215c5274d3ebdd7d39",
     "d2_sha": "49c2bbd403fffd571926c9ca3329ded77fcdba0a",
     "d4_sha": "e0c43541bf19f4c179522305e147e5f5dfe4736b",
     "d5_sha": "a45db53636015afdfaa8a1c4cb0a19ddd8b91ad9",
     "d6_sha": "d5202f6a29678e18964930f8bc2b5af80baa9145",
-    "d7_sha": "0ce4f79361e18d6b30145e9c532d53b9db094515"
+    "d7_sha": "0ce4f79361e18d6b30145e9c532d53b9db094515",
+    "d8_sha": "48f1edc62b60f7b120c75a2346ec87715404e261"
   },
-  "artifact_root": "D:/codex产出/电商智能体_D8安全稳定",
+  "artifact_root": "D:/codex产出/电商智能体_D9最终工程交付",
   "d0": {
     "status": "READY_FOR_USER_ACCEPTANCE",
     "engineering_validation": "PASS",
@@ -165,7 +166,7 @@
     "D6": "VERIFIED_CONTINUATION_AUTHORIZED",
     "D7": "VERIFIED_CONTINUATION_AUTHORIZED",
     "D8": "VERIFIED_CONTINUATION_AUTHORIZED",
-    "D9": "AUTHORIZED_READY_TO_START"
+    "D9": "READY_FOR_USER_ACCEPTANCE"
   },
   "d1": {
     "status": "READY_FOR_USER_ACCEPTANCE",
@@ -684,6 +685,191 @@
       "First full pytest: 262 passed/1 outdated OpenAPI version assertion; final 263 passed.",
       "First full browser: 7 passed/1 failed/1 skipped; frontend D7-only health validation fixed; final full 9 passed.",
       "npm audit and audit fix dry run exit 1: four moderate development advisories remain, production zero."
+    ]
+  },
+  "d9": {
+    "stage": "D9",
+    "engineering_validation": "PASS",
+    "delivery_status": "READY_FOR_USER_ACCEPTANCE",
+    "implementation_overall": "PARTIAL_LIVE_MODEL_BLOCKED",
+    "live_model_verified": "BLOCKED_AUTHORIZATION",
+    "user_acceptance": "NOT_PERFORMED",
+    "pytest_passed": 263,
+    "vitest_passed": 28,
+    "edge_cases_passed": 9,
+    "build": "PASS",
+    "clean_dependency_install": "PASS",
+    "clean_migration": "PASS",
+    "clean_python_lock_exact": true,
+    "edge_cases": [
+      {
+        "title": "official ZIP uploads in UI, progresses, survives refresh and deduplicates XLSX",
+        "file": "business.spec.ts",
+        "status": "passed"
+      },
+      {
+        "title": "September and October values match real API and independent SQL; refresh and restart use saved GET",
+        "file": "business.spec.ts",
+        "status": "passed"
+      },
+      {
+        "title": "partial, no-data, empty-filter, corrupt upload and real backend outage are explicit",
+        "file": "business.spec.ts",
+        "status": "passed"
+      },
+      {
+        "title": "page receives real health JSON and remains connected after reload",
+        "file": "health.spec.ts",
+        "status": "passed"
+      },
+      {
+        "title": "stopping and restarting the real backend shows failure and recovery",
+        "file": "health.spec.ts",
+        "status": "passed"
+      },
+      {
+        "title": "real upload reuse -> B0 comparison -> exact report -> downloads -> GET history after restart",
+        "file": "reports.spec.ts",
+        "status": "passed"
+      },
+      {
+        "title": "partial and empty reports keep distinct states",
+        "file": "reports.spec.ts",
+        "status": "passed"
+      },
+      {
+        "title": "scripted B2 clarification survives restart, replies in the same run and exports cited real values",
+        "file": "reports.spec.ts",
+        "status": "passed"
+      },
+      {
+        "title": "D8 browser escapes stored questions and rejects an actual foreign-origin form",
+        "file": "reports.spec.ts",
+        "status": "passed"
+      }
+    ],
+    "browser": "Microsoft Edge / Playwright",
+    "viewports": [
+      "1280x900",
+      "390x844"
+    ],
+    "evidence_run": "D:\\codex产出\\电商智能体_D9最终工程交付\\缓存\\playwright\\2026-11-02T16-59-09-574Z-56368",
+    "verification_counts": {
+      "import": 41,
+      "metrics": 85,
+      "tools": 265,
+      "agent": 114,
+      "default": 23,
+      "default_report": 92,
+      "browser_report": 158,
+      "browser_monthly": 21
+    },
+    "real_tool_http_calls": 57,
+    "external_model_calls": 0,
+    "agent_fixture_runs": 15,
+    "matrix": {
+      "ready": 12,
+      "blocked_live_model": 4,
+      "E01_E10": "PASS"
+    },
+    "database": {
+      "path": "D:\\codex产出\\电商智能体_D9最终工程交付\\缓存\\runtime\\app.sqlite3",
+      "bytes": 677265408,
+      "sha256": "39b0c8fb939c6e059f1b1284540d22504d2f6dfe07b9407619d61247e29271b8",
+      "counts": {
+        "transaction_rows": 541909,
+        "analysis_runs": 63,
+        "reports": 63,
+        "model_attempts": 132,
+        "agent_tool_calls": 80,
+        "query_history": 2
+      }
+    },
+    "checkpoint": {
+      "path": "D:\\codex产出\\电商智能体_D9最终工程交付\\缓存\\runtime\\app.checkpoints.sqlite3",
+      "bytes": 5226496,
+      "sha256": "8a566f156e80ab955cf35c8f38e76ca55018ca0046cc2a00fd4e90abb7ad1aaf"
+    },
+    "clean_database": {
+      "path": "D:\\codex产出\\电商智能体_D9最终工程交付\\缓存\\clean-runtime\\app.sqlite3",
+      "bytes": 676491264,
+      "sha256": "aac38a4f16f4319660c014cebc21c064a989bfb7ca602755b6ae6fda05873387",
+      "counts": {
+        "transaction_rows": 541909,
+        "analysis_runs": 1,
+        "reports": 1,
+        "model_attempts": 0,
+        "agent_tool_calls": 8,
+        "query_history": 1
+      }
+    },
+    "clean_checkpoint": {
+      "path": "D:\\codex产出\\电商智能体_D9最终工程交付\\缓存\\clean-runtime\\app.checkpoints.sqlite3",
+      "bytes": 4096,
+      "sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977"
+    },
+    "browser_databases": [
+      {
+        "path": "D:\\codex产出\\电商智能体_D9最终工程交付\\缓存\\playwright\\2026-11-02T16-59-09-574Z-56368\\business\\real-ui.sqlite3",
+        "bytes": 676421632,
+        "sha256": "f69c0e48393b01c34814ede150d9082d9d0e051ac69e640b5e7070e8e87151b8",
+        "counts": {
+          "transaction_rows": 541909,
+          "analysis_runs": 0,
+          "reports": 0,
+          "model_attempts": 0,
+          "agent_tool_calls": 0,
+          "query_history": 5
+        }
+      },
+      {
+        "path": "D:\\codex产出\\电商智能体_D9最终工程交付\\缓存\\playwright\\2026-11-02T16-59-09-574Z-56368\\reports\\real-ui.sqlite3",
+        "bytes": 677265408,
+        "sha256": "a3dc20481bd2f3f015a5333cd0f24edd640f23e554facf14a54bc8b20d264346",
+        "counts": {
+          "transaction_rows": 541909,
+          "analysis_runs": 53,
+          "reports": 53,
+          "model_attempts": 103,
+          "agent_tool_calls": 86,
+          "query_history": 2
+        }
+      }
+    ],
+    "source_hashes": {
+      "zip": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
+      "xlsx": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d"
+    },
+    "D8_preserved": true,
+    "stopped_services": true,
+    "dependency_audit": {
+      "production": 0,
+      "development_moderate": 4,
+      "high": 0,
+      "critical": 0,
+      "fix_dry_run_changed": 0
+    },
+    "python_audit": {
+      "tool": "pip-audit 2.10.1",
+      "dependencies": 68,
+      "known_vulnerabilities": 0
+    },
+    "performance": {
+      "clean_import_seconds": 151.391,
+      "detail_response": {
+        "method": "POST",
+        "path": "/api/v1/tools/inspect_transactions",
+        "status": 200,
+        "bytes": 40105,
+        "seconds": 0.2295
+      },
+      "detail_limit": 50,
+      "frontend_build_js_bytes": 116875
+    },
+    "failures": [
+      "First agent verification reused an inherited idempotency key because output basename matched D8; API correctly returned 200. Script now generates per-invocation identity; final 114 checks passed.",
+      "First refreshed metrics verifier could not import backend when launched as script; added project sys.path, rerun 85 checks passed.",
+      "Patch application initially rejected delete/add of README in one operation; reapplied sequentially, no source data affected."
     ]
   }
 }

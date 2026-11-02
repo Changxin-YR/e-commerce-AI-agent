@@ -76,3 +76,12 @@
 - K01仍OPEN：npm生产0、开发4moderate；无high/critical，fix dry-run changed=0。Python68项固定依赖本次未发现已知漏洞；不代表所有供应链风险不存在。
 - D7原库保持SHA；D8默认库含继承与新增共45个scripted任务+3个B0报表。真实模型仍BLOCKED_AUTHORIZATION，费用和未知用量不伪装为真实零费用结果。
 - D9干净复现、当前README改写和完整功能矩阵待继续。最终实机验收仍由用户完成。
+
+## D9 最终覆盖（以上阶段待实现描述为历史）
+
+- D0—D9离线工程/干净复现完成，263 pytest/28 Vitest/9 Edge通过。实际模型F06—F09仍BLOCKED_AUTHORIZATION，最终用户实机未验收，不称FULL PASS。
+- 首次Agent复跑因输出目录同名复用已有提交键，API正确200但脚本期望202；改为每轮UUID后114项通过。首次metrics新导入当前schema模块时缺sys.path，修复后85项通过；原失败保留。
+- 独立复现目录先命名reproduction，安装后改名ecommerce-agent-thesis满足不可变project-name检查；实际管理器、测试均使用改名后Python -m入口，源码/锁一致。
+- K01依旧：npm4项moderate开发依赖，生产0；Python68项同锁本次无已知漏洞。没有代码分发许可证，不擅自授予开源许可。
+- 默认D9库63任务/63报告，60个明确scripted记录+3个B0；clean-runtime只有1个B0和1条查询，无模型尝试。源码/配对数据库/全部失败与最终证据封存。清缓存前保存库。
+- 需要用户完成实机验收；真实模型费用授权、真实模型冒烟、论文和正式实验是后续独立门禁。当前无已知未修复严重工程缺陷。

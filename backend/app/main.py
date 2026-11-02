@@ -67,8 +67,8 @@ def create_app(settings: Settings | None = None, *, test_hashes: frozenset[str] 
             engine.dispose()
 
     application = FastAPI(
-        title="Ecommerce Agent — D8",
-        version="0.8.0",
+        title="Ecommerce Agent — D9",
+        version="0.9.0",
         description="Local source ingestion. raw_sha256/data_hash always identify the XLSX workbook; container hashes are separate.",
         lifespan=lifespan,
     )

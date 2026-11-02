@@ -1,28 +1,39 @@
-# 当前进度：D3 精确指标、只读工具与查询历史已完成
+# 电商经营数据分析智能体
 
-最新状态见 `docs/STATUS.json`，本轮交付见 `docs/D3_DELIVERY.md`，指标使用见 `docs/D3_METRICS.md`，导入/恢复操作见 `docs/D2_IMPORT.md`。官方541909行已入库，158 pytest / 8 Vitest / 2 Edge、87项真实核对及真实历史JSON的Edge刷新通过；完成后等待验收，不进入D4。原始文件只在本地 `data/raw/`。
+本地单用户历史交易分析应用：FastAPI、SQLite/Alembic、Vue 3、LangGraph。使用官方UCI Online Retail 541909行，提供导入与质量、经营概览、智能分析、报告详情、任务记录五项功能，另保留查询历史。金额使用整数千分英镑计算，API返回三位精度字符串。
 
-# 电商经营数据分析智能体 · 启动说明
+D9离线工程交付与干净复现已完成。确定性报表B0可直接使用；B1/B2代码与脚本provider工程测试已实现，**实际模型仍BLOCKED_AUTHORIZATION**，没有真实供应商冒烟结果。最终状态与验收数量以`docs/STATUS.json`、`docs/EVIDENCE_INDEX.md`、`docs/D9_ACCEPTANCE.md`为准。用户本人尚未实机验收，论文和正式学术实验未开始。
 
-已实现可运行的 FastAPI + SQLite/Alembic 后端、Vue 3 + TypeScript + Vite 健康连接页及管理命令。D0—D3已完成，确定性指标API和3项受限工具可用；业务页面、Agent和完整报告属于D4—D9，尚未实现。论文与正式学术实验继续延期。
+## 本机启动
 
-本机项目根目录是 `C:\Users\27363\Desktop\毕业论文\电商智能体的实现\ecommerce-agent-thesis`，请在该目录执行以下命令。源文件保留在工作区，额外交付位于 `D:\codex产出\电商智能体_D3精确指标API\交付`，日志、测试数据库和构建位于同任务的 `缓存` 目录。
+项目根目录：`C:\Users\27363\Desktop\毕业论文\电商智能体的实现\ecommerce-agent-thesis`。源码留原位；当前运行库、配套checkpoint与额外交付位于`D:\codex产出\电商智能体_D9最终工程交付`。备份前停止服务，成对保留业务库和checkpoint。
 
-## 本机环境与安装
-
-2026-11-02 实测：Windows 11 build 26200、Python 3.12.15、Node.js 24.22.0、npm 11.19.1、Git 2.56.0.windows.3、Python 内置 SQLite 3.53.1。Python 要求 3.11+，Node 要求 22.12+；实际锁定环境为上述版本。浏览器测试使用本机 Microsoft Edge，不下载浏览器，不调用模型。
-
-`D:\codex产出` 由用户事先创建。首次安装或重新安装：
+已安装的本机环境无需重复初始化。两个PowerShell窗口分别执行：
 
 ```powershell
 Set-Location 'C:\Users\27363\Desktop\毕业论文\电商智能体的实现\ecommerce-agent-thesis'
-$env:D0_CACHE_DIR = 'D:\codex产出\电商智能体_D3精确指标API\缓存'
-New-Item -ItemType Directory -Force -Path $env:D0_CACHE_DIR | Out-Null
-$env:PIP_CACHE_DIR = Join-Path $env:D0_CACHE_DIR 'pip'
-$env:npm_config_cache = Join-Path $env:D0_CACHE_DIR 'npm'
-$env:TEMP = $env:D0_CACHE_DIR
-$env:TMP = $env:D0_CACHE_DIR
+python scripts/manage.py backend
+```
+
+```powershell
+Set-Location 'C:\Users\27363\Desktop\毕业论文\电商智能体的实现\ecommerce-agent-thesis'
+python scripts/manage.py frontend
+```
+
+浏览器打开`http://127.0.0.1:5173`。后端健康为`http://127.0.0.1:8000/healthz`，接口文档为`http://127.0.0.1:8000/docs`。服务仅监听本机；端口冲突会失败。停止时在各窗口按Ctrl+C。
+
+## 首次安装或独立复现
+
+实测环境：Windows 11、Python 3.12.15、Node.js 24.22.0、npm 11.19.1、Git 2.56.0、SQLite 3.53.1。最低Python3.11、Node22.12；浏览器测试使用已安装Microsoft Edge。
+
+用户先创建`D:\codex产出`。独立源码文件夹命名为`ecommerce-agent-thesis`（不可变交接校验按此名称识别项目）。在该根目录执行，不覆盖已有.env或数据库：
+
+```powershell
+$taskCache = 'D:\codex产出\电商智能体_本地运行\缓存'
+New-Item -ItemType Directory -Force -Path $taskCache | Out-Null
+$env:D0_CACHE_DIR = $taskCache
 $env:PYTHONDONTWRITEBYTECODE = '1'
+$env:PYTHONUTF8 = '1'
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.lock
 npm --prefix frontend ci --no-fund
@@ -31,85 +42,56 @@ python scripts/manage.py doctor
 python scripts/manage.py migrate
 ```
 
-本次已创建 `.venv`、安装依赖并生成 `.env`，不必重复初始化。管理脚本自动使用项目 `.venv`，无需激活脚本或修改 PowerShell 执行策略。Python 全量实际依赖固定于 `requirements.lock`；npm 完整依赖及 integrity 固定于 `frontend/package-lock.json`，直接依赖也固定精确版本。`requirements.in` 仅用于解释依赖来源，重建请使用锁文件，不自行升级。
-
-`.env` 不入 Git；模板关闭付费模型且总预算为 0。当前没有模型SDK或调用入口。数据库路径指向D3任务缓存/runtime，已真实导入；交付目录另有备份。可修改 `APP_PORT`/`FRONTEND_PORT`，后端与开发代理读取同一配置；端口冲突时报错退出，不悄悄换端口。
-
-## 启动、检查与停止
-
-在两个 PowerShell 窗口进入同一个项目根目录后分别运行：
+模板默认库为`D:/codex产出/电商智能体_本地运行/缓存/runtime/app.sqlite3`。多份独立复现分别设置.env中的DATABASE_URL、D0_CACHE_DIR、IMPORT_CACHE_DIR，避免共用库。管理器自动使用项目.venv，无需激活或改执行策略。使用requirements.lock和frontend/package-lock.json，不自行升级。
 
 ```powershell
-# 窗口 A：后端
-python scripts/manage.py backend
+python scripts/download_source_data.py --download
+python scripts/manage.py import-data data/raw/online_retail_uci352.zip
 ```
 
-```powershell
-# 窗口 B：前端
-python scripts/manage.py frontend
-```
+也可从“数据与导入”上传官方ZIP/XLSX。只接受已审计SHA，最多50MiB。来源/许可/哈希见data/manifest.json；原文件留在项目data/raw，不进Git或源码ZIP。同内容ZIP/XLSX复用快照，不增加交易行。
 
-浏览器打开 `http://127.0.0.1:5173`，应显示“本地服务已连接”以及真实 SQLite/迁移版本。后端默认 `http://127.0.0.1:8000`，OpenAPI 交互文档在 `/docs`。两服务均只监听本机。
+## 使用与验证
 
-```powershell
-# 第三个窗口：真实 API 响应
-Invoke-RestMethod 'http://127.0.0.1:8000/healthz' | ConvertTo-Json -Depth 4
-```
-
-停止时在各自窗口按 `Ctrl+C`。需要开发自动重载可用 `python scripts/manage.py backend --reload`；该可选模式未作为 D0 验收命令。自动浏览器测试会清理自己创建的服务，不停止用户已有进程。
-
-`GET /healthz` 检查真实连接、`alembic_version`、`app_metadata` 与项目标记。成功为 HTTP 200：
-
-```json
-{"status":"ok","service":"ecommerce-agent","version":"0.3.0","stage":"D3","database":{"status":"ok","engine":"sqlite","sqlite_version":"3.53.1","schema_revision":"0003_query_history"}}
-```
-
-SQLite 版本以实际运行环境为准。缺库/未迁移/损坏返回 503；健康请求只读，不创建数据库、不自动执行迁移。异常统一为 `{"error":{"code":"...","message":"...","details":{}},"request_id":"..."}`，不返回内部路径或堆栈。不存在的业务路由返回 404，不返回假业务结果。
-
-## 验证命令
+无模型即可查看2011年9月/10月精确指标、保存查询，在“智能分析”的确定性报表表单生成B0报告、导出JSON/Markdown并重启回看。完整操作、恢复与演示见`docs/D9_OPERATIONS.md`，接口见`docs/D9_API.md`。
 
 ```powershell
 python scripts/handoff_check.py
 python scripts/manage.py test --scope smoke
 python scripts/manage.py test --scope e2e
+# 或顺序运行全部：
+python scripts/manage.py test --scope all
 ```
 
-`smoke` 顺序执行 pytest、Vitest、TypeScript 检查及 Vite 构建，首个失败立即返回真实退出码。已通过158项Python测试、8项前端测试及构建。`e2e` 通过真实 Edge、隔离数据库与随机本机端口自动启动管理命令，2 项测试覆盖真实健康响应/刷新，以及实际停后端→页面报错→重启恢复，并保存桌面、移动宽度与失败恢复截图。浏览器回归仅验证健康页；另有真实经营数据HTTP/SQL导入验证，全部属于工程验证，无学术实验。
+smoke执行pytest、Vitest和构建。e2e使用真实Edge、随机本机端口、独立库，从完整导入到概览/报告/历史/停服恢复；补答恢复使用明确的脚本provider。需要项目data/raw下官方两文件及当前配置的已导入库，可用E2E_SOURCE_DATABASE指定另一已审计源库。测试自动停止自己创建的服务，保留失败、trace和截图。
 
-`python scripts/manage.py verify-metrics --database <现有导入库> --output <新的证据目录> --browser` 可执行D3真实验证；会重复上传既有源验证幂等，并显式保存一份查询历史。具体参数见 docs/D3_METRICS.md。
-
-其他已实现命令：
-
-| 命令 | 行为 |
+| 命令 | 用途 |
 |---|---|
-| `python scripts/manage.py doctor` | 实际版本、依赖、端口及数据库文件存在性；环境检查不等于业务验收 |
-| `python scripts/manage.py migrate` | Alembic upgrade head；可以重复执行 |
-| `python scripts/manage.py test --scope backend` | 后端与管理脚本测试 |
-| `python scripts/manage.py test --scope frontend` | Vitest 测试 |
-| `python scripts/manage.py build` | 前端类型检查与生产构建 |
-| `python scripts/manage.py test --scope all` | smoke 后再执行 e2e |
-| `python scripts/manage.py --help` | 所有入口说明 |
+| `python scripts/manage.py doctor` | 实际依赖/端口/SQLite检查，不输出密钥 |
+| `python scripts/manage.py migrate` | 显式迁移至0004_agent_runtime，可重复 |
+| `python scripts/manage.py build` | 构建到D0_CACHE_DIR/frontend-dist |
+| `python scripts/manage.py test --scope backend` | 后端测试 |
+| `python scripts/manage.py test --scope frontend` | 前端测试 |
+| `python scripts/manage.py verify-metrics --database <库> --output <新目录>` | HTTP/独立SQL核对，会新增一条查询历史 |
+| `.venv/Scripts/python.exe scripts/verify_tools.py --database <库> --output <新目录>` | 八工具真实数据/边界核对 |
+| `.venv/Scripts/python.exe scripts/verify_agent.py --database <验证库> --output <新目录>` | 开发用scripted恢复验证，会新增夹具任务 |
 
-`python scripts/manage.py import-data <官方ZIP/XLSX>` 已实现。`download-data/verify-data/tools/agent/evaluate` 管理入口仍预留，返回NOT_IMPLEMENTED和退出码2；真实数据下载/审计使用已实现的专用scripts脚本。
-
-`D0_CACHE_DIR` 从根 `.env` 或环境读取。构建输出为其下 `frontend-dist`；另有 `npm --prefix frontend run preview` 预览入口，仍需启动后端，该可选入口未纳入 D0 验证。仅构建了前端静态文件，不代表实现生产部署。
-
-保存单次命令证据可使用：
+download-data/verify-data/tools/agent/evaluate是管理器预留别名，返回NOT_IMPLEMENTED；使用上表专用脚本或API。正式实验入口未开放。D0_CACHE_DIR名称为历史兼容，指当前任务缓存。
 
 ```powershell
-python scripts/record_command.py --output 'D:\codex产出\电商智能体_D3精确指标API\缓存\commands' --label smoke -- python scripts/manage.py test --scope smoke
+python scripts/record_command.py --output 'D:/codex产出/电商智能体_本地运行/缓存/commands' --label smoke -- python scripts/manage.py test --scope smoke
 ```
 
-记录包含完整 argv、工作目录、UTC 起止时间、耗时、退出码和原始 stdout/stderr；不要在参数中放密钥。浏览器证据保存到 `缓存\playwright\<每次独立目录>`，包含真实进程启动/停止记录、截图与 trace。
+不要把密钥放在命令参数中。模型开关默认false，总请求/Token及每run Token预算0。已有key不代表收费授权；真实模型需要用户明确预算、实际模型ID和供应商冒烟后单独验收。脚本夹具不证明真实模型表现。源数据没有成本/广告/库存，不能计算利润/ROAS或判断商业因果。
 
-## 故障排查与当前限制
+## 故障与限制
 
-- `DATABASE_NOT_INITIALIZED` / `DATABASE_MIGRATION_REQUIRED`：检查本地 `.env` 路径，再执行 `python scripts/manage.py migrate`。不要删除已有数据库。
-- 页面显示暂不可用：检查后端窗口、配置端口和 `GET /healthz`；服务恢复后点击“重新检查”。
-- 缺少依赖：用锁文件安装到 `.venv` 并运行 `npm --prefix frontend ci --no-fund`；不要混用系统 Python 包。
-- Edge 不可用：浏览器测试会失败并保留日志，不会冒充通过；安装浏览器或在明确环境变更后调整 Playwright channel。
-- 已知依赖告警及真实失败修复见 `docs/KNOWN_ISSUES.md`，完整运行证据见 `docs/EVIDENCE_INDEX.md`。
+- 缺库/未迁移：检查.env路径后执行migrate，不删除已有库；健康GET不会建库。
+- 页面暂不可用：检查后端和端口，恢复后点“重新检查”。变更API要求可信Origin，CLI HTTP需加`Origin: http://127.0.0.1:5173`。
+- 未授权模型：B1/B2保持阻断，B0可使用。
+- 代码/配置变更后未终结run可能RUN_CONFIG_CHANGED，应新建关联run，不改旧checkpoint。
+- npm保留4项开发依赖moderate告警，生产审计0；Python固定依赖本次审计未发现已知漏洞。见D8_SECURITY和KNOWN_ISSUES。
 
-仓库已有D0—D3本地提交，最终SHA见当前交付目录的git-receipt.json；未推送。源码ZIP和文件哈希清单可核对。`PACKAGE_MANIFEST.json` 是原始 V1.5 交接包的不可变资料描述，其 `NOT_STARTED` 不用于表示当前开发进度。当前进度以 `docs/STATUS.json` 为准。
+数据署名：Chen, D. (2015). *Online Retail* [Dataset]. UCI Machine Learning Repository. DOI 10.24432/C5BW33，CC BY 4.0。数据许可不等于本项目代码开源许可；仓库暂未声明代码分发许可证，依赖各自保留上游许可证。提交仅本地保存，未远程推送。
 
-本轮停止在 D3，用户验收并授权后才进入 D4 真实Vue业务页面。继续开发必须先读项目 `AGENTS.md`、`DEV_FIRST.md` 和 `docs/NEXT_SESSION.md`。
+PACKAGE_MANIFEST及旧规格中的NOT_STARTED是原始交接资料；55份不可变契约保持原字节，当前状态以STATUS/EVIDENCE_INDEX为准。

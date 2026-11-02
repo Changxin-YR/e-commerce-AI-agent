@@ -1,0 +1,4514 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "real_source_rows",
+      "actual": 541909,
+      "expected": 541909,
+      "passed": true
+    },
+    {
+      "name": "official_snapshot",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "persisted_report",
+      "actual": {
+        "run_id": "run_311384d9a2f1440fa8af0d2d6873365c",
+        "variant": "B0",
+        "action": "answer",
+        "business_result": "PASS",
+        "message": "按所选期间与筛选条件生成的确定性报表。全部关键数值来自保存的工具结果。",
+        "claims": [
+          {
+            "claim_id": "claim_19701c9c219492bf514e4fa2",
+            "label": "2011-10 · 正向交易行金额",
+            "value": "1154979.300",
+            "unit": "GBP",
+            "model_value": "1154979.300",
+            "tool_call_id": "tc_617be6a180ac8f3610a1062bdfb1fc4338eff1d98d7dd034bec90571985fe62d",
+            "field_path": "points.0.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_a5bd92eb4f65a10395ff6049",
+            "label": "2011-10 · 取消类金额",
+            "value": "84274.630",
+            "unit": "GBP",
+            "model_value": "84274.630",
+            "tool_call_id": "tc_eb90b7f32f598e8150dcb125488b04179fe2a743d5e8abcc625f97b3243506af",
+            "field_path": "points.0.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_70bc8b0f625f9704a990de02",
+            "label": "2011-10 · 净交易金额",
+            "value": "1070704.670",
+            "unit": "GBP",
+            "model_value": "1070704.670",
+            "tool_call_id": "tc_6da1698d5e8ffbd25667fa92195e0bef57fde06cccd55abfc4fdbbf41ac263a6",
+            "field_path": "points.0.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_648f81648f567eb139796de5",
+            "label": "2011-10 · 有效发票数",
+            "value": "2040",
+            "unit": "invoice_count",
+            "model_value": "2040",
+            "tool_call_id": "tc_b41cfc71f7b1eacb3313854434bbb43dee3e6c4c8711a9513f26ea272e2685b9",
+            "field_path": "points.0.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_cc6f0e7259b44ea161f0fd8b",
+            "label": "country · United Kingdom",
+            "value": "877438.190",
+            "unit": "GBP",
+            "model_value": "877438.190",
+            "tool_call_id": "tc_4b8c14ac61475a531ebeb97ee06a27931ab8ce39daea20064af4ab356a3d85c4",
+            "field_path": "items.0.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_eed124e2292dd616eb4ea602",
+            "label": "country · Netherlands",
+            "value": "40708.650",
+            "unit": "GBP",
+            "model_value": "40708.650",
+            "tool_call_id": "tc_4b8c14ac61475a531ebeb97ee06a27931ab8ce39daea20064af4ab356a3d85c4",
+            "field_path": "items.1.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_61bf7e1a207b87b8eca8c5ac",
+            "label": "country · Germany",
+            "value": "30614.270",
+            "unit": "GBP",
+            "model_value": "30614.270",
+            "tool_call_id": "tc_4b8c14ac61475a531ebeb97ee06a27931ab8ce39daea20064af4ab356a3d85c4",
+            "field_path": "items.2.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_aabbec3019f06702e7623b20",
+            "label": "country · France",
+            "value": "25032.040",
+            "unit": "GBP",
+            "model_value": "25032.040",
+            "tool_call_id": "tc_4b8c14ac61475a531ebeb97ee06a27931ab8ce39daea20064af4ab356a3d85c4",
+            "field_path": "items.3.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_f1e0849d55caf24d8172ca03",
+            "label": "country · EIRE",
+            "value": "23307.620",
+            "unit": "GBP",
+            "model_value": "23307.620",
+            "tool_call_id": "tc_4b8c14ac61475a531ebeb97ee06a27931ab8ce39daea20064af4ab356a3d85c4",
+            "field_path": "items.4.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_9fb1c66410f4df120ce6aa31",
+            "label": "country · Australia",
+            "value": "17150.530",
+            "unit": "GBP",
+            "model_value": "17150.530",
+            "tool_call_id": "tc_4b8c14ac61475a531ebeb97ee06a27931ab8ce39daea20064af4ab356a3d85c4",
+            "field_path": "items.5.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_df57410ca157d745bfa839b7",
+            "label": "country · Switzerland",
+            "value": "8033.980",
+            "unit": "GBP",
+            "model_value": "8033.980",
+            "tool_call_id": "tc_4b8c14ac61475a531ebeb97ee06a27931ab8ce39daea20064af4ab356a3d85c4",
+            "field_path": "items.6.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_b55cdc2d4662270a8f43d925",
+            "label": "country · Sweden",
+            "value": "5766.160",
+            "unit": "GBP",
+            "model_value": "5766.160",
+            "tool_call_id": "tc_4b8c14ac61475a531ebeb97ee06a27931ab8ce39daea20064af4ab356a3d85c4",
+            "field_path": "items.7.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_438a799c95ff756c827348cc",
+            "label": "country · Belgium",
+            "value": "5651.380",
+            "unit": "GBP",
+            "model_value": "5651.380",
+            "tool_call_id": "tc_4b8c14ac61475a531ebeb97ee06a27931ab8ce39daea20064af4ab356a3d85c4",
+            "field_path": "items.8.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_7beab3dd9fd2d0f0374c3086",
+            "label": "country · Portugal",
+            "value": "5584.630",
+            "unit": "GBP",
+            "model_value": "5584.630",
+            "tool_call_id": "tc_4b8c14ac61475a531ebeb97ee06a27931ab8ce39daea20064af4ab356a3d85c4",
+            "field_path": "items.9.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_966431e6bb9f484460707d74",
+            "label": "product · DOT",
+            "value": "17955.130",
+            "unit": "GBP",
+            "model_value": "17955.130",
+            "tool_call_id": "tc_6a3636f759fa633f99a7456f593dfecce87ddb3cc1fe4a9c52998a1e6f3bb83b",
+            "field_path": "items.0.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_c05f67cb93e755bbddf8b44a",
+            "label": "product · 22423",
+            "value": "12660.840",
+            "unit": "GBP",
+            "model_value": "12660.840",
+            "tool_call_id": "tc_6a3636f759fa633f99a7456f593dfecce87ddb3cc1fe4a9c52998a1e6f3bb83b",
+            "field_path": "items.1.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_24ebb1e0c240da3b5e57dc2f",
+            "label": "product · 23084",
+            "value": "12249.710",
+            "unit": "GBP",
+            "model_value": "12249.710",
+            "tool_call_id": "tc_6a3636f759fa633f99a7456f593dfecce87ddb3cc1fe4a9c52998a1e6f3bb83b",
+            "field_path": "items.2.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_1fc3e5032beb9629db82cef7",
+            "label": "product · 23284",
+            "value": "10111.950",
+            "unit": "GBP",
+            "model_value": "10111.950",
+            "tool_call_id": "tc_6a3636f759fa633f99a7456f593dfecce87ddb3cc1fe4a9c52998a1e6f3bb83b",
+            "field_path": "items.3.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_f952a958e8dd24bc90dadd76",
+            "label": "product · 22086",
+            "value": "9419.390",
+            "unit": "GBP",
+            "model_value": "9419.390",
+            "tool_call_id": "tc_6a3636f759fa633f99a7456f593dfecce87ddb3cc1fe4a9c52998a1e6f3bb83b",
+            "field_path": "items.4.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_a263ce8db327fc1f711496f2",
+            "label": "product · 85099B",
+            "value": "9409.950",
+            "unit": "GBP",
+            "model_value": "9409.950",
+            "tool_call_id": "tc_6a3636f759fa633f99a7456f593dfecce87ddb3cc1fe4a9c52998a1e6f3bb83b",
+            "field_path": "items.5.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_0753ded83e3c52b52a411f04",
+            "label": "product · POST",
+            "value": "7536.780",
+            "unit": "GBP",
+            "model_value": "7536.780",
+            "tool_call_id": "tc_6a3636f759fa633f99a7456f593dfecce87ddb3cc1fe4a9c52998a1e6f3bb83b",
+            "field_path": "items.6.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_87d9873cd512ba1a18841a01",
+            "label": "product · 23355",
+            "value": "6066.690",
+            "unit": "GBP",
+            "model_value": "6066.690",
+            "tool_call_id": "tc_6a3636f759fa633f99a7456f593dfecce87ddb3cc1fe4a9c52998a1e6f3bb83b",
+            "field_path": "items.7.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_6632e334f7e9d35b7fff7b14",
+            "label": "product · 22386",
+            "value": "5568.780",
+            "unit": "GBP",
+            "model_value": "5568.780",
+            "tool_call_id": "tc_6a3636f759fa633f99a7456f593dfecce87ddb3cc1fe4a9c52998a1e6f3bb83b",
+            "field_path": "items.8.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_3f084fa722c28666a6909548",
+            "label": "product · 22114",
+            "value": "5051.510",
+            "unit": "GBP",
+            "model_value": "5051.510",
+            "tool_call_id": "tc_6a3636f759fa633f99a7456f593dfecce87ddb3cc1fe4a9c52998a1e6f3bb83b",
+            "field_path": "items.9.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_1cd110bcf88b1a02335d5e94",
+            "label": "基期",
+            "value": "1019687.622",
+            "unit": "GBP",
+            "model_value": "1019687.622",
+            "tool_call_id": "tc_f704955338e6242bc80921058eca116fb691d6c8133c48d15105664f3a8603de",
+            "field_path": "baseline.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_90584d04b486bcd5bd476dfd",
+            "label": "本期",
+            "value": "1070704.670",
+            "unit": "GBP",
+            "model_value": "1070704.670",
+            "tool_call_id": "tc_f704955338e6242bc80921058eca116fb691d6c8133c48d15105664f3a8603de",
+            "field_path": "current.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_ed1eda32fa4ee2635616023c",
+            "label": "期间差额",
+            "value": "51017.048",
+            "unit": "GBP",
+            "model_value": "51017.048",
+            "tool_call_id": "tc_f704955338e6242bc80921058eca116fb691d6c8133c48d15105664f3a8603de",
+            "field_path": "delta_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_4438152dba032061c72ef5c9",
+            "label": "变化构成 · EIRE",
+            "value": "-19331.430",
+            "unit": "GBP",
+            "model_value": "-19331.430",
+            "tool_call_id": "tc_f770d48ff9348ac4142f55cacf6b085c7881ee5a71f1cc82be9992b8f3511b2a",
+            "field_path": "items.0.delta_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_1e42dae940e15fc88515add4",
+            "label": "变化构成 · United Kingdom",
+            "value": "15420.038",
+            "unit": "GBP",
+            "model_value": "15420.038",
+            "tool_call_id": "tc_f770d48ff9348ac4142f55cacf6b085c7881ee5a71f1cc82be9992b8f3511b2a",
+            "field_path": "items.1.delta_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_df728733d4dd35b9b332ec0d",
+            "label": "变化构成 · Netherlands",
+            "value": "13771.390",
+            "unit": "GBP",
+            "model_value": "13771.390",
+            "tool_call_id": "tc_f770d48ff9348ac4142f55cacf6b085c7881ee5a71f1cc82be9992b8f3511b2a",
+            "field_path": "items.2.delta_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_122b6123c8f7f6ca1ad1653d",
+            "label": "变化构成 · Germany",
+            "value": "12893.960",
+            "unit": "GBP",
+            "model_value": "12893.960",
+            "tool_call_id": "tc_f770d48ff9348ac4142f55cacf6b085c7881ee5a71f1cc82be9992b8f3511b2a",
+            "field_path": "items.3.delta_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_3999f366cb44157ee4be9a37",
+            "label": "变化构成 · Australia",
+            "value": "12118.800",
+            "unit": "GBP",
+            "model_value": "12118.800",
+            "tool_call_id": "tc_f770d48ff9348ac4142f55cacf6b085c7881ee5a71f1cc82be9992b8f3511b2a",
+            "field_path": "items.4.delta_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_79e03adc50502b8aa26ecc52",
+            "label": "变化构成 · Norway",
+            "value": "-4991.710",
+            "unit": "GBP",
+            "model_value": "-4991.710",
+            "tool_call_id": "tc_f770d48ff9348ac4142f55cacf6b085c7881ee5a71f1cc82be9992b8f3511b2a",
+            "field_path": "items.5.delta_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_b16e14cff3380100ce0ebd03",
+            "label": "变化构成 · Portugal",
+            "value": "4151.410",
+            "unit": "GBP",
+            "model_value": "4151.410",
+            "tool_call_id": "tc_f770d48ff9348ac4142f55cacf6b085c7881ee5a71f1cc82be9992b8f3511b2a",
+            "field_path": "items.6.delta_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_006cc5afc3c21cfc897463e1",
+            "label": "变化构成 · Cyprus",
+            "value": "4020.170",
+            "unit": "GBP",
+            "model_value": "4020.170",
+            "tool_call_id": "tc_f770d48ff9348ac4142f55cacf6b085c7881ee5a71f1cc82be9992b8f3511b2a",
+            "field_path": "items.7.delta_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_cc9588dbee2b7215ee1ec41e",
+            "label": "变化构成 · Denmark",
+            "value": "-3132.050",
+            "unit": "GBP",
+            "model_value": "-3132.050",
+            "tool_call_id": "tc_f770d48ff9348ac4142f55cacf6b085c7881ee5a71f1cc82be9992b8f3511b2a",
+            "field_path": "items.8.delta_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_b4a41ef722cd97f176744b04",
+            "label": "变化构成 · Italy",
+            "value": "3130.990",
+            "unit": "GBP",
+            "model_value": "3130.990",
+            "tool_call_id": "tc_f770d48ff9348ac4142f55cacf6b085c7881ee5a71f1cc82be9992b8f3511b2a",
+            "field_path": "items.9.delta_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_a5ecd4ebbda76c4bd0790e07",
+            "label": "其他条目差额",
+            "value": "12965.480",
+            "unit": "GBP",
+            "model_value": "12965.480",
+            "tool_call_id": "tc_f770d48ff9348ac4142f55cacf6b085c7881ee5a71f1cc82be9992b8f3511b2a",
+            "field_path": "other_delta_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          }
+        ],
+        "warnings": [
+          "SOURCE_TIMEZONE_UNSPECIFIED",
+          "DUPLICATE_CANDIDATES_RETAINED",
+          "TRANSACTION_AMOUNTS_INCLUDE_CHARGES",
+          "MISSING_CUSTOMER_ID_RETAINED",
+          "UNEQUAL_PERIOD_LENGTHS"
+        ],
+        "evidence_refs": [
+          "tc_617be6a180ac8f3610a1062bdfb1fc4338eff1d98d7dd034bec90571985fe62d",
+          "tc_eb90b7f32f598e8150dcb125488b04179fe2a743d5e8abcc625f97b3243506af",
+          "tc_6da1698d5e8ffbd25667fa92195e0bef57fde06cccd55abfc4fdbbf41ac263a6",
+          "tc_b41cfc71f7b1eacb3313854434bbb43dee3e6c4c8711a9513f26ea272e2685b9",
+          "tc_4b8c14ac61475a531ebeb97ee06a27931ab8ce39daea20064af4ab356a3d85c4",
+          "tc_6a3636f759fa633f99a7456f593dfecce87ddb3cc1fe4a9c52998a1e6f3bb83b",
+          "tc_f704955338e6242bc80921058eca116fb691d6c8133c48d15105664f3a8603de",
+          "tc_f770d48ff9348ac4142f55cacf6b085c7881ee5a71f1cc82be9992b8f3511b2a"
+        ],
+        "tool_statuses": [
+          {
+            "tool": "query_metric_series",
+            "status": "PASS",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            }
+          },
+          {
+            "tool": "query_metric_series",
+            "status": "PASS",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            }
+          },
+          {
+            "tool": "query_metric_series",
+            "status": "PASS",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            }
+          },
+          {
+            "tool": "query_metric_series",
+            "status": "PASS",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            }
+          },
+          {
+            "tool": "rank_entities",
+            "status": "PASS",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            }
+          },
+          {
+            "tool": "rank_entities",
+            "status": "PASS",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            }
+          },
+          {
+            "tool": "compare_periods",
+            "status": "PASS",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            }
+          },
+          {
+            "tool": "decompose_change",
+            "status": "PASS",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            }
+          }
+        ],
+        "validation": "DETERMINISTIC_TEMPLATE",
+        "test_fixture": false,
+        "provenance": {
+          "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+          "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+          "transform_version": "uci352-ooxml-milligbp-v1",
+          "metric_version": "retail-v1.2",
+          "source_url": "https://archive.ics.uci.edu/dataset/352/online+retail",
+          "source_time_min": "2010-12-01 08:26:00.000",
+          "source_time_max": "2011-12-09 12:50:00.000",
+          "row_count": 541909
+        },
+        "limitations": [
+          "真实公开历史交易数据，不代表当前店铺经营。",
+          "金额包含符合口径的费用条目，不是纯商品 GMV、财务收入或实际退款。",
+          "缺少采购成本、广告、库存和活动资料，无法判断利润、ROAS 或商业因果。",
+          "重复候选保留；源时区未声明；不完整期间仅代表已观测交易。"
+        ],
+        "parameters": {
+          "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+          "query": {
+            "country": null,
+            "stock_code": null,
+            "metric": "net_amount",
+            "date_from": "2011-10-01",
+            "date_to": "2011-11-01",
+            "granularity": "month"
+          },
+          "baseline": {
+            "date_from": "2011-09-01",
+            "date_to": "2011-10-01"
+          }
+        },
+        "report_schema": "report-v1"
+      },
+      "expected": {
+        "run_id": "run_311384d9a2f1440fa8af0d2d6873365c",
+        "variant": "B0",
+        "action": "answer",
+        "business_result": "PASS",
+        "message": "按所选期间与筛选条件生成的确定性报表。全部关键数值来自保存的工具结果。",
+        "claims": [
+          {
+            "claim_id": "claim_19701c9c219492bf514e4fa2",
+            "label": "2011-10 · 正向交易行金额",
+            "value": "1154979.300",
+            "unit": "GBP",
+            "model_value": "1154979.300",
+            "tool_call_id": "tc_617be6a180ac8f3610a1062bdfb1fc4338eff1d98d7dd034bec90571985fe62d",
+            "field_path": "points.0.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_a5bd92eb4f65a10395ff6049",
+            "label": "2011-10 · 取消类金额",
+            "value": "84274.630",
+            "unit": "GBP",
+            "model_value": "84274.630",
+            "tool_call_id": "tc_eb90b7f32f598e8150dcb125488b04179fe2a743d5e8abcc625f97b3243506af",
+            "field_path": "points.0.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_70bc8b0f625f9704a990de02",
+            "label": "2011-10 · 净交易金额",
+            "value": "1070704.670",
+            "unit": "GBP",
+            "model_value": "1070704.670",
+            "tool_call_id": "tc_6da1698d5e8ffbd25667fa92195e0bef57fde06cccd55abfc4fdbbf41ac263a6",
+            "field_path": "points.0.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_648f81648f567eb139796de5",
+            "label": "2011-10 · 有效发票数",
+            "value": "2040",
+            "unit": "invoice_count",
+            "model_value": "2040",
+            "tool_call_id": "tc_b41cfc71f7b1eacb3313854434bbb43dee3e6c4c8711a9513f26ea272e2685b9",
+            "field_path": "points.0.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_cc6f0e7259b44ea161f0fd8b",
+            "label": "country · United Kingdom",
+            "value": "877438.190",
+            "unit": "GBP",
+            "model_value": "877438.190",
+            "tool_call_id": "tc_4b8c14ac61475a531ebeb97ee06a27931ab8ce39daea20064af4ab356a3d85c4",
+            "field_path": "items.0.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_eed124e2292dd616eb4ea602",
+            "label": "country · Netherlands",
+            "value": "40708.650",
+            "unit": "GBP",
+            "model_value": "40708.650",
+            "tool_call_id": "tc_4b8c14ac61475a531ebeb97ee06a27931ab8ce39daea20064af4ab356a3d85c4",
+            "field_path": "items.1.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_61bf7e1a207b87b8eca8c5ac",
+            "label": "country · Germany",
+            "value": "30614.270",
+            "unit": "GBP",
+            "model_value": "30614.270",
+            "tool_call_id": "tc_4b8c14ac61475a531ebeb97ee06a27931ab8ce39daea20064af4ab356a3d85c4",
+            "field_path": "items.2.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_aabbec3019f06702e7623b20",
+            "label": "country · France",
+            "value": "25032.040",
+            "unit": "GBP",
+            "model_value": "25032.040",
+            "tool_call_id": "tc_4b8c14ac61475a531ebeb97ee06a27931ab8ce39daea20064af4ab356a3d85c4",
+            "field_path": "items.3.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_f1e0849d55caf24d8172ca03",
+            "label": "country · EIRE",
+            "value": "23307.620",
+            "unit": "GBP",
+            "model_value": "23307.620",
+            "tool_call_id": "tc_4b8c14ac61475a531ebeb97ee06a27931ab8ce39daea20064af4ab356a3d85c4",
+            "field_path": "items.4.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_9fb1c66410f4df120ce6aa31",
+            "label": "country · Australia",
+            "value": "17150.530",
+            "unit": "GBP",
+            "model_value": "17150.530",
+            "tool_call_id": "tc_4b8c14ac61475a531ebeb97ee06a27931ab8ce39daea20064af4ab356a3d85c4",
+            "field_path": "items.5.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_df57410ca157d745bfa839b7",
+            "label": "country · Switzerland",
+            "value": "8033.980",
+            "unit": "GBP",
+            "model_value": "8033.980",
+            "tool_call_id": "tc_4b8c14ac61475a531ebeb97ee06a27931ab8ce39daea20064af4ab356a3d85c4",
+            "field_path": "items.6.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_b55cdc2d4662270a8f43d925",
+            "label": "country · Sweden",
+            "value": "5766.160",
+            "unit": "GBP",
+            "model_value": "5766.160",
+            "tool_call_id": "tc_4b8c14ac61475a531ebeb97ee06a27931ab8ce39daea20064af4ab356a3d85c4",
+            "field_path": "items.7.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_438a799c95ff756c827348cc",
+            "label": "country · Belgium",
+            "value": "5651.380",
+            "unit": "GBP",
+            "model_value": "5651.380",
+            "tool_call_id": "tc_4b8c14ac61475a531ebeb97ee06a27931ab8ce39daea20064af4ab356a3d85c4",
+            "field_path": "items.8.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_7beab3dd9fd2d0f0374c3086",
+            "label": "country · Portugal",
+            "value": "5584.630",
+            "unit": "GBP",
+            "model_value": "5584.630",
+            "tool_call_id": "tc_4b8c14ac61475a531ebeb97ee06a27931ab8ce39daea20064af4ab356a3d85c4",
+            "field_path": "items.9.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_966431e6bb9f484460707d74",
+            "label": "product · DOT",
+            "value": "17955.130",
+            "unit": "GBP",
+            "model_value": "17955.130",
+            "tool_call_id": "tc_6a3636f759fa633f99a7456f593dfecce87ddb3cc1fe4a9c52998a1e6f3bb83b",
+            "field_path": "items.0.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_c05f67cb93e755bbddf8b44a",
+            "label": "product · 22423",
+            "value": "12660.840",
+            "unit": "GBP",
+            "model_value": "12660.840",
+            "tool_call_id": "tc_6a3636f759fa633f99a7456f593dfecce87ddb3cc1fe4a9c52998a1e6f3bb83b",
+            "field_path": "items.1.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_24ebb1e0c240da3b5e57dc2f",
+            "label": "product · 23084",
+            "value": "12249.710",
+            "unit": "GBP",
+            "model_value": "12249.710",
+            "tool_call_id": "tc_6a3636f759fa633f99a7456f593dfecce87ddb3cc1fe4a9c52998a1e6f3bb83b",
+            "field_path": "items.2.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_1fc3e5032beb9629db82cef7",
+            "label": "product · 23284",
+            "value": "10111.950",
+            "unit": "GBP",
+            "model_value": "10111.950",
+            "tool_call_id": "tc_6a3636f759fa633f99a7456f593dfecce87ddb3cc1fe4a9c52998a1e6f3bb83b",
+            "field_path": "items.3.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_f952a958e8dd24bc90dadd76",
+            "label": "product · 22086",
+            "value": "9419.390",
+            "unit": "GBP",
+            "model_value": "9419.390",
+            "tool_call_id": "tc_6a3636f759fa633f99a7456f593dfecce87ddb3cc1fe4a9c52998a1e6f3bb83b",
+            "field_path": "items.4.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_a263ce8db327fc1f711496f2",
+            "label": "product · 85099B",
+            "value": "9409.950",
+            "unit": "GBP",
+            "model_value": "9409.950",
+            "tool_call_id": "tc_6a3636f759fa633f99a7456f593dfecce87ddb3cc1fe4a9c52998a1e6f3bb83b",
+            "field_path": "items.5.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_0753ded83e3c52b52a411f04",
+            "label": "product · POST",
+            "value": "7536.780",
+            "unit": "GBP",
+            "model_value": "7536.780",
+            "tool_call_id": "tc_6a3636f759fa633f99a7456f593dfecce87ddb3cc1fe4a9c52998a1e6f3bb83b",
+            "field_path": "items.6.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_87d9873cd512ba1a18841a01",
+            "label": "product · 23355",
+            "value": "6066.690",
+            "unit": "GBP",
+            "model_value": "6066.690",
+            "tool_call_id": "tc_6a3636f759fa633f99a7456f593dfecce87ddb3cc1fe4a9c52998a1e6f3bb83b",
+            "field_path": "items.7.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_6632e334f7e9d35b7fff7b14",
+            "label": "product · 22386",
+            "value": "5568.780",
+            "unit": "GBP",
+            "model_value": "5568.780",
+            "tool_call_id": "tc_6a3636f759fa633f99a7456f593dfecce87ddb3cc1fe4a9c52998a1e6f3bb83b",
+            "field_path": "items.8.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_3f084fa722c28666a6909548",
+            "label": "product · 22114",
+            "value": "5051.510",
+            "unit": "GBP",
+            "model_value": "5051.510",
+            "tool_call_id": "tc_6a3636f759fa633f99a7456f593dfecce87ddb3cc1fe4a9c52998a1e6f3bb83b",
+            "field_path": "items.9.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_1cd110bcf88b1a02335d5e94",
+            "label": "基期",
+            "value": "1019687.622",
+            "unit": "GBP",
+            "model_value": "1019687.622",
+            "tool_call_id": "tc_f704955338e6242bc80921058eca116fb691d6c8133c48d15105664f3a8603de",
+            "field_path": "baseline.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_90584d04b486bcd5bd476dfd",
+            "label": "本期",
+            "value": "1070704.670",
+            "unit": "GBP",
+            "model_value": "1070704.670",
+            "tool_call_id": "tc_f704955338e6242bc80921058eca116fb691d6c8133c48d15105664f3a8603de",
+            "field_path": "current.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_ed1eda32fa4ee2635616023c",
+            "label": "期间差额",
+            "value": "51017.048",
+            "unit": "GBP",
+            "model_value": "51017.048",
+            "tool_call_id": "tc_f704955338e6242bc80921058eca116fb691d6c8133c48d15105664f3a8603de",
+            "field_path": "delta_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_4438152dba032061c72ef5c9",
+            "label": "变化构成 · EIRE",
+            "value": "-19331.430",
+            "unit": "GBP",
+            "model_value": "-19331.430",
+            "tool_call_id": "tc_f770d48ff9348ac4142f55cacf6b085c7881ee5a71f1cc82be9992b8f3511b2a",
+            "field_path": "items.0.delta_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_1e42dae940e15fc88515add4",
+            "label": "变化构成 · United Kingdom",
+            "value": "15420.038",
+            "unit": "GBP",
+            "model_value": "15420.038",
+            "tool_call_id": "tc_f770d48ff9348ac4142f55cacf6b085c7881ee5a71f1cc82be9992b8f3511b2a",
+            "field_path": "items.1.delta_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_df728733d4dd35b9b332ec0d",
+            "label": "变化构成 · Netherlands",
+            "value": "13771.390",
+            "unit": "GBP",
+            "model_value": "13771.390",
+            "tool_call_id": "tc_f770d48ff9348ac4142f55cacf6b085c7881ee5a71f1cc82be9992b8f3511b2a",
+            "field_path": "items.2.delta_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_122b6123c8f7f6ca1ad1653d",
+            "label": "变化构成 · Germany",
+            "value": "12893.960",
+            "unit": "GBP",
+            "model_value": "12893.960",
+            "tool_call_id": "tc_f770d48ff9348ac4142f55cacf6b085c7881ee5a71f1cc82be9992b8f3511b2a",
+            "field_path": "items.3.delta_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_3999f366cb44157ee4be9a37",
+            "label": "变化构成 · Australia",
+            "value": "12118.800",
+            "unit": "GBP",
+            "model_value": "12118.800",
+            "tool_call_id": "tc_f770d48ff9348ac4142f55cacf6b085c7881ee5a71f1cc82be9992b8f3511b2a",
+            "field_path": "items.4.delta_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_79e03adc50502b8aa26ecc52",
+            "label": "变化构成 · Norway",
+            "value": "-4991.710",
+            "unit": "GBP",
+            "model_value": "-4991.710",
+            "tool_call_id": "tc_f770d48ff9348ac4142f55cacf6b085c7881ee5a71f1cc82be9992b8f3511b2a",
+            "field_path": "items.5.delta_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_b16e14cff3380100ce0ebd03",
+            "label": "变化构成 · Portugal",
+            "value": "4151.410",
+            "unit": "GBP",
+            "model_value": "4151.410",
+            "tool_call_id": "tc_f770d48ff9348ac4142f55cacf6b085c7881ee5a71f1cc82be9992b8f3511b2a",
+            "field_path": "items.6.delta_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_006cc5afc3c21cfc897463e1",
+            "label": "变化构成 · Cyprus",
+            "value": "4020.170",
+            "unit": "GBP",
+            "model_value": "4020.170",
+            "tool_call_id": "tc_f770d48ff9348ac4142f55cacf6b085c7881ee5a71f1cc82be9992b8f3511b2a",
+            "field_path": "items.7.delta_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_cc9588dbee2b7215ee1ec41e",
+            "label": "变化构成 · Denmark",
+            "value": "-3132.050",
+            "unit": "GBP",
+            "model_value": "-3132.050",
+            "tool_call_id": "tc_f770d48ff9348ac4142f55cacf6b085c7881ee5a71f1cc82be9992b8f3511b2a",
+            "field_path": "items.8.delta_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_b4a41ef722cd97f176744b04",
+            "label": "变化构成 · Italy",
+            "value": "3130.990",
+            "unit": "GBP",
+            "model_value": "3130.990",
+            "tool_call_id": "tc_f770d48ff9348ac4142f55cacf6b085c7881ee5a71f1cc82be9992b8f3511b2a",
+            "field_path": "items.9.delta_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_a5ecd4ebbda76c4bd0790e07",
+            "label": "其他条目差额",
+            "value": "12965.480",
+            "unit": "GBP",
+            "model_value": "12965.480",
+            "tool_call_id": "tc_f770d48ff9348ac4142f55cacf6b085c7881ee5a71f1cc82be9992b8f3511b2a",
+            "field_path": "other_delta_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          }
+        ],
+        "warnings": [
+          "SOURCE_TIMEZONE_UNSPECIFIED",
+          "DUPLICATE_CANDIDATES_RETAINED",
+          "TRANSACTION_AMOUNTS_INCLUDE_CHARGES",
+          "MISSING_CUSTOMER_ID_RETAINED",
+          "UNEQUAL_PERIOD_LENGTHS"
+        ],
+        "evidence_refs": [
+          "tc_617be6a180ac8f3610a1062bdfb1fc4338eff1d98d7dd034bec90571985fe62d",
+          "tc_eb90b7f32f598e8150dcb125488b04179fe2a743d5e8abcc625f97b3243506af",
+          "tc_6da1698d5e8ffbd25667fa92195e0bef57fde06cccd55abfc4fdbbf41ac263a6",
+          "tc_b41cfc71f7b1eacb3313854434bbb43dee3e6c4c8711a9513f26ea272e2685b9",
+          "tc_4b8c14ac61475a531ebeb97ee06a27931ab8ce39daea20064af4ab356a3d85c4",
+          "tc_6a3636f759fa633f99a7456f593dfecce87ddb3cc1fe4a9c52998a1e6f3bb83b",
+          "tc_f704955338e6242bc80921058eca116fb691d6c8133c48d15105664f3a8603de",
+          "tc_f770d48ff9348ac4142f55cacf6b085c7881ee5a71f1cc82be9992b8f3511b2a"
+        ],
+        "tool_statuses": [
+          {
+            "tool": "query_metric_series",
+            "status": "PASS",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            }
+          },
+          {
+            "tool": "query_metric_series",
+            "status": "PASS",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            }
+          },
+          {
+            "tool": "query_metric_series",
+            "status": "PASS",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            }
+          },
+          {
+            "tool": "query_metric_series",
+            "status": "PASS",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            }
+          },
+          {
+            "tool": "rank_entities",
+            "status": "PASS",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            }
+          },
+          {
+            "tool": "rank_entities",
+            "status": "PASS",
+            "period": {
+              "date_from": "2011-10-01",
+              "date_to": "2011-11-01"
+            }
+          },
+          {
+            "tool": "compare_periods",
+            "status": "PASS",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            }
+          },
+          {
+            "tool": "decompose_change",
+            "status": "PASS",
+            "period": {
+              "baseline": {
+                "date_from": "2011-09-01",
+                "date_to": "2011-10-01"
+              },
+              "current": {
+                "date_from": "2011-10-01",
+                "date_to": "2011-11-01"
+              }
+            }
+          }
+        ],
+        "validation": "DETERMINISTIC_TEMPLATE",
+        "test_fixture": false,
+        "provenance": {
+          "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+          "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+          "transform_version": "uci352-ooxml-milligbp-v1",
+          "metric_version": "retail-v1.2",
+          "source_url": "https://archive.ics.uci.edu/dataset/352/online+retail",
+          "source_time_min": "2010-12-01 08:26:00.000",
+          "source_time_max": "2011-12-09 12:50:00.000",
+          "row_count": 541909
+        },
+        "limitations": [
+          "真实公开历史交易数据，不代表当前店铺经营。",
+          "金额包含符合口径的费用条目，不是纯商品 GMV、财务收入或实际退款。",
+          "缺少采购成本、广告、库存和活动资料，无法判断利润、ROAS 或商业因果。",
+          "重复候选保留；源时区未声明；不完整期间仅代表已观测交易。"
+        ],
+        "parameters": {
+          "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+          "query": {
+            "country": null,
+            "stock_code": null,
+            "metric": "net_amount",
+            "date_from": "2011-10-01",
+            "date_to": "2011-11-01",
+            "granularity": "month"
+          },
+          "baseline": {
+            "date_from": "2011-09-01",
+            "date_to": "2011-10-01"
+          }
+        },
+        "report_schema": "report-v1"
+      },
+      "passed": true
+    },
+    {
+      "name": "claim:2011-10 · 正向交易行金额",
+      "actual": "1154979.300",
+      "expected": "1154979.300",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:2011-10 · 取消类金额",
+      "actual": "84274.630",
+      "expected": "84274.630",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:2011-10 · 净交易金额",
+      "actual": "1070704.670",
+      "expected": "1070704.670",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:2011-10 · 有效发票数",
+      "actual": "2040",
+      "expected": "2040",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:country · United Kingdom",
+      "actual": "877438.190",
+      "expected": "877438.190",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:country · Netherlands",
+      "actual": "40708.650",
+      "expected": "40708.650",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:country · Germany",
+      "actual": "30614.270",
+      "expected": "30614.270",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:country · France",
+      "actual": "25032.040",
+      "expected": "25032.040",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:country · EIRE",
+      "actual": "23307.620",
+      "expected": "23307.620",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:country · Australia",
+      "actual": "17150.530",
+      "expected": "17150.530",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:country · Switzerland",
+      "actual": "8033.980",
+      "expected": "8033.980",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:country · Sweden",
+      "actual": "5766.160",
+      "expected": "5766.160",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:country · Belgium",
+      "actual": "5651.380",
+      "expected": "5651.380",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:country · Portugal",
+      "actual": "5584.630",
+      "expected": "5584.630",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:product · DOT",
+      "actual": "17955.130",
+      "expected": "17955.130",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:product · 22423",
+      "actual": "12660.840",
+      "expected": "12660.840",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:product · 23084",
+      "actual": "12249.710",
+      "expected": "12249.710",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:product · 23284",
+      "actual": "10111.950",
+      "expected": "10111.950",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:product · 22086",
+      "actual": "9419.390",
+      "expected": "9419.390",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:product · 85099B",
+      "actual": "9409.950",
+      "expected": "9409.950",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:product · POST",
+      "actual": "7536.780",
+      "expected": "7536.780",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:product · 23355",
+      "actual": "6066.690",
+      "expected": "6066.690",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:product · 22386",
+      "actual": "5568.780",
+      "expected": "5568.780",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:product · 22114",
+      "actual": "5051.510",
+      "expected": "5051.510",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:基期",
+      "actual": "1019687.622",
+      "expected": "1019687.622",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:本期",
+      "actual": "1070704.670",
+      "expected": "1070704.670",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:期间差额",
+      "actual": "51017.048",
+      "expected": "51017.048",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:变化构成 · EIRE",
+      "actual": "-19331.430",
+      "expected": "-19331.430",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:变化构成 · United Kingdom",
+      "actual": "15420.038",
+      "expected": "15420.038",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:变化构成 · Netherlands",
+      "actual": "13771.390",
+      "expected": "13771.390",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:变化构成 · Germany",
+      "actual": "12893.960",
+      "expected": "12893.960",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:变化构成 · Australia",
+      "actual": "12118.800",
+      "expected": "12118.800",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:变化构成 · Norway",
+      "actual": "-4991.710",
+      "expected": "-4991.710",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:变化构成 · Portugal",
+      "actual": "4151.410",
+      "expected": "4151.410",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:变化构成 · Cyprus",
+      "actual": "4020.170",
+      "expected": "4020.170",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:变化构成 · Denmark",
+      "actual": "-3132.050",
+      "expected": "-3132.050",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:变化构成 · Italy",
+      "actual": "3130.990",
+      "expected": "3130.990",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:其他条目差额",
+      "actual": "12965.480",
+      "expected": "12965.480",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "positive_amount:2011-10",
+      "actual": "1154979.300",
+      "expected": "1154979.300",
+      "passed": true
+    },
+    {
+      "name": "cancellation_amount:2011-10",
+      "actual": "84274.630",
+      "expected": "84274.630",
+      "passed": true
+    },
+    {
+      "name": "net_amount:2011-10",
+      "actual": "1070704.670",
+      "expected": "1070704.670",
+      "passed": true
+    },
+    {
+      "name": "positive_invoice_count:2011-10",
+      "actual": "2040",
+      "expected": "2040",
+      "passed": true
+    },
+    {
+      "name": "rank_entities",
+      "actual": [
+        "United Kingdom",
+        "Netherlands",
+        "Germany",
+        "France",
+        "EIRE",
+        "Australia",
+        "Switzerland",
+        "Sweden",
+        "Belgium",
+        "Portugal"
+      ],
+      "expected": [
+        "United Kingdom",
+        "Netherlands",
+        "Germany",
+        "France",
+        "EIRE",
+        "Australia",
+        "Switzerland",
+        "Sweden",
+        "Belgium",
+        "Portugal"
+      ],
+      "passed": true
+    },
+    {
+      "name": "rank_values",
+      "actual": [
+        "877438.190",
+        "40708.650",
+        "30614.270",
+        "25032.040",
+        "23307.620",
+        "17150.530",
+        "8033.980",
+        "5766.160",
+        "5651.380",
+        "5584.630"
+      ],
+      "expected": [
+        "877438.190",
+        "40708.650",
+        "30614.270",
+        "25032.040",
+        "23307.620",
+        "17150.530",
+        "8033.980",
+        "5766.160",
+        "5651.380",
+        "5584.630"
+      ],
+      "passed": true
+    },
+    {
+      "name": "rank_entities",
+      "actual": [
+        "DOT",
+        "22423",
+        "23084",
+        "23284",
+        "22086",
+        "85099B",
+        "POST",
+        "23355",
+        "22386",
+        "22114"
+      ],
+      "expected": [
+        "DOT",
+        "22423",
+        "23084",
+        "23284",
+        "22086",
+        "85099B",
+        "POST",
+        "23355",
+        "22386",
+        "22114"
+      ],
+      "passed": true
+    },
+    {
+      "name": "rank_values",
+      "actual": [
+        "17955.130",
+        "12660.840",
+        "12249.710",
+        "10111.950",
+        "9419.390",
+        "9409.950",
+        "7536.780",
+        "6066.690",
+        "5568.780",
+        "5051.510"
+      ],
+      "expected": [
+        "17955.130",
+        "12660.840",
+        "12249.710",
+        "10111.950",
+        "9419.390",
+        "9409.950",
+        "7536.780",
+        "6066.690",
+        "5568.780",
+        "5051.510"
+      ],
+      "passed": true
+    },
+    {
+      "name": "period_delta",
+      "actual": "51017.048",
+      "expected": "51017.048",
+      "passed": true
+    },
+    {
+      "name": "period_delta",
+      "actual": "51017.048",
+      "expected": "51017.048",
+      "passed": true
+    },
+    {
+      "name": "decomposition_keys",
+      "actual": [
+        "EIRE",
+        "United Kingdom",
+        "Netherlands",
+        "Germany",
+        "Australia",
+        "Norway",
+        "Portugal",
+        "Cyprus",
+        "Denmark",
+        "Italy"
+      ],
+      "expected": [
+        "EIRE",
+        "United Kingdom",
+        "Netherlands",
+        "Germany",
+        "Australia",
+        "Norway",
+        "Portugal",
+        "Cyprus",
+        "Denmark",
+        "Italy"
+      ],
+      "passed": true
+    },
+    {
+      "name": "decomposition_values",
+      "actual": [
+        "-19331.430",
+        "15420.038",
+        "13771.390",
+        "12893.960",
+        "12118.800",
+        "-4991.710",
+        "4151.410",
+        "4020.170",
+        "-3132.050",
+        "3130.990"
+      ],
+      "expected": [
+        "-19331.430",
+        "15420.038",
+        "13771.390",
+        "12893.960",
+        "12118.800",
+        "-4991.710",
+        "4151.410",
+        "4020.170",
+        "-3132.050",
+        "3130.990"
+      ],
+      "passed": true
+    },
+    {
+      "name": "other_changes",
+      "actual": "12965.480",
+      "expected": "12965.480",
+      "passed": true
+    },
+    {
+      "name": "persisted_report",
+      "actual": {
+        "run_id": "run_88fbbacee931464f87065f41904485fa",
+        "variant": "B0",
+        "action": "answer",
+        "business_result": "PARTIAL_PERIOD",
+        "message": "按所选期间与筛选条件生成的确定性报表。全部关键数值来自保存的工具结果。",
+        "claims": [
+          {
+            "claim_id": "claim_ad6c4d41e1570a7111351d6a",
+            "label": "2011-12 · 正向交易行金额",
+            "value": "638792.680",
+            "unit": "GBP",
+            "model_value": "638792.680",
+            "tool_call_id": "tc_bd8f2b89b4be9976f49363dd8c47e52b141f9d8b1a3169cc740f54891f3f89a5",
+            "field_path": "points.0.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_104d75c2b151152c2abb12ce",
+            "label": "2011-12 · 取消类金额",
+            "value": "205124.670",
+            "unit": "GBP",
+            "model_value": "205124.670",
+            "tool_call_id": "tc_ae01a3020a53c779868d58d7ecb6425ec37fa6cfa5bc2193512955334597a070",
+            "field_path": "points.0.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_dcfe5aa00b686b98e35c013c",
+            "label": "2011-12 · 净交易金额",
+            "value": "433668.010",
+            "unit": "GBP",
+            "model_value": "433668.010",
+            "tool_call_id": "tc_7a144ac381ac1c43fce345bed7a385ee2d0ad213736814d3369c38b21ad2292c",
+            "field_path": "points.0.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_f3f989debdcbb49e1e8eeedd",
+            "label": "2011-12 · 有效发票数",
+            "value": "819",
+            "unit": "invoice_count",
+            "model_value": "819",
+            "tool_call_id": "tc_8ba4fa9f5411a26a8b1eda5363b71ecc7b28a5dbac10e0eaacab69f8ecc85fb8",
+            "field_path": "points.0.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_4bd00a11a731e117ec53e3d3",
+            "label": "country · United Kingdom",
+            "value": "388735.430",
+            "unit": "GBP",
+            "model_value": "388735.430",
+            "tool_call_id": "tc_d038189b64cf0e920b7b9894957ee20b317e6d75d3b0026b814693f6406354a1",
+            "field_path": "items.0.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_ddaa9c7aca894656b6884a5f",
+            "label": "country · Netherlands",
+            "value": "11728.020",
+            "unit": "GBP",
+            "model_value": "11728.020",
+            "tool_call_id": "tc_d038189b64cf0e920b7b9894957ee20b317e6d75d3b0026b814693f6406354a1",
+            "field_path": "items.1.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_e1b5e5ef2f2eecc34925fdda",
+            "label": "country · Germany",
+            "value": "7804.700",
+            "unit": "GBP",
+            "model_value": "7804.700",
+            "tool_call_id": "tc_d038189b64cf0e920b7b9894957ee20b317e6d75d3b0026b814693f6406354a1",
+            "field_path": "items.2.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_2687f1ba46652994af02dd74",
+            "label": "country · EIRE",
+            "value": "7323.040",
+            "unit": "GBP",
+            "model_value": "7323.040",
+            "tool_call_id": "tc_d038189b64cf0e920b7b9894957ee20b317e6d75d3b0026b814693f6406354a1",
+            "field_path": "items.3.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_4334a443d2b0c84841eccf02",
+            "label": "country · France",
+            "value": "7048.830",
+            "unit": "GBP",
+            "model_value": "7048.830",
+            "tool_call_id": "tc_d038189b64cf0e920b7b9894957ee20b317e6d75d3b0026b814693f6406354a1",
+            "field_path": "items.4.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_e1406827e3876f1f8c71210e",
+            "label": "country · Portugal",
+            "value": "2801.950",
+            "unit": "GBP",
+            "model_value": "2801.950",
+            "tool_call_id": "tc_d038189b64cf0e920b7b9894957ee20b317e6d75d3b0026b814693f6406354a1",
+            "field_path": "items.5.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_49d7bf895f95f4d17001545f",
+            "label": "country · Norway",
+            "value": "2785.700",
+            "unit": "GBP",
+            "model_value": "2785.700",
+            "tool_call_id": "tc_d038189b64cf0e920b7b9894957ee20b317e6d75d3b0026b814693f6406354a1",
+            "field_path": "items.6.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_2a1e7771c4587b2665df9cf7",
+            "label": "country · Belgium",
+            "value": "1409.430",
+            "unit": "GBP",
+            "model_value": "1409.430",
+            "tool_call_id": "tc_d038189b64cf0e920b7b9894957ee20b317e6d75d3b0026b814693f6406354a1",
+            "field_path": "items.7.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_3ca83ccbe750eda5bdc728ac",
+            "label": "country · Finland",
+            "value": "1230.680",
+            "unit": "GBP",
+            "model_value": "1230.680",
+            "tool_call_id": "tc_d038189b64cf0e920b7b9894957ee20b317e6d75d3b0026b814693f6406354a1",
+            "field_path": "items.8.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_f2718832b3396bcff2555456",
+            "label": "country · Austria",
+            "value": "683.200",
+            "unit": "GBP",
+            "model_value": "683.200",
+            "tool_call_id": "tc_d038189b64cf0e920b7b9894957ee20b317e6d75d3b0026b814693f6406354a1",
+            "field_path": "items.9.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_6eb53c5185633d998ba82fc8",
+            "label": "product · DOT",
+            "value": "19872.690",
+            "unit": "GBP",
+            "model_value": "19872.690",
+            "tool_call_id": "tc_0ba27d3ffa706076732404c7f7f89d4077c0708c414053f1f937b6214facf3e5",
+            "field_path": "items.0.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_2f99a517f786213aa2238696",
+            "label": "product · 23084",
+            "value": "9618.010",
+            "unit": "GBP",
+            "model_value": "9618.010",
+            "tool_call_id": "tc_0ba27d3ffa706076732404c7f7f89d4077c0708c414053f1f937b6214facf3e5",
+            "field_path": "items.1.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_44233f2b0473300ee9ecbdfa",
+            "label": "product · 22086",
+            "value": "6870.710",
+            "unit": "GBP",
+            "model_value": "6870.710",
+            "tool_call_id": "tc_0ba27d3ffa706076732404c7f7f89d4077c0708c414053f1f937b6214facf3e5",
+            "field_path": "items.2.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_ef2243e7dc8c8e43eada3b81",
+            "label": "product · 22423",
+            "value": "5902.920",
+            "unit": "GBP",
+            "model_value": "5902.920",
+            "tool_call_id": "tc_0ba27d3ffa706076732404c7f7f89d4077c0708c414053f1f937b6214facf3e5",
+            "field_path": "items.3.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_13011aef035790c2f068e099",
+            "label": "product · 21137",
+            "value": "5582.430",
+            "unit": "GBP",
+            "model_value": "5582.430",
+            "tool_call_id": "tc_0ba27d3ffa706076732404c7f7f89d4077c0708c414053f1f937b6214facf3e5",
+            "field_path": "items.4.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_dd9c1fb6dcbfa7d4514b4f30",
+            "label": "product · 22197",
+            "value": "5409.860",
+            "unit": "GBP",
+            "model_value": "5409.860",
+            "tool_call_id": "tc_0ba27d3ffa706076732404c7f7f89d4077c0708c414053f1f937b6214facf3e5",
+            "field_path": "items.5.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_c49ef1b1dab737942674da67",
+            "label": "product · 22413",
+            "value": "3999.650",
+            "unit": "GBP",
+            "model_value": "3999.650",
+            "tool_call_id": "tc_0ba27d3ffa706076732404c7f7f89d4077c0708c414053f1f937b6214facf3e5",
+            "field_path": "items.6.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_aefe20a6e72aff5e31b9f317",
+            "label": "product · 23355",
+            "value": "3974.680",
+            "unit": "GBP",
+            "model_value": "3974.680",
+            "tool_call_id": "tc_0ba27d3ffa706076732404c7f7f89d4077c0708c414053f1f937b6214facf3e5",
+            "field_path": "items.7.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_b5e646558036fc04c4684ceb",
+            "label": "product · 22727",
+            "value": "3814.400",
+            "unit": "GBP",
+            "model_value": "3814.400",
+            "tool_call_id": "tc_0ba27d3ffa706076732404c7f7f89d4077c0708c414053f1f937b6214facf3e5",
+            "field_path": "items.8.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_26376ea8720cbc94feeaf610",
+            "label": "product · 23582",
+            "value": "3810.680",
+            "unit": "GBP",
+            "model_value": "3810.680",
+            "tool_call_id": "tc_0ba27d3ffa706076732404c7f7f89d4077c0708c414053f1f937b6214facf3e5",
+            "field_path": "items.9.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          }
+        ],
+        "warnings": [
+          "SOURCE_TIMEZONE_UNSPECIFIED",
+          "DUPLICATE_CANDIDATES_RETAINED",
+          "TRANSACTION_AMOUNTS_INCLUDE_CHARGES",
+          "MISSING_CUSTOMER_ID_RETAINED",
+          "PERIOD_NOT_FULLY_COVERED"
+        ],
+        "evidence_refs": [
+          "tc_bd8f2b89b4be9976f49363dd8c47e52b141f9d8b1a3169cc740f54891f3f89a5",
+          "tc_ae01a3020a53c779868d58d7ecb6425ec37fa6cfa5bc2193512955334597a070",
+          "tc_7a144ac381ac1c43fce345bed7a385ee2d0ad213736814d3369c38b21ad2292c",
+          "tc_8ba4fa9f5411a26a8b1eda5363b71ecc7b28a5dbac10e0eaacab69f8ecc85fb8",
+          "tc_d038189b64cf0e920b7b9894957ee20b317e6d75d3b0026b814693f6406354a1",
+          "tc_0ba27d3ffa706076732404c7f7f89d4077c0708c414053f1f937b6214facf3e5"
+        ],
+        "tool_statuses": [
+          {
+            "tool": "query_metric_series",
+            "status": "PARTIAL_PERIOD",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            }
+          },
+          {
+            "tool": "query_metric_series",
+            "status": "PARTIAL_PERIOD",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            }
+          },
+          {
+            "tool": "query_metric_series",
+            "status": "PARTIAL_PERIOD",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            }
+          },
+          {
+            "tool": "query_metric_series",
+            "status": "PARTIAL_PERIOD",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            }
+          },
+          {
+            "tool": "rank_entities",
+            "status": "PARTIAL_PERIOD",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            }
+          },
+          {
+            "tool": "rank_entities",
+            "status": "PARTIAL_PERIOD",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            }
+          }
+        ],
+        "validation": "DETERMINISTIC_TEMPLATE",
+        "test_fixture": false,
+        "provenance": {
+          "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+          "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+          "transform_version": "uci352-ooxml-milligbp-v1",
+          "metric_version": "retail-v1.2",
+          "source_url": "https://archive.ics.uci.edu/dataset/352/online+retail",
+          "source_time_min": "2010-12-01 08:26:00.000",
+          "source_time_max": "2011-12-09 12:50:00.000",
+          "row_count": 541909
+        },
+        "limitations": [
+          "真实公开历史交易数据，不代表当前店铺经营。",
+          "金额包含符合口径的费用条目，不是纯商品 GMV、财务收入或实际退款。",
+          "缺少采购成本、广告、库存和活动资料，无法判断利润、ROAS 或商业因果。",
+          "重复候选保留；源时区未声明；不完整期间仅代表已观测交易。"
+        ],
+        "parameters": {
+          "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+          "query": {
+            "country": null,
+            "stock_code": null,
+            "metric": "net_amount",
+            "date_from": "2011-12-01",
+            "date_to": "2012-01-01",
+            "granularity": "month"
+          },
+          "baseline": null
+        },
+        "report_schema": "report-v1"
+      },
+      "expected": {
+        "run_id": "run_88fbbacee931464f87065f41904485fa",
+        "variant": "B0",
+        "action": "answer",
+        "business_result": "PARTIAL_PERIOD",
+        "message": "按所选期间与筛选条件生成的确定性报表。全部关键数值来自保存的工具结果。",
+        "claims": [
+          {
+            "claim_id": "claim_ad6c4d41e1570a7111351d6a",
+            "label": "2011-12 · 正向交易行金额",
+            "value": "638792.680",
+            "unit": "GBP",
+            "model_value": "638792.680",
+            "tool_call_id": "tc_bd8f2b89b4be9976f49363dd8c47e52b141f9d8b1a3169cc740f54891f3f89a5",
+            "field_path": "points.0.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_104d75c2b151152c2abb12ce",
+            "label": "2011-12 · 取消类金额",
+            "value": "205124.670",
+            "unit": "GBP",
+            "model_value": "205124.670",
+            "tool_call_id": "tc_ae01a3020a53c779868d58d7ecb6425ec37fa6cfa5bc2193512955334597a070",
+            "field_path": "points.0.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_dcfe5aa00b686b98e35c013c",
+            "label": "2011-12 · 净交易金额",
+            "value": "433668.010",
+            "unit": "GBP",
+            "model_value": "433668.010",
+            "tool_call_id": "tc_7a144ac381ac1c43fce345bed7a385ee2d0ad213736814d3369c38b21ad2292c",
+            "field_path": "points.0.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_f3f989debdcbb49e1e8eeedd",
+            "label": "2011-12 · 有效发票数",
+            "value": "819",
+            "unit": "invoice_count",
+            "model_value": "819",
+            "tool_call_id": "tc_8ba4fa9f5411a26a8b1eda5363b71ecc7b28a5dbac10e0eaacab69f8ecc85fb8",
+            "field_path": "points.0.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_4bd00a11a731e117ec53e3d3",
+            "label": "country · United Kingdom",
+            "value": "388735.430",
+            "unit": "GBP",
+            "model_value": "388735.430",
+            "tool_call_id": "tc_d038189b64cf0e920b7b9894957ee20b317e6d75d3b0026b814693f6406354a1",
+            "field_path": "items.0.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_ddaa9c7aca894656b6884a5f",
+            "label": "country · Netherlands",
+            "value": "11728.020",
+            "unit": "GBP",
+            "model_value": "11728.020",
+            "tool_call_id": "tc_d038189b64cf0e920b7b9894957ee20b317e6d75d3b0026b814693f6406354a1",
+            "field_path": "items.1.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_e1b5e5ef2f2eecc34925fdda",
+            "label": "country · Germany",
+            "value": "7804.700",
+            "unit": "GBP",
+            "model_value": "7804.700",
+            "tool_call_id": "tc_d038189b64cf0e920b7b9894957ee20b317e6d75d3b0026b814693f6406354a1",
+            "field_path": "items.2.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_2687f1ba46652994af02dd74",
+            "label": "country · EIRE",
+            "value": "7323.040",
+            "unit": "GBP",
+            "model_value": "7323.040",
+            "tool_call_id": "tc_d038189b64cf0e920b7b9894957ee20b317e6d75d3b0026b814693f6406354a1",
+            "field_path": "items.3.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_4334a443d2b0c84841eccf02",
+            "label": "country · France",
+            "value": "7048.830",
+            "unit": "GBP",
+            "model_value": "7048.830",
+            "tool_call_id": "tc_d038189b64cf0e920b7b9894957ee20b317e6d75d3b0026b814693f6406354a1",
+            "field_path": "items.4.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_e1406827e3876f1f8c71210e",
+            "label": "country · Portugal",
+            "value": "2801.950",
+            "unit": "GBP",
+            "model_value": "2801.950",
+            "tool_call_id": "tc_d038189b64cf0e920b7b9894957ee20b317e6d75d3b0026b814693f6406354a1",
+            "field_path": "items.5.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_49d7bf895f95f4d17001545f",
+            "label": "country · Norway",
+            "value": "2785.700",
+            "unit": "GBP",
+            "model_value": "2785.700",
+            "tool_call_id": "tc_d038189b64cf0e920b7b9894957ee20b317e6d75d3b0026b814693f6406354a1",
+            "field_path": "items.6.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_2a1e7771c4587b2665df9cf7",
+            "label": "country · Belgium",
+            "value": "1409.430",
+            "unit": "GBP",
+            "model_value": "1409.430",
+            "tool_call_id": "tc_d038189b64cf0e920b7b9894957ee20b317e6d75d3b0026b814693f6406354a1",
+            "field_path": "items.7.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_3ca83ccbe750eda5bdc728ac",
+            "label": "country · Finland",
+            "value": "1230.680",
+            "unit": "GBP",
+            "model_value": "1230.680",
+            "tool_call_id": "tc_d038189b64cf0e920b7b9894957ee20b317e6d75d3b0026b814693f6406354a1",
+            "field_path": "items.8.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_f2718832b3396bcff2555456",
+            "label": "country · Austria",
+            "value": "683.200",
+            "unit": "GBP",
+            "model_value": "683.200",
+            "tool_call_id": "tc_d038189b64cf0e920b7b9894957ee20b317e6d75d3b0026b814693f6406354a1",
+            "field_path": "items.9.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_6eb53c5185633d998ba82fc8",
+            "label": "product · DOT",
+            "value": "19872.690",
+            "unit": "GBP",
+            "model_value": "19872.690",
+            "tool_call_id": "tc_0ba27d3ffa706076732404c7f7f89d4077c0708c414053f1f937b6214facf3e5",
+            "field_path": "items.0.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_2f99a517f786213aa2238696",
+            "label": "product · 23084",
+            "value": "9618.010",
+            "unit": "GBP",
+            "model_value": "9618.010",
+            "tool_call_id": "tc_0ba27d3ffa706076732404c7f7f89d4077c0708c414053f1f937b6214facf3e5",
+            "field_path": "items.1.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_44233f2b0473300ee9ecbdfa",
+            "label": "product · 22086",
+            "value": "6870.710",
+            "unit": "GBP",
+            "model_value": "6870.710",
+            "tool_call_id": "tc_0ba27d3ffa706076732404c7f7f89d4077c0708c414053f1f937b6214facf3e5",
+            "field_path": "items.2.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_ef2243e7dc8c8e43eada3b81",
+            "label": "product · 22423",
+            "value": "5902.920",
+            "unit": "GBP",
+            "model_value": "5902.920",
+            "tool_call_id": "tc_0ba27d3ffa706076732404c7f7f89d4077c0708c414053f1f937b6214facf3e5",
+            "field_path": "items.3.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_13011aef035790c2f068e099",
+            "label": "product · 21137",
+            "value": "5582.430",
+            "unit": "GBP",
+            "model_value": "5582.430",
+            "tool_call_id": "tc_0ba27d3ffa706076732404c7f7f89d4077c0708c414053f1f937b6214facf3e5",
+            "field_path": "items.4.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_dd9c1fb6dcbfa7d4514b4f30",
+            "label": "product · 22197",
+            "value": "5409.860",
+            "unit": "GBP",
+            "model_value": "5409.860",
+            "tool_call_id": "tc_0ba27d3ffa706076732404c7f7f89d4077c0708c414053f1f937b6214facf3e5",
+            "field_path": "items.5.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_c49ef1b1dab737942674da67",
+            "label": "product · 22413",
+            "value": "3999.650",
+            "unit": "GBP",
+            "model_value": "3999.650",
+            "tool_call_id": "tc_0ba27d3ffa706076732404c7f7f89d4077c0708c414053f1f937b6214facf3e5",
+            "field_path": "items.6.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_aefe20a6e72aff5e31b9f317",
+            "label": "product · 23355",
+            "value": "3974.680",
+            "unit": "GBP",
+            "model_value": "3974.680",
+            "tool_call_id": "tc_0ba27d3ffa706076732404c7f7f89d4077c0708c414053f1f937b6214facf3e5",
+            "field_path": "items.7.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_b5e646558036fc04c4684ceb",
+            "label": "product · 22727",
+            "value": "3814.400",
+            "unit": "GBP",
+            "model_value": "3814.400",
+            "tool_call_id": "tc_0ba27d3ffa706076732404c7f7f89d4077c0708c414053f1f937b6214facf3e5",
+            "field_path": "items.8.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          },
+          {
+            "claim_id": "claim_26376ea8720cbc94feeaf610",
+            "label": "product · 23582",
+            "value": "3810.680",
+            "unit": "GBP",
+            "model_value": "3810.680",
+            "tool_call_id": "tc_0ba27d3ffa706076732404c7f7f89d4077c0708c414053f1f937b6214facf3e5",
+            "field_path": "items.9.value_exact",
+            "dataset_snapshot_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+            "snapshot_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "metric_version": "retail-v1.2",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            },
+            "filters": {
+              "country": null,
+              "stock_code": null
+            }
+          }
+        ],
+        "warnings": [
+          "SOURCE_TIMEZONE_UNSPECIFIED",
+          "DUPLICATE_CANDIDATES_RETAINED",
+          "TRANSACTION_AMOUNTS_INCLUDE_CHARGES",
+          "MISSING_CUSTOMER_ID_RETAINED",
+          "PERIOD_NOT_FULLY_COVERED"
+        ],
+        "evidence_refs": [
+          "tc_bd8f2b89b4be9976f49363dd8c47e52b141f9d8b1a3169cc740f54891f3f89a5",
+          "tc_ae01a3020a53c779868d58d7ecb6425ec37fa6cfa5bc2193512955334597a070",
+          "tc_7a144ac381ac1c43fce345bed7a385ee2d0ad213736814d3369c38b21ad2292c",
+          "tc_8ba4fa9f5411a26a8b1eda5363b71ecc7b28a5dbac10e0eaacab69f8ecc85fb8",
+          "tc_d038189b64cf0e920b7b9894957ee20b317e6d75d3b0026b814693f6406354a1",
+          "tc_0ba27d3ffa706076732404c7f7f89d4077c0708c414053f1f937b6214facf3e5"
+        ],
+        "tool_statuses": [
+          {
+            "tool": "query_metric_series",
+            "status": "PARTIAL_PERIOD",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            }
+          },
+          {
+            "tool": "query_metric_series",
+            "status": "PARTIAL_PERIOD",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            }
+          },
+          {
+            "tool": "query_metric_series",
+            "status": "PARTIAL_PERIOD",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            }
+          },
+          {
+            "tool": "query_metric_series",
+            "status": "PARTIAL_PERIOD",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            }
+          },
+          {
+            "tool": "rank_entities",
+            "status": "PARTIAL_PERIOD",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            }
+          },
+          {
+            "tool": "rank_entities",
+            "status": "PARTIAL_PERIOD",
+            "period": {
+              "date_from": "2011-12-01",
+              "date_to": "2012-01-01"
+            }
+          }
+        ],
+        "validation": "DETERMINISTIC_TEMPLATE",
+        "test_fixture": false,
+        "provenance": {
+          "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+          "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+          "transform_version": "uci352-ooxml-milligbp-v1",
+          "metric_version": "retail-v1.2",
+          "source_url": "https://archive.ics.uci.edu/dataset/352/online+retail",
+          "source_time_min": "2010-12-01 08:26:00.000",
+          "source_time_max": "2011-12-09 12:50:00.000",
+          "row_count": 541909
+        },
+        "limitations": [
+          "真实公开历史交易数据，不代表当前店铺经营。",
+          "金额包含符合口径的费用条目，不是纯商品 GMV、财务收入或实际退款。",
+          "缺少采购成本、广告、库存和活动资料，无法判断利润、ROAS 或商业因果。",
+          "重复候选保留；源时区未声明；不完整期间仅代表已观测交易。"
+        ],
+        "parameters": {
+          "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+          "query": {
+            "country": null,
+            "stock_code": null,
+            "metric": "net_amount",
+            "date_from": "2011-12-01",
+            "date_to": "2012-01-01",
+            "granularity": "month"
+          },
+          "baseline": null
+        },
+        "report_schema": "report-v1"
+      },
+      "passed": true
+    },
+    {
+      "name": "claim:2011-12 · 正向交易行金额",
+      "actual": "638792.680",
+      "expected": "638792.680",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:2011-12 · 取消类金额",
+      "actual": "205124.670",
+      "expected": "205124.670",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:2011-12 · 净交易金额",
+      "actual": "433668.010",
+      "expected": "433668.010",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:2011-12 · 有效发票数",
+      "actual": "819",
+      "expected": "819",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:country · United Kingdom",
+      "actual": "388735.430",
+      "expected": "388735.430",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:country · Netherlands",
+      "actual": "11728.020",
+      "expected": "11728.020",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:country · Germany",
+      "actual": "7804.700",
+      "expected": "7804.700",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:country · EIRE",
+      "actual": "7323.040",
+      "expected": "7323.040",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:country · France",
+      "actual": "7048.830",
+      "expected": "7048.830",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:country · Portugal",
+      "actual": "2801.950",
+      "expected": "2801.950",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:country · Norway",
+      "actual": "2785.700",
+      "expected": "2785.700",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:country · Belgium",
+      "actual": "1409.430",
+      "expected": "1409.430",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:country · Finland",
+      "actual": "1230.680",
+      "expected": "1230.680",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:country · Austria",
+      "actual": "683.200",
+      "expected": "683.200",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:product · DOT",
+      "actual": "19872.690",
+      "expected": "19872.690",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:product · 23084",
+      "actual": "9618.010",
+      "expected": "9618.010",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:product · 22086",
+      "actual": "6870.710",
+      "expected": "6870.710",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:product · 22423",
+      "actual": "5902.920",
+      "expected": "5902.920",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:product · 21137",
+      "actual": "5582.430",
+      "expected": "5582.430",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:product · 22197",
+      "actual": "5409.860",
+      "expected": "5409.860",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:product · 22413",
+      "actual": "3999.650",
+      "expected": "3999.650",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:product · 23355",
+      "actual": "3974.680",
+      "expected": "3974.680",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:product · 22727",
+      "actual": "3814.400",
+      "expected": "3814.400",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "claim:product · 23582",
+      "actual": "3810.680",
+      "expected": "3810.680",
+      "passed": true
+    },
+    {
+      "name": "claim_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "positive_amount:2011-12",
+      "actual": "638792.680",
+      "expected": "638792.680",
+      "passed": true
+    },
+    {
+      "name": "cancellation_amount:2011-12",
+      "actual": "205124.670",
+      "expected": "205124.670",
+      "passed": true
+    },
+    {
+      "name": "net_amount:2011-12",
+      "actual": "433668.010",
+      "expected": "433668.010",
+      "passed": true
+    },
+    {
+      "name": "positive_invoice_count:2011-12",
+      "actual": "819",
+      "expected": "819",
+      "passed": true
+    },
+    {
+      "name": "rank_entities",
+      "actual": [
+        "United Kingdom",
+        "Netherlands",
+        "Germany",
+        "EIRE",
+        "France",
+        "Portugal",
+        "Norway",
+        "Belgium",
+        "Finland",
+        "Austria"
+      ],
+      "expected": [
+        "United Kingdom",
+        "Netherlands",
+        "Germany",
+        "EIRE",
+        "France",
+        "Portugal",
+        "Norway",
+        "Belgium",
+        "Finland",
+        "Austria"
+      ],
+      "passed": true
+    },
+    {
+      "name": "rank_values",
+      "actual": [
+        "388735.430",
+        "11728.020",
+        "7804.700",
+        "7323.040",
+        "7048.830",
+        "2801.950",
+        "2785.700",
+        "1409.430",
+        "1230.680",
+        "683.200"
+      ],
+      "expected": [
+        "388735.430",
+        "11728.020",
+        "7804.700",
+        "7323.040",
+        "7048.830",
+        "2801.950",
+        "2785.700",
+        "1409.430",
+        "1230.680",
+        "683.200"
+      ],
+      "passed": true
+    },
+    {
+      "name": "rank_entities",
+      "actual": [
+        "DOT",
+        "23084",
+        "22086",
+        "22423",
+        "21137",
+        "22197",
+        "22413",
+        "23355",
+        "22727",
+        "23582"
+      ],
+      "expected": [
+        "DOT",
+        "23084",
+        "22086",
+        "22423",
+        "21137",
+        "22197",
+        "22413",
+        "23355",
+        "22727",
+        "23582"
+      ],
+      "passed": true
+    },
+    {
+      "name": "rank_values",
+      "actual": [
+        "19872.690",
+        "9618.010",
+        "6870.710",
+        "5902.920",
+        "5582.430",
+        "5409.860",
+        "3999.650",
+        "3974.680",
+        "3814.400",
+        "3810.680"
+      ],
+      "expected": [
+        "19872.690",
+        "9618.010",
+        "6870.710",
+        "5902.920",
+        "5582.430",
+        "5409.860",
+        "3999.650",
+        "3974.680",
+        "3814.400",
+        "3810.680"
+      ],
+      "passed": true
+    },
+    {
+      "name": "persisted_report",
+      "actual": {
+        "run_id": "run_c1a69f8d071a472d882bda8409cd95a1",
+        "variant": "B0",
+        "action": "answer",
+        "business_result": "NO_DATA",
+        "message": "按所选期间与筛选条件生成的确定性报表。全部关键数值来自保存的工具结果。",
+        "claims": [],
+        "warnings": [
+          "SOURCE_TIMEZONE_UNSPECIFIED",
+          "DUPLICATE_CANDIDATES_RETAINED",
+          "TRANSACTION_AMOUNTS_INCLUDE_CHARGES",
+          "MISSING_CUSTOMER_ID_RETAINED",
+          "PERIOD_NOT_FULLY_COVERED",
+          "NO_DATA"
+        ],
+        "evidence_refs": [
+          "tc_8d91744de74e4b203ba3e7395e54c1ee5e54d6cfcdbfa154be99db1a38d80bc1",
+          "tc_44dc1baa4430ddb6a660ba5763a7a25bdc7029e5bf82a6383a644afe9f145048",
+          "tc_a000b0cdd58d2ecb3d3ff7663cf6ffaccbbb3e0a09493545086a9303a88bd643",
+          "tc_8ce53598f2eaf5a90fa92f1dd2127b138684daee50104709d9cc78b58c012436",
+          "tc_3b5942b3332768b01531230bd636a0fc7eda85b438b138e02dbd4fac5d6ca8d7",
+          "tc_2c4b3dbc769a48eaeab92a4147400c5b2a7665c343df4558870ee6cef9986735"
+        ],
+        "tool_statuses": [
+          {
+            "tool": "query_metric_series",
+            "status": "NO_DATA",
+            "period": {
+              "date_from": "2012-01-01",
+              "date_to": "2012-02-01"
+            }
+          },
+          {
+            "tool": "query_metric_series",
+            "status": "NO_DATA",
+            "period": {
+              "date_from": "2012-01-01",
+              "date_to": "2012-02-01"
+            }
+          },
+          {
+            "tool": "query_metric_series",
+            "status": "NO_DATA",
+            "period": {
+              "date_from": "2012-01-01",
+              "date_to": "2012-02-01"
+            }
+          },
+          {
+            "tool": "query_metric_series",
+            "status": "NO_DATA",
+            "period": {
+              "date_from": "2012-01-01",
+              "date_to": "2012-02-01"
+            }
+          },
+          {
+            "tool": "rank_entities",
+            "status": "NO_DATA",
+            "period": {
+              "date_from": "2012-01-01",
+              "date_to": "2012-02-01"
+            }
+          },
+          {
+            "tool": "rank_entities",
+            "status": "NO_DATA",
+            "period": {
+              "date_from": "2012-01-01",
+              "date_to": "2012-02-01"
+            }
+          }
+        ],
+        "validation": "DETERMINISTIC_TEMPLATE",
+        "test_fixture": false,
+        "provenance": {
+          "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+          "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+          "transform_version": "uci352-ooxml-milligbp-v1",
+          "metric_version": "retail-v1.2",
+          "source_url": "https://archive.ics.uci.edu/dataset/352/online+retail",
+          "source_time_min": "2010-12-01 08:26:00.000",
+          "source_time_max": "2011-12-09 12:50:00.000",
+          "row_count": 541909
+        },
+        "limitations": [
+          "真实公开历史交易数据，不代表当前店铺经营。",
+          "金额包含符合口径的费用条目，不是纯商品 GMV、财务收入或实际退款。",
+          "缺少采购成本、广告、库存和活动资料，无法判断利润、ROAS 或商业因果。",
+          "重复候选保留；源时区未声明；不完整期间仅代表已观测交易。"
+        ],
+        "parameters": {
+          "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+          "query": {
+            "country": null,
+            "stock_code": null,
+            "metric": "net_amount",
+            "date_from": "2012-01-01",
+            "date_to": "2012-02-01",
+            "granularity": "month"
+          },
+          "baseline": null
+        },
+        "report_schema": "report-v1"
+      },
+      "expected": {
+        "run_id": "run_c1a69f8d071a472d882bda8409cd95a1",
+        "variant": "B0",
+        "action": "answer",
+        "business_result": "NO_DATA",
+        "message": "按所选期间与筛选条件生成的确定性报表。全部关键数值来自保存的工具结果。",
+        "claims": [],
+        "warnings": [
+          "SOURCE_TIMEZONE_UNSPECIFIED",
+          "DUPLICATE_CANDIDATES_RETAINED",
+          "TRANSACTION_AMOUNTS_INCLUDE_CHARGES",
+          "MISSING_CUSTOMER_ID_RETAINED",
+          "PERIOD_NOT_FULLY_COVERED",
+          "NO_DATA"
+        ],
+        "evidence_refs": [
+          "tc_8d91744de74e4b203ba3e7395e54c1ee5e54d6cfcdbfa154be99db1a38d80bc1",
+          "tc_44dc1baa4430ddb6a660ba5763a7a25bdc7029e5bf82a6383a644afe9f145048",
+          "tc_a000b0cdd58d2ecb3d3ff7663cf6ffaccbbb3e0a09493545086a9303a88bd643",
+          "tc_8ce53598f2eaf5a90fa92f1dd2127b138684daee50104709d9cc78b58c012436",
+          "tc_3b5942b3332768b01531230bd636a0fc7eda85b438b138e02dbd4fac5d6ca8d7",
+          "tc_2c4b3dbc769a48eaeab92a4147400c5b2a7665c343df4558870ee6cef9986735"
+        ],
+        "tool_statuses": [
+          {
+            "tool": "query_metric_series",
+            "status": "NO_DATA",
+            "period": {
+              "date_from": "2012-01-01",
+              "date_to": "2012-02-01"
+            }
+          },
+          {
+            "tool": "query_metric_series",
+            "status": "NO_DATA",
+            "period": {
+              "date_from": "2012-01-01",
+              "date_to": "2012-02-01"
+            }
+          },
+          {
+            "tool": "query_metric_series",
+            "status": "NO_DATA",
+            "period": {
+              "date_from": "2012-01-01",
+              "date_to": "2012-02-01"
+            }
+          },
+          {
+            "tool": "query_metric_series",
+            "status": "NO_DATA",
+            "period": {
+              "date_from": "2012-01-01",
+              "date_to": "2012-02-01"
+            }
+          },
+          {
+            "tool": "rank_entities",
+            "status": "NO_DATA",
+            "period": {
+              "date_from": "2012-01-01",
+              "date_to": "2012-02-01"
+            }
+          },
+          {
+            "tool": "rank_entities",
+            "status": "NO_DATA",
+            "period": {
+              "date_from": "2012-01-01",
+              "date_to": "2012-02-01"
+            }
+          }
+        ],
+        "validation": "DETERMINISTIC_TEMPLATE",
+        "test_fixture": false,
+        "provenance": {
+          "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+          "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+          "transform_version": "uci352-ooxml-milligbp-v1",
+          "metric_version": "retail-v1.2",
+          "source_url": "https://archive.ics.uci.edu/dataset/352/online+retail",
+          "source_time_min": "2010-12-01 08:26:00.000",
+          "source_time_max": "2011-12-09 12:50:00.000",
+          "row_count": 541909
+        },
+        "limitations": [
+          "真实公开历史交易数据，不代表当前店铺经营。",
+          "金额包含符合口径的费用条目，不是纯商品 GMV、财务收入或实际退款。",
+          "缺少采购成本、广告、库存和活动资料，无法判断利润、ROAS 或商业因果。",
+          "重复候选保留；源时区未声明；不完整期间仅代表已观测交易。"
+        ],
+        "parameters": {
+          "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+          "query": {
+            "country": null,
+            "stock_code": null,
+            "metric": "net_amount",
+            "date_from": "2012-01-01",
+            "date_to": "2012-02-01",
+            "granularity": "month"
+          },
+          "baseline": null
+        },
+        "report_schema": "report-v1"
+      },
+      "passed": true
+    },
+    {
+      "name": "positive_amount:2012-01",
+      "actual": null,
+      "expected": null,
+      "passed": true
+    },
+    {
+      "name": "cancellation_amount:2012-01",
+      "actual": null,
+      "expected": null,
+      "passed": true
+    },
+    {
+      "name": "net_amount:2012-01",
+      "actual": null,
+      "expected": null,
+      "passed": true
+    },
+    {
+      "name": "positive_invoice_count:2012-01",
+      "actual": null,
+      "expected": null,
+      "passed": true
+    },
+    {
+      "name": "rank_entities",
+      "actual": [],
+      "expected": [],
+      "passed": true
+    },
+    {
+      "name": "rank_values",
+      "actual": [],
+      "expected": [],
+      "passed": true
+    },
+    {
+      "name": "rank_entities",
+      "actual": [],
+      "expected": [],
+      "passed": true
+    },
+    {
+      "name": "rank_values",
+      "actual": [],
+      "expected": [],
+      "passed": true
+    }
+  ],
+  "source": "real_browser_reports_independent_SQL",
+  "reports_sha256": "9414eac60cf6b7a5a7d156fa1ab61a043c1c58ca39fea59bf14768d80efc4190",
+  "external_model_calls": 0
+}

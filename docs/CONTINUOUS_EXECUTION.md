@@ -1,3 +1,9 @@
+# 最终检查点：D9工程收尾完成
+
+D0—D9离线工程与干净复现已完成，READY_FOR_USER_ACCEPTANCE。263 pytest、28 Vitest、完整9 Edge通过；实际模型F06—F09仍BLOCKED_AUTHORIZATION，用户未实机确认。持续开发范围已收尾，不再自动派生开发对话；下一步等待用户验收或明确模型授权。论文/正式实验仍延期。以下为历史授权与检查点，最新状态见NEXT_SESSION。
+
+---
+
 # 最新检查点：D8工程已验证，继续D9
 
 263 pytest、28 Vitest、完整9 Edge和114项脚本恢复断言通过。真实模型BLOCKED_AUTHORIZATION，最终用户未验收。下一步D9干净复现与F01—F16/E01—E10矩阵。当前精确状态见NEXT_SESSION，以下旧检查点保留。

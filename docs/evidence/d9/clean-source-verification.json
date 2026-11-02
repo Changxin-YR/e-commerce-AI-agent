@@ -1,0 +1,395 @@
+{
+  "status": "PASS",
+  "clean_root": "D:\\codex产出\\电商智能体_D9最终工程交付\\缓存\\ecommerce-agent-thesis",
+  "clean_git": "not included; source snapshot hashes establish identity",
+  "initial_directory": "D:\\codex产出\\电商智能体_D9最终工程交付\\缓存\\reproduction",
+  "relocation": "Renamed to ecommerce-agent-thesis after dependency install to satisfy immutable project-name check; all tests used relocated Python via -m.",
+  "code_files": [
+    {
+      "path": ".env.example",
+      "sha256": "51166cf5793effb6a95705b1491a458e8136c7e4ca08b08aa42124b2d608d7a2"
+    },
+    {
+      "path": "backend/.gitkeep",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "backend/__init__.py",
+      "sha256": "2923a8a33e558782e1c2f5732ea56c5f6c67e669ce131c0915c190da453b85ad"
+    },
+    {
+      "path": "backend/alembic.ini",
+      "sha256": "acaf208e9e346e8dba1039d6dad1324bb3f1026cb38f0bcd8c8c85fe171c8404"
+    },
+    {
+      "path": "backend/alembic/env.py",
+      "sha256": "fb29dd1a863e46a04a283fa5bb373df3ec85d1c44fe34f3563f08d0159f985b3"
+    },
+    {
+      "path": "backend/alembic/script.py.mako",
+      "sha256": "67042994cfc495007c508ccae15e44d21057d90222461630f9bc04d3657f5f6d"
+    },
+    {
+      "path": "backend/alembic/versions/0001_bootstrap.py",
+      "sha256": "e128c6eea88e5992b5abeaec9c3b68b4dcda31a7b06391f1db6bd783adbc9fa2"
+    },
+    {
+      "path": "backend/alembic/versions/0002_import.py",
+      "sha256": "4c362b82be17fdede9e07dd6136d110dab4c3ba6fc17b917edcf5e3bd28b4a27"
+    },
+    {
+      "path": "backend/alembic/versions/0003_query_history.py",
+      "sha256": "40d2941c31cfb1ed06750ae8b563393e5c33951797cbeb551f863cee01db14f3"
+    },
+    {
+      "path": "backend/alembic/versions/0004_agent_runtime.py",
+      "sha256": "4f5b50af797ba1dfd0eef6c0ddb4149c0541010180eb649ce35233eaeac846c0"
+    },
+    {
+      "path": "backend/app/__init__.py",
+      "sha256": "c1f854897accef6d124ef84ec64d0300c880c5cfcf950759105ad0d28fea2b53"
+    },
+    {
+      "path": "backend/app/agent/__init__.py",
+      "sha256": "ab8e2eaad22f81c84735c8b6f4f3fe6c49694f9a91bb86d2299a00c4fe34e414"
+    },
+    {
+      "path": "backend/app/agent/budget.py",
+      "sha256": "6d655a5b38f1ecaa8a75d288298fea38059cd392c62670028c96c97f1a99631b"
+    },
+    {
+      "path": "backend/app/agent/contracts.py",
+      "sha256": "fb6d5de10c1d42aeaf2b00266563b9a124e22f84cfad9a6f9c6dbbb7d4d4d5de"
+    },
+    {
+      "path": "backend/app/agent/provider.py",
+      "sha256": "0f45b43e5915514d8d883127f6c400f87d41b92aeaeb30f909c2fc0c645c2d14"
+    },
+    {
+      "path": "backend/app/agent/routes.py",
+      "sha256": "2218bc46e4ad254ececab03da124a7b094c23333f93136f5d0e015566b6d7f6e"
+    },
+    {
+      "path": "backend/app/agent/service.py",
+      "sha256": "34ccf286546567dbc59388340fc1dafed16ecadf6c1446be3925237b880c9f60"
+    },
+    {
+      "path": "backend/app/agent/validation.py",
+      "sha256": "b488ea218067824e5975d19c14985047162cafdfecc2492c4ce499887e59d095"
+    },
+    {
+      "path": "backend/app/agent/workflow.py",
+      "sha256": "eedda17c0788ac81d589e8d7bcb4291384fa734b07e3ffc22350b60738ea0ca0"
+    },
+    {
+      "path": "backend/app/config.py",
+      "sha256": "cc807fe85da6f04ebf0948ae797a145de22265d73cb142ba9ebe7e7c46dae767"
+    },
+    {
+      "path": "backend/app/database.py",
+      "sha256": "f000c2e6977647dd73eb56f6cee1892ee7bd2ae01a667d282fccfc63cf86a36b"
+    },
+    {
+      "path": "backend/app/errors.py",
+      "sha256": "9c3c76b70f4ae58f502dacfbe12acd54eb9d6f3330b682e2ce08436f879a5e87"
+    },
+    {
+      "path": "backend/app/imports/__init__.py",
+      "sha256": "c2331aab48fcfdeacd3b54554ae8f604d193505fbb1df4ed0c103c870283f0bb"
+    },
+    {
+      "path": "backend/app/imports/locks.py",
+      "sha256": "c0b346eade83f6bd9a072c72f99448bbbfb230ce9d8d218637c57552f914ad94"
+    },
+    {
+      "path": "backend/app/imports/routes.py",
+      "sha256": "aa21d66981387d1010f9cb078596ec87879fe0542b3adb2eee9c88a5afb9043a"
+    },
+    {
+      "path": "backend/app/imports/rows.py",
+      "sha256": "681f143cf9069a49dde339be448bf9ca634483137356b6d377527516912f7ad2"
+    },
+    {
+      "path": "backend/app/imports/service.py",
+      "sha256": "c70940302bb3238acf54ae9a593eafc44ab73bb41269798383c510d66b5eb117"
+    },
+    {
+      "path": "backend/app/imports/source.py",
+      "sha256": "6397fe0efce85146c8b337fb8868ed0a5fb07d7f3fb985901af497e7268f303a"
+    },
+    {
+      "path": "backend/app/main.py",
+      "sha256": "22afd1d02687c6449d98f9c730e59039dc9ab7cc702e6596fc6825866b843315"
+    },
+    {
+      "path": "backend/app/metrics/__init__.py",
+      "sha256": "83d4fc8565967bab4f95bb222c603319709d735affb1436e1a50f9131fcb0cc4"
+    },
+    {
+      "path": "backend/app/metrics/analytics.py",
+      "sha256": "7544dd730b63a665d3dda3a3ad53137c8b3665dea78b2881b738c33c5c16384e"
+    },
+    {
+      "path": "backend/app/metrics/contracts.py",
+      "sha256": "375522cd96c10015385a26ac54adc1e8a198fc2bd202d275f54cf6dcec3f455e"
+    },
+    {
+      "path": "backend/app/metrics/history.py",
+      "sha256": "8be185903b866e67f1128b97932a614c8042234f85481cf0cd9751d77016862e"
+    },
+    {
+      "path": "backend/app/metrics/routes.py",
+      "sha256": "fe623b24ae8980c1a152b8dcd9a17f5a01b19a52d33b1717664ee6d9e73ad456"
+    },
+    {
+      "path": "backend/app/metrics/service.py",
+      "sha256": "8b60461fc55059b5dd9bf6b64dbdd3d6847d7f86a81e4de527ffa0827a7807ee"
+    },
+    {
+      "path": "backend/app/metrics/tool_contracts.py",
+      "sha256": "3bd592936c848831e3a0a0c5a1bc46f25df59f0f48dfbf43450c83794d8675cc"
+    },
+    {
+      "path": "backend/app/metrics/tools.py",
+      "sha256": "377ad7243b0a488c5f818a6bcecf95cc54ab7eb31b2a0e0ad31dc06bb38f85c4"
+    },
+    {
+      "path": "backend/app/models.py",
+      "sha256": "6967fa6ef48129d8d649f15ce7f44660d486111caa29b7f19b240088a8945562"
+    },
+    {
+      "path": "backend/app/reports.py",
+      "sha256": "7029e0185b1c984faf9501366603670bb2aaaf374466c414101861ee89f57b6c"
+    },
+    {
+      "path": "backend/app/schemas.py",
+      "sha256": "72bc9b00add7ec859ea67032261e6fdfd856213e117d8bf3fef46d611e8f0f51"
+    },
+    {
+      "path": "backend/app/security.py",
+      "sha256": "b1c980be9f9f0ab01cd5149df73a6aa247e76968d0a392ff036b59f2e2f0f52e"
+    },
+    {
+      "path": "frontend/.gitkeep",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "frontend/e2e/business.spec.ts",
+      "sha256": "c05d5585fb12f3cef5b792265b7e6fb6682a34cd498eb9784d1e6c06d8df65a2"
+    },
+    {
+      "path": "frontend/e2e/health.spec.ts",
+      "sha256": "7b1904b617ce59d1753d2fb3ff36fb3e64debcb54cf405656d126a97b7f06174"
+    },
+    {
+      "path": "frontend/e2e/reports.spec.ts",
+      "sha256": "81aeaa16e896a00c399fca2433e24f0d3320178c8df1a88afde212397939d310"
+    },
+    {
+      "path": "frontend/e2e/run.mjs",
+      "sha256": "7c0fd11f0febe9b05aa01091b9a4a00048e1ff325022ae1b5e9ee136320e5dd3"
+    },
+    {
+      "path": "frontend/index.html",
+      "sha256": "2423cec5d4bd92b2969bcec6b84e23c053137e11e71bd677a62c923ec53986f2"
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "sha256": "7ecf9958e959f05e94c5cd159ab5e8ac7596f0120c3dd736923042be2a680ccb"
+    },
+    {
+      "path": "frontend/package.json",
+      "sha256": "75c9a4c37425ea94cbcd4852abfecf16dcfa59234a87c42cb4517d8aa42fa718"
+    },
+    {
+      "path": "frontend/playwright.config.ts",
+      "sha256": "45d4ba17effc44aa7664f260edf6b12360fad6ca1aec65a6c2dc6204bf1b8815"
+    },
+    {
+      "path": "frontend/public/favicon.svg",
+      "sha256": "0a5fd4ea0dbbf4facb77966e9de45989f9fae0a2504ff1b6ac0bbbdc8eb529ec"
+    },
+    {
+      "path": "frontend/scripts/verify-metrics-browser.mjs",
+      "sha256": "919336bd5bc2b91165ea72c947894fdce249747949e6f7edb47357277ec71789"
+    },
+    {
+      "path": "frontend/src/App.vue",
+      "sha256": "cc3fd2119d1510f5b2ad6d7bdd60e8732a16548d1d89daca7785ed01814179a4"
+    },
+    {
+      "path": "frontend/src/api/agent.ts",
+      "sha256": "a5ee7f42821c2d7e563039fa48b056cd8509bca9519e31f3f925c95f8df35a76"
+    },
+    {
+      "path": "frontend/src/api/health.ts",
+      "sha256": "d2921cfa6d87fc15f70be2207ef54aadf7157cfb2abd7cafb70ca030f99a73f9"
+    },
+    {
+      "path": "frontend/src/api/retail.ts",
+      "sha256": "39e98f1ddc2049dedc938d0e0d2ba1c95b4e47954454b6be6f0d881d6f693432"
+    },
+    {
+      "path": "frontend/src/components/AgentWorkspace.vue",
+      "sha256": "d20b7c8eda145c72152cd7cef73d4ae25ed7f09676952f390994c0c49a5b322b"
+    },
+    {
+      "path": "frontend/src/components/HealthPanel.vue",
+      "sha256": "26a8daa178702e96630c2626a4faa75cf4d3b773241c379a57792d79adc7ee01"
+    },
+    {
+      "path": "frontend/src/components/RetailWorkspace.vue",
+      "sha256": "801ce3078f170e4eafb412484de752c68a425c670e744ec54f6cc7d0e7c08911"
+    },
+    {
+      "path": "frontend/src/main.ts",
+      "sha256": "0d42fb6bb74a51d647f20a0cd2bcdcc7b89b146f4cdfbf6f1f7b640e7e036119"
+    },
+    {
+      "path": "frontend/src/style.css",
+      "sha256": "fce84cdf29dc2ca93a5d53c8ef60d77a7bf663f96d7092842d088b081c2e975c"
+    },
+    {
+      "path": "frontend/src/useRetail.ts",
+      "sha256": "40344eb3d85cb59261c787b934a9f601446978a6375e781a7c5cf0dcd8e20478"
+    },
+    {
+      "path": "frontend/tests/agent.test.ts",
+      "sha256": "7628b4f173b2c87bfd6005d696d2b51e6f162e606482e5336ca8185734bcdc36"
+    },
+    {
+      "path": "frontend/tests/health.test.ts",
+      "sha256": "798688becb3f2dc8173089dafeace641637be943107db3941785a5d593a38d01"
+    },
+    {
+      "path": "frontend/tests/retail.test.ts",
+      "sha256": "9a6de191e395d21ab524ea208941052a8fd13216b2e96e684efdc052d8ccc04d"
+    },
+    {
+      "path": "frontend/tsconfig.json",
+      "sha256": "b0ef679fbc3b12a787e00bd1359d9ea3c279767365ef59fe35c7a5e5b389563c"
+    },
+    {
+      "path": "frontend/vite.config.ts",
+      "sha256": "7a7cb0d53004debd091529767b649eb1164bd3fe2b55e5f2743c6ff9b696175b"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "93a46abc572aaccfee7845e3e8f2e51174d0c6b837a24d494fe526d663ec6515"
+    },
+    {
+      "path": "requirements.in",
+      "sha256": "f23c549dc10aca139c0da1f8dcd59d18117ee4a4014cab0f239ce5684d819080"
+    },
+    {
+      "path": "requirements.lock",
+      "sha256": "9d5f7fe3f6df16badf33dd1a24b90b0b801f05586c7e69be48925d8a1f94ec60"
+    },
+    {
+      "path": "scripts/.gitkeep",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "scripts/audit_release.py",
+      "sha256": "19d02954ec8c8bb3abb9edb9d16bc78d52bdbeb42b194e4792d16a45b185034a"
+    },
+    {
+      "path": "scripts/audit_source_data.py",
+      "sha256": "6c716aec58c65d56db4ea9c59caeec12aabd132043931afb2da02097eb389d48"
+    },
+    {
+      "path": "scripts/download_source_data.py",
+      "sha256": "facc25730e086ba5c3dba55cb1b961ba2c38a5082c9fdd2166e4685ad37e2db0"
+    },
+    {
+      "path": "scripts/handoff_check.py",
+      "sha256": "8b9e54e5a29e7879e2b713e5e8e331135a17b75cede8cde7c6a4ec6f92569d10"
+    },
+    {
+      "path": "scripts/import_data.py",
+      "sha256": "6ac2763d8e518580a1fe9f0772bd912a744c621bb0652fc646ebdbaedc842f66"
+    },
+    {
+      "path": "scripts/manage.py",
+      "sha256": "212bf24d191463c30be1cd1f873dabe9f2875385861e041f3e69ee442395ef18"
+    },
+    {
+      "path": "scripts/record_command.py",
+      "sha256": "80de2c6a10be56327f5e1a88331012d67707b8791cf9025bbb6ff87637e60d84"
+    },
+    {
+      "path": "scripts/run_independent_audits.py",
+      "sha256": "0b7a45a5281faeb1203bd15eb5c21d007033587d4a6b259716cac848c020718b"
+    },
+    {
+      "path": "scripts/verify_agent.py",
+      "sha256": "447ebc0f3e5a698c21ad6c18977ec21e42b677c9293abdc871c31e73f98ac63f"
+    },
+    {
+      "path": "scripts/verify_d1_evidence.py",
+      "sha256": "4dd98afddfa4e4587550c3f4841b8cbe8d9577ab2ae49e28ab92c2113459f641"
+    },
+    {
+      "path": "scripts/verify_import.py",
+      "sha256": "1b3f0d8f5704b6996453db436d38a803d0516a13e7a764d3e49a0bd9f8ae69ee"
+    },
+    {
+      "path": "scripts/verify_metrics.py",
+      "sha256": "17449c95b5afcf6a115e74f8040ffe05c1c50c15fbf6416da33868f78f1b63e5"
+    },
+    {
+      "path": "scripts/verify_reports.py",
+      "sha256": "641c03b93306f81f6a9f29f797b5ea2a243ae5d067dab791e130137e25098b5f"
+    },
+    {
+      "path": "scripts/verify_tools.py",
+      "sha256": "bf569932bf9dd03e7553efed7129fdd3778b0cafd5ebf0d8d76bce1414ab747e"
+    },
+    {
+      "path": "scripts/verify_ui.py",
+      "sha256": "2c3a2112c345adf233df22ac90051e544633bacc2bd58bfb0efbe902c7f009b8"
+    },
+    {
+      "path": "tests/.gitkeep",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "tests/test_agent.py",
+      "sha256": "6dc578e78a75c7ba791cd3245bf6f39ed7c83468b2ee70fe4d2943271228291b"
+    },
+    {
+      "path": "tests/test_backend.py",
+      "sha256": "819741490769c1d4d50c03014a95546739ede9376d9433a2dece6e7158d3eee0"
+    },
+    {
+      "path": "tests/test_imports.py",
+      "sha256": "c6e92442a4ecf05e5d0718e13fa821645fea1aaa69f999f4213ca22c83bbfcfe"
+    },
+    {
+      "path": "tests/test_manage.py",
+      "sha256": "e5074fd8e9328227b2a5060b95fe86b32226950199f71eeeb9dc10162faa9cb2"
+    },
+    {
+      "path": "tests/test_metrics.py",
+      "sha256": "a7c642ea96937e7b4922ba7d07b2d4c7ffa966e6d74135cd9d4066d869288243"
+    },
+    {
+      "path": "tests/test_reports.py",
+      "sha256": "b46753c80aea7e3ce4a712b2997dffd19d55f170208bb99a254aeb692aec6389"
+    },
+    {
+      "path": "tests/test_security.py",
+      "sha256": "0a6b0b58729a077e82e3b7809649913e99d200bfa855a29a020c0433c3534b94"
+    },
+    {
+      "path": "tests/test_source_data.py",
+      "sha256": "f5b2199f64b0ff85af5ea07c28cae24ff6c719c3d174440e77aba7a2ef2af58f"
+    },
+    {
+      "path": "tests/test_tools.py",
+      "sha256": "b656838bda592569ddc8cf850b1a5897096c0c3b41068d2f2a39fd9ef839e9f7"
+    }
+  ],
+  "python_lock_exact_match": true,
+  "npm_lock_sha256": "7ecf9958e959f05e94c5cd159ab5e8ac7596f0120c3dd736923042be2a680ccb"
+}

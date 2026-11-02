@@ -92,3 +92,10 @@
 - secret递归键值脱敏、Markdown换行规整；Vue文本插值持续保留。无CSV/Excel导出则S05为N/A。
 - health阶段是版本元数据，前端验证其D加数字格式，不再将D7作为成功必要条件。
 - 执行完整9项真实Edge、263 pytest、28 Vitest和脚本进程恢复。npm4项moderate开发依赖保留，审计预演没有可用常规升级，不强行覆写主版本。
+
+## D9 最终工程交付
+
+- 独立源码目录新建.venv/npm ci/空库迁移，pip freeze精确匹配锁；统一all实际跑263/28/9。保留原环境与D8封存。
+- 旧metrics验证脚本以当前schema/health版本检验，SQL参考仍独立；verify_agent使用每次调用UUID，避免阶段目录同名误复用旧run。
+- .env.example移除未实现的MODEL_MAX_TOTAL_COST/EVAL_FROZEN_MODE/UPLOAD_MAX_BYTES，不误导为有效控制。真实预算0，不开收费。
+- READY_FOR_USER_ACCEPTANCE仅工程交付；F06—F09实际模型仍BLOCKED，用户确认独立。论文/正式实验继续延期，无远程推送。

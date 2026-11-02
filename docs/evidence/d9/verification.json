@@ -1,0 +1,185 @@
+{
+  "stage": "D9",
+  "engineering_validation": "PASS",
+  "delivery_status": "READY_FOR_USER_ACCEPTANCE",
+  "implementation_overall": "PARTIAL_LIVE_MODEL_BLOCKED",
+  "live_model_verified": "BLOCKED_AUTHORIZATION",
+  "user_acceptance": "NOT_PERFORMED",
+  "pytest_passed": 263,
+  "vitest_passed": 28,
+  "edge_cases_passed": 9,
+  "build": "PASS",
+  "clean_dependency_install": "PASS",
+  "clean_migration": "PASS",
+  "clean_python_lock_exact": true,
+  "edge_cases": [
+    {
+      "title": "official ZIP uploads in UI, progresses, survives refresh and deduplicates XLSX",
+      "file": "business.spec.ts",
+      "status": "passed"
+    },
+    {
+      "title": "September and October values match real API and independent SQL; refresh and restart use saved GET",
+      "file": "business.spec.ts",
+      "status": "passed"
+    },
+    {
+      "title": "partial, no-data, empty-filter, corrupt upload and real backend outage are explicit",
+      "file": "business.spec.ts",
+      "status": "passed"
+    },
+    {
+      "title": "page receives real health JSON and remains connected after reload",
+      "file": "health.spec.ts",
+      "status": "passed"
+    },
+    {
+      "title": "stopping and restarting the real backend shows failure and recovery",
+      "file": "health.spec.ts",
+      "status": "passed"
+    },
+    {
+      "title": "real upload reuse -> B0 comparison -> exact report -> downloads -> GET history after restart",
+      "file": "reports.spec.ts",
+      "status": "passed"
+    },
+    {
+      "title": "partial and empty reports keep distinct states",
+      "file": "reports.spec.ts",
+      "status": "passed"
+    },
+    {
+      "title": "scripted B2 clarification survives restart, replies in the same run and exports cited real values",
+      "file": "reports.spec.ts",
+      "status": "passed"
+    },
+    {
+      "title": "D8 browser escapes stored questions and rejects an actual foreign-origin form",
+      "file": "reports.spec.ts",
+      "status": "passed"
+    }
+  ],
+  "browser": "Microsoft Edge / Playwright",
+  "viewports": [
+    "1280x900",
+    "390x844"
+  ],
+  "evidence_run": "D:\\codex产出\\电商智能体_D9最终工程交付\\缓存\\playwright\\2026-11-02T16-59-09-574Z-56368",
+  "verification_counts": {
+    "import": 41,
+    "metrics": 85,
+    "tools": 265,
+    "agent": 114,
+    "default": 23,
+    "default_report": 92,
+    "browser_report": 158,
+    "browser_monthly": 21
+  },
+  "real_tool_http_calls": 57,
+  "external_model_calls": 0,
+  "agent_fixture_runs": 15,
+  "matrix": {
+    "ready": 12,
+    "blocked_live_model": 4,
+    "E01_E10": "PASS"
+  },
+  "database": {
+    "path": "D:\\codex产出\\电商智能体_D9最终工程交付\\缓存\\runtime\\app.sqlite3",
+    "bytes": 677265408,
+    "sha256": "39b0c8fb939c6e059f1b1284540d22504d2f6dfe07b9407619d61247e29271b8",
+    "counts": {
+      "transaction_rows": 541909,
+      "analysis_runs": 63,
+      "reports": 63,
+      "model_attempts": 132,
+      "agent_tool_calls": 80,
+      "query_history": 2
+    }
+  },
+  "checkpoint": {
+    "path": "D:\\codex产出\\电商智能体_D9最终工程交付\\缓存\\runtime\\app.checkpoints.sqlite3",
+    "bytes": 5226496,
+    "sha256": "8a566f156e80ab955cf35c8f38e76ca55018ca0046cc2a00fd4e90abb7ad1aaf"
+  },
+  "clean_database": {
+    "path": "D:\\codex产出\\电商智能体_D9最终工程交付\\缓存\\clean-runtime\\app.sqlite3",
+    "bytes": 676491264,
+    "sha256": "aac38a4f16f4319660c014cebc21c064a989bfb7ca602755b6ae6fda05873387",
+    "counts": {
+      "transaction_rows": 541909,
+      "analysis_runs": 1,
+      "reports": 1,
+      "model_attempts": 0,
+      "agent_tool_calls": 8,
+      "query_history": 1
+    }
+  },
+  "clean_checkpoint": {
+    "path": "D:\\codex产出\\电商智能体_D9最终工程交付\\缓存\\clean-runtime\\app.checkpoints.sqlite3",
+    "bytes": 4096,
+    "sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977"
+  },
+  "browser_databases": [
+    {
+      "path": "D:\\codex产出\\电商智能体_D9最终工程交付\\缓存\\playwright\\2026-11-02T16-59-09-574Z-56368\\business\\real-ui.sqlite3",
+      "bytes": 676421632,
+      "sha256": "f69c0e48393b01c34814ede150d9082d9d0e051ac69e640b5e7070e8e87151b8",
+      "counts": {
+        "transaction_rows": 541909,
+        "analysis_runs": 0,
+        "reports": 0,
+        "model_attempts": 0,
+        "agent_tool_calls": 0,
+        "query_history": 5
+      }
+    },
+    {
+      "path": "D:\\codex产出\\电商智能体_D9最终工程交付\\缓存\\playwright\\2026-11-02T16-59-09-574Z-56368\\reports\\real-ui.sqlite3",
+      "bytes": 677265408,
+      "sha256": "a3dc20481bd2f3f015a5333cd0f24edd640f23e554facf14a54bc8b20d264346",
+      "counts": {
+        "transaction_rows": 541909,
+        "analysis_runs": 53,
+        "reports": 53,
+        "model_attempts": 103,
+        "agent_tool_calls": 86,
+        "query_history": 2
+      }
+    }
+  ],
+  "source_hashes": {
+    "zip": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
+    "xlsx": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d"
+  },
+  "D8_preserved": true,
+  "stopped_services": true,
+  "dependency_audit": {
+    "production": 0,
+    "development_moderate": 4,
+    "high": 0,
+    "critical": 0,
+    "fix_dry_run_changed": 0
+  },
+  "python_audit": {
+    "tool": "pip-audit 2.10.1",
+    "dependencies": 68,
+    "known_vulnerabilities": 0
+  },
+  "performance": {
+    "clean_import_seconds": 151.391,
+    "detail_response": {
+      "method": "POST",
+      "path": "/api/v1/tools/inspect_transactions",
+      "status": 200,
+      "bytes": 40105,
+      "seconds": 0.2295
+    },
+    "detail_limit": 50,
+    "frontend_build_js_bytes": 116875
+  },
+  "failures": [
+    "First agent verification reused an inherited idempotency key because output basename matched D8; API correctly returned 200. Script now generates per-invocation identity; final 114 checks passed.",
+    "First refreshed metrics verifier could not import backend when launched as script; added project sys.path, rerun 85 checks passed.",
+    "Patch application initially rejected delete/add of README in one operation; reapplied sequentially, no source data affected."
+  ]
+}

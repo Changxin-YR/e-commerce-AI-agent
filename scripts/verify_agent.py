@@ -15,6 +15,7 @@ import sqlite3
 import subprocess
 import sys
 import time
+from uuid import uuid4
 import httpx
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -69,7 +70,7 @@ def main():
     args.output.mkdir(parents=True,exist_ok=False)
     report=dict(scope='D6_real_UCI_HTTP_and_process_restart_with_test_fixture_provider',
         started_at=datetime.now(timezone.utc).isoformat(),checks=[],runs=[],servers=[],external_model_calls=0,
-        live_model_verified='BLOCKED_AUTHORIZATION',formal_experiments='NOT_STARTED')
+        live_model_verified='BLOCKED_AUTHORIZATION',formal_experiments='NOT_STARTED',invocation_id=uuid4().hex)
     process=client=log=db=None; ordinal=0
     def check(name,actual,expected):
         report['checks'].append(dict(name=name,actual=actual,expected=expected,passed=actual==expected))
@@ -102,7 +103,7 @@ def main():
             time.sleep(.1)
         raise RuntimeError('Owned fixture server failed startup')
     def create(variant,scenario):
-        body=dict(dataset_id=dataset,variant=variant,question='开发工程夹具 test_fixture_case='+scenario,idempotency_key=args.output.name+'-'+variant+'-'+scenario)
+        body=dict(dataset_id=dataset,variant=variant,question='开发工程夹具 test_fixture_case='+scenario,idempotency_key=report['invocation_id']+'-'+variant+'-'+scenario)
         response=client.post('/api/v1/runs',json=body); check(variant+'_'+scenario+'_accepted',response.status_code,202)
         return response.json()['run_id']
     def wait(run_id):

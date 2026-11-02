@@ -1,0 +1,1446 @@
+{
+  "scope": "D3_development_acceptance_not_academic_experiment",
+  "started_at": "2026-11-02T17:02:36.841739+00:00",
+  "checks": [
+    {
+      "name": "zip_sha256",
+      "actual": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
+      "expected": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
+      "passed": true
+    },
+    {
+      "name": "xlsx_sha256",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "independent_reference_source",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "passed": true
+    },
+    {
+      "name": "d1_classification_reference_hash",
+      "actual": "a6bb66d14ee3468cbacf8281df5057d34df1f024cade8b5de36bea4696230d5c",
+      "expected": "a6bb66d14ee3468cbacf8281df5057d34df1f024cade8b5de36bea4696230d5c",
+      "passed": true
+    },
+    {
+      "name": "one_official_ready_snapshot",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "ready",
+      "actual": "READY",
+      "expected": "READY",
+      "passed": true
+    },
+    {
+      "name": "rows",
+      "actual": 541909,
+      "expected": 541909,
+      "passed": true
+    },
+    {
+      "name": "class_reconciliation",
+      "actual": 541909,
+      "expected": 541909,
+      "passed": true
+    },
+    {
+      "name": "classes",
+      "actual": {
+        "CANCELLATION": 9288,
+        "EXCLUDED_OTHER": 2517,
+        "POSITIVE": 530104
+      },
+      "expected": {
+        "POSITIVE": 530104,
+        "CANCELLATION": 9288,
+        "EXCLUDED_OTHER": 2517
+      },
+      "passed": true
+    },
+    {
+      "name": "milli_row_numbers",
+      "actual": [
+        157197,
+        279047,
+        359873,
+        361743
+      ],
+      "expected": [
+        157197,
+        279047,
+        359873,
+        361743
+      ],
+      "passed": true
+    },
+    {
+      "name": "milli_raw_values",
+      "actual": [
+        [
+          "1E-3",
+          1
+        ],
+        [
+          "1E-3",
+          1
+        ],
+        [
+          "1E-3",
+          1
+        ],
+        [
+          "1E-3",
+          1
+        ]
+      ],
+      "expected": [
+        [
+          "1E-3",
+          1
+        ],
+        [
+          "1E-3",
+          1
+        ],
+        [
+          "1E-3",
+          1
+        ],
+        [
+          "1E-3",
+          1
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "name": "class_negative_price",
+      "actual": "EXCLUDED_OTHER",
+      "expected": "EXCLUDED_OTHER",
+      "passed": true
+    },
+    {
+      "name": "class_non_c_negative",
+      "actual": "EXCLUDED_OTHER",
+      "expected": "EXCLUDED_OTHER",
+      "passed": true
+    },
+    {
+      "name": "class_zero_price",
+      "actual": "EXCLUDED_OTHER",
+      "expected": "EXCLUDED_OTHER",
+      "passed": true
+    },
+    {
+      "name": "duplicate_quality",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "migration_revision",
+      "actual": "0004_agent_runtime",
+      "expected": "0004_agent_runtime",
+      "passed": true
+    },
+    {
+      "name": "sqlite_integrity",
+      "actual": [
+        [
+          "ok"
+        ]
+      ],
+      "expected": [
+        [
+          "ok"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "name": "2011-09_http",
+      "actual": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "2011-09_status",
+      "actual": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "2011-09_positive_sql",
+      "actual": 1058590172,
+      "expected": 1058590172,
+      "passed": true
+    },
+    {
+      "name": "2011-09_positive_exact",
+      "actual": "1058590.172",
+      "expected": "1058590.172",
+      "passed": true
+    },
+    {
+      "name": "2011-09_positive_display",
+      "actual": "1058590.17",
+      "expected": "1058590.17",
+      "passed": true
+    },
+    {
+      "name": "2011-09_cancellation_sql",
+      "actual": 38902550,
+      "expected": 38902550,
+      "passed": true
+    },
+    {
+      "name": "2011-09_cancellation_exact",
+      "actual": "38902.550",
+      "expected": "38902.550",
+      "passed": true
+    },
+    {
+      "name": "2011-09_cancellation_display",
+      "actual": "38902.55",
+      "expected": "38902.55",
+      "passed": true
+    },
+    {
+      "name": "2011-09_net_sql",
+      "actual": 1019687622,
+      "expected": 1019687622,
+      "passed": true
+    },
+    {
+      "name": "2011-09_net_exact",
+      "actual": "1019687.622",
+      "expected": "1019687.622",
+      "passed": true
+    },
+    {
+      "name": "2011-09_net_display",
+      "actual": "1019687.62",
+      "expected": "1019687.62",
+      "passed": true
+    },
+    {
+      "name": "2011-09_positive_invoice_count",
+      "actual": 1837,
+      "expected": 1837,
+      "passed": true
+    },
+    {
+      "name": "2011-09_positive_row_count",
+      "actual": 49261,
+      "expected": 49261,
+      "passed": true
+    },
+    {
+      "name": "2011-09_cancel_row_count",
+      "actual": 805,
+      "expected": 805,
+      "passed": true
+    },
+    {
+      "name": "2011-09_row_reconciliation",
+      "actual": 50226,
+      "expected": 50226,
+      "passed": true
+    },
+    {
+      "name": "2011-10_http",
+      "actual": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "2011-10_status",
+      "actual": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "2011-10_positive_sql",
+      "actual": 1154979300,
+      "expected": 1154979300,
+      "passed": true
+    },
+    {
+      "name": "2011-10_positive_exact",
+      "actual": "1154979.300",
+      "expected": "1154979.300",
+      "passed": true
+    },
+    {
+      "name": "2011-10_positive_display",
+      "actual": "1154979.30",
+      "expected": "1154979.30",
+      "passed": true
+    },
+    {
+      "name": "2011-10_cancellation_sql",
+      "actual": 84274630,
+      "expected": 84274630,
+      "passed": true
+    },
+    {
+      "name": "2011-10_cancellation_exact",
+      "actual": "84274.630",
+      "expected": "84274.630",
+      "passed": true
+    },
+    {
+      "name": "2011-10_cancellation_display",
+      "actual": "84274.63",
+      "expected": "84274.63",
+      "passed": true
+    },
+    {
+      "name": "2011-10_net_sql",
+      "actual": 1070704670,
+      "expected": 1070704670,
+      "passed": true
+    },
+    {
+      "name": "2011-10_net_exact",
+      "actual": "1070704.670",
+      "expected": "1070704.670",
+      "passed": true
+    },
+    {
+      "name": "2011-10_net_display",
+      "actual": "1070704.67",
+      "expected": "1070704.67",
+      "passed": true
+    },
+    {
+      "name": "2011-10_positive_invoice_count",
+      "actual": 2040,
+      "expected": 2040,
+      "passed": true
+    },
+    {
+      "name": "2011-10_positive_row_count",
+      "actual": 59304,
+      "expected": 59304,
+      "passed": true
+    },
+    {
+      "name": "2011-10_cancel_row_count",
+      "actual": 1200,
+      "expected": 1200,
+      "passed": true
+    },
+    {
+      "name": "2011-10_row_reconciliation",
+      "actual": 60742,
+      "expected": 60742,
+      "passed": true
+    },
+    {
+      "name": "2011-12_coverage",
+      "actual": "PARTIAL_PERIOD",
+      "expected": "PARTIAL_PERIOD",
+      "passed": true
+    },
+    {
+      "name": "2012-01_coverage",
+      "actual": "NO_DATA",
+      "expected": "NO_DATA",
+      "passed": true
+    },
+    {
+      "name": "no_data_not_zero",
+      "actual": null,
+      "expected": null,
+      "passed": true
+    },
+    {
+      "name": "empty_result",
+      "actual": "EMPTY_RESULT",
+      "expected": "EMPTY_RESULT",
+      "passed": true
+    },
+    {
+      "name": "empty_zero",
+      "actual": "0.000",
+      "expected": "0.000",
+      "passed": true
+    },
+    {
+      "name": "reject_sql",
+      "actual": 422,
+      "expected": 422,
+      "passed": true
+    },
+    {
+      "name": "reject_path",
+      "actual": 422,
+      "expected": 422,
+      "passed": true
+    },
+    {
+      "name": "reject_url",
+      "actual": 422,
+      "expected": 422,
+      "passed": true
+    },
+    {
+      "name": "reject_month",
+      "actual": 422,
+      "expected": 422,
+      "passed": true
+    },
+    {
+      "name": "bad_host",
+      "actual": 400,
+      "expected": 400,
+      "passed": true
+    },
+    {
+      "name": "unknown_dataset",
+      "actual": 404,
+      "expected": 404,
+      "passed": true
+    },
+    {
+      "name": "series_monthly_equivalence",
+      "actual": [
+        "1019687.622",
+        "1070704.670"
+      ],
+      "expected": [
+        "1019687.622",
+        "1070704.670"
+      ],
+      "passed": true
+    },
+    {
+      "name": "openapi_stage",
+      "actual": "0.9.0",
+      "expected": "0.9.0",
+      "passed": true
+    },
+    {
+      "name": "ordinary_gets_do_not_write",
+      "actual": "b4fc0b52aeaa311665b7db9e414cb3e8bfa58991a22f02fba0740b7872c32818",
+      "expected": "b4fc0b52aeaa311665b7db9e414cb3e8bfa58991a22f02fba0740b7872c32818",
+      "passed": true
+    },
+    {
+      "name": "idempotent_zip_http",
+      "actual": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "idempotent_zip_dataset",
+      "actual": "ds_9561855056bc9d83ca5a82c198b5130b",
+      "expected": "ds_9561855056bc9d83ca5a82c198b5130b",
+      "passed": true
+    },
+    {
+      "name": "idempotent_xlsx_http",
+      "actual": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "idempotent_xlsx_dataset",
+      "actual": "ds_9561855056bc9d83ca5a82c198b5130b",
+      "expected": "ds_9561855056bc9d83ca5a82c198b5130b",
+      "passed": true
+    },
+    {
+      "name": "idempotent_zip_http",
+      "actual": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "idempotent_zip_dataset",
+      "actual": "ds_9561855056bc9d83ca5a82c198b5130b",
+      "expected": "ds_9561855056bc9d83ca5a82c198b5130b",
+      "passed": true
+    },
+    {
+      "name": "corrupt_upload",
+      "actual": 422,
+      "expected": 422,
+      "passed": true
+    },
+    {
+      "name": "oversize_upload",
+      "actual": 413,
+      "expected": 413,
+      "passed": true
+    },
+    {
+      "name": "after_bad_upload_healthy",
+      "actual": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "reupload_amount_unchanged",
+      "actual": {
+        "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+        "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+        "metric_version": "retail-v1.2",
+        "transform_version": "uci352-ooxml-milligbp-v1",
+        "currency": "GBP",
+        "source_timezone": "UNSPECIFIED_LOCAL_TIME",
+        "month": "2011-09",
+        "period_start": "2011-09-01",
+        "period_end_exclusive": "2011-10-01",
+        "filters": {
+          "country": null,
+          "stock_code": null
+        },
+        "status": "PASS",
+        "coverage": {
+          "status": "FULL",
+          "basis": "observed_source_day_bounds",
+          "source_start": "2010-12-01",
+          "source_end_exclusive": "2011-12-10"
+        },
+        "calendar_month_complete": true,
+        "source_row_count": 50226,
+        "matched_row_count": 50226,
+        "primary_class_counts": {
+          "INVALID": 0,
+          "POSITIVE": 49261,
+          "CANCELLATION": 805,
+          "EXCLUDED_OTHER": 160
+        },
+        "positive_row_count": 49261,
+        "cancel_row_count": 805,
+        "excluded_row_count": 160,
+        "positive_invoice_count": 1837,
+        "positive_amount_exact": "1058590.172",
+        "cancellation_amount_exact": "38902.550",
+        "net_amount_exact": "1019687.622",
+        "positive_amount_display": "1058590.17",
+        "cancellation_amount_display": "38902.55",
+        "net_amount_display": "1019687.62",
+        "warnings": [
+          "SOURCE_TIMEZONE_UNSPECIFIED",
+          "DUPLICATE_CANDIDATES_RETAINED",
+          "TRANSACTION_AMOUNTS_INCLUDE_CHARGES",
+          "MISSING_CUSTOMER_ID_RETAINED"
+        ],
+        "query_fingerprint": "b0cf4b1797a8e4651a7c440d80d42ded93fd95d22ffce799ad334dbad1737547"
+      },
+      "expected": {
+        "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+        "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+        "metric_version": "retail-v1.2",
+        "transform_version": "uci352-ooxml-milligbp-v1",
+        "currency": "GBP",
+        "source_timezone": "UNSPECIFIED_LOCAL_TIME",
+        "month": "2011-09",
+        "period_start": "2011-09-01",
+        "period_end_exclusive": "2011-10-01",
+        "filters": {
+          "country": null,
+          "stock_code": null
+        },
+        "status": "PASS",
+        "coverage": {
+          "status": "FULL",
+          "basis": "observed_source_day_bounds",
+          "source_start": "2010-12-01",
+          "source_end_exclusive": "2011-12-10"
+        },
+        "calendar_month_complete": true,
+        "source_row_count": 50226,
+        "matched_row_count": 50226,
+        "primary_class_counts": {
+          "INVALID": 0,
+          "POSITIVE": 49261,
+          "CANCELLATION": 805,
+          "EXCLUDED_OTHER": 160
+        },
+        "positive_row_count": 49261,
+        "cancel_row_count": 805,
+        "excluded_row_count": 160,
+        "positive_invoice_count": 1837,
+        "positive_amount_exact": "1058590.172",
+        "cancellation_amount_exact": "38902.550",
+        "net_amount_exact": "1019687.622",
+        "positive_amount_display": "1058590.17",
+        "cancellation_amount_display": "38902.55",
+        "net_amount_display": "1019687.62",
+        "warnings": [
+          "SOURCE_TIMEZONE_UNSPECIFIED",
+          "DUPLICATE_CANDIDATES_RETAINED",
+          "TRANSACTION_AMOUNTS_INCLUDE_CHARGES",
+          "MISSING_CUSTOMER_ID_RETAINED"
+        ],
+        "query_fingerprint": "b0cf4b1797a8e4651a7c440d80d42ded93fd95d22ffce799ad334dbad1737547"
+      },
+      "passed": true
+    },
+    {
+      "name": "history_created",
+      "actual": 201,
+      "expected": 201,
+      "passed": true
+    },
+    {
+      "name": "saved_result",
+      "actual": {
+        "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+        "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+        "metric_version": "retail-v1.2",
+        "transform_version": "uci352-ooxml-milligbp-v1",
+        "currency": "GBP",
+        "source_timezone": "UNSPECIFIED_LOCAL_TIME",
+        "month": "2011-09",
+        "period_start": "2011-09-01",
+        "period_end_exclusive": "2011-10-01",
+        "filters": {
+          "country": null,
+          "stock_code": null
+        },
+        "status": "PASS",
+        "coverage": {
+          "status": "FULL",
+          "basis": "observed_source_day_bounds",
+          "source_start": "2010-12-01",
+          "source_end_exclusive": "2011-12-10"
+        },
+        "calendar_month_complete": true,
+        "source_row_count": 50226,
+        "matched_row_count": 50226,
+        "primary_class_counts": {
+          "INVALID": 0,
+          "POSITIVE": 49261,
+          "CANCELLATION": 805,
+          "EXCLUDED_OTHER": 160
+        },
+        "positive_row_count": 49261,
+        "cancel_row_count": 805,
+        "excluded_row_count": 160,
+        "positive_invoice_count": 1837,
+        "positive_amount_exact": "1058590.172",
+        "cancellation_amount_exact": "38902.550",
+        "net_amount_exact": "1019687.622",
+        "positive_amount_display": "1058590.17",
+        "cancellation_amount_display": "38902.55",
+        "net_amount_display": "1019687.62",
+        "warnings": [
+          "SOURCE_TIMEZONE_UNSPECIFIED",
+          "DUPLICATE_CANDIDATES_RETAINED",
+          "TRANSACTION_AMOUNTS_INCLUDE_CHARGES",
+          "MISSING_CUSTOMER_ID_RETAINED"
+        ],
+        "query_fingerprint": "b0cf4b1797a8e4651a7c440d80d42ded93fd95d22ffce799ad334dbad1737547"
+      },
+      "expected": {
+        "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+        "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+        "metric_version": "retail-v1.2",
+        "transform_version": "uci352-ooxml-milligbp-v1",
+        "currency": "GBP",
+        "source_timezone": "UNSPECIFIED_LOCAL_TIME",
+        "month": "2011-09",
+        "period_start": "2011-09-01",
+        "period_end_exclusive": "2011-10-01",
+        "filters": {
+          "country": null,
+          "stock_code": null
+        },
+        "status": "PASS",
+        "coverage": {
+          "status": "FULL",
+          "basis": "observed_source_day_bounds",
+          "source_start": "2010-12-01",
+          "source_end_exclusive": "2011-12-10"
+        },
+        "calendar_month_complete": true,
+        "source_row_count": 50226,
+        "matched_row_count": 50226,
+        "primary_class_counts": {
+          "INVALID": 0,
+          "POSITIVE": 49261,
+          "CANCELLATION": 805,
+          "EXCLUDED_OTHER": 160
+        },
+        "positive_row_count": 49261,
+        "cancel_row_count": 805,
+        "excluded_row_count": 160,
+        "positive_invoice_count": 1837,
+        "positive_amount_exact": "1058590.172",
+        "cancellation_amount_exact": "38902.550",
+        "net_amount_exact": "1019687.622",
+        "positive_amount_display": "1058590.17",
+        "cancellation_amount_display": "38902.55",
+        "net_amount_display": "1019687.62",
+        "warnings": [
+          "SOURCE_TIMEZONE_UNSPECIFIED",
+          "DUPLICATE_CANDIDATES_RETAINED",
+          "TRANSACTION_AMOUNTS_INCLUDE_CHARGES",
+          "MISSING_CUSTOMER_ID_RETAINED"
+        ],
+        "query_fingerprint": "b0cf4b1797a8e4651a7c440d80d42ded93fd95d22ffce799ad334dbad1737547"
+      },
+      "passed": true
+    },
+    {
+      "name": "idempotent_history",
+      "actual": {
+        "query_id": "q_2c007e6c28e24d67a8da2162e1debbe9",
+        "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+        "kind": "monthly",
+        "parameters": {
+          "country": null,
+          "stock_code": null,
+          "month": "2011-09",
+          "kind": "monthly"
+        },
+        "result": {
+          "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+          "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+          "metric_version": "retail-v1.2",
+          "transform_version": "uci352-ooxml-milligbp-v1",
+          "currency": "GBP",
+          "source_timezone": "UNSPECIFIED_LOCAL_TIME",
+          "month": "2011-09",
+          "period_start": "2011-09-01",
+          "period_end_exclusive": "2011-10-01",
+          "filters": {
+            "country": null,
+            "stock_code": null
+          },
+          "status": "PASS",
+          "coverage": {
+            "status": "FULL",
+            "basis": "observed_source_day_bounds",
+            "source_start": "2010-12-01",
+            "source_end_exclusive": "2011-12-10"
+          },
+          "calendar_month_complete": true,
+          "source_row_count": 50226,
+          "matched_row_count": 50226,
+          "primary_class_counts": {
+            "INVALID": 0,
+            "POSITIVE": 49261,
+            "CANCELLATION": 805,
+            "EXCLUDED_OTHER": 160
+          },
+          "positive_row_count": 49261,
+          "cancel_row_count": 805,
+          "excluded_row_count": 160,
+          "positive_invoice_count": 1837,
+          "positive_amount_exact": "1058590.172",
+          "cancellation_amount_exact": "38902.550",
+          "net_amount_exact": "1019687.622",
+          "positive_amount_display": "1058590.17",
+          "cancellation_amount_display": "38902.55",
+          "net_amount_display": "1019687.62",
+          "warnings": [
+            "SOURCE_TIMEZONE_UNSPECIFIED",
+            "DUPLICATE_CANDIDATES_RETAINED",
+            "TRANSACTION_AMOUNTS_INCLUDE_CHARGES",
+            "MISSING_CUSTOMER_ID_RETAINED"
+          ],
+          "query_fingerprint": "b0cf4b1797a8e4651a7c440d80d42ded93fd95d22ffce799ad334dbad1737547"
+        },
+        "result_sha256": "3bec04eabbd451ead8a478457ff22856196f61f302a7ccb92fb5137fb8a2f6f9",
+        "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+        "transform_version": "uci352-ooxml-milligbp-v1",
+        "metric_version": "retail-v1.2",
+        "created_at": "2026-11-02T17:02:42.850942+00:00"
+      },
+      "expected": {
+        "query_id": "q_2c007e6c28e24d67a8da2162e1debbe9",
+        "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+        "kind": "monthly",
+        "parameters": {
+          "country": null,
+          "stock_code": null,
+          "month": "2011-09",
+          "kind": "monthly"
+        },
+        "result": {
+          "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+          "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+          "metric_version": "retail-v1.2",
+          "transform_version": "uci352-ooxml-milligbp-v1",
+          "currency": "GBP",
+          "source_timezone": "UNSPECIFIED_LOCAL_TIME",
+          "month": "2011-09",
+          "period_start": "2011-09-01",
+          "period_end_exclusive": "2011-10-01",
+          "filters": {
+            "country": null,
+            "stock_code": null
+          },
+          "status": "PASS",
+          "coverage": {
+            "status": "FULL",
+            "basis": "observed_source_day_bounds",
+            "source_start": "2010-12-01",
+            "source_end_exclusive": "2011-12-10"
+          },
+          "calendar_month_complete": true,
+          "source_row_count": 50226,
+          "matched_row_count": 50226,
+          "primary_class_counts": {
+            "INVALID": 0,
+            "POSITIVE": 49261,
+            "CANCELLATION": 805,
+            "EXCLUDED_OTHER": 160
+          },
+          "positive_row_count": 49261,
+          "cancel_row_count": 805,
+          "excluded_row_count": 160,
+          "positive_invoice_count": 1837,
+          "positive_amount_exact": "1058590.172",
+          "cancellation_amount_exact": "38902.550",
+          "net_amount_exact": "1019687.622",
+          "positive_amount_display": "1058590.17",
+          "cancellation_amount_display": "38902.55",
+          "net_amount_display": "1019687.62",
+          "warnings": [
+            "SOURCE_TIMEZONE_UNSPECIFIED",
+            "DUPLICATE_CANDIDATES_RETAINED",
+            "TRANSACTION_AMOUNTS_INCLUDE_CHARGES",
+            "MISSING_CUSTOMER_ID_RETAINED"
+          ],
+          "query_fingerprint": "b0cf4b1797a8e4651a7c440d80d42ded93fd95d22ffce799ad334dbad1737547"
+        },
+        "result_sha256": "3bec04eabbd451ead8a478457ff22856196f61f302a7ccb92fb5137fb8a2f6f9",
+        "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+        "transform_version": "uci352-ooxml-milligbp-v1",
+        "metric_version": "retail-v1.2",
+        "created_at": "2026-11-02T17:02:42.850942+00:00"
+      },
+      "passed": true
+    },
+    {
+      "name": "history_get",
+      "actual": {
+        "query_id": "q_2c007e6c28e24d67a8da2162e1debbe9",
+        "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+        "kind": "monthly",
+        "parameters": {
+          "country": null,
+          "stock_code": null,
+          "month": "2011-09",
+          "kind": "monthly"
+        },
+        "result": {
+          "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+          "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+          "metric_version": "retail-v1.2",
+          "transform_version": "uci352-ooxml-milligbp-v1",
+          "currency": "GBP",
+          "source_timezone": "UNSPECIFIED_LOCAL_TIME",
+          "month": "2011-09",
+          "period_start": "2011-09-01",
+          "period_end_exclusive": "2011-10-01",
+          "filters": {
+            "country": null,
+            "stock_code": null
+          },
+          "status": "PASS",
+          "coverage": {
+            "status": "FULL",
+            "basis": "observed_source_day_bounds",
+            "source_start": "2010-12-01",
+            "source_end_exclusive": "2011-12-10"
+          },
+          "calendar_month_complete": true,
+          "source_row_count": 50226,
+          "matched_row_count": 50226,
+          "primary_class_counts": {
+            "INVALID": 0,
+            "POSITIVE": 49261,
+            "CANCELLATION": 805,
+            "EXCLUDED_OTHER": 160
+          },
+          "positive_row_count": 49261,
+          "cancel_row_count": 805,
+          "excluded_row_count": 160,
+          "positive_invoice_count": 1837,
+          "positive_amount_exact": "1058590.172",
+          "cancellation_amount_exact": "38902.550",
+          "net_amount_exact": "1019687.622",
+          "positive_amount_display": "1058590.17",
+          "cancellation_amount_display": "38902.55",
+          "net_amount_display": "1019687.62",
+          "warnings": [
+            "SOURCE_TIMEZONE_UNSPECIFIED",
+            "DUPLICATE_CANDIDATES_RETAINED",
+            "TRANSACTION_AMOUNTS_INCLUDE_CHARGES",
+            "MISSING_CUSTOMER_ID_RETAINED"
+          ],
+          "query_fingerprint": "b0cf4b1797a8e4651a7c440d80d42ded93fd95d22ffce799ad334dbad1737547"
+        },
+        "result_sha256": "3bec04eabbd451ead8a478457ff22856196f61f302a7ccb92fb5137fb8a2f6f9",
+        "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+        "transform_version": "uci352-ooxml-milligbp-v1",
+        "metric_version": "retail-v1.2",
+        "created_at": "2026-11-02T17:02:42.850942+00:00"
+      },
+      "expected": {
+        "query_id": "q_2c007e6c28e24d67a8da2162e1debbe9",
+        "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+        "kind": "monthly",
+        "parameters": {
+          "country": null,
+          "stock_code": null,
+          "month": "2011-09",
+          "kind": "monthly"
+        },
+        "result": {
+          "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+          "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+          "metric_version": "retail-v1.2",
+          "transform_version": "uci352-ooxml-milligbp-v1",
+          "currency": "GBP",
+          "source_timezone": "UNSPECIFIED_LOCAL_TIME",
+          "month": "2011-09",
+          "period_start": "2011-09-01",
+          "period_end_exclusive": "2011-10-01",
+          "filters": {
+            "country": null,
+            "stock_code": null
+          },
+          "status": "PASS",
+          "coverage": {
+            "status": "FULL",
+            "basis": "observed_source_day_bounds",
+            "source_start": "2010-12-01",
+            "source_end_exclusive": "2011-12-10"
+          },
+          "calendar_month_complete": true,
+          "source_row_count": 50226,
+          "matched_row_count": 50226,
+          "primary_class_counts": {
+            "INVALID": 0,
+            "POSITIVE": 49261,
+            "CANCELLATION": 805,
+            "EXCLUDED_OTHER": 160
+          },
+          "positive_row_count": 49261,
+          "cancel_row_count": 805,
+          "excluded_row_count": 160,
+          "positive_invoice_count": 1837,
+          "positive_amount_exact": "1058590.172",
+          "cancellation_amount_exact": "38902.550",
+          "net_amount_exact": "1019687.622",
+          "positive_amount_display": "1058590.17",
+          "cancellation_amount_display": "38902.55",
+          "net_amount_display": "1019687.62",
+          "warnings": [
+            "SOURCE_TIMEZONE_UNSPECIFIED",
+            "DUPLICATE_CANDIDATES_RETAINED",
+            "TRANSACTION_AMOUNTS_INCLUDE_CHARGES",
+            "MISSING_CUSTOMER_ID_RETAINED"
+          ],
+          "query_fingerprint": "b0cf4b1797a8e4651a7c440d80d42ded93fd95d22ffce799ad334dbad1737547"
+        },
+        "result_sha256": "3bec04eabbd451ead8a478457ff22856196f61f302a7ccb92fb5137fb8a2f6f9",
+        "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+        "transform_version": "uci352-ooxml-milligbp-v1",
+        "metric_version": "retail-v1.2",
+        "created_at": "2026-11-02T17:02:42.850942+00:00"
+      },
+      "passed": true
+    },
+    {
+      "name": "history_no_write",
+      "actual": "cec8b2f14e300e7800d4d8f23df9985b58158358d2bfad51619c2f5833bc2c4d",
+      "expected": "cec8b2f14e300e7800d4d8f23df9985b58158358d2bfad51619c2f5833bc2c4d",
+      "passed": true
+    },
+    {
+      "name": "history_after_restart",
+      "actual": {
+        "query_id": "q_2c007e6c28e24d67a8da2162e1debbe9",
+        "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+        "kind": "monthly",
+        "parameters": {
+          "country": null,
+          "stock_code": null,
+          "month": "2011-09",
+          "kind": "monthly"
+        },
+        "result": {
+          "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+          "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+          "metric_version": "retail-v1.2",
+          "transform_version": "uci352-ooxml-milligbp-v1",
+          "currency": "GBP",
+          "source_timezone": "UNSPECIFIED_LOCAL_TIME",
+          "month": "2011-09",
+          "period_start": "2011-09-01",
+          "period_end_exclusive": "2011-10-01",
+          "filters": {
+            "country": null,
+            "stock_code": null
+          },
+          "status": "PASS",
+          "coverage": {
+            "status": "FULL",
+            "basis": "observed_source_day_bounds",
+            "source_start": "2010-12-01",
+            "source_end_exclusive": "2011-12-10"
+          },
+          "calendar_month_complete": true,
+          "source_row_count": 50226,
+          "matched_row_count": 50226,
+          "primary_class_counts": {
+            "INVALID": 0,
+            "POSITIVE": 49261,
+            "CANCELLATION": 805,
+            "EXCLUDED_OTHER": 160
+          },
+          "positive_row_count": 49261,
+          "cancel_row_count": 805,
+          "excluded_row_count": 160,
+          "positive_invoice_count": 1837,
+          "positive_amount_exact": "1058590.172",
+          "cancellation_amount_exact": "38902.550",
+          "net_amount_exact": "1019687.622",
+          "positive_amount_display": "1058590.17",
+          "cancellation_amount_display": "38902.55",
+          "net_amount_display": "1019687.62",
+          "warnings": [
+            "SOURCE_TIMEZONE_UNSPECIFIED",
+            "DUPLICATE_CANDIDATES_RETAINED",
+            "TRANSACTION_AMOUNTS_INCLUDE_CHARGES",
+            "MISSING_CUSTOMER_ID_RETAINED"
+          ],
+          "query_fingerprint": "b0cf4b1797a8e4651a7c440d80d42ded93fd95d22ffce799ad334dbad1737547"
+        },
+        "result_sha256": "3bec04eabbd451ead8a478457ff22856196f61f302a7ccb92fb5137fb8a2f6f9",
+        "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+        "transform_version": "uci352-ooxml-milligbp-v1",
+        "metric_version": "retail-v1.2",
+        "created_at": "2026-11-02T17:02:42.850942+00:00"
+      },
+      "expected": {
+        "query_id": "q_2c007e6c28e24d67a8da2162e1debbe9",
+        "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+        "kind": "monthly",
+        "parameters": {
+          "country": null,
+          "stock_code": null,
+          "month": "2011-09",
+          "kind": "monthly"
+        },
+        "result": {
+          "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+          "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+          "metric_version": "retail-v1.2",
+          "transform_version": "uci352-ooxml-milligbp-v1",
+          "currency": "GBP",
+          "source_timezone": "UNSPECIFIED_LOCAL_TIME",
+          "month": "2011-09",
+          "period_start": "2011-09-01",
+          "period_end_exclusive": "2011-10-01",
+          "filters": {
+            "country": null,
+            "stock_code": null
+          },
+          "status": "PASS",
+          "coverage": {
+            "status": "FULL",
+            "basis": "observed_source_day_bounds",
+            "source_start": "2010-12-01",
+            "source_end_exclusive": "2011-12-10"
+          },
+          "calendar_month_complete": true,
+          "source_row_count": 50226,
+          "matched_row_count": 50226,
+          "primary_class_counts": {
+            "INVALID": 0,
+            "POSITIVE": 49261,
+            "CANCELLATION": 805,
+            "EXCLUDED_OTHER": 160
+          },
+          "positive_row_count": 49261,
+          "cancel_row_count": 805,
+          "excluded_row_count": 160,
+          "positive_invoice_count": 1837,
+          "positive_amount_exact": "1058590.172",
+          "cancellation_amount_exact": "38902.550",
+          "net_amount_exact": "1019687.622",
+          "positive_amount_display": "1058590.17",
+          "cancellation_amount_display": "38902.55",
+          "net_amount_display": "1019687.62",
+          "warnings": [
+            "SOURCE_TIMEZONE_UNSPECIFIED",
+            "DUPLICATE_CANDIDATES_RETAINED",
+            "TRANSACTION_AMOUNTS_INCLUDE_CHARGES",
+            "MISSING_CUSTOMER_ID_RETAINED"
+          ],
+          "query_fingerprint": "b0cf4b1797a8e4651a7c440d80d42ded93fd95d22ffce799ad334dbad1737547"
+        },
+        "result_sha256": "3bec04eabbd451ead8a478457ff22856196f61f302a7ccb92fb5137fb8a2f6f9",
+        "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+        "transform_version": "uci352-ooxml-milligbp-v1",
+        "metric_version": "retail-v1.2",
+        "created_at": "2026-11-02T17:02:42.850942+00:00"
+      },
+      "passed": true
+    },
+    {
+      "name": "restart_no_write",
+      "actual": "cec8b2f14e300e7800d4d8f23df9985b58158358d2bfad51619c2f5833bc2c4d",
+      "expected": "cec8b2f14e300e7800d4d8f23df9985b58158358d2bfad51619c2f5833bc2c4d",
+      "passed": true
+    },
+    {
+      "name": "final_dataset_snapshots",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "final_import_batches",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "final_transaction_rows",
+      "actual": 541909,
+      "expected": 541909,
+      "passed": true
+    },
+    {
+      "name": "final_analysis_runs",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "final_reports",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "final_query_history",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "final_classification",
+      "actual": {
+        "CANCELLATION": 9288,
+        "EXCLUDED_OTHER": 2517,
+        "POSITIVE": 530104
+      },
+      "expected": {
+        "CANCELLATION": 9288,
+        "EXCLUDED_OTHER": 2517,
+        "POSITIVE": 530104
+      },
+      "passed": true
+    }
+  ],
+  "model_calls": 0,
+  "business_ui": "VERIFIED_SEPARATELY_BY_PLAYWRIGHT",
+  "reference": {
+    "path": "D:\\codex产出\\电商智能体_D9最终工程交付\\缓存\\ecommerce-agent-thesis\\docs\\evidence\\d1\\audit_normalization_and_reference.json",
+    "sha256": "e9ab15b8f40ddcbd7db5d015bb4d6870b70efe81957ac1d29d37316ed1901647"
+  },
+  "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+  "independent_sql": {
+    "classes": {
+      "CANCELLATION": 9288,
+      "EXCLUDED_OTHER": 2517,
+      "POSITIVE": 530104
+    },
+    "rows": 541909,
+    "monthly": {
+      "2011-09": {
+        "positive_milligbp": 1058590172,
+        "cancellation_milligbp": 38902550,
+        "net_milligbp": 1019687622,
+        "positive_invoice_count": 1837,
+        "positive_rows": 49261,
+        "cancellation_rows": 805
+      },
+      "2011-10": {
+        "positive_milligbp": 1154979300,
+        "cancellation_milligbp": 84274630,
+        "net_milligbp": 1070704670,
+        "positive_invoice_count": 2040,
+        "positive_rows": 59304,
+        "cancellation_rows": 1200
+      }
+    },
+    "milli_rows": [
+      [
+        157197,
+        "1E-3",
+        1
+      ],
+      [
+        279047,
+        "1E-3",
+        1
+      ],
+      [
+        359873,
+        "1E-3",
+        1
+      ],
+      [
+        361743,
+        "1E-3",
+        1
+      ]
+    ],
+    "examples": {
+      "negative_price": [
+        299985,
+        "EXCLUDED_OTHER",
+        "[\"MISSING_CUSTOMER_ID\", \"STOCK_CODE_OUTSIDE_5_DIGITS_OPTIONAL_SUFFIX\", \"NEGATIVE_PRICE\"]"
+      ],
+      "non_c_negative": [
+        2408,
+        "EXCLUDED_OTHER",
+        "[\"MISSING_CUSTOMER_ID\", \"MISSING_DESCRIPTION\", \"NEGATIVE_QUANTITY\", \"NON_C_NEGATIVE_QUANTITY\", \"ZERO_PRICE\"]"
+      ],
+      "zero_price": [
+        624,
+        "EXCLUDED_OTHER",
+        "[\"MISSING_CUSTOMER_ID\", \"MISSING_DESCRIPTION\", \"ZERO_PRICE\"]"
+      ],
+      "duplicate": [
+        519,
+        "POSITIVE",
+        "[\"DUPLICATE_CANDIDATE_AFTER_FIRST\"]"
+      ]
+    },
+    "tables": {
+      "dataset_snapshots": 1,
+      "import_batches": 1,
+      "transaction_rows": 541909,
+      "analysis_runs": 0,
+      "reports": 0,
+      "query_history": 0
+    },
+    "revision": "0004_agent_runtime",
+    "integrity": [
+      [
+        "ok"
+      ]
+    ]
+  },
+  "servers": [
+    {
+      "argv": [
+        "D:\\codex产出\\电商智能体_D9最终工程交付\\缓存\\ecommerce-agent-thesis\\.venv\\Scripts\\python.exe",
+        "-m",
+        "uvicorn",
+        "backend.app.main:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "55906"
+      ],
+      "pid": 47932,
+      "log": "server.log",
+      "stop_exit_code": 1,
+      "intentional_stop": true
+    },
+    {
+      "argv": [
+        "D:\\codex产出\\电商智能体_D9最终工程交付\\缓存\\ecommerce-agent-thesis\\.venv\\Scripts\\python.exe",
+        "-m",
+        "uvicorn",
+        "backend.app.main:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "55906"
+      ],
+      "pid": 2812,
+      "log": "server-restart.log",
+      "stop_exit_code": 1,
+      "intentional_stop": true
+    }
+  ],
+  "http_monthly": {
+    "2011-09": {
+      "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+      "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "metric_version": "retail-v1.2",
+      "transform_version": "uci352-ooxml-milligbp-v1",
+      "currency": "GBP",
+      "source_timezone": "UNSPECIFIED_LOCAL_TIME",
+      "month": "2011-09",
+      "period_start": "2011-09-01",
+      "period_end_exclusive": "2011-10-01",
+      "filters": {
+        "country": null,
+        "stock_code": null
+      },
+      "status": "PASS",
+      "coverage": {
+        "status": "FULL",
+        "basis": "observed_source_day_bounds",
+        "source_start": "2010-12-01",
+        "source_end_exclusive": "2011-12-10"
+      },
+      "calendar_month_complete": true,
+      "source_row_count": 50226,
+      "matched_row_count": 50226,
+      "primary_class_counts": {
+        "INVALID": 0,
+        "POSITIVE": 49261,
+        "CANCELLATION": 805,
+        "EXCLUDED_OTHER": 160
+      },
+      "positive_row_count": 49261,
+      "cancel_row_count": 805,
+      "excluded_row_count": 160,
+      "positive_invoice_count": 1837,
+      "positive_amount_exact": "1058590.172",
+      "cancellation_amount_exact": "38902.550",
+      "net_amount_exact": "1019687.622",
+      "positive_amount_display": "1058590.17",
+      "cancellation_amount_display": "38902.55",
+      "net_amount_display": "1019687.62",
+      "warnings": [
+        "SOURCE_TIMEZONE_UNSPECIFIED",
+        "DUPLICATE_CANDIDATES_RETAINED",
+        "TRANSACTION_AMOUNTS_INCLUDE_CHARGES",
+        "MISSING_CUSTOMER_ID_RETAINED"
+      ],
+      "query_fingerprint": "b0cf4b1797a8e4651a7c440d80d42ded93fd95d22ffce799ad334dbad1737547"
+    },
+    "2011-10": {
+      "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+      "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "metric_version": "retail-v1.2",
+      "transform_version": "uci352-ooxml-milligbp-v1",
+      "currency": "GBP",
+      "source_timezone": "UNSPECIFIED_LOCAL_TIME",
+      "month": "2011-10",
+      "period_start": "2011-10-01",
+      "period_end_exclusive": "2011-11-01",
+      "filters": {
+        "country": null,
+        "stock_code": null
+      },
+      "status": "PASS",
+      "coverage": {
+        "status": "FULL",
+        "basis": "observed_source_day_bounds",
+        "source_start": "2010-12-01",
+        "source_end_exclusive": "2011-12-10"
+      },
+      "calendar_month_complete": true,
+      "source_row_count": 60742,
+      "matched_row_count": 60742,
+      "primary_class_counts": {
+        "INVALID": 0,
+        "POSITIVE": 59304,
+        "CANCELLATION": 1200,
+        "EXCLUDED_OTHER": 238
+      },
+      "positive_row_count": 59304,
+      "cancel_row_count": 1200,
+      "excluded_row_count": 238,
+      "positive_invoice_count": 2040,
+      "positive_amount_exact": "1154979.300",
+      "cancellation_amount_exact": "84274.630",
+      "net_amount_exact": "1070704.670",
+      "positive_amount_display": "1154979.30",
+      "cancellation_amount_display": "84274.63",
+      "net_amount_display": "1070704.67",
+      "warnings": [
+        "SOURCE_TIMEZONE_UNSPECIFIED",
+        "DUPLICATE_CANDIDATES_RETAINED",
+        "TRANSACTION_AMOUNTS_INCLUDE_CHARGES",
+        "MISSING_CUSTOMER_ID_RETAINED"
+      ],
+      "query_fingerprint": "e6112c6875366bc34c3998c8f64c74df72fab7225102213a3e4722e8b430df14"
+    }
+  },
+  "saved_query": {
+    "query_id": "q_2c007e6c28e24d67a8da2162e1debbe9",
+    "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+    "kind": "monthly",
+    "parameters": {
+      "country": null,
+      "stock_code": null,
+      "month": "2011-09",
+      "kind": "monthly"
+    },
+    "result": {
+      "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+      "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "metric_version": "retail-v1.2",
+      "transform_version": "uci352-ooxml-milligbp-v1",
+      "currency": "GBP",
+      "source_timezone": "UNSPECIFIED_LOCAL_TIME",
+      "month": "2011-09",
+      "period_start": "2011-09-01",
+      "period_end_exclusive": "2011-10-01",
+      "filters": {
+        "country": null,
+        "stock_code": null
+      },
+      "status": "PASS",
+      "coverage": {
+        "status": "FULL",
+        "basis": "observed_source_day_bounds",
+        "source_start": "2010-12-01",
+        "source_end_exclusive": "2011-12-10"
+      },
+      "calendar_month_complete": true,
+      "source_row_count": 50226,
+      "matched_row_count": 50226,
+      "primary_class_counts": {
+        "INVALID": 0,
+        "POSITIVE": 49261,
+        "CANCELLATION": 805,
+        "EXCLUDED_OTHER": 160
+      },
+      "positive_row_count": 49261,
+      "cancel_row_count": 805,
+      "excluded_row_count": 160,
+      "positive_invoice_count": 1837,
+      "positive_amount_exact": "1058590.172",
+      "cancellation_amount_exact": "38902.550",
+      "net_amount_exact": "1019687.622",
+      "positive_amount_display": "1058590.17",
+      "cancellation_amount_display": "38902.55",
+      "net_amount_display": "1019687.62",
+      "warnings": [
+        "SOURCE_TIMEZONE_UNSPECIFIED",
+        "DUPLICATE_CANDIDATES_RETAINED",
+        "TRANSACTION_AMOUNTS_INCLUDE_CHARGES",
+        "MISSING_CUSTOMER_ID_RETAINED"
+      ],
+      "query_fingerprint": "b0cf4b1797a8e4651a7c440d80d42ded93fd95d22ffce799ad334dbad1737547"
+    },
+    "result_sha256": "3bec04eabbd451ead8a478457ff22856196f61f302a7ccb92fb5137fb8a2f6f9",
+    "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+    "transform_version": "uci352-ooxml-milligbp-v1",
+    "metric_version": "retail-v1.2",
+    "created_at": "2026-11-02T17:02:42.850942+00:00"
+  },
+  "status": "PASS",
+  "finished_at": "2026-11-02T17:02:47.621801+00:00",
+  "database_sha256": "cec8b2f14e300e7800d4d8f23df9985b58158358d2bfad51619c2f5833bc2c4d"
+}

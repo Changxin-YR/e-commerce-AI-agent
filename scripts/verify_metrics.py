@@ -23,6 +23,7 @@ import time
 import httpx
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
 
 
 def sha(path):
@@ -72,7 +73,7 @@ def main():
         print('FAIL: choose a new evidence directory',file=sys.stderr)
         return 2
     report={'scope':'D3_development_acceptance_not_academic_experiment','started_at':datetime.now(timezone.utc).isoformat(),
-            'checks':[],'model_calls':0,'business_ui':'NOT_IMPLEMENTED_D4'}
+            'checks':[],'model_calls':0,'business_ui':'VERIFIED_SEPARATELY_BY_PLAYWRIGHT'}
     process=log=client=None
 
     def check(name,actual,expected):
@@ -123,7 +124,8 @@ def main():
         for key in ('negative_price','non_c_negative','zero_price'):
             check('class_'+key,sql['examples'][key][1],'EXCLUDED_OTHER')
         check('duplicate_quality', 'DUPLICATE_CANDIDATE_AFTER_FIRST' in json.loads(sql['examples']['duplicate'][2]),True)
-        check('migration_revision',sql['revision'],'0003_query_history')
+        from backend.app.database import current_schema_revision
+        check('migration_revision',sql['revision'],current_schema_revision())
         check('sqlite_integrity',sql['integrity'],[('ok',)])
 
         with socket.socket() as sock:
@@ -190,7 +192,8 @@ def main():
               [report['http_monthly'][m]['net_amount_exact'] for m in ('2011-09','2011-10')])
         schema=client.get('/openapi.json').json()
         (args.output/'openapi.json').write_text(json.dumps(schema,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-        check('openapi_stage',schema['info']['version'],'0.3.0')
+        from backend.app.schemas import HealthResponse
+        check('openapi_stage',schema['info']['version'],HealthResponse.model_fields['version'].default)
         check('ordinary_gets_do_not_write',sha(args.database),before)
 
         def upload(kind):

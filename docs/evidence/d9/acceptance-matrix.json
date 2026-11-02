@@ -1,0 +1,155 @@
+{
+  "features": [
+    {
+      "id": "F01",
+      "capability": "官方数据取得与导入",
+      "status": "READY",
+      "evidence": "import 41项/原SHA复核；本轮使用先前官方取得原件，来源下载证据仍保留于D1"
+    },
+    {
+      "id": "F02",
+      "capability": "原值/分类/质量/幂等",
+      "status": "READY",
+      "evidence": "新库541909行，四类及四个千分价/重复候选独立对账"
+    },
+    {
+      "id": "F03",
+      "capability": "月度精确金额/空集/覆盖",
+      "status": "READY",
+      "evidence": "metrics 85项、浏览器月度21项独立SQL"
+    },
+    {
+      "id": "F04",
+      "capability": "排名/序列/比较/拆解",
+      "status": "READY",
+      "evidence": "八工具57HTTP/265断言"
+    },
+    {
+      "id": "F05",
+      "capability": "八工具schema与边界",
+      "status": "READY",
+      "evidence": "tools-verification与pytest非法参数/上限/空集用例"
+    },
+    {
+      "id": "F06",
+      "capability": "真实模型B1多轮调用",
+      "status": "BLOCKED",
+      "evidence": "BLOCKED_AUTHORIZATION；真实调用0，scripted多轮工程测试通过"
+    },
+    {
+      "id": "F07",
+      "capability": "真实模型B2核验与恢复",
+      "status": "BLOCKED",
+      "evidence": "机械核验/错误注入/有限恢复pytest通过；实际模型未冒烟"
+    },
+    {
+      "id": "F08",
+      "capability": "真实模型追问重启恢复",
+      "status": "BLOCKED",
+      "evidence": "同run/thread、重复补答和中断预算的脚本15任务/114断言通过；实际模型链未验证"
+    },
+    {
+      "id": "F09",
+      "capability": "真实模型不支持问题回答",
+      "status": "BLOCKED",
+      "evidence": "工具与脚本provider拒绝利润等字段通过；实际模型措辞/工具选择未验证"
+    },
+    {
+      "id": "F10",
+      "capability": "五视图/交互/错误",
+      "status": "READY",
+      "evidence": "完整9项Edge，桌面与移动截图；模型阻断和fixture明确展示"
+    },
+    {
+      "id": "F11",
+      "capability": "报告保存/引用/导出",
+      "status": "READY",
+      "evidence": "浏览器报表158/默认端口报表92独立SQL，JSON/Markdown下载"
+    },
+    {
+      "id": "F12",
+      "capability": "历史只读无重复调用",
+      "status": "READY",
+      "evidence": "重启前后报告/任务/导出相同、模型尝试未增加"
+    },
+    {
+      "id": "F13",
+      "capability": "上传/SQL/CSRF/XSS/密钥",
+      "status": "READY",
+      "evidence": "D8安全矩阵、D9全量25项新增安全回归/跨源表单；CSV导出N/A"
+    },
+    {
+      "id": "F14",
+      "capability": "Windows独立安装/迁移/启动停止",
+      "status": "READY",
+      "evidence": "新.venv/npm ci、空库迁移、完整导入、默认8000/5173的23检查；停止使用自有进程树终止"
+    },
+    {
+      "id": "F15",
+      "capability": "自动化回归",
+      "status": "READY",
+      "evidence": "干净环境统一test --scope all退出0：263 pytest/28 Vitest/9 Edge/构建"
+    },
+    {
+      "id": "F16",
+      "capability": "工程可复现/无伪造研究",
+      "status": "READY",
+      "evidence": "固定依赖完全匹配、可执行源码逐字节一致、55契约、源SHA和本地提交；论文/正式实验未开始"
+    }
+  ],
+  "core_cases": [
+    {
+      "id": "E01",
+      "status": "PASS",
+      "evidence": "新库import分类/源SHA/原值"
+    },
+    {
+      "id": "E02",
+      "status": "PASS",
+      "evidence": "ZIP/XLSX重复上传+CLI复用，未翻倍"
+    },
+    {
+      "id": "E03",
+      "status": "PASS",
+      "evidence": "metrics9/10月精确值、前端显示与独立SQL"
+    },
+    {
+      "id": "E04",
+      "status": "PASS",
+      "evidence": "四条0.001原始1E-3及整数千分价1"
+    },
+    {
+      "id": "E05",
+      "status": "PASS",
+      "evidence": "2011-12 PARTIAL_PERIOD、范围外NO_DATA"
+    },
+    {
+      "id": "E06",
+      "status": "PASS",
+      "evidence": "负价/非C负数量/零价/重复候选独立抽查"
+    },
+    {
+      "id": "E07",
+      "status": "PASS",
+      "evidence": "参数化SQL、白名单/非法参数/Host-Origin"
+    },
+    {
+      "id": "E08",
+      "status": "PASS",
+      "evidence": "真实浏览器保存查询/报告刷新、GET无模型副作用"
+    },
+    {
+      "id": "E09",
+      "status": "PASS",
+      "evidence": "损坏ZIP/超限/攻击输入拒绝且旧库保留"
+    },
+    {
+      "id": "E10",
+      "status": "PASS",
+      "evidence": "干净环境全量自动化、命令退出码/哈希/截图"
+    }
+  ],
+  "final_status": "READY_FOR_USER_ACCEPTANCE",
+  "live_model": "BLOCKED_AUTHORIZATION",
+  "user_acceptance": "NOT_PERFORMED"
+}

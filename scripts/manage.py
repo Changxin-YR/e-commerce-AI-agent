@@ -1,4 +1,4 @@
-"""Windows-first D0 commands. All subprocess failures keep their real exit code."""
+"""Windows local application commands. All subprocess failures keep their real exit code."""
 from __future__ import annotations
 
 import argparse
@@ -116,11 +116,11 @@ def main() -> int:
     test = sub.add_parser("test", help="Run tests and propagate the first failing exit code")
     test.add_argument("--scope", choices=("smoke", "backend", "frontend", "e2e", "all"), default="smoke")
     for name in FUTURE_COMMANDS:
-        future = sub.add_parser(name, help="NOT_IMPLEMENTED: reserved for a later stage")
+        future = sub.add_parser(name, help="Reserved CLI alias; see README for the current API/script entry point")
         future.add_argument("arguments", nargs=argparse.REMAINDER)
     args = parser.parse_args()
     if args.command in FUTURE_COMMANDS:
-        print(f"NOT_IMPLEMENTED: {args.command} is outside D0", file=sys.stderr)
+        print(f"NOT_IMPLEMENTED: {args.command} is a reserved CLI alias; see documented API/scripts", file=sys.stderr)
         return 2
     try:
         # Only local process configuration; never print .env or provider values.
