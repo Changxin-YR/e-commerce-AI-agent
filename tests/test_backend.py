@@ -44,8 +44,8 @@ def test_migration_upgrade_idempotence_and_round_trip(settings: Settings):
         with create_session_factory(engine)() as session:
             assert session.scalars(select(AppMetadata)).one().value == "ecommerce-agent-thesis"
         with sqlite3.connect(settings.database_path) as connection:
-            assert connection.execute("SELECT version_num FROM alembic_version").fetchall() == [("0001_bootstrap",)]
-            assert set(row[0] for row in connection.execute("SELECT name FROM sqlite_master WHERE type='table'")) == {"alembic_version", "app_metadata"}
+            assert connection.execute("SELECT version_num FROM alembic_version").fetchall() == [("0002_import",)]
+            assert set(row[0] for row in connection.execute("SELECT name FROM sqlite_master WHERE type='table'")) == {"alembic_version", "app_metadata", "dataset_snapshots", "import_batches", "transaction_rows", "quality_issues", "analysis_runs", "reports"}
         command.downgrade(config, "base")
         with sqlite3.connect(settings.database_path) as connection:
             assert connection.execute("SELECT name FROM sqlite_master WHERE name='app_metadata'").fetchall() == []
@@ -64,8 +64,8 @@ def test_health_checks_real_database_and_has_no_write_side_effect(migrated: Sett
             assert response.status_code == 200
             payload = response.json()
             assert payload == {
-                "status": "ok", "service": "ecommerce-agent", "version": "0.1.0", "stage": "D0",
-                "database": {"status": "ok", "engine": "sqlite", "sqlite_version": sqlite3.sqlite_version, "schema_revision": "0001_bootstrap"},
+                "status": "ok", "service": "ecommerce-agent", "version": "0.2.0", "stage": "D2",
+                "database": {"status": "ok", "engine": "sqlite", "sqlite_version": sqlite3.sqlite_version, "schema_revision": "0002_import"},
             }
             UUID(response.headers["X-Request-ID"])
             assert response.headers["cache-control"] == "no-store"

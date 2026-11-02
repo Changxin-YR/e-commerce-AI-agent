@@ -27,3 +27,7 @@
 POSITIVE 为非 C/c 发票、Quantity>0、规范化价格>0；CANCELLATION 为 C/c 发票、Quantity<0、规范化价格>0。C/c 且数量>=0 必须归 EXCLUDED_OTHER 并保留原因；当前实际文件该组合为 0，边界由明确标识的测试 fixture 验证。
 
 疑似重复：按解析后的八字段比较，每组首次之后 5268 行，重复组共覆盖 10147 行。全部保留；这与 D2 的相同文件重复导入幂等是不同概念。
+
+## D2 存储映射
+
+TransactionRow.source_row_num为Excel物理行号；raw_fields依8字段顺序保存type/raw/value，公式另存formula且标INVALID。unit_price_raw直接保存F列OOXML <v>，unit_price_milli_gbp与line_amount_milli_gbp为有界整数。invoice_date_source保留源本地时刻，序列值在raw_fields；CustomerID为可空字符串。质量标签与primary_class独立，重复不删除。数据库表与状态说明见docs/D2_IMPORT.md。

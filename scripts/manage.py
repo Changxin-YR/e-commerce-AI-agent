@@ -17,7 +17,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 VENV_PYTHON = ROOT / ".venv" / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
 PACKAGES = ("fastapi", "pydantic", "pydantic-settings", "SQLAlchemy", "alembic", "uvicorn", "httpx", "pytest")
-FUTURE_COMMANDS = ("download-data", "import-data", "verify-data", "verify-metrics", "tools", "agent", "evaluate")
+FUTURE_COMMANDS = ("download-data", "verify-data", "verify-metrics", "tools", "agent", "evaluate")
 
 
 def run(command: list[str], cwd: Path = ROOT) -> int:
@@ -96,6 +96,10 @@ def main() -> int:
     sub.add_parser("frontend", help="Start local Vue/Vite; use Ctrl+C to stop")
     sub.add_parser("migrate", help="Explicitly upgrade the local SQLite database to head")
     sub.add_parser("build", help="Type-check and build the frontend")
+    importer = sub.add_parser("import-data", help="Import an audited source; migrate the database first")
+    importer.add_argument("file", type=Path)
+    importer.add_argument("--database", type=Path)
+    importer.add_argument("--output", type=Path)
     test = sub.add_parser("test", help="Run tests and propagate the first failing exit code")
     test.add_argument("--scope", choices=("smoke", "backend", "frontend", "e2e", "all"), default="smoke")
     for name in FUTURE_COMMANDS:
@@ -115,6 +119,12 @@ def main() -> int:
         cache = Path(os.environ["D0_CACHE_DIR"]).resolve() if os.environ.get("D0_CACHE_DIR") else None
         if args.command == "doctor":
             return doctor()
+        if args.command == "import-data":
+            command = [sys.executable, str(ROOT / "scripts/import_data.py"), str(args.file)]
+            for name in ("database", "output"):
+                if getattr(args, name):
+                    command.extend(["--" + name, str(getattr(args, name))])
+            return run(command)
         if args.command == "backend":
             from backend.app.config import Settings
             settings = Settings()

@@ -6,6 +6,7 @@ anyio==4.16.0
 certifi==2026.10.23
 click==8.5.0
 colorama==0.4.6
+defusedxml==0.7.1
 et_xmlfile==2.0.0
 fastapi==0.162.0
 greenlet==3.5.6
@@ -31,6 +32,7 @@ Pygments==2.21.0
 pytest==9.2.0
 python-dateutil==4.0.0
 python-dotenv==1.2.4
+python-multipart==0.0.33
 pytz==2026.6
 SQLAlchemy==2.0.55
 starlette==1.10.0

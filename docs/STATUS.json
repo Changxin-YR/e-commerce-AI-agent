@@ -1,23 +1,23 @@
 {
   "project_id": "ecommerce-agent-thesis",
-  "updated_at": "2026-11-02T18:04:32.353141+08:00",
+  "updated_at": "2026-11-02T21:01:14.805178+08:00",
   "implementation_ready": {
     "status": "PARTIAL",
     "blocker_code": null,
-    "scope": "D0 engineering and D1 acquisition/audit passed; D2-D9 NOT_STARTED",
+    "scope": "D0-D2 engineering verified; D3-D9 NOT_STARTED",
     "evidence": [
       "docs/EVIDENCE_INDEX.md",
-      "docs/D1_DELIVERY.md"
+      "docs/D2_DELIVERY.md"
     ]
   },
   "real_data_ready": {
     "status": "PASS",
     "blocker_code": null,
-    "scope": "Raw source acquired, identity verified and independently audited; database import NOT_STARTED",
+    "scope": "Official source audited and 541909 rows imported; ZIP/XLSX idempotence, exact money and recovery verified",
     "evidence": [
       "data/manifest.json",
-      "docs/data-quality.md",
-      "docs/evidence/d1/verification.json"
+      "docs/evidence/d2/real-import.json",
+      "docs/evidence/d2/real-final.json"
     ]
   },
   "live_model_verified": {
@@ -46,25 +46,26 @@
     "evidence": []
   },
   "handoff_version": "1.5",
-  "handoff_status": "D1_AUDITED_READY_FOR_USER_ACCEPTANCE",
-  "implementation_status": "D1_READY_FOR_USER_ACCEPTANCE",
+  "handoff_status": "D2_IMPORTED_READY_FOR_USER_ACCEPTANCE",
+  "implementation_status": "D2_READY_FOR_USER_ACCEPTANCE",
   "execution_mode": "FEATURE_FIRST",
-  "current_dev_step": "D1",
+  "current_dev_step": "D2",
   "paper_work_mode": "DEFERRED_BY_USER",
   "formal_experiment_mode": "DEFERRED_UNTIL_FEATURE_ACCEPTANCE_AND_USER_APPROVAL",
-  "last_verified_dev_step": "D1",
-  "next_dev_step": "D2",
+  "last_verified_dev_step": "D2",
+  "next_dev_step": "D3",
   "next_step_requires_user_approval": true,
-  "user_acceptance": "PENDING_D1",
+  "user_acceptance": "PENDING_D2",
   "git": {
     "initialized": true,
     "baseline_sha": "0740bf439c37dc344885d2f7c26568c157dd9571",
     "baseline_scope": "Verified D0 plus closeout",
-    "delivery_commit_receipt": "D:/codex产出/电商智能体_D1真实数据审计/交付/git-receipt.json",
+    "delivery_commit_receipt": "D:/codex产出/电商智能体_D2数据库导入/交付/git-receipt.json",
     "pushed": false,
-    "note": "Final D1 commit is recorded outside the commit to avoid a self-referencing SHA."
+    "note": "Final D2 commit recorded outside the commit to avoid a self-referencing SHA.",
+    "d1_sha": "bf92c1f5672f0ecbc05169215c5274d3ebdd7d39"
   },
-  "artifact_root": "D:/codex产出/电商智能体_D1真实数据审计",
+  "artifact_root": "D:/codex产出/电商智能体_D2数据库导入",
   "d0": {
     "status": "READY_FOR_USER_ACCEPTANCE",
     "engineering_validation": "PASS",
@@ -108,11 +109,17 @@
     }
   },
   "data": {
-    "status": "ACQUIRED_AND_AUDITED_NOT_IMPORTED",
+    "status": "IMPORTED_READY",
     "business_data_sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
     "engineering_database_contains": [
       "alembic_version",
-      "app_metadata"
+      "app_metadata",
+      "dataset_snapshots",
+      "import_batches",
+      "transaction_rows",
+      "quality_issues",
+      "analysis_runs",
+      "reports"
     ],
     "container_sha256": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
     "raw_row_count": 541909,
@@ -122,7 +129,11 @@
       "CANCELLATION": 9288,
       "EXCLUDED_OTHER": 2517
     },
-    "manifest": "data/manifest.json"
+    "manifest": "data/manifest.json",
+    "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+    "batch_id": "ib_9561855056bc9d83ca5a82c198b5130b",
+    "schema_revision": "0002_import",
+    "transform_version": "uci352-ooxml-milligbp-v1"
   },
   "model": {
     "status": "NOT_RUN",
@@ -131,8 +142,8 @@
   },
   "stage_statuses": {
     "D0": "VERIFIED_USER_AUTHORIZED_D1",
-    "D1": "READY_FOR_USER_ACCEPTANCE",
-    "D2": "NOT_STARTED",
+    "D1": "VERIFIED_USER_AUTHORIZED_D2",
+    "D2": "READY_FOR_USER_ACCEPTANCE",
     "D3": "NOT_STARTED",
     "D4": "NOT_STARTED",
     "D5": "NOT_STARTED",
@@ -151,12 +162,41 @@
     "pytest_passed": 70,
     "pytest_d1_cases": 39,
     "pytest_warnings": 0,
-    "data_import": "NOT_STARTED",
+    "data_import": "COMPLETE_IN_D2",
     "evidence": [
       "data/manifest.json",
       "docs/data-quality.md",
       "docs/D1_DELIVERY.md",
       "docs/evidence/d1/verification.json"
+    ]
+  },
+  "d2": {
+    "status": "READY_FOR_USER_ACCEPTANCE",
+    "engineering_validation": "PASS",
+    "user_authorized_continuation": true,
+    "pytest_passed": 116,
+    "pytest_d2_cases": 46,
+    "pytest_warnings": 0,
+    "vitest_passed": 8,
+    "edge_passed": 2,
+    "typescript_build": "PASS",
+    "independent_sql_checks": 41,
+    "real_http_background_import": "PASS",
+    "real_import_seconds": 115.969,
+    "rows": 541909,
+    "zip_xlsx_cli_idempotence": "PASS",
+    "restart_persistence": "PASS",
+    "partial_quality_guard": "PASS",
+    "failure_retry_and_interruption_recovery": "PASS_TEST_FIXTURES",
+    "database_path": "D:/codex产出/电商智能体_D2数据库导入/缓存/runtime/app.sqlite3",
+    "database_sha256": "7c1d3f06e8af2945a1d1f3a681bf2dd171bea8baa0af717eb898ab78d644c334",
+    "database_bytes": 676319232,
+    "runtime_services": "STOPPED_AFTER_VALIDATION",
+    "evidence": [
+      "docs/D2_DELIVERY.md",
+      "docs/D2_IMPORT.md",
+      "docs/evidence/d2/real-import.json",
+      "docs/evidence/d2/pytest-final.xml"
     ]
   }
 }

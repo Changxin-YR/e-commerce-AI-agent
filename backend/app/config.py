@@ -23,6 +23,9 @@ class Settings(BaseSettings):
     frontend_port: int = Field(default=5173, ge=1, le=65535)
     app_env: Literal["development", "test"] = "development"
     database_url: str = "sqlite:///./data/app.sqlite3"
+    import_cache_dir: Path = Path("D:/codex产出/电商智能体_D2数据库导入/缓存/imports")
+    raw_data_dir: Path = PROJECT_ROOT / "data/raw"
+    import_timeout_seconds: int = Field(default=300, ge=1, le=3600)
 
     @field_validator("database_url")
     @classmethod
@@ -37,7 +40,7 @@ class Settings(BaseSettings):
             or url.password
             or url.query
         ):
-            raise ValueError("D0 requires a file-based SQLite URL without query options")
+            raise ValueError("A file-based SQLite URL without query options is required")
         return value
 
     @property

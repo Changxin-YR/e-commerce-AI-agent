@@ -1,12 +1,12 @@
-# 当前进度：D1 已取得并审计真实 UCI 数据
+# 当前进度：D2 已完成真实导入、幂等与质量 API
 
-最新状态见 `docs/STATUS.json`，本轮交付见 `docs/D1_DELIVERY.md`。原始文件仅在本地 `data/raw/`，来源与哈希在 `data/manifest.json`。D1 完成后等待用户验收，D2 数据库导入尚未开始；复跑方法见 `docs/D2_DATA_INPUT.md`。下文 D0 启动方法继续适用。
+最新状态见 `docs/STATUS.json`，本轮交付见 `docs/D2_DELIVERY.md`，导入/恢复操作见 `docs/D2_IMPORT.md`。官方541909行已入库，116 pytest / 8 Vitest / 2 Edge 与41项对账通过；完成后等待验收，不进入D3。原始文件只在本地 `data/raw/`。
 
-# 电商经营数据分析智能体 · D0 启动说明
+# 电商经营数据分析智能体 · 启动说明
 
-已实现可运行的 FastAPI + SQLite/Alembic 后端、Vue 3 + TypeScript + Vite 健康连接页及管理命令。D0 工程基础与 D1 原始数据审计已完成；数据库导入、统计、Agent 和报告属于 D2—D9，尚未实现。论文与正式学术实验继续延期。
+已实现可运行的 FastAPI + SQLite/Alembic 后端、Vue 3 + TypeScript + Vite 健康连接页及管理命令。D0工程基础、D1审计与D2导入已完成；确定性统计API、Agent和完整报告属于D3—D9，尚未实现。论文与正式学术实验继续延期。
 
-本机项目根目录是 `C:\Users\27363\Desktop\毕业论文\电商智能体的实现\ecommerce-agent-thesis`，请在该目录执行以下命令。源文件保留在工作区，额外交付位于 `D:\codex产出\电商智能体_D0工程初始化\交付`，日志、测试数据库和构建位于同任务的 `缓存` 目录。
+本机项目根目录是 `C:\Users\27363\Desktop\毕业论文\电商智能体的实现\ecommerce-agent-thesis`，请在该目录执行以下命令。源文件保留在工作区，额外交付位于 `D:\codex产出\电商智能体_D2数据库导入\交付`，日志、测试数据库和构建位于同任务的 `缓存` 目录。
 
 ## 本机环境与安装
 
@@ -16,7 +16,7 @@
 
 ```powershell
 Set-Location 'C:\Users\27363\Desktop\毕业论文\电商智能体的实现\ecommerce-agent-thesis'
-$env:D0_CACHE_DIR = 'D:\codex产出\电商智能体_D0工程初始化\缓存'
+$env:D0_CACHE_DIR = 'D:\codex产出\电商智能体_D2数据库导入\缓存'
 New-Item -ItemType Directory -Force -Path $env:D0_CACHE_DIR | Out-Null
 $env:PIP_CACHE_DIR = Join-Path $env:D0_CACHE_DIR 'pip'
 $env:npm_config_cache = Join-Path $env:D0_CACHE_DIR 'npm'
@@ -33,7 +33,7 @@ python scripts/manage.py migrate
 
 本次已创建 `.venv`、安装依赖并生成 `.env`，不必重复初始化。管理脚本自动使用项目 `.venv`，无需激活脚本或修改 PowerShell 执行策略。Python 全量实际依赖固定于 `requirements.lock`；npm 完整依赖及 integrity 固定于 `frontend/package-lock.json`，直接依赖也固定精确版本。`requirements.in` 仅用于解释依赖来源，重建请使用锁文件，不自行升级。
 
-`.env` 不入 Git；模板关闭付费模型且总预算为 0。D0 没有模型 SDK 或调用入口。模板的数据库路径指向 D 盘任务缓存，只存工程元数据；未来业务数据位置在对应阶段确定。可修改 `APP_PORT`/`FRONTEND_PORT`，后端与开发代理读取同一配置；端口冲突时报错退出，不悄悄换端口。
+`.env` 不入 Git；模板关闭付费模型且总预算为 0。当前没有模型SDK或调用入口。数据库路径指向D2任务缓存/runtime，已真实导入；交付目录另有备份。可修改 `APP_PORT`/`FRONTEND_PORT`，后端与开发代理读取同一配置；端口冲突时报错退出，不悄悄换端口。
 
 ## 启动、检查与停止
 
@@ -61,7 +61,7 @@ Invoke-RestMethod 'http://127.0.0.1:8000/healthz' | ConvertTo-Json -Depth 4
 `GET /healthz` 检查真实连接、`alembic_version`、`app_metadata` 与项目标记。成功为 HTTP 200：
 
 ```json
-{"status":"ok","service":"ecommerce-agent","version":"0.1.0","stage":"D0","database":{"status":"ok","engine":"sqlite","sqlite_version":"3.53.1","schema_revision":"0001_bootstrap"}}
+{"status":"ok","service":"ecommerce-agent","version":"0.2.0","stage":"D2","database":{"status":"ok","engine":"sqlite","sqlite_version":"3.53.1","schema_revision":"0002_import"}}
 ```
 
 SQLite 版本以实际运行环境为准。缺库/未迁移/损坏返回 503；健康请求只读，不创建数据库、不自动执行迁移。异常统一为 `{"error":{"code":"...","message":"...","details":{}},"request_id":"..."}`，不返回内部路径或堆栈。不存在的业务路由返回 404，不返回假业务结果。
@@ -74,7 +74,7 @@ python scripts/manage.py test --scope smoke
 python scripts/manage.py test --scope e2e
 ```
 
-`smoke` 顺序执行 pytest、Vitest、TypeScript 检查及 Vite 构建，首个失败立即返回真实退出码。已通过 31 项 Python 测试、8 项前端测试及构建。`e2e` 通过真实 Edge、隔离数据库与随机本机端口自动启动管理命令，2 项测试覆盖真实健康响应/刷新，以及实际停后端→页面报错→重启恢复，并保存桌面、移动宽度与失败恢复截图。所有测试均为工程验证，无经营数据、无学术实验。
+`smoke` 顺序执行 pytest、Vitest、TypeScript 检查及 Vite 构建，首个失败立即返回真实退出码。已通过116项Python测试、8项前端测试及构建。`e2e` 通过真实 Edge、隔离数据库与随机本机端口自动启动管理命令，2 项测试覆盖真实健康响应/刷新，以及实际停后端→页面报错→重启恢复，并保存桌面、移动宽度与失败恢复截图。浏览器回归仅验证健康页；另有真实经营数据HTTP/SQL导入验证，全部属于工程验证，无学术实验。
 
 其他已实现命令：
 
@@ -88,14 +88,14 @@ python scripts/manage.py test --scope e2e
 | `python scripts/manage.py test --scope all` | smoke 后再执行 e2e |
 | `python scripts/manage.py --help` | 所有入口说明 |
 
-`download-data/import-data/verify-data/verify-metrics/tools/agent/evaluate` 为后续预留，返回 `NOT_IMPLEMENTED` 和退出码 2。已有原始数据下载脚本保持原样，本轮未执行。
+`python scripts/manage.py import-data <官方ZIP/XLSX>` 已实现。`download-data/verify-data/verify-metrics/tools/agent/evaluate` 管理入口仍预留，返回NOT_IMPLEMENTED和退出码2；真实数据下载/审计使用已实现的专用scripts脚本。
 
 `D0_CACHE_DIR` 从根 `.env` 或环境读取。构建输出为其下 `frontend-dist`；另有 `npm --prefix frontend run preview` 预览入口，仍需启动后端，该可选入口未纳入 D0 验证。仅构建了前端静态文件，不代表实现生产部署。
 
 保存单次命令证据可使用：
 
 ```powershell
-python scripts/record_command.py --output 'D:\codex产出\电商智能体_D0工程初始化\缓存\commands' --label smoke -- python scripts/manage.py test --scope smoke
+python scripts/record_command.py --output 'D:\codex产出\电商智能体_D2数据库导入\缓存\commands' --label smoke -- python scripts/manage.py test --scope smoke
 ```
 
 记录包含完整 argv、工作目录、UTC 起止时间、耗时、退出码和原始 stdout/stderr；不要在参数中放密钥。浏览器证据保存到 `缓存\playwright\<每次独立目录>`，包含真实进程启动/停止记录、截图与 trace。

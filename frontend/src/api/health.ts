@@ -2,7 +2,7 @@ export interface HealthResponse {
   status: 'ok'
   service: 'ecommerce-agent'
   version: string
-  stage: 'D0'
+  stage: 'D2'
   database: {
     status: 'ok'
     engine: 'sqlite'
@@ -30,7 +30,7 @@ function isHealth(value: unknown): value is HealthResponse {
   return record(value)
     && value.status === 'ok'
     && value.service === 'ecommerce-agent'
-    && value.stage === 'D0'
+    && value.stage === 'D2'
     && nonempty(value.version)
     && record(value.database)
     && value.database.status === 'ok'

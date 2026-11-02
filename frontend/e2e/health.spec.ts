@@ -180,8 +180,8 @@ test.describe.serial('D0 real local service', () => {
     ])
     expect(firstResponse.status()).toBe(200)
     expect(await firstResponse.json()).toMatchObject({
-      status: 'ok', service: 'ecommerce-agent', stage: 'D0',
-      database: { status: 'ok', engine: 'sqlite', schema_revision: '0001_bootstrap' },
+      status: 'ok', service: 'ecommerce-agent', stage: 'D2',
+      database: { status: 'ok', engine: 'sqlite', schema_revision: '0002_import' },
     })
     await expect(page.getByTestId('health-status')).toHaveText('本地服务已连接')
     await page.screenshot({ path: path.join(evidenceDir, 'desktop-connected.png'), fullPage: true })
@@ -205,13 +205,13 @@ test.describe.serial('D0 real local service', () => {
     await page.getByRole('button', { name: '重新检查' }).click()
     await expect(page.getByTestId('health-status')).toHaveText('本地服务暂不可用')
     await expect(page.getByRole('alert')).toBeVisible()
-    await expect(page.getByText('0001_bootstrap', { exact: true })).toHaveCount(0)
+    await expect(page.getByText('0002_import', { exact: true })).toHaveCount(0)
     await page.screenshot({ path: path.join(evidenceDir, 'backend-stopped.png'), fullPage: true })
     await startBackend()
     await page.getByRole('button', { name: '重新检查' }).click()
     await expect(page.getByTestId('health-status')).toHaveText('本地服务已连接')
     await expect(page.getByRole('alert')).toHaveCount(0)
-    await expect(page.getByText('0001_bootstrap', { exact: true })).toBeVisible()
+    await expect(page.getByText('0002_import', { exact: true })).toBeVisible()
     await page.screenshot({ path: path.join(evidenceDir, 'backend-recovered.png'), fullPage: true })
   })
 })

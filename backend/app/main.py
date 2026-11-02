@@ -1,4 +1,4 @@
-"""D0 health API. Startup and GET requests never initialize the database."""
+"""Local health/import APIs. GET never writes; startup recovers interrupted imports."""
 
 from contextlib import asynccontextmanager
 from http import HTTPStatus
@@ -17,16 +17,13 @@ from starlette.exceptions import HTTPException
 
 from backend.app.config import PROJECT_ROOT, Settings
 from backend.app.database import create_database_engine
+from backend.app.errors import AppError
+from backend.app.imports.routes import router as import_router
+from backend.app.imports.service import ImportService
+from backend.app.models import Base
 from backend.app.schemas import DatabaseHealth, ErrorDetail, ErrorResponse, HealthResponse
 
 logger = logging.getLogger(__name__)
-
-
-class AppError(Exception):
-    def __init__(self, code: str, message: str, status_code: int = 503):
-        self.code = code
-        self.message = message
-        self.status_code = status_code
 
 
 def error_response(request: Request, code: str, message: str, status_code: int) -> JSONResponse:
@@ -41,25 +38,32 @@ def error_response(request: Request, code: str, message: str, status_code: int) 
     )
 
 
-def create_app(settings: Settings | None = None) -> FastAPI:
+def create_app(settings: Settings | None = None, *, test_hashes: frozenset[str] | None = None) -> FastAPI:
     settings = settings or Settings()
     engine = create_database_engine(settings, readonly=True)
     migration_config = Config(str(PROJECT_ROOT / "backend" / "alembic.ini"))
     expected_revision = ScriptDirectory.from_config(migration_config).get_current_head()
+    import_service = ImportService(settings, test_hashes=test_hashes)
 
     @asynccontextmanager
     async def lifespan(_app: FastAPI):
-        yield
-        engine.dispose()
+        import_service.start()
+        try:
+            yield
+        finally:
+            import_service.close()
+            engine.dispose()
 
     application = FastAPI(
-        title="Ecommerce Agent — D0",
-        version="0.1.0",
-        description="Local infrastructure health only. Business APIs are not implemented in D0.",
+        title="Ecommerce Agent — D2",
+        version="0.2.0",
+        description="Local source ingestion. raw_sha256/data_hash always identify the XLSX workbook; container hashes are separate.",
         lifespan=lifespan,
     )
     application.state.settings = settings
     application.state.engine = engine
+    application.state.import_service = import_service
+    application.include_router(import_router)
 
     @application.middleware("http")
     async def request_boundary(request: Request, call_next):
@@ -113,7 +117,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             with engine.connect() as connection:
                 sqlite_version = connection.execute(text("SELECT sqlite_version()" )).scalar_one()
                 tables = set(connection.execute(text("SELECT name FROM sqlite_master WHERE type='table'")).scalars())
-                if not {"alembic_version", "app_metadata"}.issubset(tables):
+                if not {"alembic_version", *Base.metadata.tables}.issubset(tables):
                     raise AppError("DATABASE_MIGRATION_REQUIRED", "Database migration is required.")
                 revisions = connection.execute(text("SELECT version_num FROM alembic_version")).scalars().all()
                 marker = connection.execute(

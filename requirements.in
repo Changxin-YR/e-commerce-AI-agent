@@ -12,3 +12,6 @@ pytest>=8,<10
 # D1 read-only audit dependencies; same parser versions as the independent reference.
 pandas==2.2.3
 openpyxl==3.1.5
+# D2 bounded multipart and defensive OOXML parsing.
+python-multipart==0.0.33
+defusedxml==0.7.1

@@ -41,3 +41,5 @@ frontend/.vite/
 *.xlsx
 *.xls
 *.zip
+
+*.import.lock

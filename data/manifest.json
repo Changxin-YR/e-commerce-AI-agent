@@ -4,7 +4,7 @@
   "uci_id": 352,
   "verified_at": "2026-11-02T18:04:32.353141+08:00",
   "status": "ACQUIRED_AND_AUDITED",
-  "import_status": "NOT_STARTED",
+  "import_status": "READY",
   "acquired_at_utc": "2026-11-02T09:18:48.890067+00:00",
   "source": {
     "dataset_url": "https://archive.ics.uci.edu/dataset/352/online%2Bretail",
@@ -138,5 +138,19 @@
     "docs/D2_DATA_INPUT.md"
   ],
   "git_baseline_sha": "0740bf439c37dc344885d2f7c26568c157dd9571",
-  "raw_files_git_policy": "Ignored; raw ZIP/XLSX retained only in local data/raw; excluded from source delivery archive."
+  "raw_files_git_policy": "Ignored; raw ZIP/XLSX retained only in local data/raw; excluded from source delivery archive.",
+  "import": {
+    "stage": "D2",
+    "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+    "batch_id": "ib_9561855056bc9d83ca5a82c198b5130b",
+    "transform_version": "uci352-ooxml-milligbp-v1",
+    "row_count": 541909,
+    "schema_revision": "0002_import",
+    "status": "READY",
+    "verified_at": "2026-11-02T21:01:14.805178+08:00",
+    "evidence": {
+      "docs/evidence/d2/real-import.json": "ac941f7638f667dfcbb0578c7d2e7463f3ffca3127687a9175e8fa289fd9faf7",
+      "docs/evidence/d2/real-final.json": "78456b9a31b199a3472ed50aabfec9998778552d50e3582f41c029dc7449c49a"
+    }
+  }
 }

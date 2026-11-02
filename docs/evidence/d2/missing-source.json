@@ -1,0 +1,7 @@
+{
+  "status": "FAILED",
+  "error": {
+    "code": "SOURCE_NOT_FOUND",
+    "message": "Source rejected; see the documented import constraints."
+  }
+}

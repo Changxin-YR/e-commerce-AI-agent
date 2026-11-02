@@ -1,0 +1,1685 @@
+{
+  "started_at": "2026-11-02T12:43:53.894765+00:00",
+  "scope": "D2_development_acceptance_not_academic_experiment",
+  "checks": [
+    {
+      "name": "zip_hash",
+      "actual": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
+      "expected": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
+      "pass": true
+    },
+    {
+      "name": "xlsx_hash",
+      "actual": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "expected": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "pass": true
+    },
+    {
+      "name": "terminal_status",
+      "actual": "READY",
+      "expected": "READY",
+      "pass": true
+    },
+    {
+      "name": "row_count",
+      "actual": 541909,
+      "expected": 541909,
+      "pass": true
+    },
+    {
+      "name": "source_row_range",
+      "actual": [
+        2,
+        541910
+      ],
+      "expected": [
+        2,
+        541910
+      ],
+      "pass": true
+    },
+    {
+      "name": "class_counts",
+      "actual": {
+        "INVALID": 0,
+        "POSITIVE": 530104,
+        "CANCELLATION": 9288,
+        "EXCLUDED_OTHER": 2517
+      },
+      "expected": {
+        "INVALID": 0,
+        "POSITIVE": 530104,
+        "CANCELLATION": 9288,
+        "EXCLUDED_OTHER": 2517
+      },
+      "pass": true
+    },
+    {
+      "name": "quality_flags",
+      "actual": {
+        "C_PREFIX": 9288,
+        "DUPLICATE_CANDIDATE_AFTER_FIRST": 5268,
+        "MISSING_CUSTOMER_ID": 135080,
+        "MISSING_DESCRIPTION": 1454,
+        "NEGATIVE_PRICE": 2,
+        "NEGATIVE_QUANTITY": 10624,
+        "NON_C_NEGATIVE_QUANTITY": 1336,
+        "PRICE_0_001_GBP": 4,
+        "PRICE_REPRESENTATION_TAIL": 51170,
+        "STOCK_CODE_OUTSIDE_5_DIGITS_OPTIONAL_SUFFIX": 3385,
+        "ZERO_PRICE": 2515
+      },
+      "expected": {
+        "C_PREFIX": 9288,
+        "DUPLICATE_CANDIDATE_AFTER_FIRST": 5268,
+        "MISSING_CUSTOMER_ID": 135080,
+        "MISSING_DESCRIPTION": 1454,
+        "NEGATIVE_PRICE": 2,
+        "NEGATIVE_QUANTITY": 10624,
+        "NON_C_NEGATIVE_QUANTITY": 1336,
+        "PRICE_0_001_GBP": 4,
+        "PRICE_REPRESENTATION_TAIL": 51170,
+        "STOCK_CODE_OUTSIDE_5_DIGITS_OPTIONAL_SUFFIX": 3385,
+        "ZERO_PRICE": 2515
+      },
+      "pass": true
+    },
+    {
+      "name": "quality_api_matches_sql",
+      "actual": {
+        "PRICE_REPRESENTATION_TAIL": 51170,
+        "STOCK_CODE_OUTSIDE_5_DIGITS_OPTIONAL_SUFFIX": 3385,
+        "C_PREFIX": 9288,
+        "NEGATIVE_QUANTITY": 10624,
+        "DUPLICATE_CANDIDATE_AFTER_FIRST": 5268,
+        "MISSING_CUSTOMER_ID": 135080,
+        "MISSING_DESCRIPTION": 1454,
+        "ZERO_PRICE": 2515,
+        "NON_C_NEGATIVE_QUANTITY": 1336,
+        "PRICE_0_001_GBP": 4,
+        "NEGATIVE_PRICE": 2
+      },
+      "expected": {
+        "C_PREFIX": 9288,
+        "DUPLICATE_CANDIDATE_AFTER_FIRST": 5268,
+        "MISSING_CUSTOMER_ID": 135080,
+        "MISSING_DESCRIPTION": 1454,
+        "NEGATIVE_PRICE": 2,
+        "NEGATIVE_QUANTITY": 10624,
+        "NON_C_NEGATIVE_QUANTITY": 1336,
+        "PRICE_0_001_GBP": 4,
+        "PRICE_REPRESENTATION_TAIL": 51170,
+        "STOCK_CODE_OUTSIDE_5_DIGITS_OPTIONAL_SUFFIX": 3385,
+        "ZERO_PRICE": 2515
+      },
+      "pass": true
+    },
+    {
+      "name": "date_min",
+      "actual": "2010-12-01 08:26:00.000",
+      "expected": "2010-12-01 08:26:00.000",
+      "pass": true
+    },
+    {
+      "name": "date_max",
+      "actual": "2011-12-09 12:50:00.000",
+      "expected": "2011-12-09 12:50:00.000",
+      "pass": true
+    },
+    {
+      "name": "per_month_rows",
+      "actual": {
+        "2010-12": 42481,
+        "2011-01": 35147,
+        "2011-02": 27707,
+        "2011-03": 36748,
+        "2011-04": 29916,
+        "2011-05": 37030,
+        "2011-06": 36874,
+        "2011-07": 39518,
+        "2011-08": 35284,
+        "2011-09": 50226,
+        "2011-10": 60742,
+        "2011-11": 84711,
+        "2011-12": 25525
+      },
+      "expected": {
+        "2010-12": 42481,
+        "2011-01": 35147,
+        "2011-02": 27707,
+        "2011-03": 36748,
+        "2011-04": 29916,
+        "2011-05": 37030,
+        "2011-06": 36874,
+        "2011-07": 39518,
+        "2011-08": 35284,
+        "2011-09": 50226,
+        "2011-10": 60742,
+        "2011-11": 84711,
+        "2011-12": 25525
+      },
+      "pass": true
+    },
+    {
+      "name": "duplicates_retained",
+      "actual": 10147,
+      "expected": 10147,
+      "pass": true
+    },
+    {
+      "name": "duplicate_candidates",
+      "actual": 5268,
+      "expected": 5268,
+      "pass": true
+    },
+    {
+      "name": "absolute_amount",
+      "actual": 11585621154,
+      "expected": 11585621154,
+      "pass": true
+    },
+    {
+      "name": "four_raw_thousandths",
+      "actual": [
+        [
+          157197,
+          "1E-3",
+          1
+        ],
+        [
+          279047,
+          "1E-3",
+          1
+        ],
+        [
+          359873,
+          "1E-3",
+          1
+        ],
+        [
+          361743,
+          "1E-3",
+          1
+        ]
+      ],
+      "expected": [
+        [
+          157197,
+          "1E-3",
+          1
+        ],
+        [
+          279047,
+          "1E-3",
+          1
+        ],
+        [
+          359873,
+          "1E-3",
+          1
+        ],
+        [
+          361743,
+          "1E-3",
+          1
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "name": "2011-09_positive_milligbp",
+      "actual": 1058590172,
+      "expected": 1058590172,
+      "pass": true
+    },
+    {
+      "name": "2011-09_cancellation_milligbp",
+      "actual": 38902550,
+      "expected": 38902550,
+      "pass": true
+    },
+    {
+      "name": "2011-09_positive_invoice_count",
+      "actual": 1837,
+      "expected": 1837,
+      "pass": true
+    },
+    {
+      "name": "2011-09_positive_rows",
+      "actual": 49261,
+      "expected": 49261,
+      "pass": true
+    },
+    {
+      "name": "2011-09_cancellation_rows",
+      "actual": 805,
+      "expected": 805,
+      "pass": true
+    },
+    {
+      "name": "2011-09_net_milligbp",
+      "actual": 1019687622,
+      "expected": 1019687622,
+      "pass": true
+    },
+    {
+      "name": "2011-10_positive_milligbp",
+      "actual": 1154979300,
+      "expected": 1154979300,
+      "pass": true
+    },
+    {
+      "name": "2011-10_cancellation_milligbp",
+      "actual": 84274630,
+      "expected": 84274630,
+      "pass": true
+    },
+    {
+      "name": "2011-10_positive_invoice_count",
+      "actual": 2040,
+      "expected": 2040,
+      "pass": true
+    },
+    {
+      "name": "2011-10_positive_rows",
+      "actual": 59304,
+      "expected": 59304,
+      "pass": true
+    },
+    {
+      "name": "2011-10_cancellation_rows",
+      "actual": 1200,
+      "expected": 1200,
+      "pass": true
+    },
+    {
+      "name": "2011-10_net_milligbp",
+      "actual": 1070704670,
+      "expected": 1070704670,
+      "pass": true
+    },
+    {
+      "name": "class_rule_violations",
+      "actual": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "name": "money_rule_violations",
+      "actual": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "name": "foreign_keys",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "name": "sqlite_integrity",
+      "actual": [
+        [
+          "ok"
+        ]
+      ],
+      "expected": [
+        [
+          "ok"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "name": "zip_repeat_http",
+      "actual": 200,
+      "expected": 200,
+      "pass": true
+    },
+    {
+      "name": "zip_same_batch",
+      "actual": "ib_9561855056bc9d83ca5a82c198b5130b",
+      "expected": "ib_9561855056bc9d83ca5a82c198b5130b",
+      "pass": true
+    },
+    {
+      "name": "xlsx_repeat_http",
+      "actual": 200,
+      "expected": 200,
+      "pass": true
+    },
+    {
+      "name": "xlsx_same_batch",
+      "actual": "ib_9561855056bc9d83ca5a82c198b5130b",
+      "expected": "ib_9561855056bc9d83ca5a82c198b5130b",
+      "pass": true
+    },
+    {
+      "name": "repeat_rows_and_amounts",
+      "actual": {
+        "row_count": 541909,
+        "row_min": 2,
+        "row_max": 541910,
+        "absolute_amount_milli_gbp": 11585621154,
+        "date_min": "2010-12-01 08:26:00.000",
+        "date_max": "2011-12-09 12:50:00.000",
+        "classes": {
+          "INVALID": 0,
+          "POSITIVE": 530104,
+          "CANCELLATION": 9288,
+          "EXCLUDED_OTHER": 2517
+        },
+        "quality": {
+          "C_PREFIX": 9288,
+          "DUPLICATE_CANDIDATE_AFTER_FIRST": 5268,
+          "MISSING_CUSTOMER_ID": 135080,
+          "MISSING_DESCRIPTION": 1454,
+          "NEGATIVE_PRICE": 2,
+          "NEGATIVE_QUANTITY": 10624,
+          "NON_C_NEGATIVE_QUANTITY": 1336,
+          "PRICE_0_001_GBP": 4,
+          "PRICE_REPRESENTATION_TAIL": 51170,
+          "STOCK_CODE_OUTSIDE_5_DIGITS_OPTIONAL_SUFFIX": 3385,
+          "ZERO_PRICE": 2515
+        },
+        "per_month_rows": {
+          "2010-12": 42481,
+          "2011-01": 35147,
+          "2011-02": 27707,
+          "2011-03": 36748,
+          "2011-04": 29916,
+          "2011-05": 37030,
+          "2011-06": 36874,
+          "2011-07": 39518,
+          "2011-08": 35284,
+          "2011-09": 50226,
+          "2011-10": 60742,
+          "2011-11": 84711,
+          "2011-12": 25525
+        },
+        "milli_rows": [
+          [
+            157197,
+            "1E-3",
+            1
+          ],
+          [
+            279047,
+            "1E-3",
+            1
+          ],
+          [
+            359873,
+            "1E-3",
+            1
+          ],
+          [
+            361743,
+            "1E-3",
+            1
+          ]
+        ],
+        "monthly": {
+          "2011-09": {
+            "positive_milligbp": 1058590172,
+            "cancellation_milligbp": 38902550,
+            "positive_invoice_count": 1837,
+            "positive_rows": 49261,
+            "cancellation_rows": 805,
+            "net_milligbp": 1019687622
+          },
+          "2011-10": {
+            "positive_milligbp": 1154979300,
+            "cancellation_milligbp": 84274630,
+            "positive_invoice_count": 2040,
+            "positive_rows": 59304,
+            "cancellation_rows": 1200,
+            "net_milligbp": 1070704670
+          }
+        },
+        "snapshots": 1,
+        "batches": 1,
+        "fk_check": [],
+        "integrity": [
+          [
+            "ok"
+          ]
+        ],
+        "class_rule_violations": 0,
+        "money_rule_violations": 0,
+        "negative_price_examples": [
+          [
+            299985,
+            "A563186",
+            "-11062.06",
+            "EXCLUDED_OTHER"
+          ],
+          [
+            299986,
+            "A563187",
+            "-11062.06",
+            "EXCLUDED_OTHER"
+          ]
+        ],
+        "non_c_negative_example": [
+          171575,
+          "EXCLUDED_OTHER",
+          "[\"MISSING_CUSTOMER_ID\", \"MISSING_DESCRIPTION\", \"NEGATIVE_QUANTITY\", \"NON_C_NEGATIVE_QUANTITY\", \"ZERO_PRICE\"]"
+        ]
+      },
+      "expected": {
+        "row_count": 541909,
+        "row_min": 2,
+        "row_max": 541910,
+        "absolute_amount_milli_gbp": 11585621154,
+        "date_min": "2010-12-01 08:26:00.000",
+        "date_max": "2011-12-09 12:50:00.000",
+        "classes": {
+          "INVALID": 0,
+          "POSITIVE": 530104,
+          "CANCELLATION": 9288,
+          "EXCLUDED_OTHER": 2517
+        },
+        "quality": {
+          "C_PREFIX": 9288,
+          "DUPLICATE_CANDIDATE_AFTER_FIRST": 5268,
+          "MISSING_CUSTOMER_ID": 135080,
+          "MISSING_DESCRIPTION": 1454,
+          "NEGATIVE_PRICE": 2,
+          "NEGATIVE_QUANTITY": 10624,
+          "NON_C_NEGATIVE_QUANTITY": 1336,
+          "PRICE_0_001_GBP": 4,
+          "PRICE_REPRESENTATION_TAIL": 51170,
+          "STOCK_CODE_OUTSIDE_5_DIGITS_OPTIONAL_SUFFIX": 3385,
+          "ZERO_PRICE": 2515
+        },
+        "per_month_rows": {
+          "2010-12": 42481,
+          "2011-01": 35147,
+          "2011-02": 27707,
+          "2011-03": 36748,
+          "2011-04": 29916,
+          "2011-05": 37030,
+          "2011-06": 36874,
+          "2011-07": 39518,
+          "2011-08": 35284,
+          "2011-09": 50226,
+          "2011-10": 60742,
+          "2011-11": 84711,
+          "2011-12": 25525
+        },
+        "milli_rows": [
+          [
+            157197,
+            "1E-3",
+            1
+          ],
+          [
+            279047,
+            "1E-3",
+            1
+          ],
+          [
+            359873,
+            "1E-3",
+            1
+          ],
+          [
+            361743,
+            "1E-3",
+            1
+          ]
+        ],
+        "monthly": {
+          "2011-09": {
+            "positive_milligbp": 1058590172,
+            "cancellation_milligbp": 38902550,
+            "positive_invoice_count": 1837,
+            "positive_rows": 49261,
+            "cancellation_rows": 805,
+            "net_milligbp": 1019687622
+          },
+          "2011-10": {
+            "positive_milligbp": 1154979300,
+            "cancellation_milligbp": 84274630,
+            "positive_invoice_count": 2040,
+            "positive_rows": 59304,
+            "cancellation_rows": 1200,
+            "net_milligbp": 1070704670
+          }
+        },
+        "snapshots": 1,
+        "batches": 1,
+        "fk_check": [],
+        "integrity": [
+          [
+            "ok"
+          ]
+        ],
+        "class_rule_violations": 0,
+        "money_rule_violations": 0,
+        "negative_price_examples": [
+          [
+            299985,
+            "A563186",
+            "-11062.06",
+            "EXCLUDED_OTHER"
+          ],
+          [
+            299986,
+            "A563187",
+            "-11062.06",
+            "EXCLUDED_OTHER"
+          ]
+        ],
+        "non_c_negative_example": [
+          171575,
+          "EXCLUDED_OTHER",
+          "[\"MISSING_CUSTOMER_ID\", \"MISSING_DESCRIPTION\", \"NEGATIVE_QUANTITY\", \"NON_C_NEGATIVE_QUANTITY\", \"ZERO_PRICE\"]"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "cli_repeat_exit",
+      "actual": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "name": "cli_same_batch",
+      "actual": "ib_9561855056bc9d83ca5a82c198b5130b",
+      "expected": "ib_9561855056bc9d83ca5a82c198b5130b",
+      "pass": true
+    },
+    {
+      "name": "restart_quality",
+      "actual": {
+        "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+        "status": "READY",
+        "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+        "raw_sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+        "transform_version": "uci352-ooxml-milligbp-v1",
+        "schema_version": "uci-8-v1",
+        "metric_version": "retail-v1.2",
+        "source_url": "https://archive.ics.uci.edu/dataset/352/online+retail",
+        "acquired_at": "2026-11-02T12:43:55.820796+00:00",
+        "currency": "GBP",
+        "source_timezone": "UNSPECIFIED_LOCAL_TIME",
+        "row_count": 541909,
+        "source_time_min": "2010-12-01 08:26:00.000",
+        "source_time_max": "2011-12-09 12:50:00.000",
+        "raw_row_count": 541909,
+        "primary_class_counts": {
+          "INVALID": 0,
+          "POSITIVE": 530104,
+          "CANCELLATION": 9288,
+          "EXCLUDED_OTHER": 2517
+        },
+        "quality_flags": {
+          "PRICE_REPRESENTATION_TAIL": 51170,
+          "STOCK_CODE_OUTSIDE_5_DIGITS_OPTIONAL_SUFFIX": 3385,
+          "C_PREFIX": 9288,
+          "NEGATIVE_QUANTITY": 10624,
+          "DUPLICATE_CANDIDATE_AFTER_FIRST": 5268,
+          "MISSING_CUSTOMER_ID": 135080,
+          "MISSING_DESCRIPTION": 1454,
+          "ZERO_PRICE": 2515,
+          "NON_C_NEGATIVE_QUANTITY": 1336,
+          "PRICE_0_001_GBP": 4,
+          "NEGATIVE_PRICE": 2
+        },
+        "quality_flags_overlap": true,
+        "duplicates_retained": true,
+        "duplicate_group_rows": 10147,
+        "duplicate_candidates_after_first": 5268,
+        "distinct_invoices": 25900,
+        "distinct_stock_codes": 4070,
+        "distinct_countries": 38,
+        "invoices_multiple_timestamps": 43,
+        "invoices_multiple_days": 0,
+        "invoices_multiple_months": 0,
+        "absolute_amount_milli_gbp": "11585621154",
+        "duration_seconds": 115.969,
+        "warnings": [
+          "SOURCE_TIMEZONE_UNSPECIFIED",
+          "DUPLICATE_CANDIDATES_RETAINED",
+          "TRANSACTION_AMOUNTS_INCLUDE_CHARGES"
+        ]
+      },
+      "expected": {
+        "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+        "status": "READY",
+        "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+        "raw_sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+        "transform_version": "uci352-ooxml-milligbp-v1",
+        "schema_version": "uci-8-v1",
+        "metric_version": "retail-v1.2",
+        "source_url": "https://archive.ics.uci.edu/dataset/352/online+retail",
+        "acquired_at": "2026-11-02T12:43:55.820796+00:00",
+        "currency": "GBP",
+        "source_timezone": "UNSPECIFIED_LOCAL_TIME",
+        "row_count": 541909,
+        "source_time_min": "2010-12-01 08:26:00.000",
+        "source_time_max": "2011-12-09 12:50:00.000",
+        "raw_row_count": 541909,
+        "primary_class_counts": {
+          "INVALID": 0,
+          "POSITIVE": 530104,
+          "CANCELLATION": 9288,
+          "EXCLUDED_OTHER": 2517
+        },
+        "quality_flags": {
+          "PRICE_REPRESENTATION_TAIL": 51170,
+          "STOCK_CODE_OUTSIDE_5_DIGITS_OPTIONAL_SUFFIX": 3385,
+          "C_PREFIX": 9288,
+          "NEGATIVE_QUANTITY": 10624,
+          "DUPLICATE_CANDIDATE_AFTER_FIRST": 5268,
+          "MISSING_CUSTOMER_ID": 135080,
+          "MISSING_DESCRIPTION": 1454,
+          "ZERO_PRICE": 2515,
+          "NON_C_NEGATIVE_QUANTITY": 1336,
+          "PRICE_0_001_GBP": 4,
+          "NEGATIVE_PRICE": 2
+        },
+        "quality_flags_overlap": true,
+        "duplicates_retained": true,
+        "duplicate_group_rows": 10147,
+        "duplicate_candidates_after_first": 5268,
+        "distinct_invoices": 25900,
+        "distinct_stock_codes": 4070,
+        "distinct_countries": 38,
+        "invoices_multiple_timestamps": 43,
+        "invoices_multiple_days": 0,
+        "invoices_multiple_months": 0,
+        "absolute_amount_milli_gbp": "11585621154",
+        "duration_seconds": 115.969,
+        "warnings": [
+          "SOURCE_TIMEZONE_UNSPECIFIED",
+          "DUPLICATE_CANDIDATES_RETAINED",
+          "TRANSACTION_AMOUNTS_INCLUDE_CHARGES"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "restart_batch_ready",
+      "actual": "READY",
+      "expected": "READY",
+      "pass": true
+    },
+    {
+      "name": "restart_and_get_no_writes",
+      "actual": "7c1d3f06e8af2945a1d1f3a681bf2dd171bea8baa0af717eb898ab78d644c334",
+      "expected": "7c1d3f06e8af2945a1d1f3a681bf2dd171bea8baa0af717eb898ab78d644c334",
+      "pass": true
+    }
+  ],
+  "observations": [
+    {
+      "status": "IMPORTING",
+      "processed_rows": 0,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 8000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 16000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 24000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 30000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 36000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 42000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 48000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 54000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 60000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 64000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 70000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 76000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 82000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 86000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 92000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 96000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 102000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 106000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 112000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 116000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 122000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 126000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 130000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 134000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 138000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 142000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 146000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 150000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 154000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 158000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 162000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 166000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 170000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 176000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 180000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 184000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 188000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 194000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 198000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 202000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 206000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 210000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 214000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 218000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 222000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 226000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 230000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 234000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 238000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 242000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 246000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 250000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 254000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 258000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 262000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 266000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 270000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 274000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 278000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 280000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 284000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 288000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 292000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 296000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 300000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 304000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 308000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 312000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 316000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 320000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 324000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 328000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 332000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 336000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 340000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 344000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 348000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 352000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 356000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 360000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 364000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 368000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 372000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 376000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 380000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 384000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 388000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 392000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 396000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 400000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 404000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 408000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 412000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 416000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 420000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 424000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 428000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 432000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 436000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 440000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 444000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 448000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 452000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 456000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 460000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 464000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 468000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 470000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 474000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 478000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 482000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 486000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 490000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 494000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 498000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 502000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 506000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 510000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 514000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 516000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 520000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 524000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 528000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 532000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 536000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 540000,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 541909,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 541909,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 541909,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 541909,
+      "quality_http_status": 409
+    },
+    {
+      "status": "IMPORTING",
+      "processed_rows": 541909,
+      "quality_http_status": 409
+    },
+    {
+      "status": "READY",
+      "processed_rows": 541909
+    }
+  ],
+  "servers": [
+    {
+      "argv": [
+        "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\.venv\\Scripts\\python.exe",
+        "-m",
+        "uvicorn",
+        "backend.app.main:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "55831"
+      ],
+      "pid": 24472,
+      "log": "D:\\codex产出\\电商智能体_D2数据库导入\\缓存\\real-import\\server-import.log",
+      "stop_exit_code": 1
+    },
+    {
+      "argv": [
+        "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\.venv\\Scripts\\python.exe",
+        "-m",
+        "uvicorn",
+        "backend.app.main:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "55831"
+      ],
+      "pid": 7216,
+      "log": "D:\\codex产出\\电商智能体_D2数据库导入\\缓存\\real-import\\server-restart.log",
+      "stop_exit_code": 1
+    }
+  ],
+  "uploads": [
+    {
+      "kind": "zip",
+      "http_status": 202,
+      "body": {
+        "batch_id": "ib_9561855056bc9d83ca5a82c198b5130b",
+        "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+        "status": "QUEUED",
+        "raw_sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+        "workbook_sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+        "submitted_file_sha256": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
+        "containers": [
+          {
+            "sha256": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
+            "bytes": 23715478,
+            "kind": "zip"
+          }
+        ],
+        "transform_version": "uci352-ooxml-milligbp-v1",
+        "processed_rows": 0,
+        "attempt": 1,
+        "error_code": null,
+        "failures": [],
+        "created_at": "2026-11-02T12:43:55.821489+00:00",
+        "imported_at": null
+      }
+    },
+    {
+      "kind": "zip",
+      "http_status": 200,
+      "body": {
+        "batch_id": "ib_9561855056bc9d83ca5a82c198b5130b",
+        "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+        "status": "READY",
+        "raw_sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+        "workbook_sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+        "submitted_file_sha256": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
+        "containers": [
+          {
+            "sha256": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
+            "bytes": 23715478,
+            "kind": "zip"
+          }
+        ],
+        "transform_version": "uci352-ooxml-milligbp-v1",
+        "processed_rows": 541909,
+        "attempt": 1,
+        "error_code": null,
+        "failures": [],
+        "created_at": "2026-11-02T12:43:55.821489+00:00",
+        "imported_at": "2026-11-02T12:45:51.788811+00:00"
+      }
+    },
+    {
+      "kind": "xlsx",
+      "http_status": 200,
+      "body": {
+        "batch_id": "ib_9561855056bc9d83ca5a82c198b5130b",
+        "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+        "status": "READY",
+        "raw_sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+        "workbook_sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+        "submitted_file_sha256": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
+        "containers": [
+          {
+            "sha256": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
+            "bytes": 23715478,
+            "kind": "zip"
+          },
+          {
+            "sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+            "bytes": 23715344,
+            "kind": "xlsx"
+          }
+        ],
+        "transform_version": "uci352-ooxml-milligbp-v1",
+        "processed_rows": 541909,
+        "attempt": 1,
+        "error_code": null,
+        "failures": [],
+        "created_at": "2026-11-02T12:43:55.821489+00:00",
+        "imported_at": "2026-11-02T12:45:51.788811+00:00"
+      }
+    }
+  ],
+  "batch_id": "ib_9561855056bc9d83ca5a82c198b5130b",
+  "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+  "database": "D:\\codex产出\\电商智能体_D2数据库导入\\缓存\\runtime\\app.sqlite3",
+  "quality": {
+    "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+    "status": "READY",
+    "data_hash": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+    "raw_sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+    "transform_version": "uci352-ooxml-milligbp-v1",
+    "schema_version": "uci-8-v1",
+    "metric_version": "retail-v1.2",
+    "source_url": "https://archive.ics.uci.edu/dataset/352/online+retail",
+    "acquired_at": "2026-11-02T12:43:55.820796+00:00",
+    "currency": "GBP",
+    "source_timezone": "UNSPECIFIED_LOCAL_TIME",
+    "row_count": 541909,
+    "source_time_min": "2010-12-01 08:26:00.000",
+    "source_time_max": "2011-12-09 12:50:00.000",
+    "raw_row_count": 541909,
+    "primary_class_counts": {
+      "INVALID": 0,
+      "POSITIVE": 530104,
+      "CANCELLATION": 9288,
+      "EXCLUDED_OTHER": 2517
+    },
+    "quality_flags": {
+      "PRICE_REPRESENTATION_TAIL": 51170,
+      "STOCK_CODE_OUTSIDE_5_DIGITS_OPTIONAL_SUFFIX": 3385,
+      "C_PREFIX": 9288,
+      "NEGATIVE_QUANTITY": 10624,
+      "DUPLICATE_CANDIDATE_AFTER_FIRST": 5268,
+      "MISSING_CUSTOMER_ID": 135080,
+      "MISSING_DESCRIPTION": 1454,
+      "ZERO_PRICE": 2515,
+      "NON_C_NEGATIVE_QUANTITY": 1336,
+      "PRICE_0_001_GBP": 4,
+      "NEGATIVE_PRICE": 2
+    },
+    "quality_flags_overlap": true,
+    "duplicates_retained": true,
+    "duplicate_group_rows": 10147,
+    "duplicate_candidates_after_first": 5268,
+    "distinct_invoices": 25900,
+    "distinct_stock_codes": 4070,
+    "distinct_countries": 38,
+    "invoices_multiple_timestamps": 43,
+    "invoices_multiple_days": 0,
+    "invoices_multiple_months": 0,
+    "absolute_amount_milli_gbp": "11585621154",
+    "duration_seconds": 115.969,
+    "warnings": [
+      "SOURCE_TIMEZONE_UNSPECIFIED",
+      "DUPLICATE_CANDIDATES_RETAINED",
+      "TRANSACTION_AMOUNTS_INCLUDE_CHARGES"
+    ]
+  },
+  "sql": {
+    "row_count": 541909,
+    "row_min": 2,
+    "row_max": 541910,
+    "absolute_amount_milli_gbp": 11585621154,
+    "date_min": "2010-12-01 08:26:00.000",
+    "date_max": "2011-12-09 12:50:00.000",
+    "classes": {
+      "INVALID": 0,
+      "POSITIVE": 530104,
+      "CANCELLATION": 9288,
+      "EXCLUDED_OTHER": 2517
+    },
+    "quality": {
+      "C_PREFIX": 9288,
+      "DUPLICATE_CANDIDATE_AFTER_FIRST": 5268,
+      "MISSING_CUSTOMER_ID": 135080,
+      "MISSING_DESCRIPTION": 1454,
+      "NEGATIVE_PRICE": 2,
+      "NEGATIVE_QUANTITY": 10624,
+      "NON_C_NEGATIVE_QUANTITY": 1336,
+      "PRICE_0_001_GBP": 4,
+      "PRICE_REPRESENTATION_TAIL": 51170,
+      "STOCK_CODE_OUTSIDE_5_DIGITS_OPTIONAL_SUFFIX": 3385,
+      "ZERO_PRICE": 2515
+    },
+    "per_month_rows": {
+      "2010-12": 42481,
+      "2011-01": 35147,
+      "2011-02": 27707,
+      "2011-03": 36748,
+      "2011-04": 29916,
+      "2011-05": 37030,
+      "2011-06": 36874,
+      "2011-07": 39518,
+      "2011-08": 35284,
+      "2011-09": 50226,
+      "2011-10": 60742,
+      "2011-11": 84711,
+      "2011-12": 25525
+    },
+    "milli_rows": [
+      [
+        157197,
+        "1E-3",
+        1
+      ],
+      [
+        279047,
+        "1E-3",
+        1
+      ],
+      [
+        359873,
+        "1E-3",
+        1
+      ],
+      [
+        361743,
+        "1E-3",
+        1
+      ]
+    ],
+    "monthly": {
+      "2011-09": {
+        "positive_milligbp": 1058590172,
+        "cancellation_milligbp": 38902550,
+        "positive_invoice_count": 1837,
+        "positive_rows": 49261,
+        "cancellation_rows": 805,
+        "net_milligbp": 1019687622
+      },
+      "2011-10": {
+        "positive_milligbp": 1154979300,
+        "cancellation_milligbp": 84274630,
+        "positive_invoice_count": 2040,
+        "positive_rows": 59304,
+        "cancellation_rows": 1200,
+        "net_milligbp": 1070704670
+      }
+    },
+    "snapshots": 1,
+    "batches": 1,
+    "fk_check": [],
+    "integrity": [
+      [
+        "ok"
+      ]
+    ],
+    "class_rule_violations": 0,
+    "money_rule_violations": 0,
+    "negative_price_examples": [
+      [
+        299985,
+        "A563186",
+        "-11062.06",
+        "EXCLUDED_OTHER"
+      ],
+      [
+        299986,
+        "A563187",
+        "-11062.06",
+        "EXCLUDED_OTHER"
+      ]
+    ],
+    "non_c_negative_example": [
+      171575,
+      "EXCLUDED_OTHER",
+      "[\"MISSING_CUSTOMER_ID\", \"MISSING_DESCRIPTION\", \"NEGATIVE_QUANTITY\", \"NON_C_NEGATIVE_QUANTITY\", \"ZERO_PRICE\"]"
+    ]
+  },
+  "cli": {
+    "argv": [
+      "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\.venv\\Scripts\\python.exe",
+      "scripts/manage.py",
+      "import-data",
+      "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\data\\raw\\Online_Retail.xlsx",
+      "--database",
+      "D:\\codex产出\\电商智能体_D2数据库导入\\缓存\\runtime\\app.sqlite3",
+      "--output",
+      "D:\\codex产出\\电商智能体_D2数据库导入\\缓存\\real-import\\cli-repeat.json"
+    ],
+    "exit_code": 0
+  },
+  "database_sha256": "7c1d3f06e8af2945a1d1f3a681bf2dd171bea8baa0af717eb898ab78d644c334",
+  "database_bytes": 676319232,
+  "status": "PASS",
+  "finished_at": "2026-11-02T12:46:17.285931+00:00"
+}

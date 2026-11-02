@@ -1,12 +1,12 @@
-# 下一次接续入口：D1 已完成，等待验收
+# 下一次接续入口：D2 已完成，等待验收
 
-1. 先读 AGENTS.md、DEV_FIRST.md、CODEX_BRIEF.md、docs/STATUS.json、docs/EVIDENCE_INDEX.md 和实际 Git 状态。
-2. 当前 D1 工程验证 PASS、READY_FOR_USER_ACCEPTANCE。用户若只继续收尾或反馈 D1 问题，修复 D1；**未明确验收并授权 D2 时不得数据库导入**。
-3. D0 基线 `0740bf439c37dc344885d2f7c26568c157dd9571`；D1 最终提交在 `D:/codex产出/电商智能体_D1真实数据审计/交付/git-receipt.json`。原始 ZIP/XLSX 仅在项目 data/raw，未提交、未打入源码交付 ZIP。
-4. 官方原始数据已取得并通过 SHA 与独立审计。先运行 `python scripts/download_source_data.py --verify-zip data/raw/online_retail_uci352.zip`，对照 data/manifest.json；文件不存在不能凭旧 JSON 当成功。
-5. D1 可复跑脚本为 scripts/audit_source_data.py、scripts/run_independent_audits.py、scripts/verify_d1_evidence.py；命令见 docs/D2_DATA_INPUT.md。每次使用新的 D 盘缓存目录，保留旧结果。
-6. 实测 541909 行、8 字段，分类 530104/9288/2517/0；4 条 0.001 保留，重复候选 5268 保留。两份历史脚本复跑无实质差异，33 交叉检查、70 pytest 通过。旧 D0 的 8 Vitest/2 Edge 证据已核查；本轮没有重新声称执行前端/浏览器测试。
-7. 4 个间接开发依赖 moderate 仍 OPEN；生产 audit=0。Starlette/httpx 弃用已通过增加 httpx2 安全消除。详情见 docs/D0_CLOSEOUT.md。
-8. 用户明确允许 D2 后再读 docs/dev/steps/02_02_IMPORT.md 与 docs/D2_DATA_INPUT.md，实施真实导入、交易表、幂等和失败恢复。D1 审计函数是独立参考，不直接充当生产指标实现。
+1. 读取 AGENTS.md、DEV_FIRST.md、CODEX_BRIEF.md、docs/STATUS.json、docs/EVIDENCE_INDEX.md 与实际 Git 状态。当前 D2_READY_FOR_USER_ACCEPTANCE；不要自动进入 D3。
+2. D1 基线 `bf92c1f5672f0ecbc05169215c5274d3ebdd7d39`，D2 最终 SHA 与文件清单见 D:/codex产出/电商智能体_D2数据库导入/交付/git-receipt.json。未推送远程。
+3. 官方 ZIP/XLSX 仍仅在项目 data/raw；data/manifest.json 保存两个 SHA。D2 已真正导入 541909 行，分类 530104/9288/2517/0，对照 D1 无统计差异。
+4. .env 已切换 D2 运行库 D:/codex产出/电商智能体_D2数据库导入/缓存/runtime/app.sqlite3，原 D0 库保留。交付/运行数据/app.sqlite3 是封存备份；不要随意清理当前运行库。服务验证后已停止。
+5. 先参阅 docs/D2_IMPORT.md。manage migrate/import-data 可运行；POST /api/v1/datasets/imports、GET 批次/profile/quality 已实现。raw_sha256/data_hash 指 XLSX，ZIP/bare XLSX 复用稳定数据集与批次 ID。
+6. 当前 116 pytest、8 Vitest、2 Edge、构建和 41 项真实 SQL/HTTP 核对通过。原始 HTTP 导入约 116 秒，随后实际重复上传/CLI 和服务重启验证通过。docs/evidence/d2 与 D 盘缓存保存真实证据，后续复跑使用新目录。
+7. 当前只支持已审计 workbook 哈希。未知版本须先重新审计；不公开 fixture 允许列表。失败快照不能提供完整质量或指标；重试同文件清理该失败快照的部分行并保留失败历史。模型预算仍为 0。
+8. 收到用户明确授权 D3 后，再读 docs/dev/steps/03_03_METRICS.md（以实际目录为准）、生产指标契约及 D2 输入说明，基于 READY 数据集实现确定性指标。D2 独立 SQL 核对不是 D3 API，不要硬编码参考金额。
 
-继续使用当前工作区 .venv/node_modules/.env；模型预算仍为 0。额外交付与本任务缓存复用 `D:/codex产出/电商智能体_D1真实数据审计`；D2 若作为新任务建立对应新目录。论文及正式冻结实验继续延期。
+D3—D9、论文和正式实验仍未开始。前端本轮只调整健康状态兼容并回归；导入页面未实现，也未声称浏览器完成了导入交互。

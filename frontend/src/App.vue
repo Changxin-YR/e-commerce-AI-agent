@@ -70,7 +70,7 @@ onUnmounted(() => {
 
     <main>
       <div class="intro">
-        <p class="stage-label">D0 工程初始化</p>
+        <p class="stage-label">本地服务状态</p>
         <h1>先让服务连接起来。</h1>
         <p class="intro-copy">这里显示本地后端与数据库的实际连接状态，<br class="desktop-break" />为后续历史交易数据分析做好准备。</p>
       </div>
@@ -107,7 +107,7 @@ onUnmounted(() => {
         <span class="scope-symbol" aria-hidden="true">i</span>
         <div>
           <h2 id="scope-title">当前仅检查工程连接</h2>
-          <p>经营数据尚未导入，智能分析与模型调用尚未接入。连接成功只表示 D0 基础服务就绪，不代表业务功能已完成。</p>
+          <p>本页检查本地服务连接。数据导入通过 API 或 CLI 操作，数据页面与智能分析尚待后续阶段实现。</p>
         </div>
       </aside>
     </main>
