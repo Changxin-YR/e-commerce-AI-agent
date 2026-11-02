@@ -1,0 +1,19 @@
+{
+  "copies": [
+    {
+      "source": "D:\\codex产出\\电商智能体_D6智能体\\缓存\\runtime\\app.sqlite3",
+      "destination": "D:\\codex产出\\电商智能体_D7报告五视图\\缓存\\runtime\\app.sqlite3",
+      "sha256": "5d3eaad4e6fa28d096f9ca0503ccbea13f0d0c52e9976f09a4cbfd2f10dc46f3"
+    },
+    {
+      "source": "D:\\codex产出\\电商智能体_D6智能体\\缓存\\runtime\\app.checkpoints.sqlite3",
+      "destination": "D:\\codex产出\\电商智能体_D7报告五视图\\缓存\\runtime\\app.checkpoints.sqlite3",
+      "sha256": "db89aebdd3cd7930098a0efee498288ad623102ea55f48c0b95f0cb1394ce46d"
+    }
+  ],
+  "only_env_keys_changed": [
+    "DATABASE_URL",
+    "D0_CACHE_DIR",
+    "IMPORT_CACHE_DIR"
+  ]
+}

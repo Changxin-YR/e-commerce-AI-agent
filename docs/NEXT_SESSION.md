@@ -1,11 +1,11 @@
-# 当前检查点：D6 工程通过，继续 D7—D9
+# 当前检查点：D7 工程验证完成，继续 D8/D9
 
-同一持续授权见CONTINUOUS_EXECUTION.md，不逐阶段等待。源码仓库C:/Users/27363/Desktop/毕业论文/电商智能体的实现/ecommerce-agent-thesis，所有命令显式cwd；任务缓存/交付放D:/codex产出。没有多代理授权。
+持续授权见CONTINUOUS_EXECUTION.md，不逐阶段等待；不创建子代理。仓库C:/Users/27363/Desktop/毕业论文/电商智能体的实现/ecommerce-agent-thesis，命令显式cwd。交付/任务缓存都在D:/codex产出。
 
-1. D6已实际实现backend/app/agent下contracts/provider/budget/validation/workflow/service/routes，迁移0004_agent_runtime；LangGraph1.2.19/checkpoint-sqlite3.1.3。224pytest通过，真实UCI上15个scripted任务/114HTTP与进程断言通过，详情D6_AGENT/D6_DELIVERY和evidence/d6。
-2. 默认.env当前D:/codex产出/电商智能体_D6智能体/缓存/runtime/app.sqlite3，checkpoint同目录app.checkpoints.sqlite3。541909原交易、2条D3查询、两轮共30个scripted开发任务；真实调用0，付费开关false、实际模型预算0。旧D5库SHA保持76a1b09bf229ee826660762ff914a8f94afeafab4fdd5b7fee574d3d068eaac4。进程全部停止，schema0004，完整哈希见verification.json；最终提交在交付/git-receipt.json。
-3. 首轮局部28通过；全量217通过/3旧版本预期失败已修正，最终224通过；原始失败保留。D6未改前端，不冒写浏览器新结果。启动/停止与SENT边界强制终止已用实际uvicorn子进程验证。
-4. 接下来已读docs/dev/steps/07_07_REPORTS.md：实现报告详情/导出与B0确定性模板，Vue智能分析/任务/报告加现有数据导入和概览形成五视图。报告关键数字必须从持久tool refs解析。无模型配置状态可操作；正式实验只显示延期，不造成绩。真实模型浏览器链受预算阻断，可用明确scripted夹具验证工程交互。
-5. 前端入口RetailWorkspace.vue/useRetail.ts/api/retail.ts，现有3tab为overview/datasets/history。保留D4精确金额与刷新链，增加Agent与report独立组件。现有Playwright在frontend/e2e，scripts/verify_ui.py可启动实库测试；不要在测试运行时编辑被测代码或Vite配置。
-6. D7另复制运行库及checkpoint到新阶段目录，保留D6封存。各阶段更新六份状态、本地提交并D盘封存，源码ZIP排除.env/原ZIP/XLSX/库/依赖。55不可变资料不改。
-7. 持续完成D8安全稳定和D9复现/操作文档。真实模型仍BLOCKED_AUTHORIZATION，论文/gold/正式实验延期，最终用户验收不能自授。上下文足够则本聊天继续；明显较满才按CONTINUOUS_EXECUTION同项目接续，不形成空转移交。
+1. D7完成backend/app/reports.py的B0确定性报表、报告列表/详情/JSON与Markdown导出；AgentService报告增加来源/参数/限制，重跑兼容B0。Vue AgentWorkspace打通智能分析/任务/报告及原数据集和概览；保留查询历史。健康/API版本0.7.0/D7，schema0004_agent_runtime。
+2. 238 pytest、25 Vitest、构建通过；最终8个浏览器用例覆盖通过。完整最后轮7过/1旧health schema断言失败，修正后两项health定向通过；原失败记录保留。浏览器真实报表158独立SQL、月度21项；默认运行库3个B0报表另158项。证据docs/evidence/d7和D7_DELIVERY/D7_REPORTS。
+3. 当前.env指向D:/codex产出/电商智能体_D7报告五视图/缓存/runtime/app.sqlite3，配套app.checkpoints.sqlite3。541909交易行、33任务/33报告（30个D6 scripted+3个D7无模型报表）、50工具记录、66已有scripted尝试、2查询。真实外部调用0，付费false、真实预算0。D6两库SHA保持原值。所有服务已停止。最终提交在D7交付/git-receipt.json，勿自引用。
+4. D7脚本缓存finalize_d7.py/seal_d7.py可作为阶段归档参考。最终浏览器目录缓存/playwright/2026-11-02T16-04-30-464Z-52924；健康补测2026-11-02T16-09-45-869Z-48192。前序D6缺少新报告展示字段仅只读补默认，不改旧内容。
+5. 下一步docs/dev/steps/08_08_SECURITY.md（已读），资料16_SECURITY_AND_PRIVACY.md、10_RUNTIME_CONTRACT.md和fixtures/security_inputs.json。核查实际ZIP/XML/上传/参数化SQL/Host-Origin/XSS/导出/密钥/预算/恢复攻击面；CSV/Excel导出不存在，明确N/A，不虚构测试。至少复测现有真实E2E及脚本恢复，真实模型链继续BLOCKED。
+6. D8另复制运行库与checkpoint到阶段目录，保留D7封存；修复严重问题、记录原始失败，更新六份状态、本地提交并封存后继续D9。D9合同09_09_ACCEPTANCE.md已读：干净依赖安装/迁移/真实数据/启动停止复现、F01-F16与E01-E10实际矩阵、README和工程操作手册；不能写论文/学术实验或自授用户验收。
+7. 55份不可变资料保持原字节；源码ZIP排除.env/原ZIP-XLSX/数据库/依赖。npm4项moderate开发依赖旧告警待D8重新评估。当前脚本只有backend/frontend Ctrl+C启动停止，README/统一命令可在D8/D9完善，不虚构start/stop命令存在。

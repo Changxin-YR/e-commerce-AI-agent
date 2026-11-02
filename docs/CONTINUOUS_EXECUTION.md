@@ -1,3 +1,9 @@
+# 最新检查点：D7工程已验证，继续D8/D9
+
+D7五项功能视图/确定性报告/导出/历史联调完成，238 pytest、25 Vitest、8个最终浏览器用例通过。真实报表158独立SQL核对；真实模型仍BLOCKED_AUTHORIZATION，最终用户验收未执行。下一步D8安全稳定，再D9干净安装与完整工程验收；下方所有较早检查点作为历史保留，当前精确状态见NEXT_SESSION。
+
+---
+
 # 最新检查点：D6 工程已验证，继续 D7—D9
 
 D6真实LangGraph/SQLite恢复/预算与引用核验代码已通过224 pytest；真实UCI上15个scripted任务、114HTTP/进程断言通过。真实模型调用0、BLOCKED_AUTHORIZATION，用户最终验收未执行。当前下一步D7，详细路径和源码状态见NEXT_SESSION。以下历史授权与检查点保留。

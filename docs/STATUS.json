@@ -1,13 +1,13 @@
 {
   "project_id": "ecommerce-agent-thesis",
-  "updated_at": "2026-11-02T23:37:21.912680+08:00",
+  "updated_at": "2026-11-03T00:16:15.695242+08:00",
   "implementation_ready": {
     "status": "PARTIAL",
     "blocker_code": null,
-    "scope": "D0-D6 engineering verified; live model blocked; D7-D9 continue",
+    "scope": "D0-D7 engineering verified; live model blocked; D8-D9 continue",
     "evidence": [
       "docs/EVIDENCE_INDEX.md",
-      "docs/D6_DELIVERY.md"
+      "docs/D7_DELIVERY.md"
     ]
   },
   "real_data_ready": {
@@ -23,9 +23,10 @@
   "live_model_verified": {
     "status": "BLOCKED",
     "blocker_code": "BLOCKED_AUTHORIZATION",
-    "scope": "Paid flag false and real budgets zero. All D6 model replies are explicit test fixtures.",
+    "scope": "Paid flag false, real budgets zero; scripted browser scenarios are explicit engineering fixtures.",
     "evidence": [
-      "docs/D6_DELIVERY.md"
+      "docs/D7_DELIVERY.md",
+      "docs/D6_AGENT.md"
     ]
   },
   "gold_verified": {
@@ -49,29 +50,30 @@
     "evidence": []
   },
   "handoff_version": "1.5",
-  "handoff_status": "CONTINUOUS_DEVELOPMENT_FROM_D7",
-  "implementation_status": "D6_ENGINEERING_VERIFIED_CONTINUE_D7",
+  "handoff_status": "CONTINUOUS_DEVELOPMENT_FROM_D8",
+  "implementation_status": "D7_ENGINEERING_VERIFIED_CONTINUE_D8",
   "execution_mode": "FEATURE_FIRST",
-  "current_dev_step": "D7",
+  "current_dev_step": "D8",
   "paper_work_mode": "DEFERRED_BY_USER",
   "formal_experiment_mode": "DEFERRED_UNTIL_FEATURE_ACCEPTANCE_AND_USER_APPROVAL",
-  "last_verified_dev_step": "D6",
-  "next_dev_step": "D7",
+  "last_verified_dev_step": "D7",
+  "next_dev_step": "D8",
   "next_step_requires_user_approval": false,
   "user_acceptance": "PENDING_FINAL_USER_ACCEPTANCE",
   "git": {
     "initialized": true,
     "baseline_sha": "0740bf439c37dc344885d2f7c26568c157dd9571",
     "baseline_scope": "Verified D0 plus closeout",
-    "delivery_commit_receipt": "D:/codex产出/电商智能体_D6智能体/交付/git-receipt.json",
+    "delivery_commit_receipt": "D:/codex产出/电商智能体_D7报告五视图/交付/git-receipt.json",
     "pushed": false,
-    "note": "Final D6 commit is recorded outside Git to avoid self-reference.",
+    "note": "Final D7 commit is recorded outside Git to avoid self-reference.",
     "d1_sha": "bf92c1f5672f0ecbc05169215c5274d3ebdd7d39",
     "d2_sha": "49c2bbd403fffd571926c9ca3329ded77fcdba0a",
     "d4_sha": "e0c43541bf19f4c179522305e147e5f5dfe4736b",
-    "d5_sha": "a45db53636015afdfaa8a1c4cb0a19ddd8b91ad9"
+    "d5_sha": "a45db53636015afdfaa8a1c4cb0a19ddd8b91ad9",
+    "d6_sha": "d5202f6a29678e18964930f8bc2b5af80baa9145"
   },
-  "artifact_root": "D:/codex产出/电商智能体_D6智能体",
+  "artifact_root": "D:/codex产出/电商智能体_D7报告五视图",
   "d0": {
     "status": "READY_FOR_USER_ACCEPTANCE",
     "engineering_validation": "PASS",
@@ -126,7 +128,12 @@
       "quality_issues",
       "analysis_runs",
       "reports",
-      "query_history"
+      "query_history",
+      "model_attempts",
+      "agent_tool_calls",
+      "agent_reviews",
+      "run_submissions",
+      "model_budget"
     ],
     "container_sha256": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
     "raw_row_count": 541909,
@@ -139,7 +146,7 @@
     "manifest": "data/manifest.json",
     "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
     "batch_id": "ib_9561855056bc9d83ca5a82c198b5130b",
-    "schema_revision": "0003_query_history",
+    "schema_revision": "0004_agent_runtime",
     "transform_version": "uci352-ooxml-milligbp-v1"
   },
   "model": {
@@ -153,10 +160,10 @@
     "D2": "VERIFIED_USER_AUTHORIZED_D3",
     "D3": "VERIFIED_CONTINUATION_AUTHORIZED",
     "D4": "VERIFIED_CONTINUATION_AUTHORIZED",
-    "D5": "AUTHORIZED_READY_TO_START",
-    "D6": "NOT_STARTED",
-    "D7": "NOT_STARTED",
-    "D8": "NOT_STARTED",
+    "D5": "VERIFIED_CONTINUATION_AUTHORIZED",
+    "D6": "VERIFIED_CONTINUATION_AUTHORIZED",
+    "D7": "VERIFIED_CONTINUATION_AUTHORIZED",
+    "D8": "AUTHORIZED_READY_TO_START",
     "D9": "NOT_STARTED"
   },
   "d1": {
@@ -404,6 +411,139 @@
       "docs/D6_AGENT.md",
       "docs/evidence/d6/real-verification.json",
       "docs/evidence/d6/pytest-final.xml"
+    ]
+  },
+  "d7": {
+    "stage": "D7",
+    "engineering_validation": "PASS",
+    "live_model_verified": "BLOCKED_AUTHORIZATION",
+    "user_acceptance": "NOT_PERFORMED",
+    "pytest_passed": 238,
+    "new_report_tests": 14,
+    "vitest_passed": 25,
+    "edge_cases_passed": 8,
+    "edge_verification": "6 business/report cases from full suite + 2 targeted health regression cases; failed full runs retained",
+    "browser_plugin": "NOT_AVAILABLE",
+    "browser": "Microsoft Edge / Playwright",
+    "viewports": [
+      "1280x900",
+      "390x844"
+    ],
+    "edge_cases": [
+      {
+        "title": "official ZIP uploads in UI, progresses, survives refresh and deduplicates XLSX",
+        "file": "business.spec.ts",
+        "status": "passed",
+        "source": "D:\\codex产出\\电商智能体_D7报告五视图\\缓存\\playwright\\2026-11-02T16-04-30-464Z-52924\\results.json"
+      },
+      {
+        "title": "September and October values match real API and independent SQL; refresh and restart use saved GET",
+        "file": "business.spec.ts",
+        "status": "passed",
+        "source": "D:\\codex产出\\电商智能体_D7报告五视图\\缓存\\playwright\\2026-11-02T16-04-30-464Z-52924\\results.json"
+      },
+      {
+        "title": "partial, no-data, empty-filter, corrupt upload and real backend outage are explicit",
+        "file": "business.spec.ts",
+        "status": "passed",
+        "source": "D:\\codex产出\\电商智能体_D7报告五视图\\缓存\\playwright\\2026-11-02T16-04-30-464Z-52924\\results.json"
+      },
+      {
+        "title": "page receives real health JSON and remains connected after reload",
+        "file": "health.spec.ts",
+        "status": "passed",
+        "source": "D:\\codex产出\\电商智能体_D7报告五视图\\缓存\\playwright\\2026-11-02T16-09-45-869Z-48192\\results.json"
+      },
+      {
+        "title": "stopping and restarting the real backend shows failure and recovery",
+        "file": "health.spec.ts",
+        "status": "passed",
+        "source": "D:\\codex产出\\电商智能体_D7报告五视图\\缓存\\playwright\\2026-11-02T16-09-45-869Z-48192\\results.json"
+      },
+      {
+        "title": "real upload reuse -> B0 comparison -> exact report -> downloads -> GET history after restart",
+        "file": "reports.spec.ts",
+        "status": "passed",
+        "source": "D:\\codex产出\\电商智能体_D7报告五视图\\缓存\\playwright\\2026-11-02T16-04-30-464Z-52924\\results.json"
+      },
+      {
+        "title": "partial and empty reports keep distinct states",
+        "file": "reports.spec.ts",
+        "status": "passed",
+        "source": "D:\\codex产出\\电商智能体_D7报告五视图\\缓存\\playwright\\2026-11-02T16-04-30-464Z-52924\\results.json"
+      },
+      {
+        "title": "scripted B2 clarification survives restart, replies in the same run and exports cited real values",
+        "file": "reports.spec.ts",
+        "status": "passed",
+        "source": "D:\\codex产出\\电商智能体_D7报告五视图\\缓存\\playwright\\2026-11-02T16-04-30-464Z-52924\\results.json"
+      }
+    ],
+    "independent_report_sql_checks": 158,
+    "independent_monthly_sql_checks": 21,
+    "runtime_independent_sql_checks": 158,
+    "external_model_calls": 0,
+    "build": "PASS",
+    "database": {
+      "path": "D:\\codex产出\\电商智能体_D7报告五视图\\缓存\\runtime\\app.sqlite3",
+      "bytes": 676872192,
+      "sha256": "36ded9bd7b4d59dda5a7b129cc8710c035b98617f7d292ec71b85686fc5999db",
+      "counts": {
+        "transaction_rows": 541909,
+        "analysis_runs": 33,
+        "reports": 33,
+        "agent_tool_calls": 50,
+        "model_attempts": 66,
+        "query_history": 2
+      }
+    },
+    "checkpoint": {
+      "path": "D:\\codex产出\\电商智能体_D7报告五视图\\缓存\\runtime\\app.checkpoints.sqlite3",
+      "bytes": 2953216,
+      "sha256": "db89aebdd3cd7930098a0efee498288ad623102ea55f48c0b95f0cb1394ce46d"
+    },
+    "browser_databases": [
+      {
+        "path": "D:\\codex产出\\电商智能体_D7报告五视图\\缓存\\playwright\\2026-11-02T16-04-30-464Z-52924\\business\\real-ui.sqlite3",
+        "bytes": 676421632,
+        "sha256": "cf3a4aa9c6c4b771a9edac4d4a000ec5ec637bbf50855d8ca2c444d624daec14",
+        "counts": {
+          "transaction_rows": 541909,
+          "analysis_runs": 0,
+          "reports": 0,
+          "agent_tool_calls": 0,
+          "model_attempts": 0,
+          "query_history": 5
+        }
+      },
+      {
+        "path": "D:\\codex产出\\电商智能体_D7报告五视图\\缓存\\playwright\\2026-11-02T16-04-30-464Z-52924\\reports\\real-ui.sqlite3",
+        "bytes": 677056512,
+        "sha256": "4da3d19a964cbad010672218f6997a5e6109c85ac1ccc71c1f4117954fca1082",
+        "counts": {
+          "transaction_rows": 541909,
+          "analysis_runs": 37,
+          "reports": 37,
+          "agent_tool_calls": 71,
+          "model_attempts": 69,
+          "query_history": 2
+        }
+      }
+    ],
+    "evidence_run": "D:\\codex产出\\电商智能体_D7报告五视图\\缓存\\playwright\\2026-11-02T16-04-30-464Z-52924",
+    "health_regression_run": "D:\\codex产出\\电商智能体_D7报告五视图\\缓存\\playwright\\2026-11-02T16-09-45-869Z-48192",
+    "D6_preserved": true,
+    "stopped_services": true,
+    "source_hashes": {
+      "zip": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
+      "xlsx": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d"
+    },
+    "failures": [
+      "Initial report pytest: 13 setup errors (missing pytest parent); fixed, next run 13 passed.",
+      "Initial report browser test: favicon.ico 404; fixed with a local SVG favicon.",
+      "First full browser run: 6 passed/1 failed/1 skipped, stale D3 schema assertion.",
+      "Second full browser run: 7 passed/1 failed, remaining D3 restart assertion; corrected and both health cases passed.",
+      "Evidence finalizer initially expected provider=scripted; actual persisted provider=test_fixture/model=scripted-no-network, corrected guard and retained failed command."
     ]
   }
 }

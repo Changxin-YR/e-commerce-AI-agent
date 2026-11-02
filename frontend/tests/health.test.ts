@@ -5,8 +5,8 @@ import App from '../src/components/HealthPanel.vue'
 
 // test_fixture: transport responses only; no business or trading data.
 const healthy = {
-  status: 'ok', service: 'ecommerce-agent', version: '0.3.0', stage: 'D3',
-  database: { status: 'ok', engine: 'sqlite', sqlite_version: 'test_fixture', schema_revision: '0003_query_history' },
+  status: 'ok', service: 'ecommerce-agent', version: '0.7.0', stage: 'D7',
+  database: { status: 'ok', engine: 'sqlite', sqlite_version: 'test_fixture', schema_revision: '0004_agent_runtime' },
 }
 let wrapper: VueWrapper | undefined
 
@@ -35,7 +35,7 @@ describe('local health connection', () => {
     await flushPromises()
     expect(wrapper.get('[data-testid="health-status"]').text()).toBe('本地服务已连接')
     expect(wrapper.text()).toContain('SQLite test_fixture')
-    expect(wrapper.text()).toContain('0003_query_history')
+    expect(wrapper.text()).toContain('0004_agent_runtime')
   })
 
   it('treats 503 as unavailable without displaying server internals', async () => {

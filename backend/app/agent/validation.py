@@ -19,8 +19,12 @@ def resolve_claim(claim, results, dataset_id):
     if type(value) is not int and (not isinstance(value,str) or not re.fullmatch(r'-?\d+(?:\.\d+)?',value)):
         raise AppError('NON_NUMERIC_EVIDENCE','The referenced field is not a numeric result.',422)
     evidence=envelope['evidence']
+    data=envelope['data']
+    unit='percent' if claim.field_path.endswith('_percent') else data.get('unit')
+    if unit is None and data.get('metric'):
+        unit='invoice_count' if data['metric']=='positive_invoice_count' else 'GBP'
     return dict(claim_id='claim_'+digest(dict(tool=claim.tool_call_id,path=claim.field_path))[:24],label=claim.label,
-        value=value,model_value=claim.value,tool_call_id=claim.tool_call_id,field_path=claim.field_path,
+        value=value,unit=unit,model_value=claim.value,tool_call_id=claim.tool_call_id,field_path=claim.field_path,
         dataset_snapshot_id=dataset_id,snapshot_hash=evidence['snapshot_hash'],metric_version=evidence['metric_version'],
         period=evidence['period'],filters=evidence['filters'])
 

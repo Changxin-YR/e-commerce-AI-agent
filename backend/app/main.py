@@ -27,6 +27,7 @@ from backend.app.metrics.routes import router as metric_router
 from backend.app.schemas import DatabaseHealth, ErrorDetail, ErrorResponse, HealthResponse
 from backend.app.agent.service import AgentService
 from backend.app.agent.routes import router as agent_router
+from backend.app.reports import ReportService, router as report_router
 
 logger = logging.getLogger(__name__)
 
@@ -65,8 +66,8 @@ def create_app(settings: Settings | None = None, *, test_hashes: frozenset[str] 
             engine.dispose()
 
     application = FastAPI(
-        title="Ecommerce Agent — D6",
-        version="0.6.0",
+        title="Ecommerce Agent — D7",
+        version="0.7.0",
         description="Local source ingestion. raw_sha256/data_hash always identify the XLSX workbook; container hashes are separate.",
         lifespan=lifespan,
     )
@@ -76,6 +77,8 @@ def create_app(settings: Settings | None = None, *, test_hashes: frozenset[str] 
     application.state.metric_service = metric_service
     application.state.history_service = history_service
     application.state.agent_service = agent_service
+    application.state.report_service = ReportService(metric_service, import_service.engine)
+    application.include_router(report_router)
     application.include_router(agent_router)
     application.include_router(metric_router)
     application.include_router(import_router)

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useRetail } from '../useRetail'
 import { classLabel, statusLabel } from '../api/retail'
+import AgentWorkspace from './AgentWorkspace.vue'
 const {
   tab, datasets, selected, dataset, quality, definitions, history, historyTotal, historyOffset,
   saved, monthly, series, month, country, stock, busy, queryBusy, uploadBusy,
@@ -13,7 +14,12 @@ const amountRows = [
   { name: '取消类金额', key: 'cancellation_amount' },
   { name: '净交易金额', key: 'net_amount' },
 ] as const
-const tabs = [{ id: 'overview', name: '经营概览' }, { id: 'datasets', name: '数据与导入' }, { id: 'history', name: '查询历史' }]
+const tabs = [{ id: 'overview', name: '经营概览' }, { id: 'datasets', name: '数据与导入' }, { id: 'analysis', name: '智能分析' }, { id: 'reports', name: '报告详情' }, { id: 'tasks', name: '任务与实验' }, { id: 'history', name: '查询历史' }]
+function navigate(view: string) {
+  tab.value = view
+  const url = new URL(location.href); url.searchParams.set('view', view)
+  window.history.replaceState(null, '', url)
+}
 </script>
 
 <template>
@@ -23,7 +29,7 @@ const tabs = [{ id: 'overview', name: '经营概览' }, { id: 'datasets', name: 
       <a href="/?view=health" class="service-link">服务状态</a>
     </header>
     <nav class="workspace-nav" aria-label="功能视图">
-      <button v-for="item in tabs" :key="item.id" :class="{ active: tab === item.id }" :aria-current="tab === item.id ? 'page' : undefined" @click="tab = item.id">{{ item.name }}</button>
+      <button v-for="item in tabs" :key="item.id" :class="{ active: tab === item.id }" :aria-current="tab === item.id ? 'page' : undefined" @click="navigate(item.id)">{{ item.name }}</button>
     </nav>
     <main class="retail-main">
       <div class="workspace-heading">
@@ -39,6 +45,8 @@ const tabs = [{ id: 'overview', name: '经营概览' }, { id: 'datasets', name: 
         </select>
         <span v-if="dataset" class="state-tag" :data-state="dataset.status">{{ statusLabel[dataset.status] }}</span>
       </div>
+
+      <AgentWorkspace :view="tab" :dataset-id="selected" :ready="dataset?.status === 'READY'" @navigate="navigate" />
 
       <section v-if="tab === 'datasets'" aria-label="数据与导入" class="data-grid">
         <div class="surface import-panel">
@@ -102,6 +110,7 @@ const tabs = [{ id: 'overview', name: '经营概览' }, { id: 'datasets', name: 
             <div class="result-provenance"><span>口径 {{ saved.result.metric_version }}</span><span class="identifier">查询 {{ saved.query_id }}</span><details><summary>查看结果与来源哈希</summary><p>结果 SHA-256</p><code>{{ saved.result_sha256 }}</code><p>XLSX SHA-256</p><code>{{ saved.result.data_hash }}</code></details></div>
           </article>
           <details v-if="definitions" class="surface definitions"><summary>指标口径与使用边界</summary><p>正向金额减取消类金额得到净额。有效发票数为该月正向交易中的不同 InvoiceNo 数量。</p><p>包含符合分类条件的费用条目；不是商品专属 GMV、财务收入或实际退款。金额在服务端精确汇总后按 ROUND_HALF_UP 显示两位，原始三位值保留。</p><div v-for="item in definitions.definitions" :key="item.metric"><h3>{{ item.label }}</h3><p>{{ item.formula }}</p><p>{{ item.inclusion }}</p><p>{{ item.exclusions }}</p></div></details>
+          <div class="surface"><h2>国家与交易条目分布、期间比较</h2><p>在确定性报表中选择期间、筛选与可选基期，查看排名、差额与变化构成。</p><button class="secondary" @click="navigate('analysis')">查看分布与比较报表</button></div>
         </template>
       </section>
 

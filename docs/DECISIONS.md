@@ -77,3 +77,11 @@
 - 统一provider预算先占用再发送，unknown保守保留；test_fixture预算与paid_project分账，所有真实代码路径仍要求明确授权。外部tracing关闭。
 - B1与B2共享八工具、输出和基础权限；B2增加业务核验/最多两次修复。报告数字从保存工具字段解析，模型说明待人工审阅。
 - 实际模型效果与离线恢复验证独立，15个scripted任务/114断言只证明工程行为；正式实验和论文不开始。
+
+## D7 报告与五视图
+
+- B0显式表单复用确定性工具；run/tool/report同事务保存，提交键并发幂等。生成确定性报表不占模型预算。
+- 报告GET/导出核对持久化tool_call_id/field_path及金额/快照/口径/期间/过滤器/新单位；不重新算业务指标。D6旧内容不回写。
+- 导出仅JSON与纯文本Markdown，HTML/Markdown内容转义，不新增CSV/Excel表格导出攻击面。前端文本插值渲染，model prose保留人工复核提示。
+- 明确区分NO_DATA、EMPTY_RESULT、PARTIAL_PERIOD与基期不足的PARTIAL_RESULT。六个导航入口覆盖五项功能并保留查询历史。
+- 默认运行库复制D6业务库/checkpoint到D7，旧库SHA不变。真实模型仍禁止；浏览器追问仅用显式工程夹具，正式实验延期。

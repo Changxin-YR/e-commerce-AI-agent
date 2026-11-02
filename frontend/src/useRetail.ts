@@ -7,7 +7,8 @@ const storage = {
   set(key: string, value: string) { try { localStorage.setItem(`retail.${key}`, value) } catch { /* URL and server history remain usable. */ } },
 }
 export function useRetail() {
-  const tab = ref('overview'), datasets = ref<Dataset[]>([]), selected = ref('')
+  const requestedView = new URL(location.href).searchParams.get('view')
+  const tab = ref(requestedView && ['overview', 'datasets', 'history', 'analysis', 'reports', 'tasks'].includes(requestedView) ? requestedView : 'overview'), datasets = ref<Dataset[]>([]), selected = ref('')
   const quality = ref<Quality | null>(null), definitions = ref<Definitions | null>(null)
   const history = ref<HistoryItem[]>([]), historyTotal = ref(0), historyOffset = ref(0)
   const saved = ref<Saved | null>(null), month = ref(''), country = ref(''), stock = ref('')
@@ -30,6 +31,7 @@ export function useRetail() {
   function setLocation(result: Saved) {
     const url = new URL(location.href)
     url.searchParams.set('query', result.query_id)
+    for (const key of ['view', 'run', 'report']) url.searchParams.delete(key)
     window.history.replaceState(null, '', url)
     storage.set('dataset', result.dataset_id)
   }
@@ -59,8 +61,8 @@ export function useRetail() {
     } else historyError.value = errorText(h.reason)
     busy.value = false
     const queryId = new URL(location.href).searchParams.get('query')
-    if (restore && queryId) await openHistory(queryId)
-    else if (restore && history.value[0]) await openHistory(history.value[0].query_id)
+    if (restore && tab.value === 'overview' && queryId) await openHistory(queryId)
+    else if (restore && tab.value === 'overview' && history.value[0]) await openHistory(history.value[0].query_id)
   }
   async function openHistory(id: string) {
     clearResult()

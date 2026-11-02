@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "scope": "real_UCI_B0_local_TestClient_no_model",
+  "checks": [
+    {
+      "name": "comparison",
+      "report_id": "rep_83ba601362104a6f9c4666a7ece28485",
+      "run_id": "run_67c0c921d87c4da5a3633f7aa7191cb8",
+      "business_result": "PASS",
+      "readonly_gets": 6
+    },
+    {
+      "name": "partial",
+      "report_id": "rep_acf4d224c6e845d9ab81070e2d9252c1",
+      "run_id": "run_9521b3cbb5a24e929e9a2ff766ae9491",
+      "business_result": "PARTIAL_PERIOD",
+      "readonly_gets": 6
+    },
+    {
+      "name": "no-data",
+      "report_id": "rep_dbde585bdd564ff5a2a9428440f27e00",
+      "run_id": "run_6af007446f334c1b8aaf07fe7f15ec9e",
+      "business_result": "NO_DATA",
+      "readonly_gets": 6
+    }
+  ],
+  "counts": {
+    "transaction_rows": 541909,
+    "analysis_runs": 33,
+    "reports": 33,
+    "agent_tool_calls": 50,
+    "model_attempts": 66,
+    "query_history": 2
+  },
+  "external_model_calls": 0
+}

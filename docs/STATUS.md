@@ -1,9 +1,11 @@
-# 当前状态：D6 工程验证通过，继续 D7
+# 当前状态：D7 工程已验证，继续 D8/D9
 
-D0—D6工程实现已验证，真实模型仍BLOCKED_AUTHORIZATION，最终用户验收未执行。D6真实LangGraph B1/B2、多轮白名单工具、SQLite checkpoint、请求/token预算、补答和历史持久化已落地。224 pytest通过；真实UCI库上15个scripted-provider任务、114项HTTP/进程断言通过。不得把这些夹具结果当真实模型能力或论文实验成绩。
+D0—D7工程完成，当前D8。持续授权继续编码、测试、本地提交与封存，无需逐阶段重复确认。真实模型BLOCKED_AUTHORIZATION，付费关闭、真实预算0；论文、人工gold与正式实验未开始；最终用户实机验收未执行。
 
-终止已记录SENT的夹具调用后，重启保留INTERRUPTED/UNKNOWN_OUTCOME与32768 token占用；明确恢复计入新attempt。B1/B2均通过停服、同thread补答与重复补答单报告。历史GET不产生请求。3项旧版本断言失败及修复日志保留。
+D7新增B0确定性报表、报告详情/JSON与Markdown导出、智能分析/追问补答/任务列表和详情/用量/重跑。五项功能视图均连接实际API；保留原查询历史入口。API与健康版本0.7.0/D7，schema0004_agent_runtime。
 
-当前.env运行库在D:/codex产出/电商智能体_D6智能体/缓存/runtime，schema0004_agent_runtime；原541909行和2条查询历史保留，D5库逐字节不变。夹具运行显式标test_fixture，真实付费调用0。服务已停止。交付包含源码、命令、数据库与checkpoint备份。
+实测238 pytest、25 Vitest、TypeScript/Vite构建通过。Edge最终覆盖8项：真实首次导入与幂等、精确月度与重启、异常状态、2项健康检查、B0导出与历史、覆盖状态、脚本B2追问重启恢复。完整最后轮7过/1旧测试预期失败，修正后2项健康用例定向通过；没有把那次失败命令改记为通过。真实报表158项独立SQL核对、月度21项核对通过。脚本场景不是实际模型验证。
 
-按持续授权直接完成D7报告/五视图、D8安全稳定、D9复现/用户验收准备，无需阶段询问。论文、人工gold、正式实验仍延期；最多READY_FOR_USER_ACCEPTANCE。
+默认D7运行库541909交易行、33任务/33报告（30个D6脚本开发任务+3个D7无模型报表）、50工具记录、66既有脚本尝试、2个保存查询。D6业务库/checkpoint哈希不变，所有本轮验证服务已停止。默认库与checkpoint及最终浏览器库的路径/哈希见docs/evidence/d7/verification.json。
+
+下一步docs/dev/steps/08_08_SECURITY.md，再09_09_ACCEPTANCE.md。D8安全和D9干净安装/复现/F01—F16矩阵尚待完成，不宣布全系统通过。

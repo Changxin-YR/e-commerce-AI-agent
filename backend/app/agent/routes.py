@@ -39,6 +39,10 @@ def resume_run(run_id: str,body: ResumeRun,request: Request):
 
 @router.post('/runs/{run_id}/rerun',status_code=202)
 def rerun(run_id: str,body: ResumeRun,request: Request,response: Response):
+    if request.app.state.agent_service.get(run_id)['variant']=='B0':
+        report,created=request.app.state.report_service.rerun(run_id,body)
+        response.status_code=201 if created else 200
+        return request.app.state.agent_service.get(report['run_id'])
     result,created=request.app.state.agent_service.rerun(run_id,body)
     response.status_code=202 if created else 200
     return result

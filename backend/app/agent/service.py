@@ -155,7 +155,7 @@ class AgentService:
                 usage=dict(requests_reserved=run.requests_consumed,tokens_occupied=run.tokens_occupied,
                     confirmed_total_tokens=sum(known) if len(known)==len(attempts) else None,
                     known_partial_tokens=sum(known),unknown_usage_attempts=len(attempts)-len(known),confirmed_cost=None,
-                    basis='test_fixture_no_network' if run.config.get('budget_scope')=='test_fixture' else 'provider_reported_or_unknown'),
+                    basis='deterministic_no_model' if run.variant=='B0' else ('test_fixture_no_network' if run.config.get('budget_scope')=='test_fixture' else 'provider_reported_or_unknown')),
                 attempts=[dict(attempt_id=a.attempt_id,step=a.step,status=a.status,source=a.source,provider=a.provider,
                     model_id=a.model_id,request_hash=a.request_hash,reserved_tokens=a.reserved_tokens,usage=a.usage,
                     request_id=a.response.get('request_id') if a.response else None,
@@ -323,6 +323,7 @@ class AgentService:
                 session.commit()
 
     def finalize(self,state):
+        from backend.app.reports import provenance, LIMITATIONS
         run_id=state['run_id']; decision=state['decision']; results=state.get('results',[])
         warnings=list(dict.fromkeys(w for result in results for w in result.get('warnings',[])))
         warnings.append('MODEL_COMMENTARY_REQUIRES_HUMAN_REVIEW')
@@ -331,7 +332,9 @@ class AgentService:
             message=decision['message'],claims=state['claims'],warnings=warnings,
             evidence_refs=[r['tool_call_id'] for r in results if r.get('tool_call_id')],
             tool_statuses=[dict(tool=r.get('tool'),status=r.get('status'),period=r.get('period')) for r in results],
-            validation='B2_BUSINESS_CHECKS' if state['variant']=='B2' else 'B1_REFERENCE_CHECKS',test_fixture=self.provider.is_test)
+            validation='B2_BUSINESS_CHECKS' if state['variant']=='B2' else 'B1_REFERENCE_CHECKS',test_fixture=self.provider.is_test,
+            provenance=provenance(self.metrics.profile(state['dataset_id'])),limitations=LIMITATIONS,
+            parameters=self.run_input(run_id),report_schema='report-v1')
         with Session(self.write_engine) as session:
             session.execute(text('BEGIN IMMEDIATE')); run=self._get(session,run_id)
             old=session.scalar(select(Report).where(Report.run_id==run_id))
