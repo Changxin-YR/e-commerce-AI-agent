@@ -12,7 +12,7 @@ from sqlalchemy import delete, func, insert, select, text, update
 from sqlalchemy.exc import SQLAlchemyError
 
 from backend.app.config import Settings
-from backend.app.database import create_database_engine, create_session_factory
+from backend.app.database import create_database_engine, create_session_factory, current_schema_revision
 from backend.app.errors import AppError
 from backend.app.imports.locks import WriterLease
 from backend.app.imports.rows import INT64_MAX, read_rows, transform_row
@@ -36,9 +36,12 @@ class ImportService:
         self.allowed_hashes = test_hashes if test_hashes is not None else frozenset({OFFICIAL_SHA})
         self.engine = create_database_engine(settings)
         self.sessions = create_session_factory(self.engine)
+        self.read_engine = create_database_engine(settings, readonly=True)
+        self.read_sessions = create_session_factory(self.read_engine)
         self.lease = WriterLease(settings.database_path.with_suffix(".import.lock"))
         self.executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="dataset-import")
         self.ready = False
+        self.expected_revision = current_schema_revision()
 
     def start(self):
         if not self.settings.database_path.is_file():
@@ -47,7 +50,7 @@ class ImportService:
             with self.engine.connect() as connection:
                 version = connection.execute(text("SELECT version_num FROM alembic_version")).scalar_one()
                 tables = set(connection.execute(text("SELECT name FROM sqlite_master WHERE type='table'")).scalars())
-                if version != "0002_import" or not set(Base.metadata.tables).issubset(tables):
+                if version != self.expected_revision or not set(Base.metadata.tables).issubset(tables):
                     return
                 marker = connection.execute(text("SELECT value FROM app_metadata WHERE key='project_id'")).scalar_one_or_none()
                 if marker != "ecommerce-agent-thesis":
@@ -68,10 +71,11 @@ class ImportService:
         self.executor.shutdown(wait=True)
         self.lease.close()
         self.engine.dispose()
+        self.read_engine.dispose()
 
     def require_database(self):
         if not self.ready:
-            raise AppError("DATABASE_MIGRATION_REQUIRED", "Run the database migration before importing.")
+            raise AppError("DATABASE_MIGRATION_REQUIRED", "Run the database migration before using data APIs.")
 
     def submit(self, path: Path, *, background: bool = True) -> dict:
         self.require_database()
@@ -132,7 +136,7 @@ class ImportService:
 
     def batch(self, batch_id: str) -> dict:
         self.require_database()
-        with self.sessions() as session:
+        with self.read_sessions() as session:
             batch = session.get(ImportBatch, batch_id)
             if not batch:
                 raise AppError("NOT_FOUND", "Import batch not found.", 404)
@@ -140,7 +144,7 @@ class ImportService:
 
     def profile(self, dataset_id: str, *, quality: bool = False) -> dict:
         self.require_database()
-        with self.sessions() as session:
+        with self.read_sessions() as session:
             dataset = session.get(DatasetSnapshot, dataset_id)
             if not dataset:
                 raise AppError("NOT_FOUND", "Dataset not found.", 404)

@@ -1,0 +1,130 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "get_dataset_profile",
+      "parameters": {
+        "additionalProperties": false,
+        "properties": {
+          "dataset_id": {
+            "pattern": "^[a-zA-Z0-9_-]{1,64}$",
+            "title": "Dataset Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "dataset_id"
+        ],
+        "title": "ProfileArguments",
+        "type": "object"
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "get_metric_definitions",
+      "parameters": {
+        "additionalProperties": false,
+        "properties": {
+          "metric_names": {
+            "items": {
+              "enum": [
+                "positive_amount",
+                "cancellation_amount",
+                "net_amount",
+                "positive_invoice_count"
+              ],
+              "type": "string"
+            },
+            "maxItems": 4,
+            "minItems": 1,
+            "title": "Metric Names",
+            "type": "array"
+          }
+        },
+        "title": "DefinitionParams",
+        "type": "object"
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "query_metric_series",
+      "parameters": {
+        "additionalProperties": false,
+        "properties": {
+          "country": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Country"
+          },
+          "stock_code": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Stock Code"
+          },
+          "metric": {
+            "enum": [
+              "positive_amount",
+              "cancellation_amount",
+              "net_amount",
+              "positive_invoice_count"
+            ],
+            "title": "Metric",
+            "type": "string"
+          },
+          "date_from": {
+            "format": "date",
+            "title": "Date From",
+            "type": "string"
+          },
+          "date_to": {
+            "description": "Exclusive end, ISO date; source local time with unspecified timezone",
+            "format": "date",
+            "title": "Date To",
+            "type": "string"
+          },
+          "granularity": {
+            "const": "month",
+            "default": "month",
+            "title": "Granularity",
+            "type": "string"
+          },
+          "dataset_id": {
+            "pattern": "^[a-zA-Z0-9_-]{1,64}$",
+            "title": "Dataset Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "metric",
+          "date_from",
+          "date_to",
+          "dataset_id"
+        ],
+        "title": "SeriesArguments",
+        "type": "object"
+      }
+    }
+  }
+]

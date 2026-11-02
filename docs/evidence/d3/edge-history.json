@@ -1,0 +1,17 @@
+{
+  "scope": "D3_saved_real_JSON_refresh_not_D4_business_UI",
+  "status": "PASS",
+  "query_id": "q_0bd128a47fa54f9185d804e67ed0b8b6",
+  "result_sha256": "3bec04eabbd451ead8a478457ff22856196f61f302a7ccb92fb5137fb8a2f6f9",
+  "requests": [
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:60315/api/v1/queries/q_0bd128a47fa54f9185d804e67ed0b8b6"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:60315/api/v1/queries/q_0bd128a47fa54f9185d804e67ed0b8b6"
+    }
+  ],
+  "browser_version": "156.0.4314.58"
+}

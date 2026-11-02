@@ -1,0 +1,241 @@
+{
+  "config": {
+    "argv": [
+      "D:\\依赖\\Node.js\\node-v24.22.0-win-x64\\node.exe",
+      "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend\\node_modules\\@playwright\\test\\cli.js",
+      "test"
+    ],
+    "configFile": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend\\playwright.config.ts",
+    "rootDir": "C:/Users/27363/Desktop/毕业论文/电商智能体的实现/ecommerce-agent-thesis/frontend/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/codex产出/电商智能体_D3精确指标API/缓存/playwright/2026-11-02T13-45-58-419Z-45720/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/Users/27363/Desktop/毕业论文/电商智能体的实现/ecommerce-agent-thesis/frontend/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "D:\\codex产出\\电商智能体_D3精确指标API\\缓存\\playwright\\2026-11-02T13-45-58-419Z-45720\\artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend\\e2e",
+        "snapshotDir": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend\\e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 45000,
+        "use": {
+          "channel": "msedge",
+          "headless": true,
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "trace": "on",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "D:\\codex产出\\电商智能体_D3精确指标API\\缓存\\playwright\\2026-11-02T13-45-58-419Z-45720\\results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "health.spec.ts",
+      "file": "health.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "D0 real local service",
+          "file": "health.spec.ts",
+          "line": 143,
+          "column": 15,
+          "specs": [
+            {
+              "title": "page receives real health JSON and remains connected after reload",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend\\e2e\\health.spec.ts",
+                        "line": 143,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 578,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-02T13:45:59.946Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend\\e2e\\health.spec.ts",
+                            "line": 143,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\codex产出\\电商智能体_D3精确指标API\\缓存\\playwright\\2026-11-02T13-45-58-419Z-45720\\artifacts\\health-D0-real-local-servi-38e60-ains-connected-after-reload\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "760d72a3746ac5132f88-4aced9ff3f1a87db38e8",
+              "file": "health.spec.ts",
+              "line": 174,
+              "column": 3
+            },
+            {
+              "title": "stopping and restarting the real backend shows failure and recovery",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend\\e2e\\health.spec.ts",
+                        "line": 143,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2553,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-02T13:46:04.659Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend\\e2e\\health.spec.ts",
+                            "line": 143,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\codex产出\\电商智能体_D3精确指标API\\缓存\\playwright\\2026-11-02T13-45-58-419Z-45720\\artifacts\\health-D0-real-local-servi-895e7--shows-failure-and-recovery\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "760d72a3746ac5132f88-c3f25ba8ef85833393ee",
+              "file": "health.spec.ts",
+              "line": 201,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-02T13:45:59.359Z",
+    "duration": 8616.871000000001,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

@@ -9,6 +9,13 @@ from sqlalchemy.pool import NullPool
 from backend.app.config import Settings
 
 
+def current_schema_revision() -> str:
+    from alembic.config import Config
+    from alembic.script import ScriptDirectory
+    from backend.app.config import PROJECT_ROOT
+    return ScriptDirectory.from_config(Config(str(PROJECT_ROOT / "backend/alembic.ini"))).get_current_head()
+
+
 def create_database_engine(
     settings: Settings, *, allow_create: bool = False, readonly: bool = False
 ) -> Engine:

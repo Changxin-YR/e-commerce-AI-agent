@@ -17,7 +17,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 VENV_PYTHON = ROOT / ".venv" / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
 PACKAGES = ("fastapi", "pydantic", "pydantic-settings", "SQLAlchemy", "alembic", "uvicorn", "httpx", "pytest")
-FUTURE_COMMANDS = ("download-data", "verify-data", "verify-metrics", "tools", "agent", "evaluate")
+FUTURE_COMMANDS = ("download-data", "verify-data", "tools", "agent", "evaluate")
 
 
 def run(command: list[str], cwd: Path = ROOT) -> int:
@@ -100,6 +100,11 @@ def main() -> int:
     importer.add_argument("file", type=Path)
     importer.add_argument("--database", type=Path)
     importer.add_argument("--output", type=Path)
+    metrics = sub.add_parser("verify-metrics", help="Real D3 HTTP/SQL acceptance; requires an existing imported database")
+    metrics.add_argument("--database", type=Path, required=True)
+    metrics.add_argument("--output", type=Path, required=True)
+    metrics.add_argument("--reference", type=Path)
+    metrics.add_argument("--browser", action="store_true")
     test = sub.add_parser("test", help="Run tests and propagate the first failing exit code")
     test.add_argument("--scope", choices=("smoke", "backend", "frontend", "e2e", "all"), default="smoke")
     for name in FUTURE_COMMANDS:
@@ -119,6 +124,13 @@ def main() -> int:
         cache = Path(os.environ["D0_CACHE_DIR"]).resolve() if os.environ.get("D0_CACHE_DIR") else None
         if args.command == "doctor":
             return doctor()
+        if args.command == "verify-metrics":
+            command = [sys.executable, str(ROOT / "scripts/verify_metrics.py"), "--database", str(args.database), "--output", str(args.output)]
+            if args.reference:
+                command.extend(["--reference", str(args.reference)])
+            if args.browser:
+                command.append("--browser")
+            return run(command)
         if args.command == "import-data":
             command = [sys.executable, str(ROOT / "scripts/import_data.py"), str(args.file)]
             for name in ("database", "output"):

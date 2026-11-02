@@ -21,6 +21,9 @@ from backend.app.errors import AppError
 from backend.app.imports.routes import router as import_router
 from backend.app.imports.service import ImportService
 from backend.app.models import Base
+from backend.app.metrics.service import MetricService
+from backend.app.metrics.history import HistoryService
+from backend.app.metrics.routes import router as metric_router
 from backend.app.schemas import DatabaseHealth, ErrorDetail, ErrorResponse, HealthResponse
 
 logger = logging.getLogger(__name__)
@@ -44,6 +47,8 @@ def create_app(settings: Settings | None = None, *, test_hashes: frozenset[str] 
     migration_config = Config(str(PROJECT_ROOT / "backend" / "alembic.ini"))
     expected_revision = ScriptDirectory.from_config(migration_config).get_current_head()
     import_service = ImportService(settings, test_hashes=test_hashes)
+    metric_service = MetricService(engine, import_service.require_database)
+    history_service = HistoryService(metric_service, import_service.engine)
 
     @asynccontextmanager
     async def lifespan(_app: FastAPI):
@@ -55,14 +60,17 @@ def create_app(settings: Settings | None = None, *, test_hashes: frozenset[str] 
             engine.dispose()
 
     application = FastAPI(
-        title="Ecommerce Agent — D2",
-        version="0.2.0",
+        title="Ecommerce Agent — D3",
+        version="0.3.0",
         description="Local source ingestion. raw_sha256/data_hash always identify the XLSX workbook; container hashes are separate.",
         lifespan=lifespan,
     )
     application.state.settings = settings
     application.state.engine = engine
     application.state.import_service = import_service
+    application.state.metric_service = metric_service
+    application.state.history_service = history_service
+    application.include_router(metric_router)
     application.include_router(import_router)
 
     @application.middleware("http")
@@ -88,6 +96,10 @@ def create_app(settings: Settings | None = None, *, test_hashes: frozenset[str] 
     @application.exception_handler(AppError)
     async def app_error_handler(request: Request, exc: AppError):
         return error_response(request, exc.code, exc.message, exc.status_code)
+
+    @application.exception_handler(SQLAlchemyError)
+    async def database_error_handler(request: Request, _exc: SQLAlchemyError):
+        return error_response(request, "DATABASE_UNAVAILABLE", "Database operation failed.", 503)
 
     @application.exception_handler(RequestValidationError)
     async def validation_handler(request: Request, _exc: RequestValidationError):

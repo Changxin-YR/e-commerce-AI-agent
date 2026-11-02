@@ -15,8 +15,8 @@ class DatabaseHealth(BaseModel):
 class HealthResponse(BaseModel):
     status: Literal["ok"] = "ok"
     service: Literal["ecommerce-agent"] = "ecommerce-agent"
-    version: Literal["0.2.0"] = "0.2.0"
-    stage: Literal["D2"] = "D2"
+    version: Literal["0.3.0"] = "0.3.0"
+    stage: Literal["D3"] = "D3"
     database: DatabaseHealth
 
 

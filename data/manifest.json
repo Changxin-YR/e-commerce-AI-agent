@@ -152,5 +152,17 @@
       "docs/evidence/d2/real-import.json": "ac941f7638f667dfcbb0578c7d2e7463f3ffca3127687a9175e8fa289fd9faf7",
       "docs/evidence/d2/real-final.json": "78456b9a31b199a3472ed50aabfec9998778552d50e3582f41c029dc7449c49a"
     }
+  },
+  "metrics": {
+    "stage": "D3",
+    "status": "VERIFIED",
+    "metric_version": "retail-v1.2",
+    "schema_revision": "0003_query_history",
+    "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
+    "verified_at": "2026-11-02T21:56:49.252368+08:00",
+    "evidence": {
+      "docs/evidence/d3/real-final.json": "97f16e843f6193902eae6cf28da482f3b282c9a2fec25c189d25b135ac47ac86",
+      "docs/evidence/d3/independent-comparison.json": "b5021aa96625d87d37aecd4eb3bb345c05d5979624f84250463f7a8d5cae7b78"
+    }
   }
 }

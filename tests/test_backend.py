@@ -44,8 +44,8 @@ def test_migration_upgrade_idempotence_and_round_trip(settings: Settings):
         with create_session_factory(engine)() as session:
             assert session.scalars(select(AppMetadata)).one().value == "ecommerce-agent-thesis"
         with sqlite3.connect(settings.database_path) as connection:
-            assert connection.execute("SELECT version_num FROM alembic_version").fetchall() == [("0002_import",)]
-            assert set(row[0] for row in connection.execute("SELECT name FROM sqlite_master WHERE type='table'")) == {"alembic_version", "app_metadata", "dataset_snapshots", "import_batches", "transaction_rows", "quality_issues", "analysis_runs", "reports"}
+            assert connection.execute("SELECT version_num FROM alembic_version").fetchall() == [("0003_query_history",)]
+            assert set(row[0] for row in connection.execute("SELECT name FROM sqlite_master WHERE type='table'")) == {"alembic_version", "app_metadata", "dataset_snapshots", "import_batches", "transaction_rows", "quality_issues", "analysis_runs", "reports", "query_history"}
         command.downgrade(config, "base")
         with sqlite3.connect(settings.database_path) as connection:
             assert connection.execute("SELECT name FROM sqlite_master WHERE name='app_metadata'").fetchall() == []
@@ -64,8 +64,8 @@ def test_health_checks_real_database_and_has_no_write_side_effect(migrated: Sett
             assert response.status_code == 200
             payload = response.json()
             assert payload == {
-                "status": "ok", "service": "ecommerce-agent", "version": "0.2.0", "stage": "D2",
-                "database": {"status": "ok", "engine": "sqlite", "sqlite_version": sqlite3.sqlite_version, "schema_revision": "0002_import"},
+                "status": "ok", "service": "ecommerce-agent", "version": "0.3.0", "stage": "D3",
+                "database": {"status": "ok", "engine": "sqlite", "sqlite_version": sqlite3.sqlite_version, "schema_revision": "0003_query_history"},
             }
             UUID(response.headers["X-Request-ID"])
             assert response.headers["cache-control"] == "no-store"
@@ -114,7 +114,7 @@ def test_stamped_revision_without_real_schema_is_not_healthy(migrated: Settings)
 
 def test_unknown_route_and_http_method_have_error_envelopes(migrated: Settings):
     with TestClient(create_app(migrated), base_url="http://127.0.0.1") as client:
-        missing = client.get("/api/v1/datasets")
+        missing = client.get("/api/v1/not-implemented")
         method = client.post("/healthz", headers={"Origin": "http://127.0.0.1:5173"})
     assert missing.status_code == 404
     assert missing.json()["error"]["code"] == "NOT_FOUND"

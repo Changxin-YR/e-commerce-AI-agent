@@ -108,3 +108,24 @@ class Report(Base):
     run_id: Mapped[str] = mapped_column(ForeignKey("analysis_runs.run_id"), unique=True)
     created_at: Mapped[str] = mapped_column(String(40))
     content: Mapped[dict] = mapped_column(JSON)
+
+
+class QueryHistory(Base):
+    __tablename__ = "query_history"
+    __table_args__ = (
+        UniqueConstraint("dataset_id", "idempotency_key"),
+        Index("ix_query_history_dataset_created", "dataset_id", "created_at", "query_id"),
+        CheckConstraint("query_kind IN ('monthly','series')"),
+    )
+    query_id: Mapped[str] = mapped_column(String(64), primary_key=True)
+    dataset_id: Mapped[str] = mapped_column(ForeignKey("dataset_snapshots.dataset_id"))
+    idempotency_key: Mapped[str] = mapped_column(String(128))
+    request_sha256: Mapped[str] = mapped_column(String(64))
+    query_kind: Mapped[str] = mapped_column(String(16))
+    parameters: Mapped[dict] = mapped_column(JSON)
+    result: Mapped[dict] = mapped_column(JSON)
+    result_sha256: Mapped[str] = mapped_column(String(64))
+    workbook_sha256: Mapped[str] = mapped_column(String(64))
+    transform_version: Mapped[str] = mapped_column(String(32))
+    metric_version: Mapped[str] = mapped_column(String(32))
+    created_at: Mapped[str] = mapped_column(String(40))

@@ -97,6 +97,17 @@ def test_successful_smoke_runs_python_frontend_tests_and_build(cli, monkeypatch)
     assert calls[2][0][-2:] == ["run", "build"]
 
 
+def test_verify_metrics_dispatch_preserves_failure_and_arguments(cli, monkeypatch):
+    calls=[]
+    def child(command):
+        calls.append(command)
+        return 2
+    monkeypatch.setattr(manage,"run",child)
+    assert cli("verify-metrics","--database","test_fixture.db","--output","evidence","--browser")==2
+    assert calls[0][1].endswith("verify_metrics.py")
+    assert calls[0][2:]==["--database","test_fixture.db","--output","evidence","--browser"]
+
+
 @pytest.mark.parametrize("missing_dependency", [False, True])
 def test_doctor_checks_dependencies_without_printing_model_secrets(
     monkeypatch, capsys, tmp_path, missing_dependency

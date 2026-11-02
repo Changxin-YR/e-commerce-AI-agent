@@ -1,23 +1,23 @@
 {
   "project_id": "ecommerce-agent-thesis",
-  "updated_at": "2026-11-02T21:01:14.805178+08:00",
+  "updated_at": "2026-11-02T21:56:49.252368+08:00",
   "implementation_ready": {
     "status": "PARTIAL",
     "blocker_code": null,
-    "scope": "D0-D2 engineering verified; D3-D9 NOT_STARTED",
+    "scope": "D0-D3 engineering verified; D4-D9 NOT_STARTED",
     "evidence": [
       "docs/EVIDENCE_INDEX.md",
-      "docs/D2_DELIVERY.md"
+      "docs/D3_DELIVERY.md"
     ]
   },
   "real_data_ready": {
     "status": "PASS",
     "blocker_code": null,
-    "scope": "Official source audited and 541909 rows imported; ZIP/XLSX idempotence, exact money and recovery verified",
+    "scope": "Official 541909 rows; audited source, integer metric APIs and persisted queries verified",
     "evidence": [
       "data/manifest.json",
-      "docs/evidence/d2/real-import.json",
-      "docs/evidence/d2/real-final.json"
+      "docs/evidence/d3/real-final.json",
+      "docs/evidence/d3/independent-comparison.json"
     ]
   },
   "live_model_verified": {
@@ -46,26 +46,27 @@
     "evidence": []
   },
   "handoff_version": "1.5",
-  "handoff_status": "D2_IMPORTED_READY_FOR_USER_ACCEPTANCE",
-  "implementation_status": "D2_READY_FOR_USER_ACCEPTANCE",
+  "handoff_status": "D3_METRICS_READY_FOR_USER_ACCEPTANCE",
+  "implementation_status": "D3_READY_FOR_USER_ACCEPTANCE",
   "execution_mode": "FEATURE_FIRST",
-  "current_dev_step": "D2",
+  "current_dev_step": "D3",
   "paper_work_mode": "DEFERRED_BY_USER",
   "formal_experiment_mode": "DEFERRED_UNTIL_FEATURE_ACCEPTANCE_AND_USER_APPROVAL",
-  "last_verified_dev_step": "D2",
-  "next_dev_step": "D3",
+  "last_verified_dev_step": "D3",
+  "next_dev_step": "D4",
   "next_step_requires_user_approval": true,
-  "user_acceptance": "PENDING_D2",
+  "user_acceptance": "PENDING_D3",
   "git": {
     "initialized": true,
     "baseline_sha": "0740bf439c37dc344885d2f7c26568c157dd9571",
     "baseline_scope": "Verified D0 plus closeout",
-    "delivery_commit_receipt": "D:/codex产出/电商智能体_D2数据库导入/交付/git-receipt.json",
+    "delivery_commit_receipt": "D:/codex产出/电商智能体_D3精确指标API/交付/git-receipt.json",
     "pushed": false,
-    "note": "Final D2 commit recorded outside the commit to avoid a self-referencing SHA.",
-    "d1_sha": "bf92c1f5672f0ecbc05169215c5274d3ebdd7d39"
+    "note": "Final D3 commit is recorded outside Git to avoid a self-referencing SHA.",
+    "d1_sha": "bf92c1f5672f0ecbc05169215c5274d3ebdd7d39",
+    "d2_sha": "49c2bbd403fffd571926c9ca3329ded77fcdba0a"
   },
-  "artifact_root": "D:/codex产出/电商智能体_D2数据库导入",
+  "artifact_root": "D:/codex产出/电商智能体_D3精确指标API",
   "d0": {
     "status": "READY_FOR_USER_ACCEPTANCE",
     "engineering_validation": "PASS",
@@ -119,7 +120,8 @@
       "transaction_rows",
       "quality_issues",
       "analysis_runs",
-      "reports"
+      "reports",
+      "query_history"
     ],
     "container_sha256": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
     "raw_row_count": 541909,
@@ -132,7 +134,7 @@
     "manifest": "data/manifest.json",
     "dataset_id": "ds_9561855056bc9d83ca5a82c198b5130b",
     "batch_id": "ib_9561855056bc9d83ca5a82c198b5130b",
-    "schema_revision": "0002_import",
+    "schema_revision": "0003_query_history",
     "transform_version": "uci352-ooxml-milligbp-v1"
   },
   "model": {
@@ -143,8 +145,8 @@
   "stage_statuses": {
     "D0": "VERIFIED_USER_AUTHORIZED_D1",
     "D1": "VERIFIED_USER_AUTHORIZED_D2",
-    "D2": "READY_FOR_USER_ACCEPTANCE",
-    "D3": "NOT_STARTED",
+    "D2": "VERIFIED_USER_AUTHORIZED_D3",
+    "D3": "READY_FOR_USER_ACCEPTANCE",
     "D4": "NOT_STARTED",
     "D5": "NOT_STARTED",
     "D6": "NOT_STARTED",
@@ -197,6 +199,46 @@
       "docs/D2_IMPORT.md",
       "docs/evidence/d2/real-import.json",
       "docs/evidence/d2/pytest-final.xml"
+    ]
+  },
+  "d3": {
+    "status": "READY_FOR_USER_ACCEPTANCE",
+    "engineering_validation": "PASS",
+    "user_authorized_continuation": true,
+    "pytest_passed": 158,
+    "pytest_d3_cases": 42,
+    "pytest_warnings": 0,
+    "vitest_passed": 8,
+    "edge_regression_passed": 2,
+    "real_edge_saved_json_refresh": "PASS",
+    "business_ui": "NOT_IMPLEMENTED_D4",
+    "typescript_build": "PASS",
+    "real_sql_http_checks": 87,
+    "independent_audits": "PASS_NO_DIFFERENCES_EXCEPT_TIMESTAMP",
+    "monthly_2011_09_10_reference_match": true,
+    "monthly_and_series_apis": "PASS",
+    "tools": [
+      "get_dataset_profile",
+      "get_metric_definitions",
+      "query_metric_series"
+    ],
+    "history_idempotence_and_restart": "PASS",
+    "get_requests_readonly": "PASS_DATABASE_SHA_UNCHANGED",
+    "source_rows": 541909,
+    "schema_revision": "0003_query_history",
+    "metric_version": "retail-v1.2",
+    "database_path": "D:/codex产出/电商智能体_D3精确指标API/缓存/runtime/app.sqlite3",
+    "database_sha256": "76a1b09bf229ee826660762ff914a8f94afeafab4fdd5b7fee574d3d068eaac4",
+    "database_bytes": 676335616,
+    "saved_query_count": 2,
+    "runtime_services": "STOPPED_AFTER_VALIDATION",
+    "d2_database_preserved": true,
+    "evidence": [
+      "docs/D3_DELIVERY.md",
+      "docs/D3_METRICS.md",
+      "docs/evidence/d3/real-final.json",
+      "docs/evidence/d3/pytest-final.xml",
+      "docs/evidence/d3/edge-history.json"
     ]
   }
 }

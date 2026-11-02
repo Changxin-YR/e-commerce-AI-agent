@@ -10,10 +10,9 @@ class WriterLease:
         self.stream = None
 
     def acquire(self) -> bool:
-        stream = self.path.open("a+b")
-        if stream.tell() == 0:
-            stream.write(b"0")
-            stream.flush()
+        # Windows can lock beyond EOF. Initialize only after acquiring the byte
+        # lock: two contenders must never write the first byte before locking.
+        stream = self.path.open("a+b", buffering=0)
         stream.seek(0)
         try:
             if os.name == "nt":
@@ -22,6 +21,8 @@ class WriterLease:
             else:
                 import fcntl
                 fcntl.flock(stream.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+            if self.path.stat().st_size == 0:
+                stream.write(b"0")
         except OSError:
             stream.close()
             return False

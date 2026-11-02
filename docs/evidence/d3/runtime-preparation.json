@@ -1,0 +1,17 @@
+{
+  "source": "D:\\codex产出\\电商智能体_D2数据库导入\\缓存\\runtime\\app.sqlite3",
+  "source_sha256": "7c1d3f06e8af2945a1d1f3a681bf2dd171bea8baa0af717eb898ab78d644c334",
+  "target": "D:\\codex产出\\电商智能体_D3精确指标API\\缓存\\runtime\\app.sqlite3",
+  "migrated_sha256": "e74736eec9827acf403d83aef0e2d0e9c51aa12773e8cc6400fbca2917fa270c",
+  "migration_argv": [
+    "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\.venv\\Scripts\\python.exe",
+    "-m",
+    "alembic",
+    "-c",
+    "backend/alembic.ini",
+    "upgrade",
+    "head"
+  ],
+  "migration_exit_code": 0,
+  "old_database_preserved": true
+}
