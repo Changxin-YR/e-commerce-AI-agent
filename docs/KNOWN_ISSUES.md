@@ -41,3 +41,12 @@
 - **未变遗留**：4项npm moderate开发依赖告警未在D4升级或重新audit；Edge保留NO_COLOR/FORCE_COLOR提示，Python158测试无警告。
 
 - **K24 / RESOLVED / 封存检查**：首次staged diff检出business.spec.ts末尾空行，已移除。首次提交因本机未设作者失败；沿用先前Codex <codex@localhost>，仅本次git -c设置作者，不修改全局用户配置。失败命令与复查保留。
+
+## D5 当前覆盖
+
+- K20的三工具限制已在D5解除，八工具实现并通过真实数据验证；仅retail-v1.2，任意SQL/模型外呼仍不可用。
+- K25 / RESOLVED：首次pytest父目录遗漏导致73 setup errors，补建新目录；第二轮一项AppError错误码匹配预期修正。最终195通过，失败证据全部保留。
+- D6—D9继续：真实模型预算0、BLOCKED_AUTHORIZATION；fake-provider结果只能证明离线工程逻辑。最终实机验收仍待用户。
+- 当前.env数据库改指D5缓存/runtime，D4封存库未改动。清理任务缓存之前必须保留实际使用库/交付备份。
+
+- D5封存diff首次发现两份新增日志末尾空行，已移除；失败与复查命令保留。

@@ -10,6 +10,7 @@ from backend.app.metrics.contracts import (
     MonthlyParams, MonthlyResult, PageParams, SaveQuery, SeriesParams, SeriesResult,
 )
 from backend.app.metrics.service import definitions
+from backend.app.metrics.tools import execute_tool, tool_schemas
 from backend.app.schemas import DatasetProfile, ErrorResponse
 
 
@@ -33,6 +34,17 @@ class DatasetPage(BaseModel):
     total: int
     limit: int
     offset: int
+
+
+@router.get("/tools", dependencies=[Depends(no_query)])
+def tools():
+    return {"tools": tool_schemas()}
+
+
+@router.post("/tools/{tool_name}", dependencies=[Depends(no_query)])
+def invoke_tool(tool_name: str, arguments: dict, request: Request):
+    """Read-only execution; Origin protection also applies to this POST."""
+    return execute_tool(request.app.state.metric_service, tool_name, arguments)
 
 
 @router.get("/datasets", response_model=DatasetPage)

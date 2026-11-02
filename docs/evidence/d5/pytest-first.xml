@@ -1,0 +1,804 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="73" failures="0" skipped="0" tests="79" time="2.554" timestamp="2026-11-02T22:57:05.711876+08:00" hostname="KY"><testcase classname="tests.test_tools" name="test_all_tools_http_evidence_readonly_and_reject_unknown[get_dataset_profile]" time="0.001"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_all_tools_http_evidence_readonly_and_reject_unknown[get_metric_definitions]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_all_tools_http_evidence_readonly_and_reject_unknown[get_quality_summary]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_all_tools_http_evidence_readonly_and_reject_unknown[query_metric_series]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_all_tools_http_evidence_readonly_and_reject_unknown[rank_entities]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_all_tools_http_evidence_readonly_and_reject_unknown[compare_periods]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_all_tools_http_evidence_readonly_and_reject_unknown[decompose_change]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_all_tools_http_evidence_readonly_and_reject_unknown[inspect_transactions]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_tools_math_and_quality" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_ties_order_truncation_missing_dimension_and_nonadditivity" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_no_data_partial_and_empty_are_distinct[get_quality_summary]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_no_data_partial_and_empty_are_distinct[query_metric_series]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_no_data_partial_and_empty_are_distinct[rank_entities]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_no_data_partial_and_empty_are_distinct[compare_periods]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_no_data_partial_and_empty_are_distinct[decompose_change]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_no_data_partial_and_empty_are_distinct[inspect_transactions]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_zero_negative_baseline_and_zero_change" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_inspection_limit_filters_and_no_customers" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_invalid_parameters[inspect_transactions-patch0]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_invalid_parameters[inspect_transactions-patch1]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_invalid_parameters[inspect_transactions-patch2]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_invalid_parameters[inspect_transactions-patch3]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_invalid_parameters[inspect_transactions-patch4]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_invalid_parameters[inspect_transactions-patch5]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_invalid_parameters[rank_entities-patch6]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_invalid_parameters[rank_entities-patch7]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_invalid_parameters[rank_entities-patch8]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_invalid_parameters[rank_entities-patch9]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_invalid_parameters[rank_entities-patch10]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_invalid_parameters[rank_entities-patch11]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_invalid_parameters[compare_periods-patch12]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_invalid_parameters[get_quality_summary-patch13]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_invalid_parameters[get_quality_summary-patch14]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_invalid_parameters[inspect_transactions-patch15]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_invalid_parameters[decompose_change-patch16]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_invalid_parameters[rank_entities-patch17]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_tools" name="test_registry_schema_and_no_arbitrary_tool" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_exact_money[1-0.001-0.00]" time="0.000" /><testcase classname="tests.test_metrics" name="test_exact_money[5-0.005-0.01]" time="0.000" /><testcase classname="tests.test_metrics" name="test_exact_money[1009-1.009-1.01]" time="0.000" /><testcase classname="tests.test_metrics" name="test_exact_money[-5--0.005--0.01]" time="0.000" /><testcase classname="tests.test_metrics" name="test_exact_money[-1--0.001-0.00]" time="0.000" /><testcase classname="tests.test_metrics" name="test_exact_money[9223372036854775807-9223372036854775.807-9223372036854775.81]" time="0.000" /><testcase classname="tests.test_metrics" name="test_monthly_integer_totals_filters_boundaries_and_quality" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_no_data_gap_and_partial_period[2011-11-NO_DATA-None-FULL]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_no_data_gap_and_partial_period[2012-01-NO_DATA-None-NONE]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_no_data_gap_and_partial_period[2011-12-PARTIAL_PERIOD-1.000-PARTIAL]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_no_data_gap_and_partial_period[2011-08-PARTIAL_PERIOD-99.000-PARTIAL]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_empty_filter_is_zero_and_literal_not_sql" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_bad_monthly_parameters[month=2011-13]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_bad_monthly_parameters[month=0000-01]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_bad_monthly_parameters[month=9999-12]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_bad_monthly_parameters[month=2011-9]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_bad_monthly_parameters[month=2011-09&amp;sql=SELECT+1]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_bad_monthly_parameters[month=2011-09&amp;file=C:/private]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_bad_monthly_parameters[month=2011-09&amp;country=]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_bad_monthly_parameters[month=2011-09&amp;month=2011-10]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_bad_monthly_parameters[month=2011-09&amp;country=UK&amp;country=France]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_series_gaps_clipped_months_and_invoice_counts" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_series_rejects_unsupported_inputs[overrides0-UNSUPPORTED_METRIC]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_series_rejects_unsupported_inputs[overrides1-VALIDATION_ERROR]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_series_rejects_unsupported_inputs[overrides2-VALIDATION_ERROR]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_series_rejects_unsupported_inputs[overrides3-VALIDATION_ERROR]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_series_rejects_unsupported_inputs[overrides4-VALIDATION_ERROR]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_series_rejects_unsupported_inputs[overrides5-VALIDATION_ERROR]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_series_rejects_unsupported_inputs[overrides6-VALIDATION_ERROR]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_non_ready_rejected_and_metadata_is_honest[QUEUED]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_non_ready_rejected_and_metadata_is_honest[IMPORTING]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_non_ready_rejected_and_metadata_is_honest[FAILED]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_unknown_dataset_and_metric_version" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_tools_whitelist_schemas_and_equivalence" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_history_idempotence_restart_no_reexecution_and_readonly" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_concurrent_save_and_series_history" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_openapi_describes_real_contract_and_errors" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_missing_database_does_not_create_success" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_verifier_fails_without_real_imported_database[missing]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_verifier_fails_without_real_imported_database[empty]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_verifier_fails_without_real_imported_database[corrupt]" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_metrics" name="test_empty_lock_file_contenders_never_initialize_without_ownership" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'&quot;">self = WindowsPath('D:/codex产出/电商智能体_D5八工具/缓存/pytest/first'), mode = 448
+parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\codex产出\\电商智能体_D5八工具\\缓存\\pytest\\first'
+
+D:\依赖\Python\版本\cpython-3.12.15-windows-x86_64-none\Lib\pathlib.py:1311: FileNotFoundError</error></testcase></testsuite></testsuites>

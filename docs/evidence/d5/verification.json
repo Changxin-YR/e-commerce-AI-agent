@@ -1,0 +1,36 @@
+{
+  "stage": "D5",
+  "engineering_validation": "PASS",
+  "status": "READY_FOR_USER_ACCEPTANCE",
+  "user_acceptance": "NOT_PERFORMED",
+  "pytest_passed": 195,
+  "d5_cases": 37,
+  "real_http_calls": 57,
+  "real_checks": 265,
+  "model_calls": 0,
+  "database": {
+    "path": "D:\\codex产出\\电商智能体_D5八工具\\缓存\\runtime\\app.sqlite3",
+    "bytes": 676335616,
+    "sha256": "76a1b09bf229ee826660762ff914a8f94afeafab4fdd5b7fee574d3d068eaac4",
+    "rows": 541909,
+    "saved_queries": 2,
+    "schema": "0003_query_history"
+  },
+  "runtime_services": "STOPPED_AFTER_VALIDATION",
+  "old_databases_preserved": true,
+  "source_hashes": {
+    "zip": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
+    "xlsx": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d"
+  },
+  "failed_runs": [
+    "pytest-first: 6 passed/73 setup errors (missing parent)",
+    "pytest-second: 78 passed/1 failed (exception-message expectation)"
+  ],
+  "frontend_regression": "D4 evidence retained; D5 changes backend only; not rerun",
+  "evidence": [
+    "docs/D5_DELIVERY.md",
+    "docs/D5_TOOLS.md",
+    "docs/evidence/d5/real-verification.json",
+    "docs/evidence/d5/pytest-full.xml"
+  ]
+}

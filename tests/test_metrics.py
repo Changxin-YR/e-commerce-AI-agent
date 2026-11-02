@@ -182,7 +182,7 @@ def test_unknown_dataset_and_metric_version(api, dataset):
 def test_tools_whitelist_schemas_and_equivalence(api):
     client, app, d = api
     service=app.state.metric_service
-    assert len(tool_schemas()) == 3
+    assert len(tool_schemas()) == 8
     assert all(s['function']['parameters']['additionalProperties'] is False for s in tool_schemas())
     profile=execute_tool(service,'get_dataset_profile',{'dataset_id':d})
     assert profile['snapshot_hash'] == client.get(f'/api/v1/datasets/{d}').json()['data_hash']

@@ -1,0 +1,639 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "get_dataset_profile",
+      "description": "Read snapshot identity, source coverage and available metrics.",
+      "parameters": {
+        "additionalProperties": false,
+        "properties": {
+          "dataset_id": {
+            "pattern": "^[a-zA-Z0-9_-]{1,64}$",
+            "title": "Dataset Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "dataset_id"
+        ],
+        "title": "ProfileArguments",
+        "type": "object"
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "get_metric_definitions",
+      "description": "Read exact metric formulas and exclusions; dataset_id optionally binds the snapshot.",
+      "parameters": {
+        "additionalProperties": false,
+        "properties": {
+          "metric_names": {
+            "items": {
+              "enum": [
+                "positive_amount",
+                "cancellation_amount",
+                "net_amount",
+                "positive_invoice_count"
+              ],
+              "type": "string"
+            },
+            "maxItems": 4,
+            "minItems": 1,
+            "title": "Metric Names",
+            "type": "array"
+          },
+          "dataset_id": {
+            "anyOf": [
+              {
+                "pattern": "^[a-zA-Z0-9_-]{1,64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Dataset Id"
+          }
+        },
+        "title": "DefinitionArguments",
+        "type": "object"
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "get_quality_summary",
+      "description": "Read mutually exclusive row classes and overlapping quality flags; optional bounded dates.",
+      "parameters": {
+        "additionalProperties": false,
+        "properties": {
+          "country": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Country"
+          },
+          "stock_code": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Stock Code"
+          },
+          "dataset_id": {
+            "pattern": "^[a-zA-Z0-9_-]{1,64}$",
+            "title": "Dataset Id",
+            "type": "string"
+          },
+          "date_from": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Date From"
+          },
+          "date_to": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Date To"
+          }
+        },
+        "required": [
+          "dataset_id"
+        ],
+        "title": "OptionalPeriodArguments",
+        "type": "object"
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "query_metric_series",
+      "description": "Read exact monthly values within a left-closed right-open date interval.",
+      "parameters": {
+        "additionalProperties": false,
+        "properties": {
+          "country": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Country"
+          },
+          "stock_code": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Stock Code"
+          },
+          "metric": {
+            "enum": [
+              "positive_amount",
+              "cancellation_amount",
+              "net_amount",
+              "positive_invoice_count"
+            ],
+            "title": "Metric",
+            "type": "string"
+          },
+          "date_from": {
+            "format": "date",
+            "title": "Date From",
+            "type": "string"
+          },
+          "date_to": {
+            "description": "Exclusive end, ISO date; source local time with unspecified timezone",
+            "format": "date",
+            "title": "Date To",
+            "type": "string"
+          },
+          "granularity": {
+            "const": "month",
+            "default": "month",
+            "title": "Granularity",
+            "type": "string"
+          },
+          "dataset_id": {
+            "pattern": "^[a-zA-Z0-9_-]{1,64}$",
+            "title": "Dataset Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "metric",
+          "date_from",
+          "date_to",
+          "dataset_id"
+        ],
+        "title": "SeriesArguments",
+        "type": "object"
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "rank_entities",
+      "description": "Rank products or countries, at most 50 rows; competition ties, deterministic entity order.",
+      "parameters": {
+        "additionalProperties": false,
+        "properties": {
+          "country": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Country"
+          },
+          "stock_code": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Stock Code"
+          },
+          "metric": {
+            "enum": [
+              "positive_amount",
+              "cancellation_amount",
+              "net_amount",
+              "positive_invoice_count"
+            ],
+            "title": "Metric",
+            "type": "string"
+          },
+          "date_from": {
+            "format": "date",
+            "title": "Date From",
+            "type": "string"
+          },
+          "date_to": {
+            "description": "Exclusive end, ISO date; source local time with unspecified timezone",
+            "format": "date",
+            "title": "Date To",
+            "type": "string"
+          },
+          "granularity": {
+            "const": "month",
+            "default": "month",
+            "title": "Granularity",
+            "type": "string"
+          },
+          "dataset_id": {
+            "pattern": "^[a-zA-Z0-9_-]{1,64}$",
+            "title": "Dataset Id",
+            "type": "string"
+          },
+          "dimension": {
+            "enum": [
+              "product",
+              "country"
+            ],
+            "title": "Dimension",
+            "type": "string"
+          },
+          "top_k": {
+            "default": 10,
+            "maximum": 50,
+            "minimum": 1,
+            "title": "Top K",
+            "type": "integer"
+          },
+          "order": {
+            "default": "desc",
+            "enum": [
+              "desc",
+              "asc"
+            ],
+            "title": "Order",
+            "type": "string"
+          }
+        },
+        "required": [
+          "metric",
+          "date_from",
+          "date_to",
+          "dataset_id",
+          "dimension"
+        ],
+        "title": "RankArguments",
+        "type": "object"
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "compare_periods",
+      "description": "Compare two explicit periods; zero or negative baseline has no growth percentage.",
+      "parameters": {
+        "$defs": {
+          "Period": {
+            "additionalProperties": false,
+            "properties": {
+              "date_from": {
+                "format": "date",
+                "title": "Date From",
+                "type": "string"
+              },
+              "date_to": {
+                "description": "Exclusive end; source local date, no timezone conversion",
+                "format": "date",
+                "title": "Date To",
+                "type": "string"
+              }
+            },
+            "required": [
+              "date_from",
+              "date_to"
+            ],
+            "title": "Period",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "country": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Country"
+          },
+          "stock_code": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Stock Code"
+          },
+          "dataset_id": {
+            "pattern": "^[a-zA-Z0-9_-]{1,64}$",
+            "title": "Dataset Id",
+            "type": "string"
+          },
+          "metric": {
+            "enum": [
+              "positive_amount",
+              "cancellation_amount",
+              "net_amount",
+              "positive_invoice_count"
+            ],
+            "title": "Metric",
+            "type": "string"
+          },
+          "baseline": {
+            "$ref": "#/$defs/Period"
+          },
+          "current": {
+            "$ref": "#/$defs/Period"
+          }
+        },
+        "required": [
+          "dataset_id",
+          "metric",
+          "baseline",
+          "current"
+        ],
+        "title": "CompareArguments",
+        "type": "object"
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "decompose_change",
+      "description": "Reconcile additive monetary changes by entity including an other remainder; not causal analysis.",
+      "parameters": {
+        "$defs": {
+          "Period": {
+            "additionalProperties": false,
+            "properties": {
+              "date_from": {
+                "format": "date",
+                "title": "Date From",
+                "type": "string"
+              },
+              "date_to": {
+                "description": "Exclusive end; source local date, no timezone conversion",
+                "format": "date",
+                "title": "Date To",
+                "type": "string"
+              }
+            },
+            "required": [
+              "date_from",
+              "date_to"
+            ],
+            "title": "Period",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "country": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Country"
+          },
+          "stock_code": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Stock Code"
+          },
+          "dataset_id": {
+            "pattern": "^[a-zA-Z0-9_-]{1,64}$",
+            "title": "Dataset Id",
+            "type": "string"
+          },
+          "metric": {
+            "enum": [
+              "positive_amount",
+              "cancellation_amount",
+              "net_amount",
+              "positive_invoice_count"
+            ],
+            "title": "Metric",
+            "type": "string"
+          },
+          "baseline": {
+            "$ref": "#/$defs/Period"
+          },
+          "current": {
+            "$ref": "#/$defs/Period"
+          },
+          "dimension": {
+            "enum": [
+              "product",
+              "country"
+            ],
+            "title": "Dimension",
+            "type": "string"
+          },
+          "top_k": {
+            "default": 10,
+            "maximum": 50,
+            "minimum": 1,
+            "title": "Top K",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "dataset_id",
+          "metric",
+          "baseline",
+          "current",
+          "dimension"
+        ],
+        "title": "DecomposeArguments",
+        "type": "object"
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "inspect_transactions",
+      "description": "Read at most 50 source rows with exact prices and quality flags, without customer identifiers.",
+      "parameters": {
+        "additionalProperties": false,
+        "properties": {
+          "country": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Country"
+          },
+          "stock_code": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Stock Code"
+          },
+          "dataset_id": {
+            "pattern": "^[a-zA-Z0-9_-]{1,64}$",
+            "title": "Dataset Id",
+            "type": "string"
+          },
+          "date_from": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Date From"
+          },
+          "date_to": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Date To"
+          },
+          "primary_class": {
+            "anyOf": [
+              {
+                "enum": [
+                  "INVALID",
+                  "POSITIVE",
+                  "CANCELLATION",
+                  "EXCLUDED_OTHER"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Primary Class"
+          },
+          "limit": {
+            "default": 20,
+            "maximum": 50,
+            "minimum": 1,
+            "title": "Limit",
+            "type": "integer"
+          },
+          "order": {
+            "default": "source_row_asc",
+            "enum": [
+              "source_row_asc",
+              "source_row_desc"
+            ],
+            "title": "Order",
+            "type": "string"
+          }
+        },
+        "required": [
+          "dataset_id"
+        ],
+        "title": "InspectArguments",
+        "type": "object"
+      }
+    }
+  }
+]
