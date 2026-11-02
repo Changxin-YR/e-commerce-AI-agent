@@ -25,6 +25,8 @@ from backend.app.metrics.service import MetricService
 from backend.app.metrics.history import HistoryService
 from backend.app.metrics.routes import router as metric_router
 from backend.app.schemas import DatabaseHealth, ErrorDetail, ErrorResponse, HealthResponse
+from backend.app.agent.service import AgentService
+from backend.app.agent.routes import router as agent_router
 
 logger = logging.getLogger(__name__)
 
@@ -41,7 +43,7 @@ def error_response(request: Request, code: str, message: str, status_code: int) 
     )
 
 
-def create_app(settings: Settings | None = None, *, test_hashes: frozenset[str] | None = None) -> FastAPI:
+def create_app(settings: Settings | None = None, *, test_hashes: frozenset[str] | None = None, test_provider=None) -> FastAPI:
     settings = settings or Settings()
     engine = create_database_engine(settings, readonly=True)
     migration_config = Config(str(PROJECT_ROOT / "backend" / "alembic.ini"))
@@ -49,19 +51,22 @@ def create_app(settings: Settings | None = None, *, test_hashes: frozenset[str] 
     import_service = ImportService(settings, test_hashes=test_hashes)
     metric_service = MetricService(engine, import_service.require_database)
     history_service = HistoryService(metric_service, import_service.engine)
+    agent_service = AgentService(settings, metric_service, import_service.engine, test_provider)
 
     @asynccontextmanager
     async def lifespan(_app: FastAPI):
         import_service.start()
+        agent_service.start()
         try:
             yield
         finally:
+            agent_service.close()
             import_service.close()
             engine.dispose()
 
     application = FastAPI(
-        title="Ecommerce Agent — D3",
-        version="0.3.0",
+        title="Ecommerce Agent — D6",
+        version="0.6.0",
         description="Local source ingestion. raw_sha256/data_hash always identify the XLSX workbook; container hashes are separate.",
         lifespan=lifespan,
     )
@@ -70,6 +75,8 @@ def create_app(settings: Settings | None = None, *, test_hashes: frozenset[str] 
     application.state.import_service = import_service
     application.state.metric_service = metric_service
     application.state.history_service = history_service
+    application.state.agent_service = agent_service
+    application.include_router(agent_router)
     application.include_router(metric_router)
     application.include_router(import_router)
 

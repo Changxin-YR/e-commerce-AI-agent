@@ -100,6 +100,90 @@ class AnalysisRun(Base):
     dataset_id: Mapped[str] = mapped_column(ForeignKey("dataset_snapshots.dataset_id"), index=True)
     status: Mapped[str] = mapped_column(String(32))
     created_at: Mapped[str] = mapped_column(String(40))
+    thread_id: Mapped[str | None] = mapped_column(String(64), unique=True)
+    parent_run_id: Mapped[str | None] = mapped_column(String(64))
+    submission_key: Mapped[str | None] = mapped_column(String(128), unique=True)
+    request_hash: Mapped[str | None] = mapped_column(String(64))
+    variant: Mapped[str] = mapped_column(String(8), default="B0", server_default="B0")
+    phase: Mapped[str] = mapped_column(String(32), default="received", server_default="received")
+    revision: Mapped[int] = mapped_column(Integer, default=0, server_default="0")
+    input: Mapped[dict] = mapped_column(JSON, default=dict, server_default="{}")
+    data_version: Mapped[dict] = mapped_column(JSON, default=dict, server_default="{}")
+    config: Mapped[dict] = mapped_column(JSON, default=dict, server_default="{}")
+    config_hash: Mapped[str | None] = mapped_column(String(64))
+    checkpoint_id: Mapped[str | None] = mapped_column(String(64))
+    pending_input: Mapped[dict | None] = mapped_column(JSON)
+    resume_payload: Mapped[dict | None] = mapped_column(JSON)
+    requests_consumed: Mapped[int] = mapped_column(Integer, default=0, server_default="0")
+    tokens_occupied: Mapped[int] = mapped_column(BigInteger, default=0, server_default="0")
+    cancel_requested: Mapped[int] = mapped_column(Integer, default=0, server_default="0")
+    result_ref: Mapped[str | None] = mapped_column(String(64))
+    error_code: Mapped[str | None] = mapped_column(String(64))
+    started_at: Mapped[str | None] = mapped_column(String(40))
+    updated_at: Mapped[str | None] = mapped_column(String(40))
+    ended_at: Mapped[str | None] = mapped_column(String(40))
+
+
+class ModelAttempt(Base):
+    __tablename__ = "model_attempts"
+    attempt_id: Mapped[str] = mapped_column(String(64), primary_key=True)
+    run_id: Mapped[str] = mapped_column(ForeignKey("analysis_runs.run_id"), index=True)
+    step: Mapped[int] = mapped_column(Integer)
+    status: Mapped[str] = mapped_column(String(24))
+    source: Mapped[str] = mapped_column(String(32))
+    request_hash: Mapped[str] = mapped_column(String(64))
+    provider: Mapped[str] = mapped_column(String(64))
+    model_id: Mapped[str] = mapped_column(String(128))
+    reserved_tokens: Mapped[int] = mapped_column(BigInteger)
+    usage: Mapped[dict | None] = mapped_column(JSON)
+    response: Mapped[dict | None] = mapped_column(JSON)
+    error_code: Mapped[str | None] = mapped_column(String(64))
+    created_at: Mapped[str] = mapped_column(String(40))
+    finished_at: Mapped[str | None] = mapped_column(String(40))
+
+
+class AgentToolCall(Base):
+    __tablename__ = "agent_tool_calls"
+    __table_args__ = (UniqueConstraint("run_id", "step", "position"),)
+    id: Mapped[str] = mapped_column(String(64), primary_key=True)
+    run_id: Mapped[str] = mapped_column(ForeignKey("analysis_runs.run_id"), index=True)
+    step: Mapped[int] = mapped_column(Integer)
+    position: Mapped[int] = mapped_column(Integer)
+    model_call_id: Mapped[str] = mapped_column(String(128))
+    tool_name: Mapped[str] = mapped_column(String(64))
+    arguments: Mapped[dict] = mapped_column(JSON)
+    result: Mapped[dict] = mapped_column(JSON)
+    created_at: Mapped[str] = mapped_column(String(40))
+
+
+class RunSubmission(Base):
+    __tablename__ = "run_submissions"
+    __table_args__ = (UniqueConstraint("run_id", "submission_key"),)
+    id: Mapped[str] = mapped_column(String(64), primary_key=True)
+    run_id: Mapped[str] = mapped_column(ForeignKey("analysis_runs.run_id"))
+    submission_key: Mapped[str] = mapped_column(String(128))
+    request_hash: Mapped[str] = mapped_column(String(64))
+    kind: Mapped[str] = mapped_column(String(16))
+    payload: Mapped[dict] = mapped_column(JSON)
+    created_at: Mapped[str] = mapped_column(String(40))
+
+
+class ModelBudget(Base):
+    __tablename__ = "model_budget"
+    scope: Mapped[str] = mapped_column(String(32), primary_key=True)
+    requests_consumed: Mapped[int] = mapped_column(Integer, default=0)
+    tokens_occupied: Mapped[int] = mapped_column(BigInteger, default=0)
+
+
+class AgentReview(Base):
+    __tablename__ = "agent_reviews"
+    __table_args__ = (UniqueConstraint("run_id", "step", "kind"),)
+    id: Mapped[str] = mapped_column(String(64), primary_key=True)
+    run_id: Mapped[str] = mapped_column(ForeignKey("analysis_runs.run_id"))
+    step: Mapped[int] = mapped_column(Integer)
+    kind: Mapped[str] = mapped_column(String(32))
+    result: Mapped[dict] = mapped_column(JSON)
+    created_at: Mapped[str] = mapped_column(String(40))
 
 
 class Report(Base):

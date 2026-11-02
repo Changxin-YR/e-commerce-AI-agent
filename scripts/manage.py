@@ -16,7 +16,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 VENV_PYTHON = ROOT / ".venv" / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
-PACKAGES = ("fastapi", "pydantic", "pydantic-settings", "SQLAlchemy", "alembic", "uvicorn", "httpx", "pytest")
+PACKAGES = ("fastapi", "pydantic", "pydantic-settings", "SQLAlchemy", "alembic", "uvicorn", "httpx", "pytest", "langgraph", "langgraph-checkpoint", "langgraph-checkpoint-sqlite")
 FUTURE_COMMANDS = ("download-data", "verify-data", "tools", "agent", "evaluate")
 
 
@@ -76,9 +76,17 @@ def doctor() -> int:
         "git_head_status": "COMMITTED" if git_head["exit_code"] == 0 else "UNBORN_OR_UNAVAILABLE",
         "dependencies": packages, "ports": ports,
         "database_exists": settings.database_path.is_file(),
-        "paid_model_calls": "NOT_IMPLEMENTED_IN_D0",
+        "paid_model_calls": "DISABLED" if not settings.allow_paid_model_calls else "CONFIGURATION_REQUIRES_AUTHORIZED_SMOKE",
+        "checkpoint_journal": checkpoint_journal(settings),
     }, ensure_ascii=False, indent=2))
     return 0 if ready else 1
+
+
+def checkpoint_journal(settings):
+    if not settings.checkpoint_path.is_file():
+        return "NOT_CREATED"
+    with sqlite3.connect(settings.checkpoint_path.as_uri()+"?mode=ro",uri=True) as connection:
+        return connection.execute("PRAGMA journal_mode").fetchone()[0]
 
 
 def main() -> int:

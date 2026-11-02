@@ -1,13 +1,13 @@
 {
   "project_id": "ecommerce-agent-thesis",
-  "updated_at": "2026-11-02T23:03:50.881350+08:00",
+  "updated_at": "2026-11-02T23:37:21.912680+08:00",
   "implementation_ready": {
     "status": "PARTIAL",
     "blocker_code": null,
-    "scope": "D0-D5 engineering verified; D6-D9 continuous execution",
+    "scope": "D0-D6 engineering verified; live model blocked; D7-D9 continue",
     "evidence": [
       "docs/EVIDENCE_INDEX.md",
-      "docs/D5_DELIVERY.md"
+      "docs/D6_DELIVERY.md"
     ]
   },
   "real_data_ready": {
@@ -23,9 +23,9 @@
   "live_model_verified": {
     "status": "BLOCKED",
     "blocker_code": "BLOCKED_AUTHORIZATION",
-    "scope": "Budget 0; no external model calls. D6 offline implementation still authorized.",
+    "scope": "Paid flag false and real budgets zero. All D6 model replies are explicit test fixtures.",
     "evidence": [
-      "docs/CONTINUOUS_EXECUTION.md"
+      "docs/D6_DELIVERY.md"
     ]
   },
   "gold_verified": {
@@ -49,29 +49,29 @@
     "evidence": []
   },
   "handoff_version": "1.5",
-  "handoff_status": "CONTINUOUS_DEVELOPMENT_FROM_D6",
-  "implementation_status": "D5_VERIFIED_CONTINUE_D6",
+  "handoff_status": "CONTINUOUS_DEVELOPMENT_FROM_D7",
+  "implementation_status": "D6_ENGINEERING_VERIFIED_CONTINUE_D7",
   "execution_mode": "FEATURE_FIRST",
-  "current_dev_step": "D6",
+  "current_dev_step": "D7",
   "paper_work_mode": "DEFERRED_BY_USER",
   "formal_experiment_mode": "DEFERRED_UNTIL_FEATURE_ACCEPTANCE_AND_USER_APPROVAL",
-  "last_verified_dev_step": "D5",
-  "next_dev_step": "D6",
+  "last_verified_dev_step": "D6",
+  "next_dev_step": "D7",
   "next_step_requires_user_approval": false,
   "user_acceptance": "PENDING_FINAL_USER_ACCEPTANCE",
   "git": {
     "initialized": true,
     "baseline_sha": "0740bf439c37dc344885d2f7c26568c157dd9571",
     "baseline_scope": "Verified D0 plus closeout",
-    "delivery_commit_receipt": "D:/codex产出/电商智能体_D5八工具/交付/git-receipt.json",
+    "delivery_commit_receipt": "D:/codex产出/电商智能体_D6智能体/交付/git-receipt.json",
     "pushed": false,
-    "note": "Final D5 SHA recorded outside Git to avoid self-reference.",
+    "note": "Final D6 commit is recorded outside Git to avoid self-reference.",
     "d1_sha": "bf92c1f5672f0ecbc05169215c5274d3ebdd7d39",
     "d2_sha": "49c2bbd403fffd571926c9ca3329ded77fcdba0a",
     "d4_sha": "e0c43541bf19f4c179522305e147e5f5dfe4736b",
     "d5_sha": "a45db53636015afdfaa8a1c4cb0a19ddd8b91ad9"
   },
-  "artifact_root": "D:/codex产出/电商智能体_D5八工具",
+  "artifact_root": "D:/codex产出/电商智能体_D6智能体",
   "d0": {
     "status": "READY_FOR_USER_ACCEPTANCE",
     "engineering_validation": "PASS",
@@ -357,12 +357,53 @@
     ]
   },
   "d6": {
-    "status": "IN_PROGRESS",
-    "implementation": "NOT_STARTED",
-    "dependency_dry_run": "PASS_NOT_INSTALLED",
-    "official_docs": "FETCHED_NOT_YET_FULLY_REVIEWED",
-    "artifact_root": "D:/codex产出/电商智能体_D6智能体",
-    "model_calls": 0,
-    "live_model_verified": "BLOCKED_AUTHORIZATION"
+    "stage": "D6",
+    "engineering_validation": "PASS",
+    "live_model_verified": "BLOCKED_AUTHORIZATION",
+    "user_acceptance": "NOT_PERFORMED",
+    "pytest_passed": 224,
+    "new_agent_tests": 29,
+    "real_HTTP_checks": 114,
+    "real_scripted_runs": 15,
+    "external_model_calls": 0,
+    "sources_rehashed": true,
+    "source_hashes": {
+      "zip": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
+      "xlsx": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d"
+    },
+    "counts": {
+      "transaction_rows": 541909,
+      "analysis_runs": 30,
+      "reports": 30,
+      "model_attempts": 66,
+      "agent_tool_calls": 30,
+      "query_history": 2
+    },
+    "database": {
+      "path": "D:\\codex产出\\电商智能体_D6智能体\\缓存\\runtime\\app.sqlite3",
+      "bytes": 676696064,
+      "sha256": "5d3eaad4e6fa28d096f9ca0503ccbea13f0d0c52e9976f09a4cbfd2f10dc46f3",
+      "schema": "0004_agent_runtime"
+    },
+    "checkpoint": {
+      "path": "D:\\codex产出\\电商智能体_D6智能体\\缓存\\runtime\\app.checkpoints.sqlite3",
+      "bytes": 2953216,
+      "sha256": "db89aebdd3cd7930098a0efee498288ad623102ea55f48c0b95f0cb1394ce46d",
+      "journal_mode": "wal",
+      "durability": "sync",
+      "strict_deserialization": true
+    },
+    "stopped_services": true,
+    "D5_database_preserved": true,
+    "failures": [
+      "First full regression: 217 passed, 3 stale D0/D3 status/version expectations; fixed, original XML retained"
+    ],
+    "frontend": "D6 did not change frontend; previous D4 results retained, D7 pending",
+    "evidence": [
+      "docs/D6_DELIVERY.md",
+      "docs/D6_AGENT.md",
+      "docs/evidence/d6/real-verification.json",
+      "docs/evidence/d6/pytest-final.xml"
+    ]
   }
 }

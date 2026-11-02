@@ -1,9 +1,9 @@
-# 当前工程状态：D5 已验证，继续 D6
+# 当前状态：D6 工程验证通过，继续 D7
 
-D0—D5工程验证完成；用户最终实机验收未执行。D5八工具已实现，195 pytest、57真实HTTP调用及265独立SQL/Decimal核对通过。模型调用0，真实模型仍BLOCKED_AUTHORIZATION。D6—D9按CONTINUOUS_EXECUTION持续授权继续，不重复询问。
+D0—D6工程实现已验证，真实模型仍BLOCKED_AUTHORIZATION，最终用户验收未执行。D6真实LangGraph B1/B2、多轮白名单工具、SQLite checkpoint、请求/token预算、补答和历史持久化已落地。224 pytest通过；真实UCI库上15个scripted-provider任务、114项HTTP/进程断言通过。不得把这些夹具结果当真实模型能力或论文实验成绩。
 
-八工具采用严格参数、只读数据库、最多36月区间、排名top_k≤50、明细limit≤50；金额为三位精确字符串。排名并列、零/负基期、拆解其他项、空集与部分覆盖、非法参数均已验证。
+终止已记录SENT的夹具调用后，重启保留INTERRUPTED/UNKNOWN_OUTCOME与32768 token占用；明确恢复计入新attempt。B1/B2均通过停服、同thread补答与重复补答单报告。历史GET不产生请求。3项旧版本断言失败及修复日志保留。
 
-D5运行库从D4复制，541909行、2条查询、schema0003_query_history，SHA保持76a1b09bf229ee826660762ff914a8f94afeafab4fdd5b7fee574d3d068eaac4。旧库保留，服务已停止。交付D:/codex产出/电商智能体_D5八工具/交付，最终SHA见git-receipt。
+当前.env运行库在D:/codex产出/电商智能体_D6智能体/缓存/runtime，schema0004_agent_runtime；原541909行和2条查询历史保留，D5库逐字节不变。夹具运行显式标test_fixture，真实付费调用0。服务已停止。交付包含源码、命令、数据库与checkpoint备份。
 
-D4的20 Vitest/5 Edge/构建与E08/E10证据继续有效，D5未改变前端也未重复宣称运行这些测试。首次D5测试目录错误与第二次断言文字错误保留；最终195 passed。论文、人工gold、正式实验继续延期。
+按持续授权直接完成D7报告/五视图、D8安全稳定、D9复现/用户验收准备，无需阶段询问。论文、人工gold、正式实验仍延期；最多READY_FOR_USER_ACCEPTANCE。

@@ -44,8 +44,8 @@ def test_migration_upgrade_idempotence_and_round_trip(settings: Settings):
         with create_session_factory(engine)() as session:
             assert session.scalars(select(AppMetadata)).one().value == "ecommerce-agent-thesis"
         with sqlite3.connect(settings.database_path) as connection:
-            assert connection.execute("SELECT version_num FROM alembic_version").fetchall() == [("0003_query_history",)]
-            assert set(row[0] for row in connection.execute("SELECT name FROM sqlite_master WHERE type='table'")) == {"alembic_version", "app_metadata", "dataset_snapshots", "import_batches", "transaction_rows", "quality_issues", "analysis_runs", "reports", "query_history"}
+            assert connection.execute("SELECT version_num FROM alembic_version").fetchall() == [("0004_agent_runtime",)]
+            assert set(row[0] for row in connection.execute("SELECT name FROM sqlite_master WHERE type='table'")) == {"alembic_version", "app_metadata", "dataset_snapshots", "import_batches", "transaction_rows", "quality_issues", "analysis_runs", "reports", "query_history", "model_attempts", "agent_tool_calls", "run_submissions", "model_budget", "agent_reviews"}
         command.downgrade(config, "base")
         with sqlite3.connect(settings.database_path) as connection:
             assert connection.execute("SELECT name FROM sqlite_master WHERE name='app_metadata'").fetchall() == []
@@ -65,7 +65,7 @@ def test_health_checks_real_database_and_has_no_write_side_effect(migrated: Sett
             payload = response.json()
             assert payload == {
                 "status": "ok", "service": "ecommerce-agent", "version": "0.3.0", "stage": "D3",
-                "database": {"status": "ok", "engine": "sqlite", "sqlite_version": sqlite3.sqlite_version, "schema_revision": "0003_query_history"},
+                "database": {"status": "ok", "engine": "sqlite", "sqlite_version": sqlite3.sqlite_version, "schema_revision": "0004_agent_runtime"},
             }
             UUID(response.headers["X-Request-ID"])
             assert response.headers["cache-control"] == "no-store"

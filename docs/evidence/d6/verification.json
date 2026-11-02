@@ -1,0 +1,50 @@
+{
+  "stage": "D6",
+  "engineering_validation": "PASS",
+  "live_model_verified": "BLOCKED_AUTHORIZATION",
+  "user_acceptance": "NOT_PERFORMED",
+  "pytest_passed": 224,
+  "new_agent_tests": 29,
+  "real_HTTP_checks": 114,
+  "real_scripted_runs": 15,
+  "external_model_calls": 0,
+  "sources_rehashed": true,
+  "source_hashes": {
+    "zip": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
+    "xlsx": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d"
+  },
+  "counts": {
+    "transaction_rows": 541909,
+    "analysis_runs": 30,
+    "reports": 30,
+    "model_attempts": 66,
+    "agent_tool_calls": 30,
+    "query_history": 2
+  },
+  "database": {
+    "path": "D:\\codex产出\\电商智能体_D6智能体\\缓存\\runtime\\app.sqlite3",
+    "bytes": 676696064,
+    "sha256": "5d3eaad4e6fa28d096f9ca0503ccbea13f0d0c52e9976f09a4cbfd2f10dc46f3",
+    "schema": "0004_agent_runtime"
+  },
+  "checkpoint": {
+    "path": "D:\\codex产出\\电商智能体_D6智能体\\缓存\\runtime\\app.checkpoints.sqlite3",
+    "bytes": 2953216,
+    "sha256": "db89aebdd3cd7930098a0efee498288ad623102ea55f48c0b95f0cb1394ce46d",
+    "journal_mode": "wal",
+    "durability": "sync",
+    "strict_deserialization": true
+  },
+  "stopped_services": true,
+  "D5_database_preserved": true,
+  "failures": [
+    "First full regression: 217 passed, 3 stale D0/D3 status/version expectations; fixed, original XML retained"
+  ],
+  "frontend": "D6 did not change frontend; previous D4 results retained, D7 pending",
+  "evidence": [
+    "docs/D6_DELIVERY.md",
+    "docs/D6_AGENT.md",
+    "docs/evidence/d6/real-verification.json",
+    "docs/evidence/d6/pytest-final.xml"
+  ]
+}

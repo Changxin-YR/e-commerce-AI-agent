@@ -15,3 +15,6 @@ openpyxl==3.1.5
 # D2 bounded multipart and defensive OOXML parsing.
 python-multipart==0.0.33
 defusedxml==0.7.1
+# D6 durable agent runtime. Provider HTTP uses the already locked httpx, no SDK retries.
+langgraph==1.2.19
+langgraph-checkpoint-sqlite==3.1.3

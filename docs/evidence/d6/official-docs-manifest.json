@@ -1,0 +1,51 @@
+{
+  "fetched_at": "2026-11-02T15:08:48.520366+00:00",
+  "scope": "documentation_only_no_model_calls",
+  "results": [
+    {
+      "name": "persistence",
+      "url": "https://docs.langchain.com/oss/python/langgraph/persistence",
+      "final_url": "https://docs.langchain.com/oss/python/langgraph/persistence",
+      "status": 200,
+      "path": "D:\\codex产出\\电商智能体_D6智能体\\缓存\\official-docs\\persistence.txt",
+      "bytes": 529806,
+      "sha256": "b1f96529dc74eccce29afc7181139e9bd0d6361bcb6173c25523f97d0db78bc7"
+    },
+    {
+      "name": "interrupts",
+      "url": "https://docs.langchain.com/oss/python/langgraph/interrupts",
+      "final_url": "https://docs.langchain.com/oss/python/langgraph/interrupts",
+      "status": 200,
+      "path": "D:\\codex产出\\电商智能体_D6智能体\\缓存\\official-docs\\interrupts.txt",
+      "bytes": 1310431,
+      "sha256": "304a0b0697ad022aa927b80caeaacf2efaa190a90947c0fe4ae9575386854862"
+    },
+    {
+      "name": "checkpoint_sqlite",
+      "url": "https://raw.githubusercontent.com/langchain-ai/langgraph/main/libs/checkpoint-sqlite/README.md",
+      "final_url": "https://raw.githubusercontent.com/langchain-ai/langgraph/main/libs/checkpoint-sqlite/README.md",
+      "status": 200,
+      "path": "D:\\codex产出\\电商智能体_D6智能体\\缓存\\official-docs\\checkpoint_sqlite.txt",
+      "bytes": 4144,
+      "sha256": "b02658365300fbfcaef6317c6e8fe112f92983a2d722a024ba2bbf2126d70521"
+    },
+    {
+      "name": "deepseek_tool_calls",
+      "url": "https://api-docs.deepseek.com/guides/tool_calls/",
+      "final_url": "https://api-docs.deepseek.com/guides/tool_calls/",
+      "status": 200,
+      "path": "D:\\codex产出\\电商智能体_D6智能体\\缓存\\official-docs\\deepseek_tool_calls.txt",
+      "bytes": 75421,
+      "sha256": "47b820c571f9e45d2dbd548ae298d3adddfa6e3bf7fd249667638da42bf65d9a"
+    },
+    {
+      "name": "sqlite_wal",
+      "url": "https://www.sqlite.org/wal.html",
+      "final_url": "https://www.sqlite.org/wal.html",
+      "status": 200,
+      "path": "D:\\codex产出\\电商智能体_D6智能体\\缓存\\official-docs\\sqlite_wal.txt",
+      "bytes": 42143,
+      "sha256": "f3467b530b883d4a00574fe1a898b3d121ed72764ae28cf66941080ac0badb9e"
+    }
+  ]
+}

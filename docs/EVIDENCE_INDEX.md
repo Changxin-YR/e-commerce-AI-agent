@@ -1,17 +1,16 @@
-# D5 实际证据索引
+# D6 实际证据索引
 
-D5工程验证PASS。D4索引保存在docs/evidence/d5/D4_EVIDENCE_INDEX_ARCHIVE.md；此前D0—D4证据不覆盖。
+D6离线工程PASS；真实模型BLOCKED_AUTHORIZATION。前序索引保存在docs/evidence/d6/D5_EVIDENCE_INDEX_ARCHIVE.md。
 
-| 文件 | 实际证据 |
+| 文件 | 证据 |
 |---|---|
-| docs/evidence/d5/verification.json | 阶段范围、195 pytest、数据库/源哈希与真实模型0调用 |
-| docs/evidence/d5/real-verification.json | 57真实HTTP请求/完整结果、265独立核对、前后数据库SHA相同 |
-| docs/evidence/d5/tool-schemas.json | 八个真实JSON Schema |
-| docs/evidence/d5/pytest-full.xml | 195 passed、0 failure/error/skipped |
-| docs/evidence/d5/pytest-first.xml | 6 passed/73 setup errors，缺少测试父目录 |
-| docs/evidence/d5/pytest-second.xml | 78 passed/1 failure，测试预期错误码修正 |
-| docs/evidence/d5/runtime-preparation.json | D4库复制到D5且SHA一致，仅修改env运行/缓存键 |
+| docs/evidence/d6/verification.json | 224 pytest、114真实HTTP/进程断言、运行库/checkpoint SHA与行数 |
+| docs/evidence/d6/pytest-first.xml | 首轮局部28通过 |
+| docs/evidence/d6/pytest-full.xml | 首轮全量217通过/3旧版本预期失败 |
+| docs/evidence/d6/pytest-final.xml | 最终224通过，无failure/error/skipped |
+| docs/evidence/d6/real-verification.json | 最终15个scripted任务的状态/用量/引用与114断言 |
+| docs/evidence/d6/real-first-verification.json | 第一轮15任务/114断言，未覆盖 |
+| docs/evidence/d6/runtime-preparation.json | D5库复制到D6且原SHA一致 |
+| docs/evidence/d6/official-docs-manifest.json | 官方持久化/中断/SQLite/provider文档抓取身份 |
 
-原始命令、完整argv、退出码、stdout/stderr在D:/codex产出/电商智能体_D5八工具/缓存/commands；汇总与日志SHA在交付/command-records.json。真实服务日志位于缓存/real-first/server.log，进程由验证脚本启动并停止。测试均为开发验证，不是人审gold或学术实验。
-
-handoff_check核对55份不可变资料；最终Git/封存命令和SHA见D盘git-receipt。真实模型BLOCKED_AUTHORIZATION，用户最终验收未执行。D6—D9继续。
+完整命令、退出码和stdout/stderr在D:/codex产出/电商智能体_D6智能体/缓存/commands；服务日志分别在real-first和real-final。所有子进程已停止。交付git-receipt/SOURCE_MANIFEST/DELIVERY_MANIFEST记录最终提交与逐文件哈希。源码不含.env、数据原文件、数据库或依赖。

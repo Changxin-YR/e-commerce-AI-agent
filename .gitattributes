@@ -1,3 +1,5 @@
 # Preserve source bytes, including the immutable handoff's SHA-256 records.
 # Do not let Windows core.autocrlf rewrite evidence at commit/checkout time.
 * -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Preserve raw pytest failure output (including indentation on blank traceback lines).
+docs/evidence/d6/pytest-full.xml -whitespace

@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-02T15:23:21.513235+00:00",
+  "source": "D:\\codex产出\\电商智能体_D5八工具\\缓存\\runtime\\app.sqlite3",
+  "destination": "D:\\codex产出\\电商智能体_D6智能体\\缓存\\runtime\\app.sqlite3",
+  "source_sha256": "76a1b09bf229ee826660762ff914a8f94afeafab4fdd5b7fee574d3d068eaac4",
+  "copy_sha256": "76a1b09bf229ee826660762ff914a8f94afeafab4fdd5b7fee574d3d068eaac4",
+  "only_env_keys_changed": [
+    "DATABASE_URL",
+    "D0_CACHE_DIR",
+    "IMPORT_CACHE_DIR"
+  ],
+  "previous_source_unchanged": true
+}
