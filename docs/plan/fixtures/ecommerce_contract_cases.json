@@ -1,0 +1,14 @@
+{
+  "source_kind": "test_fixture",
+  "description": "Software contract vectors only, not real transaction data or official experiment gold",
+  "metric_version": "retail-v1.2",
+  "row_class_vectors": [
+    {"name":"positive_thousandth","invoice_no":"100001","stock_code":"A","quantity":3,"unit_price_milli_gbp":1,"expected_class":"POSITIVE","expected_signed_amount_milli_gbp":3},
+    {"name":"cancellation","invoice_no":"C100002","stock_code":"A","quantity":-2,"unit_price_milli_gbp":2500,"expected_class":"CANCELLATION","expected_signed_amount_milli_gbp":-5000},
+    {"name":"nonc_negative","invoice_no":"100003","stock_code":"B","quantity":-1,"unit_price_milli_gbp":0,"expected_class":"EXCLUDED_OTHER","expected_signed_amount_milli_gbp":0},
+    {"name":"zero_price","invoice_no":"100004","stock_code":"C","quantity":4,"unit_price_milli_gbp":0,"expected_class":"EXCLUDED_OTHER","expected_signed_amount_milli_gbp":0},
+    {"name":"negative_price","invoice_no":"100005","stock_code":"M","quantity":1,"unit_price_milli_gbp":-1000,"expected_class":"EXCLUDED_OTHER","expected_signed_amount_milli_gbp":-1000},
+    {"name":"c_prefix_positive_qty","invoice_no":"C100006","stock_code":"D","quantity":1,"unit_price_milli_gbp":500,"expected_class":"EXCLUDED_OTHER","expected_signed_amount_milli_gbp":500}
+  ],
+  "invariants": ["all_rows_partitioned","file_sha_repeat_import_idempotent","exact_money_integer","date_left_closed_right_open","source_price_original_preserved","history_get_has_no_model_side_effect","real_dataset_and_test_fixture_separated"]
+}

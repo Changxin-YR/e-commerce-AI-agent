@@ -1,0 +1,12 @@
+{
+  "template": true,
+  "project_id": null,
+  "updated_at": null,
+  "implementation_ready": {"status": "NOT_STARTED", "blocker_code": null, "evidence": []},
+  "real_data_ready": {"status": "NOT_STARTED", "blocker_code": null, "evidence": []},
+  "live_model_verified": {"status": "NOT_STARTED", "blocker_code": null, "evidence": []},
+  "gold_verified": {"status": "NOT_STARTED", "blocker_code": null, "evidence": []},
+  "experiment_executed": {"status": "NOT_STARTED", "blocker_code": null, "evidence": []},
+  "paper_evidence_ready": {"status": "NOT_STARTED", "blocker_code": null, "evidence": []},
+  "school_format_ready": {"status": "NOT_STARTED", "blocker_code": null, "evidence": []}
+}

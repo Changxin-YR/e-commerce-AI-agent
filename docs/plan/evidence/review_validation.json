@@ -1,0 +1,19 @@
+{
+  "reviewed_at": "2026-10-31T01:23:59.161792+00:00",
+  "scope": "Document consistency and source-audit arithmetic only; not application or LLM evaluation",
+  "checks": {
+    "required_documents_present": true,
+    "json_templates_and_evidence_parse": true,
+    "startup_prompts_read_v1_1_contracts": true,
+    "leadgen_D1_enum_consistent": true,
+    "old_H3_not_in_new_annotation_schema": true,
+    "numeric_priority_score_disabled": true,
+    "audit_source_identity_matches": true,
+    "reference_arithmetic_checked": true,
+    "source_audit_peer_review": "PASS",
+    "leadgen_document_peer_review": "PASS"
+  },
+  "application_tests_run": false,
+  "live_model_experiments_run": false,
+  "human_gold_verified": false
+}

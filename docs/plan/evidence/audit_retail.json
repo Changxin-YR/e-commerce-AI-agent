@@ -1,0 +1,480 @@
+{
+  "audited_at_utc": "2026-10-31T01:15:12.104291+00:00",
+  "source_url": "https://archive.ics.uci.edu/static/public/352/online%2Bretail.zip",
+  "scope": "Direct audit of original official XLSX; no cleaning or metric policy applied.",
+  "file_sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+  "file_bytes": 23715344,
+  "rows": 541909,
+  "columns": [
+    "InvoiceNo",
+    "StockCode",
+    "Description",
+    "Quantity",
+    "InvoiceDate",
+    "UnitPrice",
+    "CustomerID",
+    "Country"
+  ],
+  "null_counts": {
+    "InvoiceNo": 0,
+    "StockCode": 0,
+    "Description": 1454,
+    "Quantity": 0,
+    "InvoiceDate": 0,
+    "UnitPrice": 0,
+    "CustomerID": 135080,
+    "Country": 0
+  },
+  "date_min": "2010-12-01 08:26:00",
+  "date_max": "2011-12-09 12:50:00",
+  "invoice_unique_count": 25900,
+  "stock_code_unique_count": 4070,
+  "cancellation_prefix_rows": 9288,
+  "exact_duplicates_after_first_all_columns": 5268,
+  "rows_in_duplicate_groups_all_columns": 10147,
+  "quantity_min": -80995,
+  "quantity_max": 80995,
+  "unit_price_min": "-11062.06",
+  "unit_price_max": "38970.0",
+  "cancel_quantity_cross": {
+    "negative": {
+      "C_prefix": 9288,
+      "non_C": 1336
+    },
+    "positive": {
+      "C_prefix": 0,
+      "non_C": 531285
+    }
+  },
+  "cancel_price_cross": {
+    "negative": {
+      "C_prefix": 0,
+      "non_C": 2
+    },
+    "positive": {
+      "C_prefix": 9288,
+      "non_C": 530104
+    },
+    "zero": {
+      "C_prefix": 0,
+      "non_C": 2515
+    }
+  },
+  "quantity_price_cross": {
+    "negative": {
+      "negative": 0,
+      "positive": 2
+    },
+    "positive": {
+      "negative": 9288,
+      "positive": 530104
+    },
+    "zero": {
+      "negative": 1336,
+      "positive": 1179
+    }
+  },
+  "per_month_rows": {
+    "2010-12": 42481,
+    "2011-01": 35147,
+    "2011-02": 27707,
+    "2011-03": 36748,
+    "2011-04": 29916,
+    "2011-05": 37030,
+    "2011-06": 36874,
+    "2011-07": 39518,
+    "2011-08": 35284,
+    "2011-09": 50226,
+    "2011-10": 60742,
+    "2011-11": 84711,
+    "2011-12": 25525
+  },
+  "unit_price_scale_after_read_str_normalization": {
+    "0": 4503,
+    "1": 26770,
+    "2": 510632,
+    "3": 4
+  },
+  "unit_price_gt_2_decimals_examples": [
+    {
+      "InvoiceNo": "550193",
+      "StockCode": "PADS",
+      "Description": "PADS TO MATCH ALL CUSHIONS",
+      "Quantity": 1,
+      "UnitPrice": 0.001
+    },
+    {
+      "InvoiceNo": "561226",
+      "StockCode": "PADS",
+      "Description": "PADS TO MATCH ALL CUSHIONS",
+      "Quantity": 1,
+      "UnitPrice": 0.001
+    },
+    {
+      "InvoiceNo": "568200",
+      "StockCode": "PADS",
+      "Description": "PADS TO MATCH ALL CUSHIONS",
+      "Quantity": 1,
+      "UnitPrice": 0.001
+    },
+    {
+      "InvoiceNo": "568375",
+      "StockCode": "BANK CHARGES",
+      "Description": "Bank Charges",
+      "Quantity": 1,
+      "UnitPrice": 0.001
+    }
+  ],
+  "stock_codes_outside_5_digits_optional_suffix": {
+    "POST": 1256,
+    "DOT": 710,
+    "M": 571,
+    "15056BL": 326,
+    "C2": 144,
+    "D": 77,
+    "S": 63,
+    "15056bl": 62,
+    "BANK CHARGES": 37,
+    "AMAZONFEE": 34,
+    "CRUK": 16,
+    "DCGSSGIRL": 13,
+    "DCGSSBOY": 11,
+    "gift_0001_20": 10,
+    "gift_0001_10": 9,
+    "gift_0001_30": 8,
+    "DCGS0003": 5,
+    "gift_0001_50": 4,
+    "PADS": 4,
+    "B": 3,
+    "gift_0001_40": 3,
+    "DCGS0070": 2,
+    "DCGS0076": 2,
+    "DCGS0069": 2,
+    "m": 1,
+    "DCGS0074": 1,
+    "DCGS0072": 1,
+    "DCGS0055": 1,
+    "DCGS0057": 1,
+    "DCGS0073": 1,
+    "DCGS0004": 1,
+    "DCGS0071": 1,
+    "DCGS0068": 1,
+    "DCGS0066P": 1,
+    "DCGS0067": 1,
+    "79323GR": 1,
+    "79323LP": 1
+  },
+  "special_stock_examples": [
+    {
+      "StockCode": "POST",
+      "Description": "POSTAGE"
+    },
+    {
+      "StockCode": "15056BL",
+      "Description": "EDWARDIAN PARASOL BLACK"
+    },
+    {
+      "StockCode": "D",
+      "Description": "Discount"
+    },
+    {
+      "StockCode": "C2",
+      "Description": "CARRIAGE"
+    },
+    {
+      "StockCode": "DOT",
+      "Description": "DOTCOM POSTAGE"
+    },
+    {
+      "StockCode": "M",
+      "Description": "Manual"
+    },
+    {
+      "StockCode": "BANK CHARGES",
+      "Description": "Bank Charges"
+    },
+    {
+      "StockCode": "15056bl",
+      "Description": "EDWARDIAN PARASOL BLACK"
+    },
+    {
+      "StockCode": "S",
+      "Description": "SAMPLES"
+    },
+    {
+      "StockCode": "AMAZONFEE",
+      "Description": "AMAZON FEE"
+    },
+    {
+      "StockCode": "DCGS0076",
+      "Description": "SUNJAR LED NIGHT NIGHT LIGHT"
+    },
+    {
+      "StockCode": "DCGS0003",
+      "Description": "BOXED GLASS ASHTRAY"
+    },
+    {
+      "StockCode": "gift_0001_40",
+      "Description": "Dotcomgiftshop Gift Voucher £40.00"
+    },
+    {
+      "StockCode": "DCGS0070",
+      "Description": "CAMOUFLAGE DOG COLLAR"
+    },
+    {
+      "StockCode": "m",
+      "Description": "Manual"
+    },
+    {
+      "StockCode": "gift_0001_50",
+      "Description": "Dotcomgiftshop Gift Voucher £50.00"
+    },
+    {
+      "StockCode": "gift_0001_30",
+      "Description": "Dotcomgiftshop Gift Voucher £30.00"
+    },
+    {
+      "StockCode": "gift_0001_20",
+      "Description": "Dotcomgiftshop Gift Voucher £20.00"
+    },
+    {
+      "StockCode": "POST",
+      "Description": ""
+    },
+    {
+      "StockCode": "DCGS0055",
+      "Description": ""
+    },
+    {
+      "StockCode": "DCGS0072",
+      "Description": ""
+    },
+    {
+      "StockCode": "DCGS0074",
+      "Description": ""
+    },
+    {
+      "StockCode": "DCGS0069",
+      "Description": "OOH LA LA DOGS COLLAR"
+    },
+    {
+      "StockCode": "DCGS0057",
+      "Description": ""
+    },
+    {
+      "StockCode": "DCGSSBOY",
+      "Description": "BOYS PARTY BAG"
+    },
+    {
+      "StockCode": "DCGSSGIRL",
+      "Description": "GIRLS PARTY BAG"
+    },
+    {
+      "StockCode": "gift_0001_10",
+      "Description": "Dotcomgiftshop Gift Voucher £10.00"
+    },
+    {
+      "StockCode": "DOT",
+      "Description": ""
+    },
+    {
+      "StockCode": "PADS",
+      "Description": "PADS TO MATCH ALL CUSHIONS"
+    },
+    {
+      "StockCode": "DCGS0004",
+      "Description": "HAYNES CAMPER SHOULDER BAG"
+    },
+    {
+      "StockCode": "gift_0001_20",
+      "Description": "to push order througha s stock was "
+    },
+    {
+      "StockCode": "DCGS0073",
+      "Description": "ebay"
+    },
+    {
+      "StockCode": "DCGS0071",
+      "Description": ""
+    },
+    {
+      "StockCode": "DCGS0070",
+      "Description": ""
+    },
+    {
+      "StockCode": "DCGS0069",
+      "Description": "ebay"
+    }
+  ],
+  "nonC_negative_quantity_examples": [
+    {
+      "InvoiceNo": "536589",
+      "StockCode": "21777",
+      "Description": "",
+      "Quantity": -10,
+      "UnitPrice": 0.0
+    },
+    {
+      "InvoiceNo": "536764",
+      "StockCode": "84952C",
+      "Description": "",
+      "Quantity": -38,
+      "UnitPrice": 0.0
+    },
+    {
+      "InvoiceNo": "536996",
+      "StockCode": "22712",
+      "Description": "",
+      "Quantity": -20,
+      "UnitPrice": 0.0
+    },
+    {
+      "InvoiceNo": "536997",
+      "StockCode": "22028",
+      "Description": "",
+      "Quantity": -20,
+      "UnitPrice": 0.0
+    },
+    {
+      "InvoiceNo": "536998",
+      "StockCode": "85067",
+      "Description": "",
+      "Quantity": -6,
+      "UnitPrice": 0.0
+    },
+    {
+      "InvoiceNo": "537000",
+      "StockCode": "21414",
+      "Description": "",
+      "Quantity": -22,
+      "UnitPrice": 0.0
+    },
+    {
+      "InvoiceNo": "537001",
+      "StockCode": "21653",
+      "Description": "",
+      "Quantity": -6,
+      "UnitPrice": 0.0
+    },
+    {
+      "InvoiceNo": "537003",
+      "StockCode": "85126",
+      "Description": "",
+      "Quantity": -2,
+      "UnitPrice": 0.0
+    },
+    {
+      "InvoiceNo": "537004",
+      "StockCode": "21814",
+      "Description": "",
+      "Quantity": -30,
+      "UnitPrice": 0.0
+    },
+    {
+      "InvoiceNo": "537005",
+      "StockCode": "21692",
+      "Description": "",
+      "Quantity": -70,
+      "UnitPrice": 0.0
+    },
+    {
+      "InvoiceNo": "537006",
+      "StockCode": "21648",
+      "Description": "",
+      "Quantity": -130,
+      "UnitPrice": 0.0
+    },
+    {
+      "InvoiceNo": "537007",
+      "StockCode": "21172",
+      "Description": "",
+      "Quantity": -80,
+      "UnitPrice": 0.0
+    },
+    {
+      "InvoiceNo": "537008",
+      "StockCode": "21161",
+      "Description": "",
+      "Quantity": -120,
+      "UnitPrice": 0.0
+    },
+    {
+      "InvoiceNo": "537009",
+      "StockCode": "84534B",
+      "Description": "",
+      "Quantity": -80,
+      "UnitPrice": 0.0
+    },
+    {
+      "InvoiceNo": "537010",
+      "StockCode": "22162",
+      "Description": "",
+      "Quantity": -40,
+      "UnitPrice": 0.0
+    }
+  ],
+  "negative_price_rows": [
+    {
+      "InvoiceNo": "A563186",
+      "StockCode": "B",
+      "Description": "Adjust bad debt",
+      "Quantity": 1,
+      "UnitPrice": -11062.06
+    },
+    {
+      "InvoiceNo": "A563187",
+      "StockCode": "B",
+      "Description": "Adjust bad debt",
+      "Quantity": 1,
+      "UnitPrice": -11062.06
+    }
+  ],
+  "price_scale_note": "Decimal(str(parsed numeric value)); raw OOXML numeric strings also audited below to reveal storage representation.",
+  "invoice_consistency_groups_with_multiple_non_null_values": {
+    "Country": 0,
+    "CustomerID": 0,
+    "InvoiceDate": 43
+  },
+  "sheet_names": [
+    "Online Retail"
+  ],
+  "raw_OOXML_unit_price_normalized_scales": {
+    "0": 4503,
+    "1": 26731,
+    "2": 459501,
+    "3": 4,
+    "13": 20,
+    "14": 72,
+    "15": 342,
+    "16": 38542,
+    "17": 12185,
+    "18": 9
+  },
+  "raw_OOXML_unit_price_gt2_decimal_values": {
+    "2.5499999999999998": 13033,
+    "0.55000000000000004": 7661,
+    "4.1500000000000004": 6193,
+    "9.9499999999999993": 5846,
+    "8.2899999999999991": 4790,
+    "0.28999999999999998": 4426,
+    "2.5099999999999998": 2709,
+    "2.4900000000000002": 1403,
+    "8.4700000000000006": 993,
+    "8.9499999999999993": 873,
+    "4.6500000000000004": 853,
+    "5.0599999999999996": 735,
+    "9.9600000000000009": 563,
+    "9.1300000000000008": 238,
+    "4.9800000000000004": 200,
+    "39.950000000000003": 147,
+    "0.14000000000000001": 89,
+    "16.649999999999999": 66,
+    "35.950000000000003": 41,
+    "2.0699999999999998": 41,
+    "34.950000000000003": 28,
+    "16.670000000000002": 19,
+    "1.1200000000000001": 11,
+    "4.5999999999999996": 10,
+    "7.0000000000000007E-2": 9
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "template": true,
+  "dataset_id": null,
+  "source_kind": null,
+  "source_url": null,
+  "final_url": null,
+  "license_or_use_scope": null,
+  "acquired_at": null,
+  "raw_path": null,
+  "raw_sha256": null,
+  "raw_bytes": null,
+  "actual_row_or_entity_count": null,
+  "source_time_range": {"start": null, "end": null, "timezone_semantics": null},
+  "processing_script_version": null,
+  "processing_rules_version": null,
+  "output_path": null,
+  "output_sha256": null,
+  "actual_output_count": null,
+  "quality_report_path": null,
+  "access_or_identity_errors": [],
+  "redistribution_scope": null
+}

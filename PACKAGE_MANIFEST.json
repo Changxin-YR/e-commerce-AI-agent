@@ -1,0 +1,292 @@
+{
+  "name": "Ecommerce undergraduate thesis V1.4 handoff after Claude Code cross review",
+  "project_id": "ecommerce-agent-thesis",
+  "version": "1.5",
+  "as_of": "2026-11-02",
+  "source_package": "ecommerce-agent-thesis V1.4 reviewed package",
+  "handoff_status": "READY_FOR_D0_DEV",
+  "implementation_status": "NOT_STARTED",
+  "research_status": "NOT_RUN",
+  "source_data_included": false,
+  "immutable_files": [
+    {
+      "path": "CHANGELOG_V1.4.md",
+      "bytes": 1512,
+      "sha256": "7723a36e08d2c271917803b285e3ef369a89c6ba08d99e5a0bc2f94493e8fa18"
+    },
+    {
+      "path": "CHANGELOG_V1.5.md",
+      "bytes": 1254,
+      "sha256": "02f1ab8a9cc998dc0fc23867258700291d33c7a91b997eb68ed7d0fa09a4496e"
+    },
+    {
+      "path": "CODEX_BRIEF.md",
+      "bytes": 8775,
+      "sha256": "faea71e7634af2b094676f9a6b1ee64686c197c6e16f7ea6d19a99d1456157b0"
+    },
+    {
+      "path": "CODEX_FIRST_STEP.md",
+      "bytes": 3684,
+      "sha256": "ae1afb964de8af4a425430481e7797d092c7990288d4a95a2d2fe4f8ff0bb8e8"
+    },
+    {
+      "path": "CODEX_START.md",
+      "bytes": 2338,
+      "sha256": "f1e0d4d3ab94af15f909405136ac82461f2b30dbb85033e358ef9fd1d45578d2"
+    },
+    {
+      "path": "DEV_FIRST.md",
+      "bytes": 5344,
+      "sha256": "314875aefef29c2d5faae538c05867ad180d07b25ae717df6b6c3dbdd61b2ac4"
+    },
+    {
+      "path": "docs/dev/DEVELOPMENT_ROADMAP.md",
+      "bytes": 5323,
+      "sha256": "8b71f37031bb8b890d54f0ca1742466079a5f2e4e78b6db1e8fecbcb86d87f78"
+    },
+    {
+      "path": "docs/dev/FEATURE_ACCEPTANCE.md",
+      "bytes": 2595,
+      "sha256": "5cdb4b147c441b02dd9e8599a1212ba56133006bf52af7b50834b3e1fabc5a58"
+    },
+    {
+      "path": "docs/dev/IMPLEMENTATION_CLARIFICATIONS.md",
+      "bytes": 4065,
+      "sha256": "5e323a95eac8a80fa594932e71e3352d72233b257b31b7e661723691523410d1"
+    },
+    {
+      "path": "docs/dev/SELF_AUDIT_V15.md",
+      "bytes": 4078,
+      "sha256": "10d7546cfcd9be3d4579a561b06509f36ff6185a21d3393237a0f7261f22d472"
+    },
+    {
+      "path": "docs/dev/steps/00_00_BOOTSTRAP.md",
+      "bytes": 3684,
+      "sha256": "ae1afb964de8af4a425430481e7797d092c7990288d4a95a2d2fe4f8ff0bb8e8"
+    },
+    {
+      "path": "docs/dev/steps/01_01_DATA.md",
+      "bytes": 3412,
+      "sha256": "e48afa46d9a5e04cdf44cf08186df85078d1e9497bcf2db126104f744b566e5f"
+    },
+    {
+      "path": "docs/dev/steps/02_02_IMPORT.md",
+      "bytes": 3546,
+      "sha256": "7be2a46857d940c6818a9fe485db522611a0d580affcd9f55eb0d45417e51a26"
+    },
+    {
+      "path": "docs/dev/steps/03_03_METRICS.md",
+      "bytes": 3276,
+      "sha256": "a114565fd2cf7de28ef6f306e642c81cdeb97c949360065c7de510360043fa6b"
+    },
+    {
+      "path": "docs/dev/steps/04_04_UI.md",
+      "bytes": 3084,
+      "sha256": "459394eee4745e4fe9c9a3609806cf1f2740611b814754f9c75be7f3aa443b08"
+    },
+    {
+      "path": "docs/dev/steps/05_05_TOOLS.md",
+      "bytes": 3237,
+      "sha256": "cdd4a1ecbd9b3d27ba9e4943c33e61e7110508a526d9230c81a4806f9e0e1c8b"
+    },
+    {
+      "path": "docs/dev/steps/06_06_AGENT.md",
+      "bytes": 3483,
+      "sha256": "19f853007d76e8f217e7089379d375d57b5fd5495573b129ee8694631362dd48"
+    },
+    {
+      "path": "docs/dev/steps/07_07_REPORTS.md",
+      "bytes": 3141,
+      "sha256": "dd4a4e27c564022021095e677b7b94fd6dede0a0865c3ccee9429528504dce05"
+    },
+    {
+      "path": "docs/dev/steps/08_08_SECURITY.md",
+      "bytes": 3176,
+      "sha256": "43daca60803dbe5b92074a480c07621b38dfdf6af6602fd9ed3378500066a2e8"
+    },
+    {
+      "path": "docs/dev/steps/09_09_ACCEPTANCE.md",
+      "bytes": 3375,
+      "sha256": "846a79da484616eb040df52da9cc26e6f25c95c49b7820b8473abd061368124a"
+    },
+    {
+      "path": "docs/plan/00_MASTER_PLAN.md",
+      "bytes": 18552,
+      "sha256": "0f3c318825bf3bcc5084dcff967fbc2e593d685cdabcd433419dbeba0bf01926"
+    },
+    {
+      "path": "docs/plan/01_SHARED_RULES.md",
+      "bytes": 10069,
+      "sha256": "0af647b637250b2c13edb127b042a8070b5e919adc7e380d2cf7c1aec704f5b1"
+    },
+    {
+      "path": "docs/plan/02_ECOMMERCE_SPEC.md",
+      "bytes": 28961,
+      "sha256": "6cc605a05b899338f2f6ec0973fafe07eaf4084a62be29348c4a41f5bebcd14c"
+    },
+    {
+      "path": "docs/plan/04_EXPERIMENT_PROTOCOL.md",
+      "bytes": 10884,
+      "sha256": "1d6f94d92c84b93fbe8ed09e27f11e8e70bcf22415501d08eea9809d18583ce2"
+    },
+    {
+      "path": "docs/plan/07_SOURCE_REGISTER.md",
+      "bytes": 8101,
+      "sha256": "b25fe63f1abaccf4340535d3653d3a73b6e2fbf276bee54319892a5d83552c54"
+    },
+    {
+      "path": "docs/plan/08_REVIEW_AND_CHANGES.md",
+      "bytes": 10948,
+      "sha256": "f1d8aa66905fdb7d40e4a7f93a6f705efaad4848c74e36c53af2ee9338c9bca7"
+    },
+    {
+      "path": "docs/plan/09_DATA_PREFLIGHT.md",
+      "bytes": 6141,
+      "sha256": "d8d97dd66b4785bba68f764bc3ce6c0e91a4e50262427a051b29ee41372aa4f4"
+    },
+    {
+      "path": "docs/plan/10_RUNTIME_CONTRACT.md",
+      "bytes": 10150,
+      "sha256": "982a1152d890175094d8575e338a8fc0e00462fa0841c8f740e867d25d84b230"
+    },
+    {
+      "path": "docs/plan/11_FIRST_SLICES.md",
+      "bytes": 8298,
+      "sha256": "6359275555e52efd9c83d4201e6b9da24b966b6fcd200356beaae18424e88875"
+    },
+    {
+      "path": "docs/plan/12_V12_DECISIONS.md",
+      "bytes": 7161,
+      "sha256": "8c70e858cb09c66afbc4831ddb22be5ae8542949bc7d76ba951a445a66a61945"
+    },
+    {
+      "path": "docs/plan/13_ECOMMERCE_BUILD_CONTRACT.md",
+      "bytes": 10699,
+      "sha256": "d9661455f7a3d1529cf7fe5dde2c8f407974803b06ca30cb4b904d344f1b4194"
+    },
+    {
+      "path": "docs/plan/15_EVALUATION_FREEZE_CONTRACT.md",
+      "bytes": 9916,
+      "sha256": "9f84753cbb167d233a56c17c852341bef54f6178080723ff56aed6da7d506337"
+    },
+    {
+      "path": "docs/plan/16_SECURITY_AND_PRIVACY.md",
+      "bytes": 6021,
+      "sha256": "303d1fc12304f8abe1b3a3d7c69cfcfe25a0c5d6e904e284278bea69ba74fd03"
+    },
+    {
+      "path": "docs/plan/17_IMPLEMENTATION_RUNBOOK.md",
+      "bytes": 6282,
+      "sha256": "f5fa4cbefb1f36dda33ce69d180d07921b916b85120759cb9d95c58bff7cf085"
+    },
+    {
+      "path": "docs/plan/20_V12_GAP_AUDIT.md",
+      "bytes": 4089,
+      "sha256": "cb872030f7023831d73052bc6d0fe1dfcc5a64d0cff885a1d6e22564e665e98a"
+    },
+    {
+      "path": "docs/plan/21_V14_DECISIONS.md",
+      "bytes": 8030,
+      "sha256": "08518e24d168ae3551e2db18387dd6ead81ac4d2845b48f671fe74d7361f961e"
+    },
+    {
+      "path": "docs/plan/README.md",
+      "bytes": 1459,
+      "sha256": "6f99faa09ece4c0fe300376b74c9760a63132c125666d35281057c0781adae1e"
+    },
+    {
+      "path": "docs/plan/evidence/README.md",
+      "bytes": 1770,
+      "sha256": "50948ca835f22d776f876ccdc1654b468c29a7d2ff5f102cd92ae668ffd9d88d"
+    },
+    {
+      "path": "docs/plan/evidence/audit_environment.json",
+      "bytes": 404,
+      "sha256": "4ac3416c8dc2392c980b6be4e32599a2a59ba9fcdc13b75a1ff7d08e2bd37748"
+    },
+    {
+      "path": "docs/plan/evidence/audit_normalization_and_reference.json",
+      "bytes": 37546,
+      "sha256": "a2bc487474251318aeedcd5a74dd71af591696b1a17ee008c254f2d3df844ac6"
+    },
+    {
+      "path": "docs/plan/evidence/audit_normalization_and_reference.py",
+      "bytes": 9158,
+      "sha256": "a92568a894aac06ba29ad93c97775275355c722859a3d0140b0d84a92a79c408"
+    },
+    {
+      "path": "docs/plan/evidence/audit_retail.json",
+      "bytes": 10368,
+      "sha256": "dd0506e78b0991360bb3c0556e1da4c2e0f5f89aa0730b2e30649009549f5f6d"
+    },
+    {
+      "path": "docs/plan/evidence/audit_retail.py",
+      "bytes": 4885,
+      "sha256": "20f5fe5d655ee9f07c6323c5c892ff98579707a0adb872a064029d63fbd18936"
+    },
+    {
+      "path": "docs/plan/evidence/review_validation.json",
+      "bytes": 721,
+      "sha256": "ff1f115db74f303582c123a3ac877b01ee8d3665c532251f110fa5f3f2c60487"
+    },
+    {
+      "path": "docs/plan/fixtures/ecommerce_contract_cases.json",
+      "bytes": 1545,
+      "sha256": "27fefb63e6e6af61783325dd5496046bddb9b81f56075f4e81c70a91b064aeaa"
+    },
+    {
+      "path": "docs/plan/fixtures/security_inputs.json",
+      "bytes": 951,
+      "sha256": "904b7bb02419d691dd0c4f768e25ad1e0742b8cadde58f7eb2a6ba762d40f578"
+    },
+    {
+      "path": "docs/plan/templates/README.md",
+      "bytes": 491,
+      "sha256": "0012b7c712875531bd5d707441c0473fc00823733267f452cfda3ca755b40055"
+    },
+    {
+      "path": "docs/plan/templates/STATUS.template.md",
+      "bytes": 1031,
+      "sha256": "c4c638f75841724cf0a02d81dd9fa94a866e6faf95c9eb3362cce894c02898cb"
+    },
+    {
+      "path": "docs/plan/templates/claim_evidence_map.template.csv",
+      "bytes": 138,
+      "sha256": "4aded630d14955be35a656d70a8477ea5c7e02d2a736d824feca1d80ab2a3352"
+    },
+    {
+      "path": "docs/plan/templates/ecommerce_review.template.csv",
+      "bytes": 209,
+      "sha256": "8291444042ab3b1bad613ab2c3630900d615140cb31417f3e9b548b9d0952d53"
+    },
+    {
+      "path": "docs/plan/templates/experiment_run.template.json",
+      "bytes": 1107,
+      "sha256": "5f45dabc0a1e948ee7d9c8cc29bcd4b35792820a46ebf600c543903beeea7393"
+    },
+    {
+      "path": "docs/plan/templates/project_status.template.json",
+      "bytes": 689,
+      "sha256": "1d0788e7eb45080890714b06ec94ee6e7ed84d9007da44add909f0050835a128"
+    },
+    {
+      "path": "docs/plan/templates/source_manifest.template.json",
+      "bytes": 598,
+      "sha256": "387f85af3c3f1ced8778a30d76e26a5066fda5182fff257773d84f0537abe3cf"
+    },
+    {
+      "path": "scripts/download_source_data.py",
+      "bytes": 4353,
+      "sha256": "facc25730e086ba5c3dba55cb1b961ba2c38a5082c9fdd2166e4685ad37e2db0"
+    },
+    {
+      "path": "scripts/handoff_check.py",
+      "bytes": 2452,
+      "sha256": "8b9e54e5a29e7879e2b713e5e8e331135a17b75cede8cde7c6a4ec6f92569d10"
+    }
+  ],
+  "review_changes": "V1.5 makes development executable in ten gated steps, defers academic writing, resolves importer identity and state ambiguities; preserves V1.4 business and safety contract.",
+  "development_mode": "FEATURE_FIRST",
+  "formal_experiment_mode": "DEFERRED_UNTIL_USER_APPROVAL",
+  "paper_work_mode": "DEFERRED_BY_USER"
+}

@@ -1,0 +1,116 @@
+{
+  "project_id": "ecommerce-agent-thesis",
+  "updated_at": "2026-11-02T16:19:17+08:00",
+  "implementation_ready": {
+    "status": "PARTIAL",
+    "blocker_code": null,
+    "scope": "D0 engineering foundation passed; D1-D9 remain NOT_STARTED",
+    "evidence": [
+      "docs/EVIDENCE_INDEX.md"
+    ]
+  },
+  "real_data_ready": {
+    "status": "NOT_STARTED",
+    "blocker_code": null,
+    "evidence": []
+  },
+  "live_model_verified": {
+    "status": "NOT_STARTED",
+    "blocker_code": null,
+    "evidence": []
+  },
+  "gold_verified": {
+    "status": "NOT_STARTED",
+    "blocker_code": null,
+    "evidence": []
+  },
+  "experiment_executed": {
+    "status": "NOT_STARTED",
+    "blocker_code": null,
+    "evidence": []
+  },
+  "paper_evidence_ready": {
+    "status": "NOT_STARTED",
+    "blocker_code": null,
+    "evidence": []
+  },
+  "school_format_ready": {
+    "status": "NOT_STARTED",
+    "blocker_code": null,
+    "evidence": []
+  },
+  "handoff_version": "1.5",
+  "handoff_status": "HANDOFF_CHECK_PASS_D0_VERIFIED_BUSINESS_NOT_IMPLEMENTED",
+  "implementation_status": "D0_READY_FOR_USER_ACCEPTANCE",
+  "execution_mode": "FEATURE_FIRST",
+  "current_dev_step": "D0",
+  "paper_work_mode": "DEFERRED_BY_USER",
+  "formal_experiment_mode": "DEFERRED_UNTIL_FEATURE_ACCEPTANCE_AND_USER_APPROVAL",
+  "last_verified_dev_step": "D0",
+  "next_dev_step": "D1",
+  "next_step_requires_user_approval": true,
+  "user_acceptance": "PENDING",
+  "git": {
+    "initialized": true,
+    "sha": null,
+    "head": "UNBORN",
+    "reason": "New empty workspace; repository initialized without creating a commit."
+  },
+  "artifact_root": "D:/codex产出/电商智能体_D0工程初始化",
+  "d0": {
+    "status": "READY_FOR_USER_ACCEPTANCE",
+    "engineering_validation": "PASS",
+    "handoff_check": "PASS",
+    "pytest_passed": 31,
+    "vitest_passed": 8,
+    "playwright_passed": 2,
+    "typescript_build": "PASS",
+    "migration": "PASS",
+    "default_ports_startup": "PASS",
+    "database_integrity": "PASS",
+    "dependency_lock_reinstall": "PASS",
+    "npm_audit_production": {
+      "exit_code": 0,
+      "vulnerabilities": 0
+    },
+    "npm_audit_development": {
+      "status": "KNOWN_ISSUE",
+      "remaining_moderate": 4,
+      "high": 0,
+      "critical": 0
+    },
+    "test_warnings": [
+      "Starlette TestClient deprecates httpx; current locked stack passes."
+    ],
+    "evidence": [
+      "docs/EVIDENCE_INDEX.md",
+      "docs/D0_DELIVERY.md"
+    ],
+    "runtime_services": "STOPPED_AFTER_VALIDATION"
+  },
+  "data": {
+    "status": "NOT_ACQUIRED",
+    "business_data_sha256": null,
+    "engineering_database_contains": [
+      "alembic_version",
+      "app_metadata"
+    ]
+  },
+  "model": {
+    "status": "NOT_RUN",
+    "external_calls": 0,
+    "paid_model_calls_authorized": false
+  },
+  "stage_statuses": {
+    "D0": "READY_FOR_USER_ACCEPTANCE",
+    "D1": "NOT_STARTED",
+    "D2": "NOT_STARTED",
+    "D3": "NOT_STARTED",
+    "D4": "NOT_STARTED",
+    "D5": "NOT_STARTED",
+    "D6": "NOT_STARTED",
+    "D7": "NOT_STARTED",
+    "D8": "NOT_STARTED",
+    "D9": "NOT_STARTED"
+  }
+}

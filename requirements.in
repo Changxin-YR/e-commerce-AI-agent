@@ -1,0 +1,11 @@
+# D0 direct runtime dependencies; requirements.lock pins the full installed graph.
+fastapi>=0.115,<1
+pydantic>=2,<3
+pydantic-settings>=2,<3
+SQLAlchemy>=2.0,<2.1
+alembic>=1.13,<2
+uvicorn>=0.30,<1
+# D0 development and test dependencies (no provider SDK or paid model calls).
+httpx>=0.27,<1
+httpx2==2.16.0
+pytest>=8,<10

@@ -1,0 +1,11 @@
+{
+  "recorded_at_context_date": "2026-10-31",
+  "scope": "Review environment; not user Windows environment or project dependency lock",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "pandas": "2.2.3",
+  "openpyxl": "3.1.5",
+  "human_gold_reviewed": false,
+  "system_implemented": false,
+  "model_experiment_executed": false
+}
