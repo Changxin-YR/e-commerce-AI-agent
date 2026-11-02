@@ -68,7 +68,8 @@
     "note": "Final D5 SHA recorded outside Git to avoid self-reference.",
     "d1_sha": "bf92c1f5672f0ecbc05169215c5274d3ebdd7d39",
     "d2_sha": "49c2bbd403fffd571926c9ca3329ded77fcdba0a",
-    "d4_sha": "e0c43541bf19f4c179522305e147e5f5dfe4736b"
+    "d4_sha": "e0c43541bf19f4c179522305e147e5f5dfe4736b",
+    "d5_sha": "a45db53636015afdfaa8a1c4cb0a19ddd8b91ad9"
   },
   "artifact_root": "D:/codex产出/电商智能体_D5八工具",
   "d0": {
@@ -354,5 +355,14 @@
       "docs/evidence/d5/real-verification.json",
       "docs/evidence/d5/pytest-full.xml"
     ]
+  },
+  "d6": {
+    "status": "IN_PROGRESS",
+    "implementation": "NOT_STARTED",
+    "dependency_dry_run": "PASS_NOT_INSTALLED",
+    "official_docs": "FETCHED_NOT_YET_FULLY_REVIEWED",
+    "artifact_root": "D:/codex产出/电商智能体_D6智能体",
+    "model_calls": 0,
+    "live_model_verified": "BLOCKED_AUTHORIZATION"
   }
 }
