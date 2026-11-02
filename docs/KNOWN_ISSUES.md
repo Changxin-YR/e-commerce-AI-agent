@@ -69,3 +69,10 @@
 - 两次全量浏览器仍有D3旧schema断言，均已更新到0004_agent_runtime；最终2项健康定向回归通过。最后完整轮的7过/1失败原JSON保留，不伪称该命令退出0。
 - D7默认运行库与独立浏览器库分别保存；D6两库保留。恢复旧D6未终结任务仍受代码配置哈希限制，须按RUN_CONFIG_CHANGED提示重新运行。
 - D8安全稳定和D9复现验收待继续；4项npm moderate开发依赖告警仍为未解决历史项。用户最终验收不能由Codex代授。
+
+## D8 当前覆盖
+
+- D8请求大小/头部歧义/键名脱敏/Markdown CR/健康兼容问题均修复复测。263 pytest、28 Vitest、完整9 Edge通过。首次失败记录保留。
+- K01仍OPEN：npm生产0、开发4moderate；无high/critical，fix dry-run changed=0。Python68项固定依赖本次未发现已知漏洞；不代表所有供应链风险不存在。
+- D7原库保持SHA；D8默认库含继承与新增共45个scripted任务+3个B0报表。真实模型仍BLOCKED_AUTHORIZATION，费用和未知用量不伪装为真实零费用结果。
+- D9干净复现、当前README改写和完整功能矩阵待继续。最终实机验收仍由用户完成。

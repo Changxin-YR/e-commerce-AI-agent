@@ -24,13 +24,19 @@ export default defineConfig(({ mode }) => {
   const cacheRoot = process.env.D0_CACHE_DIR ?? env.D0_CACHE_DIR
   const target = `http://127.0.0.1:${backendPort}`
   const proxy = { '/healthz': { target }, '/api': { target } }
+  const headers = {
+    'X-Content-Type-Options': 'nosniff',
+    'X-Frame-Options': 'DENY',
+    'Content-Security-Policy': "frame-ancestors 'none'",
+    'Referrer-Policy': 'no-referrer',
+  }
   return {
     plugins: [vue()],
     // Keep .env loading rooted in the project, without changing VITE_ exposure rules.
     envDir: projectRoot,
     cacheDir: cacheRoot ? path.join(cacheRoot, 'vite') : 'node_modules/.vite',
-    server: { host: '127.0.0.1', port: frontendPort, strictPort: true, proxy },
-    preview: { host: '127.0.0.1', port: frontendPort, strictPort: true, proxy },
+    server: { host: '127.0.0.1', port: frontendPort, strictPort: true, proxy, headers, cors: false },
+    preview: { host: '127.0.0.1', port: frontendPort, strictPort: true, proxy, headers, cors: false },
     build: {
       outDir: cacheRoot ? path.join(cacheRoot, 'frontend-dist') : 'dist',
       // Never empty an external directory; output names are content-hashed.

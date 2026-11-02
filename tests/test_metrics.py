@@ -250,7 +250,7 @@ def test_openapi_describes_real_contract_and_errors(api):
     monthly_route=schema['paths']['/api/v1/datasets/{dataset_id}/metrics/monthly']['get']
     assert {p['name'] for p in monthly_route['parameters']} == {'dataset_id','month','country','stock_code'}
     assert monthly_route['responses']['422']['content']['application/json']['schema']['$ref'].endswith('/ErrorResponse')
-    assert schema['info']['version'] == '0.7.0'
+    assert schema['info']['version'] == '0.8.0'
     assert client.get('/api/v1/datasets?sql=SELECT+1').status_code == 422
     assert client.get('/api/v1/datasets?limit=101').status_code == 422
     assert client.get('/api/v1/metric-definitions?metric_names=profit').status_code == 422

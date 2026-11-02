@@ -85,3 +85,10 @@
 - 导出仅JSON与纯文本Markdown，HTML/Markdown内容转义，不新增CSV/Excel表格导出攻击面。前端文本插值渲染，model prose保留人工复核提示。
 - 明确区分NO_DATA、EMPTY_RESULT、PARTIAL_PERIOD与基期不足的PARTIAL_RESULT。六个导航入口覆盖五项功能并保留查询历史。
 - 默认运行库复制D6业务库/checkpoint到D7，旧库SHA不变。真实模型仍禁止；浏览器追问仅用显式工程夹具，正式实验延期。
+
+## D8 安全边界与回归
+
+- 普通API在JSON解析前限64KiB/15秒，上传保持50MiB独立流式限制。拒绝Host/Origin多值歧义；页面/API防嵌套。无公网安全承诺。
+- secret递归键值脱敏、Markdown换行规整；Vue文本插值持续保留。无CSV/Excel导出则S05为N/A。
+- health阶段是版本元数据，前端验证其D加数字格式，不再将D7作为成功必要条件。
+- 执行完整9项真实Edge、263 pytest、28 Vitest和脚本进程恢复。npm4项moderate开发依赖保留，审计预演没有可用常规升级，不强行覆写主版本。

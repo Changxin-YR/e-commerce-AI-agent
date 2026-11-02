@@ -173,6 +173,8 @@ def main() -> int:
             if args.scope in {"smoke", "all"}:
                 commands.append((npm("run", "build"), ROOT / "frontend"))
             if args.scope in {"e2e", "all"}:
+                from backend.app.config import Settings
+                os.environ.setdefault("E2E_SOURCE_DATABASE", str(Settings().database_path))
                 commands.append((npm("run", "test:e2e"), ROOT / "frontend"))
             for command, cwd in commands:
                 code = run(command, cwd)

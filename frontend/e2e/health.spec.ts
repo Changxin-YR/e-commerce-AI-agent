@@ -180,7 +180,7 @@ test.describe.serial('D0 real local service', () => {
     ])
     expect(firstResponse.status()).toBe(200)
     expect(await firstResponse.json()).toMatchObject({
-      status: 'ok', service: 'ecommerce-agent', stage: 'D7',
+      status: 'ok', service: 'ecommerce-agent', stage: 'D8',
       database: { status: 'ok', engine: 'sqlite', schema_revision: '0004_agent_runtime' },
     })
     await expect(page.getByTestId('health-status')).toHaveText('本地服务已连接')

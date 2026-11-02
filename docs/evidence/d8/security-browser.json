@@ -1,0 +1,7 @@
+{
+  "source_kind": "test_fixture_attacks_on_real_local_services",
+  "xss_dialogs": [],
+  "cross_origin_status": 403,
+  "oversized_json_status": 413,
+  "reports_unchanged": true
+}

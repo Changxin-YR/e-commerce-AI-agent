@@ -1,13 +1,13 @@
 {
   "project_id": "ecommerce-agent-thesis",
-  "updated_at": "2026-11-03T00:16:15.695242+08:00",
+  "updated_at": "2026-11-03T00:44:34.848706+08:00",
   "implementation_ready": {
     "status": "PARTIAL",
     "blocker_code": null,
-    "scope": "D0-D7 engineering verified; live model blocked; D8-D9 continue",
+    "scope": "D0-D8 engineering verified; live model blocked; D9 clean reproduction pending",
     "evidence": [
-      "docs/EVIDENCE_INDEX.md",
-      "docs/D7_DELIVERY.md"
+      "docs/D8_DELIVERY.md",
+      "docs/EVIDENCE_INDEX.md"
     ]
   },
   "real_data_ready": {
@@ -50,30 +50,31 @@
     "evidence": []
   },
   "handoff_version": "1.5",
-  "handoff_status": "CONTINUOUS_DEVELOPMENT_FROM_D8",
-  "implementation_status": "D7_ENGINEERING_VERIFIED_CONTINUE_D8",
+  "handoff_status": "CONTINUOUS_DEVELOPMENT_FROM_D9",
+  "implementation_status": "D8_ENGINEERING_VERIFIED_CONTINUE_D9",
   "execution_mode": "FEATURE_FIRST",
-  "current_dev_step": "D8",
+  "current_dev_step": "D9",
   "paper_work_mode": "DEFERRED_BY_USER",
   "formal_experiment_mode": "DEFERRED_UNTIL_FEATURE_ACCEPTANCE_AND_USER_APPROVAL",
-  "last_verified_dev_step": "D7",
-  "next_dev_step": "D8",
+  "last_verified_dev_step": "D8",
+  "next_dev_step": "D9",
   "next_step_requires_user_approval": false,
   "user_acceptance": "PENDING_FINAL_USER_ACCEPTANCE",
   "git": {
     "initialized": true,
     "baseline_sha": "0740bf439c37dc344885d2f7c26568c157dd9571",
     "baseline_scope": "Verified D0 plus closeout",
-    "delivery_commit_receipt": "D:/codex产出/电商智能体_D7报告五视图/交付/git-receipt.json",
+    "delivery_commit_receipt": "D:/codex产出/电商智能体_D8安全稳定/交付/git-receipt.json",
     "pushed": false,
-    "note": "Final D7 commit is recorded outside Git to avoid self-reference.",
+    "note": "D8 commit recorded outside Git to avoid self-reference.",
     "d1_sha": "bf92c1f5672f0ecbc05169215c5274d3ebdd7d39",
     "d2_sha": "49c2bbd403fffd571926c9ca3329ded77fcdba0a",
     "d4_sha": "e0c43541bf19f4c179522305e147e5f5dfe4736b",
     "d5_sha": "a45db53636015afdfaa8a1c4cb0a19ddd8b91ad9",
-    "d6_sha": "d5202f6a29678e18964930f8bc2b5af80baa9145"
+    "d6_sha": "d5202f6a29678e18964930f8bc2b5af80baa9145",
+    "d7_sha": "0ce4f79361e18d6b30145e9c532d53b9db094515"
   },
-  "artifact_root": "D:/codex产出/电商智能体_D7报告五视图",
+  "artifact_root": "D:/codex产出/电商智能体_D8安全稳定",
   "d0": {
     "status": "READY_FOR_USER_ACCEPTANCE",
     "engineering_validation": "PASS",
@@ -163,8 +164,8 @@
     "D5": "VERIFIED_CONTINUATION_AUTHORIZED",
     "D6": "VERIFIED_CONTINUATION_AUTHORIZED",
     "D7": "VERIFIED_CONTINUATION_AUTHORIZED",
-    "D8": "AUTHORIZED_READY_TO_START",
-    "D9": "NOT_STARTED"
+    "D8": "VERIFIED_CONTINUATION_AUTHORIZED",
+    "D9": "AUTHORIZED_READY_TO_START"
   },
   "d1": {
     "status": "READY_FOR_USER_ACCEPTANCE",
@@ -544,6 +545,145 @@
       "First full browser run: 6 passed/1 failed/1 skipped, stale D3 schema assertion.",
       "Second full browser run: 7 passed/1 failed, remaining D3 restart assertion; corrected and both health cases passed.",
       "Evidence finalizer initially expected provider=scripted; actual persisted provider=test_fixture/model=scripted-no-network, corrected guard and retained failed command."
+    ]
+  },
+  "d8": {
+    "stage": "D8",
+    "engineering_validation": "PASS",
+    "live_model_verified": "BLOCKED_AUTHORIZATION",
+    "user_acceptance": "NOT_PERFORMED",
+    "pytest_passed": 263,
+    "new_security_tests": 25,
+    "vitest_passed": 28,
+    "edge_cases_passed": 9,
+    "edge_cases": [
+      {
+        "title": "official ZIP uploads in UI, progresses, survives refresh and deduplicates XLSX",
+        "file": "business.spec.ts",
+        "status": "passed"
+      },
+      {
+        "title": "September and October values match real API and independent SQL; refresh and restart use saved GET",
+        "file": "business.spec.ts",
+        "status": "passed"
+      },
+      {
+        "title": "partial, no-data, empty-filter, corrupt upload and real backend outage are explicit",
+        "file": "business.spec.ts",
+        "status": "passed"
+      },
+      {
+        "title": "page receives real health JSON and remains connected after reload",
+        "file": "health.spec.ts",
+        "status": "passed"
+      },
+      {
+        "title": "stopping and restarting the real backend shows failure and recovery",
+        "file": "health.spec.ts",
+        "status": "passed"
+      },
+      {
+        "title": "real upload reuse -> B0 comparison -> exact report -> downloads -> GET history after restart",
+        "file": "reports.spec.ts",
+        "status": "passed"
+      },
+      {
+        "title": "partial and empty reports keep distinct states",
+        "file": "reports.spec.ts",
+        "status": "passed"
+      },
+      {
+        "title": "scripted B2 clarification survives restart, replies in the same run and exports cited real values",
+        "file": "reports.spec.ts",
+        "status": "passed"
+      },
+      {
+        "title": "D8 browser escapes stored questions and rejects an actual foreign-origin form",
+        "file": "reports.spec.ts",
+        "status": "passed"
+      }
+    ],
+    "browser": "Microsoft Edge / Playwright",
+    "viewports": [
+      "1280x900",
+      "390x844"
+    ],
+    "evidence_run": "D:\\codex产出\\电商智能体_D8安全稳定\\缓存\\playwright\\2026-11-02T16-37-54-406Z-42432",
+    "build": "PASS",
+    "agent_restart_checks": 114,
+    "agent_fixture_runs": 15,
+    "external_model_calls": 0,
+    "python_audit": {
+      "tool": "pip-audit 2.10.1",
+      "dependencies": 68,
+      "known_vulnerabilities": 0
+    },
+    "npm_audit": {
+      "production": 0,
+      "development_moderate": 4,
+      "high": 0,
+      "critical": 0,
+      "fix_dry_run_changed": 0
+    },
+    "database": {
+      "path": "D:\\codex产出\\电商智能体_D8安全稳定\\缓存\\runtime\\app.sqlite3",
+      "bytes": 677072896,
+      "sha256": "8afa46da01cda1c6e52210133b4293674f8632aad042421f1bdc4984358b8d57",
+      "counts": {
+        "transaction_rows": 541909,
+        "analysis_runs": 48,
+        "reports": 48,
+        "model_attempts": 99,
+        "agent_tool_calls": 65,
+        "query_history": 2
+      }
+    },
+    "checkpoint": {
+      "path": "D:\\codex产出\\电商智能体_D8安全稳定\\缓存\\runtime\\app.checkpoints.sqlite3",
+      "bytes": 4087808,
+      "sha256": "b9a365a69dfeb87d7242aedff13c6abc1b7f29e1b4ccb3b9f8c6120d5c73e82a"
+    },
+    "browser_databases": [
+      {
+        "path": "D:\\codex产出\\电商智能体_D8安全稳定\\缓存\\playwright\\2026-11-02T16-37-54-406Z-42432\\business\\real-ui.sqlite3",
+        "bytes": 676421632,
+        "sha256": "b6ca9520d4c167cc12e36b30f504e51c0360fa0706dcea9df0b2059baf3e06ef",
+        "counts": {
+          "transaction_rows": 541909,
+          "analysis_runs": 0,
+          "reports": 0,
+          "model_attempts": 0,
+          "agent_tool_calls": 0,
+          "query_history": 5
+        }
+      },
+      {
+        "path": "D:\\codex产出\\电商智能体_D8安全稳定\\缓存\\playwright\\2026-11-02T16-37-54-406Z-42432\\reports\\real-ui.sqlite3",
+        "bytes": 677265408,
+        "sha256": "7c1ab3088ef6bfe910be6484375d7304c56ffb2be00f9bcd9ce0bd71817961d8",
+        "counts": {
+          "transaction_rows": 541909,
+          "analysis_runs": 53,
+          "reports": 53,
+          "model_attempts": 103,
+          "agent_tool_calls": 86,
+          "query_history": 2
+        }
+      }
+    ],
+    "D7_preserved": true,
+    "stopped_services": true,
+    "independent_report_sql_checks": 158,
+    "independent_monthly_sql_checks": 21,
+    "source_hashes": {
+      "zip": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
+      "xlsx": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d"
+    },
+    "failures": [
+      "Initial targeted security tests: 10 failed/8 passed; one invalid test route corrected, nine failed expectations drove fixes.",
+      "First full pytest: 262 passed/1 outdated OpenAPI version assertion; final 263 passed.",
+      "First full browser: 7 passed/1 failed/1 skipped; frontend D7-only health validation fixed; final full 9 passed.",
+      "npm audit and audit fix dry run exit 1: four moderate development advisories remain, production zero."
     ]
   }
 }

@@ -28,6 +28,7 @@ from backend.app.schemas import DatabaseHealth, ErrorDetail, ErrorResponse, Heal
 from backend.app.agent.service import AgentService
 from backend.app.agent.routes import router as agent_router
 from backend.app.reports import ReportService, router as report_router
+from backend.app.security import BoundedBodyMiddleware, SECURITY_HEADERS
 
 logger = logging.getLogger(__name__)
 
@@ -40,7 +41,7 @@ def error_response(request: Request, code: str, message: str, status_code: int) 
     return JSONResponse(
         body.model_dump(),
         status_code=status_code,
-        headers={"X-Request-ID": request_id, "Cache-Control": "no-store"},
+        headers={"X-Request-ID": request_id, "Cache-Control": "no-store", **SECURITY_HEADERS},
     )
 
 
@@ -66,8 +67,8 @@ def create_app(settings: Settings | None = None, *, test_hashes: frozenset[str] 
             engine.dispose()
 
     application = FastAPI(
-        title="Ecommerce Agent — D7",
-        version="0.7.0",
+        title="Ecommerce Agent — D8",
+        version="0.8.0",
         description="Local source ingestion. raw_sha256/data_hash always identify the XLSX workbook; container hashes are separate.",
         lifespan=lifespan,
     )
@@ -82,16 +83,17 @@ def create_app(settings: Settings | None = None, *, test_hashes: frozenset[str] 
     application.include_router(agent_router)
     application.include_router(metric_router)
     application.include_router(import_router)
+    application.add_middleware(BoundedBodyMiddleware, error_response=error_response)
 
     @application.middleware("http")
     async def request_boundary(request: Request, call_next):
         # Generate our own identifier; never reflect untrusted header content.
         request.state.request_id = str(uuid4())
         host = request.headers.get("host", "").lower()
-        if not re.fullmatch(r"(?:127\.0\.0\.1|localhost)(?::\d{1,5})?", host):
+        if len(request.headers.getlist('host')) != 1 or not re.fullmatch(r"(?:127\.0\.0\.1|localhost)(?::\d{1,5})?", host):
             return error_response(request, "UNTRUSTED_HOST", "Local host required.", 400)
         if request.method not in {"GET", "HEAD", "OPTIONS"}:
-            if request.headers.get("origin") not in settings.trusted_origins:
+            if len(request.headers.getlist('origin')) != 1 or request.headers.get("origin") not in settings.trusted_origins:
                 return error_response(request, "UNTRUSTED_ORIGIN", "Trusted local origin required.", 403)
         try:
             response = await call_next(request)
@@ -101,6 +103,7 @@ def create_app(settings: Settings | None = None, *, test_hashes: frozenset[str] 
             response = error_response(request, "INTERNAL_ERROR", "Internal server error.", 500)
         response.headers["X-Request-ID"] = request.state.request_id
         response.headers["Cache-Control"] = "no-store"
+        response.headers.update(SECURITY_HEADERS)
         return response
 
     @application.exception_handler(AppError)

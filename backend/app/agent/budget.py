@@ -18,7 +18,7 @@ def redact(value, secret):
     if isinstance(value, str):
         return value.replace(secret, '[REDACTED]') if secret else value
     if isinstance(value, dict):
-        return {k: redact(v,secret) for k,v in value.items()}
+        return {redact(k,secret): redact(v,secret) for k,v in value.items()}
     if isinstance(value, list):
         return [redact(v,secret) for v in value]
     return value

@@ -3,6 +3,7 @@ import { spawn } from 'node:child_process'
 import type { ChildProcess } from 'node:child_process'
 import { copyFileSync, closeSync, mkdirSync, openSync, writeFileSync, readFileSync } from 'node:fs'
 import net from 'node:net'
+import { createServer } from 'node:http'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -148,8 +149,9 @@ test.describe.serial('D7 real data reports and scripted clarification', () => {
   let reportId = '', waitingRunId = '', waitingThreadId = ''
   test.beforeAll(async () => {
     test.setTimeout(75000)
-    if (!process.env.D7_SOURCE_DATABASE) throw new Error('D7_SOURCE_DATABASE must point to an audited real database')
-    copyFileSync(process.env.D7_SOURCE_DATABASE, path.join(evidenceDir, 'real-ui.sqlite3'))
+    const sourceDatabase = process.env.E2E_SOURCE_DATABASE ?? process.env.D7_SOURCE_DATABASE
+    if (!sourceDatabase) throw new Error('E2E_SOURCE_DATABASE must point to an audited real database')
+    copyFileSync(sourceDatabase, path.join(evidenceDir, 'real-ui.sqlite3'))
     backendPort = await chooseFreePort()
     do { frontendPort = await chooseFreePort() } while (frontendPort === backendPort)
     baseURL = `http://127.0.0.1:${frontendPort}`
@@ -266,5 +268,51 @@ test.describe.serial('D7 real data reports and scripted clarification', () => {
     const exported = await (await page.request.get(`${baseURL}/api/v1/reports/${completed.result_ref}/export`)).json()
     expect(exported.content.claims[0].value).toBe('1019687.622')
     writeFileSync(path.join(evidenceDir, 'scripted-run.json'), JSON.stringify(completed, null, 2))
+  })
+  test('D8 browser escapes stored questions and rejects an actual foreign-origin form', async ({ page }) => {
+    const dialogs: string[] = []
+    page.on('dialog', dialog => { dialogs.push(dialog.message()); void dialog.dismiss() })
+    const home = await page.goto(`${baseURL}/?view=analysis`)
+    expect(home?.headers()['x-frame-options']).toBe('DENY')
+    expect(home?.headers()['content-security-policy']).toContain("frame-ancestors 'none'")
+    const attack = '<img src=x onerror=alert(1)> test_fixture_case=unsupported'
+    await page.getByLabel('经营问题').fill(attack)
+    await page.getByRole('button', { name: '提交分析任务' }).click()
+    await expect(page.getByTestId('run-status')).toHaveText('已完成')
+    await expect(page.getByTestId('run-detail')).toContainText(attack)
+    expect(await page.locator('img[src="x"]').count()).toBe(0)
+    await page.reload()
+    await expect(page.getByTestId('run-detail')).toContainText(attack)
+    expect(dialogs).toEqual([])
+    await page.screenshot({ path: path.join(evidenceDir, 'security-escaped-question.png'), fullPage: false })
+    const before = await (await page.request.get(`${baseURL}/api/v1/reports`)).json()
+    const oversized = await page.request.post(`${baseURL}/api/v1/reports`, {
+      headers: { Origin: baseURL, 'Content-Type': 'application/json' }, data: ' '.repeat(65537),
+    })
+    expect(oversized.status()).toBe(413)
+    const attacker = createServer((_req, res) => {
+      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' })
+      res.end(`<form action="${baseURL}/api/v1/reports" method="POST"><input name="idempotency_key" value="test_fixture_csrf"><button>提交跨源测试表单</button></form>`)
+    })
+    await new Promise<void>(resolve => attacker.listen(0, '127.0.0.1', resolve))
+    try {
+      const address = attacker.address()
+      if (!address || typeof address === 'string') throw new Error('Missing test origin')
+      await page.goto(`http://127.0.0.1:${address.port}`)
+      const [rejected] = await Promise.all([
+        page.waitForResponse(r => r.url() === `${baseURL}/api/v1/reports` && r.request().method() === 'POST'),
+        page.getByRole('button', { name: '提交跨源测试表单' }).click(),
+      ])
+      expect(rejected.status()).toBe(403)
+      expect((await rejected.json()).error.code).toBe('UNTRUSTED_ORIGIN')
+      await page.screenshot({ path: path.join(evidenceDir, 'security-cross-origin-rejected.png'), fullPage: false })
+      expect(await (await page.request.get(`${baseURL}/api/v1/reports`)).json()).toEqual(before)
+      writeFileSync(path.join(evidenceDir, 'security-browser.json'), JSON.stringify({
+        source_kind: 'test_fixture_attacks_on_real_local_services', xss_dialogs: dialogs,
+        cross_origin_status: rejected.status(), oversized_json_status: oversized.status(), reports_unchanged: true,
+      }, null, 2))
+    } finally {
+      await new Promise<void>((resolve, reject) => attacker.close(error => error ? reject(error) : resolve()))
+    }
   })
 })

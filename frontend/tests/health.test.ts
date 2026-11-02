@@ -5,7 +5,7 @@ import App from '../src/components/HealthPanel.vue'
 
 // test_fixture: transport responses only; no business or trading data.
 const healthy = {
-  status: 'ok', service: 'ecommerce-agent', version: '0.7.0', stage: 'D7',
+  status: 'ok', service: 'ecommerce-agent', version: '0.8.0', stage: 'D8',
   database: { status: 'ok', engine: 'sqlite', sqlite_version: 'test_fixture', schema_revision: '0004_agent_runtime' },
 }
 let wrapper: VueWrapper | undefined
@@ -49,6 +49,7 @@ describe('local health connection', () => {
 
   it.each([
     ['invalid schema', () => response({ status: 'ok' })],
+    ['invalid stage', () => response({ ...healthy, stage: 'arbitrary' })],
     ['wrong service', () => response({ ...healthy, service: 'unrelated-service' })],
     ['HTML fallback', () => new Response('<html>SPA fallback</html>', { status: 200 })],
   ])('rejects a 200 %s instead of claiming success', async (_, result) => {
@@ -57,6 +58,13 @@ describe('local health connection', () => {
     await flushPromises()
     expect(wrapper.get('[role="alert"]').text()).toContain('INVALID_RESPONSE')
     expect(wrapper.get('[data-testid="health-status"]').text()).toBe('本地服务暂不可用')
+  })
+
+  it.each(['D8', 'D9'])('accepts compatible health schema after stage advancement to %s', async (stage) => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(response({ ...healthy, stage })))
+    wrapper = mount(App)
+    await flushPromises()
+    expect(wrapper.get('[data-testid="health-status"]').text()).toBe('本地服务已连接')
   })
 
   it('retries after a network error and performs a new backend request', async () => {

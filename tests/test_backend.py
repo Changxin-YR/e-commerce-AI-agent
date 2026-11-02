@@ -64,7 +64,7 @@ def test_health_checks_real_database_and_has_no_write_side_effect(migrated: Sett
             assert response.status_code == 200
             payload = response.json()
             assert payload == {
-                "status": "ok", "service": "ecommerce-agent", "version": "0.7.0", "stage": "D7",
+                "status": "ok", "service": "ecommerce-agent", "version": "0.8.0", "stage": "D8",
                 "database": {"status": "ok", "engine": "sqlite", "sqlite_version": sqlite3.sqlite_version, "schema_revision": "0004_agent_runtime"},
             }
             UUID(response.headers["X-Request-ID"])

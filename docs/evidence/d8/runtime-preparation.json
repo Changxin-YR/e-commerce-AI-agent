@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-02T16:25:56.307777+00:00",
+  "git_sha": "0ce4f79361e18d6b30145e9c532d53b9db094515",
+  "copies": [
+    {
+      "source": "D:\\codex产出\\电商智能体_D7报告五视图\\缓存\\runtime\\app.sqlite3",
+      "target": "D:\\codex产出\\电商智能体_D8安全稳定\\缓存\\runtime\\app.sqlite3",
+      "sha256": "36ded9bd7b4d59dda5a7b129cc8710c035b98617f7d292ec71b85686fc5999db",
+      "bytes": 676872192
+    },
+    {
+      "source": "D:\\codex产出\\电商智能体_D7报告五视图\\缓存\\runtime\\app.checkpoints.sqlite3",
+      "target": "D:\\codex产出\\电商智能体_D8安全稳定\\缓存\\runtime\\app.checkpoints.sqlite3",
+      "sha256": "db89aebdd3cd7930098a0efee498288ad623102ea55f48c0b95f0cb1394ce46d",
+      "bytes": 2953216
+    }
+  ],
+  "external_model_calls": 0
+}

@@ -167,7 +167,7 @@ class ReportService:
 def markdown(report):
     def safe(value):
         value = str(value).replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
-        return re.sub(r'([\\`*_{}\[\]()#+.!|~-])', r'\\\1', value).replace('\n', ' ')
+        return re.sub(r'([\\`*_{}\[\]()#+.!|~-])', r'\\\1', value).replace('\r', ' ').replace('\n', ' ')
     c = report['content']
     lines = ['# 历史交易分析报告', '', '报告：' + safe(report['report_id']),
              '方案：' + c['variant'], '生成时间：' + report['created_at'],
