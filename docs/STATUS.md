@@ -1,21 +1,14 @@
-# 当前执行授权更新
+# 电商智能体当前工程状态
 
-用户已于2026-11-02授权从D4连续开发至D9工程收尾，并允许上下文较满时新建对话接续。无须阶段间重复确认。D4业务代码待开始，D3验证结论保持不变；付费模型/正式实验/论文/公网部署/远程推送未获新授权。读取 docs/CONTINUOUS_EXECUTION.md 和 NEXT_SESSION.md；下面保留上一阶段封存结果作为历史记录。
+2026-11-02，Asia/Shanghai。**D4 工程验证通过，继续 D5；用户最终验收尚未执行。** 持续授权和边界见 CONTINUOUS_EXECUTION.md。
 
----
+- D0—D4 已有真实工程证据。D4 完成 Vue 数据导入/批次轮询/质量/来源、月度精确金额、查询保存与历史恢复。健康诊断迁至 `/?view=health`，业务页使用 `/`。
+- 官方 ZIP 在新空库中通过 Edge 页面完整导入 541909 行，刷新继续轮询，随后 XLSX 复用相同批次。9/10 月浏览器结果与独立 SQL/Decimal 的 21 项断言一致。
+- 158 pytest、20 Vitest、5 Edge（3 业务+2 健康）、TypeScript/Vite 构建、pip check 和环境检查通过。首轮 Edge 因执行期间 Vite 配置整理触发重启而失败；原日志/截图/trace 保留，固定源码后的完整复跑通过。
+- E08 真实业务历史页面、E10 导入→两月查询→刷新链现已实测。服务重启后仍读同一保存 JSON，刷新/历史打开期间 POST 数为 0。无数据、12 月部分覆盖、空筛选、损坏上传和实际停机/恢复已验证。
+- .env 运行库指向 D4缓存/runtime/app.sqlite3，保留 D3 两份查询；独立 UI 验收库有 5 份查询。两库均 541909 行，原 D3 库保留，服务已停止。库/源文件 SHA 见 docs/evidence/d4/verification.json。
+- D4额外交付与缓存位于 `D:/codex产出/电商智能体_D4业务页面`。源码仍保留原目录，提交和封存回执见交付/git-receipt.json；不推送。
+- D5—D9 继续执行；实际模型预算为 0，真实模型验证 BLOCKED_AUTHORIZATION，离线实现仍需完成。论文、人工 gold、正式实验、生产写操作和公网部署保持延期/未授权。
+- 4 项 npm moderate 开发依赖遗留未变，本阶段未升级或重新 audit；不得把旧 audit 当成本轮结果。
 
-# 电商智能体开发状态（V1.5 FEATURE_FIRST）
-
-更新时间：2026-11-02T21:56:49.252368+08:00。
-
-- **D3_READY_FOR_USER_ACCEPTANCE**：D0—D3 工程验证通过。本轮完成后停止，D4—D9 未开始。
-- 真实源 541909 行完整保留，分类 POSITIVE 530104 / CANCELLATION 9288 / EXCLUDED_OTHER 2517 / INVALID 0。官方 ZIP/XLSX 哈希与既有版本一致；两份独立审计复跑无统计差异。
-- 月度/序列指标从 SQLite 整数千分英镑聚合，9/10 月四项核心指标与独立 OOXML 参考、独立 SQL 全部一致。三位精确字符串和两位 ROUND_HALF_UP 显示值分别输出。
-- 实现数据集列表、月度与月序列、指标定义、三项受限工具、显式 POST 保存查询和只读历史 GET。仅 READY 数据参与指标；NO_DATA / EMPTY_RESULT / PARTIAL_PERIOD / 非法参数区分处理。
-- 158 pytest（D3 42 项）、8 Vitest、2 Edge 健康回归、TypeScript/Vite 构建、87 项真实 HTTP/SQL 核对通过。另有真实 Edge 打开保存 JSON 并刷新测试；业务历史页面留待 D4，不能宣称前端业务链完成。
-- 迁移 `0003_query_history`，当前 .env 使用 D3 缓存/runtime/app.sqlite3；从 D2 库复制迁移，D2 封存库保留。两次真实验收显式保存共 2 份查询；GET、刷新和重启读取数据库 SHA 不变。服务已停止。
-- 修复回归发现的 Windows 初始锁文件竞争；首次 pytest 父缓存目录缺失和随后竞争失败日志均保留。最终 pytest 无警告，Edge 颜色环境提示仍有记录。
-- Git D2 基线 `49c2bbd403fffd571926c9ca3329ded77fcdba0a`；D3 SHA 与文件清单在 `D:/codex产出/电商智能体_D3精确指标API/交付/git-receipt.json`。仅本地提交、无推送。
-- 4 项既有 npm moderate 为开发依赖遗留，本轮未升级或重跑 audit；生产 audit=0 是 D0/D1 证据。模型调用 0，论文、正式实验与人工 gold 未开始。
-
-完整接口使用见 docs/D3_METRICS.md，交付见 docs/D3_DELIVERY.md，命令和失败记录见 docs/EVIDENCE_INDEX.md。
+使用说明 docs/D4_UI.md，验收与证据 docs/D4_DELIVERY.md、docs/EVIDENCE_INDEX.md。不是全系统功能完成声明。

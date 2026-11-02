@@ -1,0 +1,441 @@
+{
+  "config": {
+    "argv": [
+      "D:\\依赖\\Node.js\\node-v24.22.0-win-x64\\node.exe",
+      "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend\\node_modules\\@playwright\\test\\cli.js",
+      "test"
+    ],
+    "configFile": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend\\playwright.config.ts",
+    "rootDir": "C:/Users/27363/Desktop/毕业论文/电商智能体的实现/ecommerce-agent-thesis/frontend/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/codex产出/电商智能体_D4业务页面/缓存/playwright/2026-11-02T14-31-28-053Z-35716/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/Users/27363/Desktop/毕业论文/电商智能体的实现/ecommerce-agent-thesis/frontend/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "D:\\codex产出\\电商智能体_D4业务页面\\缓存\\playwright\\2026-11-02T14-31-28-053Z-35716\\artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend\\e2e",
+        "snapshotDir": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend\\e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 45000,
+        "use": {
+          "channel": "msedge",
+          "headless": true,
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "trace": "on",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "D:\\codex产出\\电商智能体_D4业务页面\\缓存\\playwright\\2026-11-02T14-31-28-053Z-35716\\results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "business.spec.ts",
+      "file": "business.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "D4 real business workflow",
+          "file": "business.spec.ts",
+          "line": 144,
+          "column": 15,
+          "specs": [
+            {
+              "title": "official ZIP uploads in UI, progresses, survives refresh and deduplicates XLSX",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 300000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend\\e2e\\business.spec.ts",
+                        "line": 144,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 241419,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('batch-status')\nExpected: \u001b[32m\"可查询\"\u001b[39m\nTimeout: 240000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('batch-status') with timeout 240000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('batch-status')\u001b[22m\n\u001b[2m    222 × locator resolved to <h3 data-testid=\"batch-status\">正在导入</h3>\u001b[22m\n\u001b[2m        - unexpected value \"正在导入\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('batch-status')\nExpected: \u001b[32m\"可查询\"\u001b[39m\nTimeout: 240000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('batch-status') with timeout 240000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('batch-status')\u001b[22m\n\u001b[2m    222 × locator resolved to <h3 data-testid=\"batch-status\">正在导入</h3>\u001b[22m\n\u001b[2m        - unexpected value \"正在导入\"\u001b[22m\n\n    at C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend\\e2e\\business.spec.ts:188:52",
+                        "location": {
+                          "file": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend\\e2e\\business.spec.ts",
+                          "column": 52,
+                          "line": 188
+                        },
+                        "snippet": "  186 |     await page.reload()\n  187 |     await page.getByRole('button', { name: '数据与导入', exact: true }).click()\n> 188 |     await expect(page.getByTestId('batch-status')).toHaveText('可查询', { timeout: 240_000 })\n      |                                                    ^\n  189 |     await expect(page.getByTestId('raw-row-count')).toHaveText('541909')\n  190 |     await expect(page.getByTestId('processed-rows')).toHaveText('541909')\n  191 |     await page.screenshot({ path: path.join(evidenceDir, 'import-complete.png'), fullPage: true })"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend\\e2e\\business.spec.ts",
+                            "column": 52,
+                            "line": 188
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('batch-status')\nExpected: \u001b[32m\"可查询\"\u001b[39m\nTimeout: 240000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('batch-status') with timeout 240000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('batch-status')\u001b[22m\n\u001b[2m    222 × locator resolved to <h3 data-testid=\"batch-status\">正在导入</h3>\u001b[22m\n\u001b[2m        - unexpected value \"正在导入\"\u001b[22m\n\n\n  186 |     await page.reload()\n  187 |     await page.getByRole('button', { name: '数据与导入', exact: true }).click()\n> 188 |     await expect(page.getByTestId('batch-status')).toHaveText('可查询', { timeout: 240_000 })\n      |                                                    ^\n  189 |     await expect(page.getByTestId('raw-row-count')).toHaveText('541909')\n  190 |     await expect(page.getByTestId('processed-rows')).toHaveText('541909')\n  191 |     await page.screenshot({ path: path.join(evidenceDir, 'import-complete.png'), fullPage: true })\n    at C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend\\e2e\\business.spec.ts:188:52"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-02T14:31:29.287Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend\\e2e\\business.spec.ts",
+                            "line": 144,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\codex产出\\电商智能体_D4业务页面\\缓存\\playwright\\2026-11-02T14-31-28-053Z-35716\\artifacts\\business-D4-real-business--2fec4-fresh-and-deduplicates-XLSX\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\codex产出\\电商智能体_D4业务页面\\缓存\\playwright\\2026-11-02T14-31-28-053Z-35716\\artifacts\\business-D4-real-business--2fec4-fresh-and-deduplicates-XLSX\\error-context.md"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\codex产出\\电商智能体_D4业务页面\\缓存\\playwright\\2026-11-02T14-31-28-053Z-35716\\artifacts\\business-D4-real-business--2fec4-fresh-and-deduplicates-XLSX\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\codex产出\\电商智能体_D4业务页面\\缓存\\playwright\\2026-11-02T14-31-28-053Z-35716\\artifacts\\business-D4-real-business--2fec4-fresh-and-deduplicates-XLSX\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend\\e2e\\business.spec.ts",
+                        "column": 52,
+                        "line": 188
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "66346504f81fcdf6f5e9-14f85e4f84de95563ad8",
+              "file": "business.spec.ts",
+              "line": 169,
+              "column": 3
+            },
+            {
+              "title": "September and October values match real API and independent SQL; refresh and restart use saved GET",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend\\e2e\\business.spec.ts",
+                        "line": 144,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-02T14:35:35.982Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "66346504f81fcdf6f5e9-274c5a1bcb7c4a7c92aa",
+              "file": "business.spec.ts",
+              "line": 209,
+              "column": 3
+            },
+            {
+              "title": "partial, no-data, empty-filter, corrupt upload and real backend outage are explicit",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend\\e2e\\business.spec.ts",
+                        "line": 144,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-02T14:35:35.982Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "66346504f81fcdf6f5e9-963681311a546f16ba11",
+              "file": "business.spec.ts",
+              "line": 257,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "health.spec.ts",
+      "file": "health.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "D0 real local service",
+          "file": "health.spec.ts",
+          "line": 143,
+          "column": 15,
+          "specs": [
+            {
+              "title": "page receives real health JSON and remains connected after reload",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend\\e2e\\health.spec.ts",
+                        "line": 143,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 551,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-02T14:35:36.542Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend\\e2e\\health.spec.ts",
+                            "line": 143,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\codex产出\\电商智能体_D4业务页面\\缓存\\playwright\\2026-11-02T14-31-28-053Z-35716\\artifacts\\health-D0-real-local-servi-38e60-ains-connected-after-reload\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "760d72a3746ac5132f88-4aced9ff3f1a87db38e8",
+              "file": "health.spec.ts",
+              "line": 174,
+              "column": 3
+            },
+            {
+              "title": "stopping and restarting the real backend shows failure and recovery",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend\\e2e\\health.spec.ts",
+                        "line": 143,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2412,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-02T14:35:41.119Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\frontend\\e2e\\health.spec.ts",
+                            "line": 143,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\codex产出\\电商智能体_D4业务页面\\缓存\\playwright\\2026-11-02T14-31-28-053Z-35716\\artifacts\\health-D0-real-local-servi-895e7--shows-failure-and-recovery\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "760d72a3746ac5132f88-c3f25ba8ef85833393ee",
+              "file": "health.spec.ts",
+              "line": 201,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-02T14:31:28.714Z",
+    "duration": 257532.33500000002,
+    "expected": 2,
+    "skipped": 2,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

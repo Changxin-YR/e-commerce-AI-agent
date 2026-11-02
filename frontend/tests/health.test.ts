@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { flushPromises, mount } from '@vue/test-utils'
 import type { VueWrapper } from '@vue/test-utils'
-import App from '../src/App.vue'
+import App from '../src/components/HealthPanel.vue'
 
 // test_fixture: transport responses only; no business or trading data.
 const healthy = {

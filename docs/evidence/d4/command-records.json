@@ -1,0 +1,270 @@
+[
+  {
+    "label": "d4-handoff-initial",
+    "started_at": "2026-11-02T14:19:20.278529+00:00",
+    "finished_at": "2026-11-02T14:19:20.376702+00:00",
+    "duration_seconds": 0.109,
+    "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+    "argv": [
+      "python",
+      "scripts/handoff_check.py"
+    ],
+    "exit_code": 0,
+    "stdout_file": "20261102T141920278529Z_d4-handoff-initial.stdout.txt",
+    "stderr_file": "20261102T141920278529Z_d4-handoff-initial.stderr.txt",
+    "record_file": "20261102T141920278529Z_d4-handoff-initial.json",
+    "stdout_file_sha256": "ce3aa1a0b62959e3dc3aa168e0c5cfbecf73713c983732ddebed6b3831a6b5dc",
+    "stderr_file_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "label": "d4-build-first",
+    "started_at": "2026-11-02T14:28:00.778300+00:00",
+    "finished_at": "2026-11-02T14:28:03.645948+00:00",
+    "duration_seconds": 2.875,
+    "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+    "argv": [
+      "python",
+      "scripts/manage.py",
+      "build"
+    ],
+    "exit_code": 0,
+    "stdout_file": "20261102T142800778300Z_d4-build-first.stdout.txt",
+    "stderr_file": "20261102T142800778300Z_d4-build-first.stderr.txt",
+    "record_file": "20261102T142800778300Z_d4-build-first.json",
+    "stdout_file_sha256": "fa1e27e55649245b52b08d6380e76001635447295817c83a563f8d4663dc2ddf",
+    "stderr_file_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "label": "d4-vitest-first",
+    "started_at": "2026-11-02T14:29:28.444270+00:00",
+    "finished_at": "2026-11-02T14:29:30.442199+00:00",
+    "duration_seconds": 2.0,
+    "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+    "argv": [
+      "python",
+      "scripts/manage.py",
+      "test",
+      "--scope",
+      "frontend"
+    ],
+    "exit_code": 0,
+    "stdout_file": "20261102T142928444270Z_d4-vitest-first.stdout.txt",
+    "stderr_file": "20261102T142928444270Z_d4-vitest-first.stderr.txt",
+    "record_file": "20261102T142928444270Z_d4-vitest-first.json",
+    "stdout_file_sha256": "920230120d203471beb4abaa617ff02d5621c59937353b22742a9c0db0c718c0",
+    "stderr_file_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "label": "d4-build-second",
+    "started_at": "2026-11-02T14:31:27.227444+00:00",
+    "finished_at": "2026-11-02T14:31:30.094537+00:00",
+    "duration_seconds": 2.875,
+    "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+    "argv": [
+      "python",
+      "scripts/manage.py",
+      "build"
+    ],
+    "exit_code": 0,
+    "stdout_file": "20261102T143127227444Z_d4-build-second.stdout.txt",
+    "stderr_file": "20261102T143127227444Z_d4-build-second.stderr.txt",
+    "record_file": "20261102T143127227444Z_d4-build-second.json",
+    "stdout_file_sha256": "78d04b34f1e657966c5ab682119a534b61309b952f3a71b5e1f0d233700a4eb6",
+    "stderr_file_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "label": "d4-edge-business-first",
+    "started_at": "2026-11-02T14:31:27.228444+00:00",
+    "finished_at": "2026-11-02T14:35:46.330999+00:00",
+    "duration_seconds": 259.11,
+    "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+    "argv": [
+      "python",
+      "scripts/manage.py",
+      "test",
+      "--scope",
+      "e2e"
+    ],
+    "exit_code": 1,
+    "stdout_file": "20261102T143127228444Z_d4-edge-business-first.stdout.txt",
+    "stderr_file": "20261102T143127228444Z_d4-edge-business-first.stderr.txt",
+    "record_file": "20261102T143127228444Z_d4-edge-business-first.json",
+    "stdout_file_sha256": "d3cded36f6974b6f23b90137e0827697d8141d4448ecc5c018498fdb57610454",
+    "stderr_file_sha256": "236cd6a39b3eb35b7d9c323d88659422fd9b34aa8318d5a1cfe8bab5ee7437b7"
+  },
+  {
+    "label": "d4-pytest",
+    "started_at": "2026-11-02T14:31:55.135923+00:00",
+    "finished_at": "2026-11-02T14:32:12.313838+00:00",
+    "duration_seconds": 17.188,
+    "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+    "argv": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "pytest",
+      "tests",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "--basetemp",
+      "D:/codex产出/电商智能体_D4业务页面/缓存/pytest/run-001",
+      "--junitxml",
+      "D:/codex产出/电商智能体_D4业务页面/缓存/pytest-final.xml"
+    ],
+    "exit_code": 0,
+    "stdout_file": "20261102T143155135923Z_d4-pytest.stdout.txt",
+    "stderr_file": "20261102T143155135923Z_d4-pytest.stderr.txt",
+    "record_file": "20261102T143155135923Z_d4-pytest.json",
+    "stdout_file_sha256": "4d8c3ff48eb29e0a5b6e35c812d6eba441b02446f9ac1f4abf6359e12840f901",
+    "stderr_file_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "label": "d4-edge-business-second",
+    "started_at": "2026-11-02T14:36:54.197630+00:00",
+    "finished_at": "2026-11-02T14:39:20.910689+00:00",
+    "duration_seconds": 146.719,
+    "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+    "argv": [
+      "python",
+      "scripts/manage.py",
+      "test",
+      "--scope",
+      "e2e"
+    ],
+    "exit_code": 0,
+    "stdout_file": "20261102T143654197630Z_d4-edge-business-second.stdout.txt",
+    "stderr_file": "20261102T143654197630Z_d4-edge-business-second.stderr.txt",
+    "record_file": "20261102T143654197630Z_d4-edge-business-second.json",
+    "stdout_file_sha256": "3a0894bb3d4a4362089252ba7f979a7f9e001e3517df2403885d4356a009c652",
+    "stderr_file_sha256": "1eec9059867b693834b86e8325f927370e9215cb8c6cc67e10304b905ae37f72"
+  },
+  {
+    "label": "d4-dependencies",
+    "started_at": "2026-11-02T14:39:33.961087+00:00",
+    "finished_at": "2026-11-02T14:39:34.544784+00:00",
+    "duration_seconds": 0.578,
+    "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+    "argv": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "pip",
+      "check"
+    ],
+    "exit_code": 0,
+    "stdout_file": "20261102T143933961087Z_d4-dependencies.stdout.txt",
+    "stderr_file": "20261102T143933961087Z_d4-dependencies.stderr.txt",
+    "record_file": "20261102T143933961087Z_d4-dependencies.json",
+    "stdout_file_sha256": "672aec65a45bed50e70229c70934a7eebf0462595c459b83023027645d57cccf",
+    "stderr_file_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "label": "d4-diff",
+    "started_at": "2026-11-02T14:39:33.961087+00:00",
+    "finished_at": "2026-11-02T14:39:34.013036+00:00",
+    "duration_seconds": 0.046,
+    "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "stdout_file": "20261102T143933961087Z_d4-diff.stdout.txt",
+    "stderr_file": "20261102T143933961087Z_d4-diff.stderr.txt",
+    "record_file": "20261102T143933961087Z_d4-diff.json",
+    "stdout_file_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_file_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "label": "d4-doctor",
+    "started_at": "2026-11-02T14:39:33.965388+00:00",
+    "finished_at": "2026-11-02T14:39:35.626090+00:00",
+    "duration_seconds": 1.671,
+    "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+    "argv": [
+      "python",
+      "scripts/manage.py",
+      "doctor"
+    ],
+    "exit_code": 0,
+    "stdout_file": "20261102T143933965388Z_d4-doctor.stdout.txt",
+    "stderr_file": "20261102T143933965388Z_d4-doctor.stderr.txt",
+    "record_file": "20261102T143933965388Z_d4-doctor.json",
+    "stdout_file_sha256": "35cfe067ba6f4d7bc3dc05db2f31525c353520d0e9a214b5f8e7a456242604bc",
+    "stderr_file_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "label": "d4-handoff-final",
+    "started_at": "2026-11-02T14:45:57.302355+00:00",
+    "finished_at": "2026-11-02T14:45:57.394110+00:00",
+    "duration_seconds": 0.094,
+    "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+    "argv": [
+      "python",
+      "scripts/handoff_check.py"
+    ],
+    "exit_code": 0,
+    "stdout_file": "20261102T144557302355Z_d4-handoff-final.stdout.txt",
+    "stderr_file": "20261102T144557302355Z_d4-handoff-final.stderr.txt",
+    "record_file": "20261102T144557302355Z_d4-handoff-final.json",
+    "stdout_file_sha256": "ce3aa1a0b62959e3dc3aa168e0c5cfbecf73713c983732ddebed6b3831a6b5dc",
+    "stderr_file_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "label": "d4-staged-check",
+    "started_at": "2026-11-02T14:46:39.474438+00:00",
+    "finished_at": "2026-11-02T14:46:39.547871+00:00",
+    "duration_seconds": 0.078,
+    "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+    "argv": [
+      "git",
+      "diff",
+      "--cached",
+      "--check"
+    ],
+    "exit_code": 2,
+    "stdout_file": "20261102T144639474438Z_d4-staged-check.stdout.txt",
+    "stderr_file": "20261102T144639474438Z_d4-staged-check.stderr.txt",
+    "record_file": "20261102T144639474438Z_d4-staged-check.json",
+    "stdout_file_sha256": "07462a470fcea515a34df7ae96ecffa5eb46208e25cbf22d0a6aeb6b89f1079b",
+    "stderr_file_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "label": "d4-commit",
+    "started_at": "2026-11-02T14:46:40.628152+00:00",
+    "finished_at": "2026-11-02T14:46:40.715794+00:00",
+    "duration_seconds": 0.079,
+    "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+    "argv": [
+      "git",
+      "commit",
+      "-m",
+      "feat: add real data import and saved monthly analysis workspace"
+    ],
+    "exit_code": 128,
+    "stdout_file": "20261102T144640628152Z_d4-commit.stdout.txt",
+    "stderr_file": "20261102T144640628152Z_d4-commit.stderr.txt",
+    "record_file": "20261102T144640628152Z_d4-commit.json",
+    "stdout_file_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_file_sha256": "06f55fb2e7495c9268098ad017f2541ad62735f2a2ec646cac16e68a975020af"
+  },
+  {
+    "label": "d4-staged-recheck",
+    "started_at": "2026-11-02T14:47:18.451903+00:00",
+    "finished_at": "2026-11-02T14:47:18.510786+00:00",
+    "duration_seconds": 0.062,
+    "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis",
+    "argv": [
+      "git",
+      "diff",
+      "--cached",
+      "--check"
+    ],
+    "exit_code": 0,
+    "stdout_file": "20261102T144718451903Z_d4-staged-recheck.stdout.txt",
+    "stderr_file": "20261102T144718451903Z_d4-staged-recheck.stderr.txt",
+    "record_file": "20261102T144718451903Z_d4-staged-recheck.json",
+    "stdout_file_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_file_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

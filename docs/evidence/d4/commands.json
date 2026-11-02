@@ -1,0 +1,187 @@
+{
+  "source_kind": "development_test_evidence",
+  "database_kind": "real_UCI_uploaded_in_browser",
+  "backend_port": 50941,
+  "frontend_port": 50942,
+  "commands": [
+    {
+      "label": "alembic-upgrade",
+      "executable": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\.venv\\Scripts\\python.exe",
+      "args": [
+        "-m",
+        "alembic",
+        "-c",
+        "backend/alembic.ini",
+        "upgrade",
+        "head"
+      ],
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\",
+      "started_at": "2026-11-02T14:36:56.126Z",
+      "log": "D:\\codex产出\\电商智能体_D4业务页面\\缓存\\playwright\\2026-11-02T14-36-54-972Z-31204\\business\\alembic-upgrade.log",
+      "pid": 53716,
+      "exit_code": 0,
+      "signal": null,
+      "ended_at": "2026-11-02T14:36:56.968Z"
+    },
+    {
+      "label": "backend-1",
+      "executable": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\.venv\\Scripts\\python.exe",
+      "args": [
+        "-X",
+        "utf8",
+        "scripts/manage.py",
+        "backend"
+      ],
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\",
+      "started_at": "2026-11-02T14:36:56.972Z",
+      "log": "D:\\codex产出\\电商智能体_D4业务页面\\缓存\\playwright\\2026-11-02T14-36-54-972Z-31204\\business\\backend-1.log",
+      "pid": 18748,
+      "intentional_stop": true,
+      "exit_code": 1,
+      "signal": null,
+      "ended_at": "2026-11-02T14:39:07.464Z"
+    },
+    {
+      "label": "frontend",
+      "executable": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\.venv\\Scripts\\python.exe",
+      "args": [
+        "-X",
+        "utf8",
+        "scripts/manage.py",
+        "frontend"
+      ],
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\",
+      "started_at": "2026-11-02T14:36:58.743Z",
+      "log": "D:\\codex产出\\电商智能体_D4业务页面\\缓存\\playwright\\2026-11-02T14-36-54-972Z-31204\\business\\frontend.log",
+      "pid": 57904,
+      "intentional_stop": true,
+      "exit_code": 1,
+      "signal": null,
+      "ended_at": "2026-11-02T14:39:13.336Z"
+    },
+    {
+      "label": "independent-sql",
+      "executable": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\.venv\\Scripts\\python.exe",
+      "args": [
+        "scripts/verify_ui.py",
+        "--database",
+        "D:\\codex产出\\电商智能体_D4业务页面\\缓存\\playwright\\2026-11-02T14-36-54-972Z-31204\\business\\real-ui.sqlite3",
+        "--responses",
+        "D:\\codex产出\\电商智能体_D4业务页面\\缓存\\playwright\\2026-11-02T14-36-54-972Z-31204\\business\\monthly-ui-responses.json",
+        "--output",
+        "D:\\codex产出\\电商智能体_D4业务页面\\缓存\\playwright\\2026-11-02T14-36-54-972Z-31204\\business\\sql-verification.json"
+      ],
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\",
+      "started_at": "2026-11-02T14:39:07.001Z",
+      "log": "D:\\codex产出\\电商智能体_D4业务页面\\缓存\\playwright\\2026-11-02T14-36-54-972Z-31204\\business\\independent-sql.log",
+      "pid": 39168,
+      "exit_code": 0,
+      "signal": null,
+      "ended_at": "2026-11-02T14:39:07.182Z"
+    },
+    {
+      "label": "stop-backend-1",
+      "executable": "C:\\Windows\\System32\\taskkill.exe",
+      "args": [
+        "/PID",
+        "18748",
+        "/T",
+        "/F"
+      ],
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\",
+      "started_at": "2026-11-02T14:39:07.271Z",
+      "log": "D:\\codex产出\\电商智能体_D4业务页面\\缓存\\playwright\\2026-11-02T14-36-54-972Z-31204\\business\\stop-backend-1.log",
+      "pid": 34460,
+      "exit_code": 0,
+      "signal": null,
+      "ended_at": "2026-11-02T14:39:07.467Z"
+    },
+    {
+      "label": "backend-2",
+      "executable": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\.venv\\Scripts\\python.exe",
+      "args": [
+        "-X",
+        "utf8",
+        "scripts/manage.py",
+        "backend"
+      ],
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\",
+      "started_at": "2026-11-02T14:39:07.472Z",
+      "log": "D:\\codex产出\\电商智能体_D4业务页面\\缓存\\playwright\\2026-11-02T14-36-54-972Z-31204\\business\\backend-2.log",
+      "pid": 37564,
+      "intentional_stop": true,
+      "exit_code": 1,
+      "signal": null,
+      "ended_at": "2026-11-02T14:39:10.937Z"
+    },
+    {
+      "label": "stop-backend-2",
+      "executable": "C:\\Windows\\System32\\taskkill.exe",
+      "args": [
+        "/PID",
+        "37564",
+        "/T",
+        "/F"
+      ],
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\",
+      "started_at": "2026-11-02T14:39:10.752Z",
+      "log": "D:\\codex产出\\电商智能体_D4业务页面\\缓存\\playwright\\2026-11-02T14-36-54-972Z-31204\\business\\stop-backend-2.log",
+      "pid": 3812,
+      "exit_code": 0,
+      "signal": null,
+      "ended_at": "2026-11-02T14:39:10.939Z"
+    },
+    {
+      "label": "backend-3",
+      "executable": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\.venv\\Scripts\\python.exe",
+      "args": [
+        "-X",
+        "utf8",
+        "scripts/manage.py",
+        "backend"
+      ],
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\",
+      "started_at": "2026-11-02T14:39:11.042Z",
+      "log": "D:\\codex产出\\电商智能体_D4业务页面\\缓存\\playwright\\2026-11-02T14-36-54-972Z-31204\\business\\backend-3.log",
+      "pid": 16280,
+      "intentional_stop": true,
+      "exit_code": 1,
+      "signal": null,
+      "ended_at": "2026-11-02T14:39:13.333Z"
+    },
+    {
+      "label": "stop-frontend",
+      "executable": "C:\\Windows\\System32\\taskkill.exe",
+      "args": [
+        "/PID",
+        "57904",
+        "/T",
+        "/F"
+      ],
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\",
+      "started_at": "2026-11-02T14:39:13.051Z",
+      "log": "D:\\codex产出\\电商智能体_D4业务页面\\缓存\\playwright\\2026-11-02T14-36-54-972Z-31204\\business\\stop-frontend.log",
+      "pid": 31256,
+      "exit_code": 0,
+      "signal": null,
+      "ended_at": "2026-11-02T14:39:13.342Z"
+    },
+    {
+      "label": "stop-backend-3",
+      "executable": "C:\\Windows\\System32\\taskkill.exe",
+      "args": [
+        "/PID",
+        "16280",
+        "/T",
+        "/F"
+      ],
+      "cwd": "C:\\Users\\27363\\Desktop\\毕业论文\\电商智能体的实现\\ecommerce-agent-thesis\\",
+      "started_at": "2026-11-02T14:39:13.060Z",
+      "log": "D:\\codex产出\\电商智能体_D4业务页面\\缓存\\playwright\\2026-11-02T14-36-54-972Z-31204\\business\\stop-backend-3.log",
+      "pid": 7564,
+      "exit_code": 0,
+      "signal": null,
+      "ended_at": "2026-11-02T14:39:13.341Z"
+    }
+  ]
+}

@@ -22,7 +22,8 @@ export default defineConfig(({ mode }) => {
   const backendPort = port(process.env.APP_PORT ?? env.APP_PORT, 8000)
   const frontendPort = port(process.env.FRONTEND_PORT ?? env.FRONTEND_PORT, 5173)
   const cacheRoot = process.env.D0_CACHE_DIR ?? env.D0_CACHE_DIR
-  const proxy = { '/healthz': { target: `http://127.0.0.1:${backendPort}` } }
+  const target = `http://127.0.0.1:${backendPort}`
+  const proxy = { '/healthz': { target }, '/api': { target } }
   return {
     plugins: [vue()],
     // Keep .env loading rooted in the project, without changing VITE_ exposure rules.

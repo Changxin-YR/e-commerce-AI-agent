@@ -176,7 +176,7 @@ test.describe.serial('D0 real local service', () => {
     page.on('pageerror', (error) => browserErrors.push(error.message))
     const [firstResponse] = await Promise.all([
       page.waitForResponse((response) => response.url() === `${baseURL}/healthz`),
-      page.goto(baseURL),
+      page.goto(`${baseURL}/?view=health`),
     ])
     expect(firstResponse.status()).toBe(200)
     expect(await firstResponse.json()).toMatchObject({
@@ -199,7 +199,7 @@ test.describe.serial('D0 real local service', () => {
   })
 
   test('stopping and restarting the real backend shows failure and recovery', async ({ page }) => {
-    await page.goto(baseURL)
+    await page.goto(`${baseURL}/?view=health`)
     await expect(page.getByTestId('health-status')).toHaveText('本地服务已连接')
     await stop(backend)
     await page.getByRole('button', { name: '重新检查' }).click()

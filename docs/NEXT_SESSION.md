@@ -1,25 +1,16 @@
-# 当前接续：持续开发 D4—D9，已获用户授权
+# 接续入口：D4 已验证，直接实施 D5
 
-2026-11-02 用户明确要求持续开发至项目收尾，并在上下文接近容量时自动新建/切换对话续接。先读 `docs/CONTINUOUS_EXECUTION.md`，再读当前阶段合同。此指令覆盖旧的逐阶段停止/重新确认要求；不得因此宣称人工验收、付费模型、论文或正式实验已获授权。
+用户授权从 D4 连续开发至 D9 工程收尾，并在上下文较满时新建/切换对话接续。先读 docs/CONTINUOUS_EXECUTION.md；旧合同的逐阶段暂停已被持续授权覆盖，不需重复询问。不能据此声明用户已实机验收、模型付费/论文/正式实验获授权。
 
-当前下一步：真正实施 D4 Vue 业务链。D3 已封存，基线 b94391d35d91995109c9977b1a66474e6fae1eeb。实际仓库是本项目父目录下的 ecommerce-agent-thesis；所有命令明确指定该目录。当前无业务代码未提交改动，只有本轮授权/接续文档更新。D4业务代码尚未开始，不要把本次协调记录计为业务完成。
+1. 实际仓库 `C:/Users/27363/Desktop/毕业论文/电商智能体的实现/ecommerce-agent-thesis`。先读 AGENTS.md、DEV_FIRST.md、CODEX_BRIEF.md、STATUS.json、本文件、EVIDENCE_INDEX 和 Git 状态；运行 handoff_check。
+2. 立即读 `docs/dev/steps/05_05_TOOLS.md` 和它引用的当前契约，实施剩余五工具及真实数据核对。D4 已完成，不能从 D0 重新开始，也不要刚续接就再开新对话。
+3. D4基线 `2888fb8449bcc13b478200b9c98f4317f94873fd`；最终本地 SHA 见 `D:/codex产出/电商智能体_D4业务页面/交付/git-receipt.json`。无远程推送。
+4. D4 158 pytest、20 Vitest、5 Edge、21独立SQL断言、构建通过。三条新增 Edge 真实业务流程在新的空数据库通过官方 ZIP 完整导入；9/10 月金额/发票与独立 SQL 一致。E08业务历史与E10已实测，真实模型仍为0调用。
+5. .env 使用 `D:/codex产出/电商智能体_D4业务页面/缓存/runtime/app.sqlite3`（D3复制库，2条原查询）。541909行、0003_query_history，SHA `76a1b09bf229ee826660762ff914a8f94afeafab4fdd5b7fee574d3d068eaac4`。D5可再复制新任务库；不要改动已封存的旧库。
+6. D4独立UI验收库在 `D:/codex产出/电商智能体_D4业务页面/缓存/playwright/2026-11-02T14-36-54-972Z-31204/business/real-ui.sqlite3`，有5条查询；SHA `07479e442d7e729b5db2fe329b55fef456e3a6361d5dce7e5305b70bbb426e2a`。它与日常运行库分别保存，不能混称。服务均已停止。
+7. 前端主要代码为 src/components/RetailWorkspace.vue、src/useRetail.ts、src/api/retail.ts。健康组件保留 HealthPanel.vue。Vite已代理 /api 与 /healthz；金额仅用字符串展示，不转Number。历史GET不能执行新查询或模型。
+8. D4首次Edge失败来自测试运行时整理Vite配置换行触发热重启，第二轮全5项通过。运行真实验收期间不要改正在加载的Vite配置或业务源码。失败记录与最终证据均在D4缓存/交付及docs/evidence/d4；不能删除或冒写PASS。
+9. 完成 D5 后更新六份状态文档、保存完整命令/退出码/哈希/实际日志，本地提交和封存，再继续 D6 LangGraph、D7报告/五视图、D8安全稳定、D9复现与交付。无预算时完成真实代码与fake-provider测试，实际模型仍标阻断；不要以此停止其余独立开发。
+10. 所有阶段源码保留原目录，任务专属缓存和额外交付在D:/codex产出。原始ZIP/XLSX仅留data/raw，不进Git/源码包；.env、密钥、依赖、运行库均排除。55份不可变文件保持原字节。
 
-持续工作到 D9：各阶段仍须真实测试、保存证据、更新状态和本地提交，再直接进入下一阶段。无模型预算时做完离线实现及独立工作，真实模型明确阻断。当前服务已停止；.env仍指向D3运行库，D4可复制至新任务缓存后使用。原始文件仅留data/raw，所有额外交付/任务缓存放D:/codex产出。
-
-完整运行事实、路径、工具/API和后续切换办法见 CONTINUOUS_EXECUTION.md。下面为 D3 封存时的历史快照，仅用于事实参考，其中“等待授权/停止D3”已被上方最新用户指令覆盖。
-
----
-
-# 下一次接续入口：D3 已完成，等待验收
-
-1. 先读 AGENTS.md、DEV_FIRST.md、CODEX_BRIEF.md、docs/STATUS.json、docs/EVIDENCE_INDEX.md 与实际 Git 状态。当前 D3_READY_FOR_USER_ACCEPTANCE；不要自动进入 D4。
-2. D2 基线 `49c2bbd403fffd571926c9ca3329ded77fcdba0a`；D3 最终 SHA/文件清单见 `D:/codex产出/电商智能体_D3精确指标API/交付/git-receipt.json`。所有提交仅本地，未推送。
-3. .env 已指向 `D:/codex产出/电商智能体_D3精确指标API/缓存/runtime/app.sqlite3`。D2 源库保留；D3 交付/运行数据/app.sqlite3 是封存备份。不要清理当前缓存运行库。官方原始 ZIP/XLSX 仅在本项目 data/raw，未进入源码 ZIP/Git。
-4. 先读 docs/D3_METRICS.md。月度与序列 API、数据集列表、指标定义及三项工具已实现。POST /api/v1/datasets/{dataset_id}/queries 显式保存；GET /api/v1/queries/{query_id} 直接读原保存结果，不能触发计算/模型/导入。
-5. 源数据 541909 行，9/10 月金额和有效发票数精确对账；NO_DATA 的金额/发票数为 null，合法空筛选为 0，2011-12 标 PARTIAL_PERIOD。源时区未知；重复候选和缺客户号行不自动排除。
-6. 158 pytest、8 Vitest、2 Edge 健康回归、构建、87 项真实核对通过。另有真实 JSON 的 Edge 刷新/服务重启证据，但 Vue 业务页面尚未实现。E08 的业务页面部分与 E10 端到端业务链仍属于 D4。
-7. 查询历史在当前库有两份真实验收记录，最后一份 `q_0bd128a47fa54f9185d804e67ed0b8b6`。工具定义在 backend/app/metrics/tools.py，3 个白名单 Schema 已保存；管理命令 tools 仍预留 D5，不接模型。
-8. 后续仅在用户明确验收/授权后读取 docs/dev/steps/04_04_UI.md（先确认实际文件名），实施 D4 数据导入/质量/月度/历史的 Vue 业务链。金额直接显示服务端字符串，不能转 JS Number 重新计算。
-9. 按 docs/D3_METRICS.md 使用新的证据目录复跑；verify-metrics 会重复上传已有数据验证幂等并显式保存一份查询，不是纯 GET 检查。失败与修复见 KNOWN_ISSUES；npm 开发依赖告警保留。
-
-本轮停在 D3。模型预算为 0，不启动 D4/D5/模型/论文或正式学术实验。
+最终最多 READY_FOR_USER_ACCEPTANCE，并如实列真实模型阻断，不能自标 USER_ACCEPTED。后续对话切换按 CONTINUOUS_EXECUTION.md 执行，切换后旧对话停止改代码。

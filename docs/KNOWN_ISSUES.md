@@ -29,3 +29,15 @@
 - **K19 / INFO / 覆盖与页面**：覆盖以观测日界为依据，不证明中间每一天有交易；空缺月份返回NO_DATA/null。真实JSON的Edge刷新已通过，但Vue历史/导入/月度页面仍属于D4。
 - **K20 / INFO / 版本和调用范围**：目前只支持retail-v1.2与三项内部工具，不提供自由SQL或模型。definitions无dataset时snapshot_hash=null；其余结果有明确快照身份。全系统验收仍未完成。
 - **D3输出补充**：最终158 pytest无警告；8 Vitest和2 Edge重新执行通过，Edge仍有颜色环境提示。K05/K13为历史轮次记录，不能作为本轮未执行的说明。npm依赖未变，本轮未重新audit。
+
+
+## D4 当前覆盖（上文 D4 未实现描述为历史快照）
+
+- **K12/K19 / RESOLVED_IN_D4**：Vue上传、轮询、质量、月度金额与保存历史已完成；E08/E10业务链真实Edge通过，不再只以JSON页面替代。
+- **K21 / RESOLVED / 测试执行干扰**：首轮Edge完整导入后，运行期间修改Vite配置造成热重启，业务断言因页面切换超时（1 failed/2 skipped/2 passed）。固定源码完整重跑5 passed；两轮证据均保留。
+- **K22 / INFO / 两份数据库**：默认D4运行库保留D3的2条历史；独立首次UI导入库有5条历史，分别封存，路径/SHA在d4/verification.json。清理缓存前保留运行库和备份。
+- **K23 / INFO / 移动布局**：390px页面无整体横向溢出；精确金额表可横向滚动查看完整列。桌面和移动截图留档。
+- **D5—D9 / PENDING**：八工具补全、真实LangGraph、报告/五视图及最终验收继续推进。模型预算为0，真实模型BLOCKED_AUTHORIZATION；fake-provider不能充当真实调用证据。
+- **未变遗留**：4项npm moderate开发依赖告警未在D4升级或重新audit；Edge保留NO_COLOR/FORCE_COLOR提示，Python158测试无警告。
+
+- **K24 / RESOLVED / 封存检查**：首次staged diff检出business.spec.ts末尾空行，已移除。首次提交因本机未设作者失败；沿用先前Codex <codex@localhost>，仅本次git -c设置作者，不修改全局用户配置。失败命令与复查保留。
