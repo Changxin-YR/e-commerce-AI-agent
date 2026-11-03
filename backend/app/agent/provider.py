@@ -29,6 +29,9 @@ class Provider(Protocol):
     def complete(self, messages: list, tools: list, max_tokens: int) -> ProviderReply: ...
 
 
+ALLOWED_PROVIDERS = frozenset({"deepseek", "openai_compatible"})
+
+
 def authorization_error(settings):
     if not settings.allow_paid_model_calls:
         return "BLOCKED_AUTHORIZATION"
@@ -36,18 +39,21 @@ def authorization_error(settings):
         return "BLOCKED_BUDGET"
     if not settings.model_api_key.get_secret_value():
         return "BLOCKED_CREDENTIALS"
-    if (settings.model_provider != "deepseek" or not settings.model_id.strip()
-        or settings.model_base_url.rstrip('/') != 'https://api.deepseek.com'):
+    if settings.model_provider not in ALLOWED_PROVIDERS or not settings.model_id.strip():
+        return "BLOCKED_PROVIDER_CONFIGURATION"
+    base = settings.model_base_url.rstrip('/')
+    if not base or not base.startswith('https://'):
         return "BLOCKED_PROVIDER_CONFIGURATION"
     return None
 
 
-class DeepSeekProvider:
-    name = "deepseek"
+class OpenAICompatibleProvider:
+    """Works with DeepSeek, Claude-compatible gateways, and other OpenAI-compatible APIs."""
     is_test = False
 
     def __init__(self, settings):
         self.settings = settings
+        self.name = settings.model_provider
         self.model_id = settings.model_id
 
     def complete(self, messages, tools, max_tokens):
@@ -59,10 +65,11 @@ class DeepSeekProvider:
         try:
             with httpx.Client(timeout=self.settings.model_timeout_seconds, trust_env=False,
                               follow_redirects=False, transport=httpx.HTTPTransport(retries=0)) as client:
-                with client.stream('POST', self.settings.model_base_url.rstrip('/')+'/chat/completions',
+                base = self.settings.model_base_url.rstrip('/')
+                endpoint = base + '/chat/completions' if base.endswith('/v1') else base + '/v1/chat/completions'
+                with client.stream('POST', endpoint,
                     headers={'Authorization':'Bearer '+self.settings.model_api_key.get_secret_value()}, json=payload) as response:
                     if response.status_code != 200:
-                        # Even HTTP errors are not evidence of zero billed usage.
                         raise ProviderFailure('MODEL_HTTP_ERROR')
                     chunks=[]; size=0
                     for chunk in response.iter_bytes():
@@ -79,6 +86,10 @@ class DeepSeekProvider:
             raise
         except (httpx.HTTPError, ValueError, KeyError, IndexError, TypeError):
             raise ProviderFailure('MODEL_OUTCOME_UNKNOWN') from None
+
+
+# Backward compatibility alias
+DeepSeekProvider = OpenAICompatibleProvider
 
 
 class ScriptedProvider:

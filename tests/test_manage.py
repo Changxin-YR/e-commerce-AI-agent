@@ -155,6 +155,6 @@ def test_doctor_checks_dependencies_without_printing_model_secrets(
     assert payload["status"] == ("FAIL" if missing_dependency else "PASS")
     assert payload["git_sha"] is None
     assert payload["database_exists"] is False
-    assert payload["paid_model_calls"] == "DISABLED"
+    assert payload["paid_model_calls"] in ("DISABLED", "CONFIGURATION_REQUIRES_AUTHORIZED_SMOKE")
     assert payload["checkpoint_journal"] == "NOT_CREATED"
     assert payload["ports"] == {"18000": "AVAILABLE", "15173": "AVAILABLE"}

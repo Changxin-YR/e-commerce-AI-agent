@@ -348,7 +348,7 @@ def test_provider_http_adapter_with_mock_transport_only(dataset,monkeypatch):
     seen=[]
     def handler(request):
         seen.append(request)
-        assert request.url==httpx.URL('https://api.deepseek.com/chat/completions')
+        assert request.url==httpx.URL('https://api.deepseek.com/v1/chat/completions')
         assert json.loads(request.content)['stream'] is False
         return httpx.Response(200,json=dict(id='fixture-response',choices=[dict(message=decision('unsupported','缺少成本。'),finish_reason='stop')],
             usage=dict(prompt_tokens=2,completion_tokens=3,total_tokens=5)))
