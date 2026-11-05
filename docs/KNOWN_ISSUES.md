@@ -1,3 +1,21 @@
+# 2026-11-05 修复：环境 ACL、依赖与 STREAM-02
+
+- **ENV-01 / RESOLVED**：项目 `.venv`、`node_modules`、`data/runtime` 与源码带旧沙箱“低完整性”标签，导致 `.venv` Python 无法写 D 盘缓存/临时目录；首轮 pytest 196 setup errors、E2E 3 failed/9 did not run。已对项目树重设 Medium 完整性，失败日志保留，重跑 282 pytest / 12 Edge 通过。
+- **ENV-02 / RESOLVED**：`frontend/node_modules/@esbuild/win32-x64` 缺少 `esbuild.exe`，Vitest 启动即失败。按 `package-lock.json` 执行 `npm ci` 修复，锁文件未改。
+- **DATA-01 / RESOLVED**：`data/raw` 缺少官方 ZIP/XLSX，E2E 导入链无法运行。从 D9 封存缓存恢复并按 `data/manifest.json` 复核 SHA-256；文件仍在 `.gitignore` 内。
+- **STREAM-02 / LOCAL_RESOLVED, LIVE_NOT_RETESTED**：模型末轮 `message` 未转义双引号导致的语法失败，新增 `tolerant_json.parse_decision` 做语法级恢复；schema、证据引用、金额一致性与 B2 对账校验未放宽。5 项新增回归通过；本轮 0 次真实模型请求，真实追问仍不能宣称通过。
+- **STREAM-03 / OPEN / 外部服务阻断**：供应商 TLS/HTTP 间歇失败仍未解决，本轮未关闭证书校验、未自动重试、未扩预算。
+
+完整修复记录与测试结果见 [fix-and-targeted-tests-20261105.md](fix-and-targeted-tests-20261105.md)。
+
+# 2026-11-03 最新补充：连接复用及真实报告验证
+
+当前 PARTIAL：本地工程 PASS，真实首轮“我有哪些数据？”已生成并核验报告，连续追问仍未通过（模型 JSON 格式错误后，纠错轮上游 MODEL_HTTP_ERROR）。连接复用降低重复握手；仅格式纠错不再携带工具定义，限额与校验不变。最后省略空 tools 字段通过本地测试，未再次付费复测。
+
+测试：277 项完整 pytest；最终协议调整后 43 项相关 pytest；39 Vitest；类型检查/构建通过。此前 Edge 12+7 项证据保留，本次只读检查真实对话与报告。累计 17 次请求尝试，已知 88728 token，4 次用量未知，预算占用 156180（不是账单）。
+
+完整证据、成功与失败运行 ID 见 [AI 流式对话升级报告](ai-streaming-upgrade.md)。下方为先前阶段历史记录。不要覆盖用户配置、删除失败数据、自动反复调用付费模型；下一步若要继续排查，应先确认网关结构化输出/无工具请求兼容性及可靠的请求计量。未提交 Git、推送、部署或开始论文实验。
+
 # 当前已知问题（D3 收尾）
 
 - **K01 / OPEN / 非阻断**：4 个 npm moderate 均为 @vue/test-utils 的间接开发依赖：js-beautify 1.15.4、glob 10.5.0、editorconfig 1.0.7、minimatch 9.0.9。两个根告警为 glob 取消后遍历及 minimatch 模式放大资源消耗。生产 audit=0；不进行未经评估的主版本强制升级。分析、影响和建议见 D0_CLOSEOUT.md。
@@ -85,3 +103,20 @@
 - K01依旧：npm4项moderate开发依赖，生产0；Python68项同锁本次无已知漏洞。没有代码分发许可证，不擅自授予开源许可。
 - 默认D9库63任务/63报告，60个明确scripted记录+3个B0；clean-runtime只有1个B0和1条查询，无模型尝试。源码/配对数据库/全部失败与最终证据封存。清缓存前保存库。
 - 需要用户完成实机验收；真实模型费用授权、真实模型冒烟、论文和正式实验是后续独立门禁。当前无已知未修复严重工程缺陷。
+
+
+## 2026-11-03 UI 当前边界
+
+- UI 范围 PASS，无已知新增阻断级缺陷。390px 长警告横向溢出已修复。
+- 本轮曾因完整导入/上传等待超时导致 2 失败、6 跳过；保留失败证据，环境资源紧张时用有界 E2E_IMPORT_TIMEOUT_MS；最终独立 10 项通过。
+- 真实模型 CONFIGURED_UNVERIFIED，未在 UI 任务中收费测试；脚本 B2 只证明执行/补答工程链路。旧 D9 BLOCKED_AUTHORIZATION 是历史快照。
+- 浏览器覆盖 Edge 与指定四宽度；未运行 Firefox/Safari，未完成整套读屏审计。文本对比自动扫描通过不等于全项 WCAG 认证。
+- GitHub API 限流，使用实际读取的 raw 分支源码，commit SHA 未核实；项目无 ESLint 配置，本次未安装。
+
+## 2026-11-03 流式对话升级
+
+- STREAM-01 / RESOLVED：固定预占整笔 32768 token 导致第二轮必败，已改为本次请求的保守预占，保留所有预算边界与未知消耗。
+- STREAM-02 / IMPLEMENTED, LIVE_NOT_FULLY_VERIFIED：模型工具结果重复 result/data 造成非法引用。送模结构已统一、中文约束及纠错提示已强化；实际最终报告尚受连接问题阻断，未放松引用校验。
+- STREAM-03 / OPEN / 外部服务阻断：供应商 TLS 间歇性 UNEXPECTED_EOF_WHILE_READING，完整真实分析未通过。连接失败已单独显示，未关闭 TLS 或扩大额度。
+- STREAM-04 / RESOLVED：导入异步完成抢回页面、分析 run 参数丢失、矮窗口输入框遮挡均已修复并浏览器回归。
+- 真实请求/额度与离线夹具严格区分，完整报告见 ai-streaming-upgrade.md。

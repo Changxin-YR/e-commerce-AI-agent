@@ -13,6 +13,7 @@ class CreateRun(Strict):
     question: str = Field(min_length=1, max_length=4000)
     idempotency_key: str = Field(min_length=1, max_length=128)
     constraints: SeriesParams | None = None
+    conversation_parent_run_id: str | None = Field(default=None, min_length=1, max_length=64)
 
 
 class ResumeRun(Strict):

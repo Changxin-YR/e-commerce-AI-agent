@@ -71,3 +71,121 @@ it('renders a real timeout error and rerun action without fabricating a report',
   expect(wrapper.get('[data-testid="run-error"]').text()).toContain('超时')
   expect(wrapper.find('[data-testid="report-detail"]').exists()).toBe(false)
 })
+
+it('fills an editable example without submitting or invoking the model', async () => {
+  const wrapper = await boot('analysis')
+  await wrapper.get('.suggestion').trigger('click')
+  expect((wrapper.get('#question').element as HTMLTextAreaElement).value).toContain('2011 年 9 月')
+  expect(vi.mocked(fetch).mock.calls.every(([, options]) => !options?.method)).toBe(true)
+  const event = new Event('beforeunload', { cancelable: true })
+  window.dispatchEvent(event)
+  expect(event.defaultPrevented).toBe(true)
+})
+
+it('rejects reversed or incomplete date ranges before calling the report API', async () => {
+  const wrapper = await boot('analysis')
+  await wrapper.get('#report-from').setValue('2011-11-01')
+  await wrapper.get('.report-form').trigger('submit'); await flushPromises()
+  expect(wrapper.get('#report-form-error').text()).toContain('结束日期必须晚于')
+  await wrapper.get('#report-from').setValue('2011-09-01')
+  await wrapper.get('#baseline-from').setValue('2011-08-01')
+  await wrapper.get('.report-form').trigger('submit'); await flushPromises()
+  expect(wrapper.get('#report-form-error').text()).toContain('完整基期')
+  expect(vi.mocked(fetch).mock.calls.every(([, options]) => !options?.method)).toBe(true)
+})
+
+it('does not claim an unverified configured model is verified', async () => {
+  vi.stubGlobal('fetch', vi.fn((url: string) => url.endsWith('/capabilities')
+    ? json({ blocker_code: null, executor_ready: true, live_model_status: 'CONFIGURED_UNVERIFIED', provider: 'test_fixture', model_id: 'unverified_fixture' }) : transport(url)))
+  const wrapper = await boot('analysis')
+  expect(wrapper.text()).toContain('模型配置就绪')
+  expect(wrapper.text()).not.toContain('模型已验证')
+  expect(wrapper.get('.agent-form button').attributes('disabled')).toBeDefined()
+  await wrapper.get('#question').setValue('fixture question')
+  expect(wrapper.get('.agent-form button').attributes('disabled')).toBeUndefined()
+})
+
+it('does not pull the user back to a report after navigating away during its request', async () => {
+  let resolve!: (value: Response) => void
+  vi.stubGlobal('fetch', vi.fn((url: string, options?: RequestInit) => options?.method === 'POST'
+    ? new Promise<Response>(done => { resolve = done }) : transport(url)))
+  const wrapper = await boot('analysis')
+  await wrapper.get('.report-form').trigger('submit')
+  history.pushState(null, '', '/?view=datasets')
+  await wrapper.setProps({ view: 'datasets' })
+  resolve(new Response(JSON.stringify(report))); await flushPromises()
+  expect(wrapper.emitted('navigate')).toBeUndefined()
+  expect(location.search).toBe('?view=datasets')
+})
+
+class FixtureEventSource {
+  static instances: FixtureEventSource[] = []
+  onopen?: () => void
+  onerror?: () => void
+  listeners = new Map<string, (event: MessageEvent) => void>()
+  close = vi.fn()
+  constructor(public url: string) { FixtureEventSource.instances.push(this) }
+  addEventListener(name: string, callback: (event: MessageEvent) => void) { this.listeners.set(name, callback) }
+  emit(name: string, value: unknown) { this.listeners.get(name)?.({ data: JSON.stringify(value) } as MessageEvent) }
+}
+const running = { ...waiting, run_status: 'RUNNING', phase: 'model', pending_input: null, revision: 4, messages: [
+  { id: 'q', role: 'user', text: 'fixture question', status: 'complete' },
+  { id: 'a', role: 'assistant', text: '正在', status: 'draft' },
+] }
+function streamFixture() {
+  FixtureEventSource.instances = []; vi.stubGlobal('EventSource', FixtureEventSource)
+  vi.stubGlobal('fetch', vi.fn((url: string) => url.endsWith('/capabilities')
+    ? json({ blocker_code: null, executor_ready: true }) : url.includes('/runs/run_fixture') ? json(running) : transport(url)))
+  window.history.replaceState(null, '', '/?view=analysis&run=run_fixture')
+}
+
+it('updates the same streamed message without duplication and closes on completion', async () => {
+  streamFixture(); const wrapper = await boot('analysis')
+  const source = FixtureEventSource.instances[0]!
+  expect(wrapper.get('[data-message-id="a"]').text()).toContain('正在')
+  source.emit('snapshot', { ...running, messages: [...running.messages.slice(0, 1), { ...running.messages[1], text: '正在查询真实数据' }] })
+  await flushPromises()
+  expect(wrapper.findAll('[data-message-id="a"]')).toHaveLength(1)
+  expect(wrapper.get('[data-message-id="a"]').text()).toContain('正在查询真实数据')
+  source.emit('snapshot', { ...running, run_status: 'PASS', phase: 'complete', messages: [] })
+  await flushPromises(); expect(source.close).toHaveBeenCalled()
+  expect(location.search).toContain('view=analysis')
+})
+
+it('reconnects without posting again and releases the stream on navigation', async () => {
+  streamFixture(); const wrapper = await boot('analysis'); const source = FixtureEventSource.instances[0]!
+  source.onerror?.(); await flushPromises()
+  expect(wrapper.text()).toContain('连接中断，正在重连')
+  expect(vi.mocked(fetch).mock.calls.every(([, options]) => !options?.method)).toBe(true)
+  await wrapper.setProps({ view: 'datasets' }); expect(source.close).toHaveBeenCalled()
+  source.emit('snapshot', { ...running, messages: [{ id: 'late', role: 'assistant', text: 'stale update', status: 'draft' }] })
+  await wrapper.setProps({ view: 'analysis' }); await flushPromises()
+  expect(wrapper.find('[data-message-id="late"]').exists()).toBe(false)
+})
+
+it('sends a follow-up with the existing conversation and dataset, then stays in chat', async () => {
+  const bodies: Record<string, unknown>[] = []
+  vi.stubGlobal('fetch', vi.fn((url: string, options?: RequestInit) => {
+    if (options?.method === 'POST') { bodies.push(JSON.parse(options.body as string)); return json({ ...waiting, run_id: 'run_next', run_status: 'PASS' }) }
+    if (url.endsWith('/capabilities')) return json({ blocker_code: null, executor_ready: true })
+    if (url.includes('/runs/run_fixture')) return json({ ...waiting, run_status: 'PASS', pending_input: null })
+    return transport(url)
+  }))
+  window.history.replaceState(null, '', '/?view=analysis&run=run_fixture')
+  const wrapper = await boot('analysis')
+  await wrapper.setProps({ datasetId: 'different_dataset' })
+  await wrapper.get('#question').setValue('继续分析')
+  await wrapper.get('.agent-form').trigger('submit'); await flushPromises()
+  expect(bodies[0]?.conversation_parent_run_id).toBe('run_fixture')
+  expect(bodies[0]?.dataset_id).toBe('ds_fixture')
+  expect(location.search).toContain('view=analysis'); expect(location.search).toContain('run=run_next')
+})
+
+it('does not send on IME composition or Shift Enter', async () => {
+  vi.stubGlobal('fetch', vi.fn((url: string) => url.endsWith('/capabilities') ? json({ blocker_code: null, executor_ready: true }) : transport(url)))
+  const wrapper = await boot('analysis')
+  await wrapper.get('#question').setValue('输入中的中文')
+  await wrapper.get('#question').trigger('keydown', { key: 'Enter', isComposing: true })
+  await wrapper.get('#question').trigger('keydown', { key: 'Enter', shiftKey: true })
+  expect(vi.mocked(fetch).mock.calls.every(([, options]) => !options?.method)).toBe(true)
+})

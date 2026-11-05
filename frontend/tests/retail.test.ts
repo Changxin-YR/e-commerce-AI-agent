@@ -28,7 +28,7 @@ function transport(url: string, options?: RequestInit): Promise<Response> {
 }
 async function boot() { wrapper = mount(RetailWorkspace); await flushPromises(); return wrapper }
 beforeEach(() => {
-  window.history.replaceState(null, '', '/')
+  window.history.replaceState(null, '', '/?view=overview')
   localStorage.clear(); historyItems = []; result = saved(); postCount = 0
   vi.stubGlobal('fetch', vi.fn(transport))
 })
@@ -95,10 +95,22 @@ describe('monthly business UI', () => {
     vi.stubGlobal('fetch', vi.fn((url: string, options?: RequestInit) => url.includes('/imports/')
       ? Promise.resolve(json({ batch_id: 'ib_fixture', dataset_id: dataset.dataset_id, status: 'FAILED', error_code: 'IMPORT_TIMEOUT', processed_rows: 2, attempt: 1, containers: [] })) : transport(url, options)))
     const view = await boot()
-    await view.findAll('.workspace-nav button')[1]!.trigger('click')
+    await view.get('.workspace-nav button[aria-label="数据与导入"]').trigger('click')
     expect(view.get('[data-testid="batch-status"]').text()).toBe('导入失败')
     expect(view.get('[data-testid="import-error"]').text()).toContain('IMPORT_TIMEOUT')
     expect(view.get('#source-file').attributes('disabled')).toBeUndefined()
+  })
+  it('does not replace the active page URL when a previous monthly query finishes late', async () => {
+    let resolve!: (value: Response) => void
+    vi.stubGlobal('fetch', vi.fn((url: string, options?: RequestInit) => options?.method === 'POST'
+      ? new Promise<Response>(done => { resolve = done }) : transport(url, options)))
+    const view = await boot()
+    await view.get('.query-form').trigger('submit')
+    await view.get('.workspace-nav button[aria-label="数据与导入"]').trigger('click')
+    resolve(json(result)); await flushPromises()
+    expect(location.search).toBe('?view=datasets')
+    expect(view.get('h1').text()).toBe('数据与导入')
+    expect(view.find('[data-testid="saved-result"]').exists()).toBe(false)
   })
 })
 

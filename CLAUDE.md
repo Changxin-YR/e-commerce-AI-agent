@@ -8,3 +8,4 @@
 4. 当前状态为 `READY_FOR_USER_ACCEPTANCE`，用户尚未最终确认。F06—F09 真实模型仍 `BLOCKED_AUTHORIZATION`，真实外部调用 0，付费开关 false，真实请求/token 预算 0。132 条历史模型尝试属于 scripted 工程夹具，不能称为实际供应商验证。B0 不用模型。
 5. 先检查 Git 状态与哈希。保护用户改动和 D9 封存件，执行会写入业务数据的验证时使用新副本。GitHub 仓库包含源码、锁定依赖清单、工程文档及已入库证据；另机复现需要按 README 取得官方数据、创建本地配置、安装依赖、迁移与导入。
 6. 独立记录本轮 PASS/FAIL/BLOCKED/NOT_RUN，不照抄历史结果。用户已授权将本次工程提交到指定 GitHub 仓库；后续验收没有自动修复或再次发布的授权。真实模型付费调用、部署、论文/gold/正式学术实验仍未授权，也不能自授 USER_ACCEPTED。
+7. 2026-11-05 用户明确要求“修复项目并做针对性测试”，本轮已修复旧沙箱低完整性 ACL、前端依赖 esbuild 缺失、`data/raw` 官方文件缺失，并为 STREAM-02 增加末轮 JSON 语法容错（不放宽证据/数值/B2 校验）。实测 282 pytest、39 Vitest、12 Edge、build PASS；0 次真实模型请求。报告见 `docs/fix-and-targeted-tests-20261105.md`，证据在 `D:/codex产出/电商智能体_项目修复与针对性测试/缓存`。未提交/推送 Git，未改数据库 schema；真实追问仍未复测，STREAM-03 外部 TLS/HTTP 阻断仍 OPEN。

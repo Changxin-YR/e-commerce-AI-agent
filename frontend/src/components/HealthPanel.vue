@@ -2,6 +2,7 @@
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { fetchHealth, HealthError } from '../api/health'
 import type { HealthResponse } from '../api/health'
+import WorkspaceShell from './WorkspaceShell.vue'
 
 const state = ref<'loading' | 'success' | 'error'>('loading')
 const health = ref<HealthResponse | null>(null)
@@ -11,6 +12,7 @@ const checkedAt = ref('')
 let controller: AbortController | undefined
 let timeout: ReturnType<typeof setTimeout> | undefined
 let unmounted = false
+function navigate(view: string) { location.assign(`/?view=${view}`) }
 
 const title = computed(() => ({
   loading: '正在检查本地连接',
@@ -59,20 +61,11 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="app-shell">
-    <header class="site-header">
-      <a class="brand" href="/" aria-label="电商经营分析首页">
-        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
-        <span>电商经营分析</span>
-      </a>
-      <span class="local-label"><span aria-hidden="true"></span>本地工作区</span>
-    </header>
-
-    <main>
+  <WorkspaceShell view="health" @navigate="navigate">
+    <div class="health-content">
       <div class="intro">
-        <p class="stage-label">本地服务状态</p>
-        <h1>先让服务连接起来。</h1>
-        <p class="intro-copy">这里显示本地后端与数据库的实际连接状态，<br class="desktop-break" />为后续历史交易数据分析做好准备。</p>
+        <h1>服务状态</h1>
+        <p class="intro-copy">检查 AI 工作台依赖的本地后端与数据库连接。</p>
       </div>
 
       <section class="connection-panel" aria-labelledby="connection-title">
@@ -107,11 +100,9 @@ onUnmounted(() => {
         <span class="scope-symbol" aria-hidden="true">i</span>
         <div>
           <h2 id="scope-title">服务连接检查</h2>
-          <p>这里用于诊断本地服务与数据库连接。返回经营工作区可上传数据和查询月度指标。</p>
+          <p>服务连接正常后，可返回工作台继续分析。模型是否可用，请查看智能分析页的实际状态。</p><a class="button-link secondary" href="/?view=analysis">返回 AI 工作台</a>
         </div>
       </aside>
-    </main>
-
-    <footer><span>电商经营数据分析智能体</span><span>V1.5 功能优先开发</span></footer>
-  </div>
+    </div>
+  </WorkspaceShell>
 </template>

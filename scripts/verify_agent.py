@@ -31,7 +31,9 @@ def server_app():
         app_port=int(os.environ['AGENT_FIXTURE_PORT']),import_cache_dir=output/'uploads',allow_paid_model_calls=False,
         model_max_total_requests=200,model_max_total_tokens=5_000_000,model_max_tokens_per_run=300_000)
     def model(messages,n):
-        initial=json.loads(messages[1]['content']); d=initial['dataset_id']
+        initial=next(json.loads(m['content']) for m in messages if m['role']=='user'
+            and m['content'].startswith('{') and 'dataset_id' in json.loads(m['content']))
+        d=initial['dataset_id']
         scenario=initial['question'].split('test_fixture_case=')[-1]
         if scenario=='crash' and os.environ.get('AGENT_FIXTURE_CRASH')=='1':
             (output/'attempt-sent.marker').write_text('test_fixture provider entered after durable SENT',encoding='utf-8')
@@ -57,9 +59,21 @@ def server_app():
         if result['status']=='NO_DATA': return answer('answer','所选期间没有数据，无法给出交易金额。')
         field='delta_exact' if scenario=='compare' else 'points.0.value_exact'
         value=result['data']['delta_exact'] if scenario=='compare' else result['data']['points'][0]['value_exact']
-        return answer('answer','数值来自保存的工具结果；覆盖范围和限制见证据。',[
+        message='数值来自保存的工具结果；覆盖范围和限制见证据。'
+        if scenario=='stream':
+            message='已读取所选期间的交易数据。正在整理工具返回的证据，并将数值与原始计算结果逐项核对。这里的交易金额包含费用类条目，不能直接视为利润；取消类交易也不能直接视为实际退款。核验后的精确数值会显示在本条回复下方，完整报告会保留数据来源、口径和查询条件。'
+        return answer('answer',message,[
             dict(tool_call_id=result['tool_call_id'],field_path=field,label='净交易金额差额' if scenario=='compare' else '净交易金额',value=value)])
-    return create_app(settings,test_provider=ScriptedProvider(model))
+    class StreamingFixture(ScriptedProvider):
+        def stream(self, messages, tools, max_tokens, on_update):
+            reply=self.complete(messages,tools,max_tokens)
+            content=reply.message.get('content') or ''
+            for length in range(1,len(content)+8,8):
+                on_update({'role':'assistant','content':content[:length]})
+                time.sleep(.12)
+            return reply
+    provider=StreamingFixture(model) if os.environ.get('AGENT_FIXTURE_STREAM')=='1' else ScriptedProvider(model)
+    return create_app(settings,test_provider=provider)
 
 
 def main():

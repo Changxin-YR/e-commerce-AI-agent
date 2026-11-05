@@ -167,10 +167,14 @@ test.describe.serial('D4 real business workflow', () => {
   })
 
   test('official ZIP uploads in UI, progresses, survives refresh and deduplicates XLSX', async ({ page }) => {
-    test.setTimeout(300_000)
+    // A full 541909-row import can be slower on a busy developer workstation.
+    // Keep the existing default, with an explicit bounded override for that environment.
+    const importWaitMs = Number(process.env.E2E_IMPORT_TIMEOUT_MS ?? 240_000)
+    if (!Number.isInteger(importWaitMs) || importWaitMs < 240_000 || importWaitMs > 900_000) throw new Error('E2E_IMPORT_TIMEOUT_MS must be between 240000 and 900000')
+    test.setTimeout(importWaitMs + 60_000)
     const errors: string[] = []
     page.on('pageerror', error => errors.push(error.message))
-    await page.goto(baseURL)
+    await page.goto(`${baseURL}/?view=datasets`)
     await expect(page.getByLabel('源数据文件')).toBeVisible()
     await page.getByLabel('源数据文件').setInputFiles(path.join(projectRoot, 'data/raw/online_retail_uci352.zip'))
     const [accepted] = await Promise.all([
@@ -185,7 +189,7 @@ test.describe.serial('D4 real business workflow', () => {
     await page.screenshot({ path: path.join(evidenceDir, 'import-progress.png'), fullPage: true })
     await page.reload()
     await page.getByRole('button', { name: '数据与导入', exact: true }).click()
-    await expect(page.getByTestId('batch-status')).toHaveText('可查询', { timeout: 240_000 })
+    await expect(page.getByTestId('batch-status')).toHaveText('可查询', { timeout: importWaitMs })
     await expect(page.getByTestId('raw-row-count')).toHaveText('541909')
     await expect(page.getByTestId('processed-rows')).toHaveText('541909')
     await page.screenshot({ path: path.join(evidenceDir, 'import-complete.png'), fullPage: true })
@@ -210,7 +214,7 @@ test.describe.serial('D4 real business workflow', () => {
     test.setTimeout(90_000)
     const errors: string[] = []
     page.on('pageerror', error => errors.push(error.message))
-    await page.goto(baseURL)
+    await page.goto(`${baseURL}/?view=overview`)
     await expect(page.getByLabel('查询月份')).toBeEnabled()
     const results = []
     for (const month of ['2011-09', '2011-10']) {
@@ -256,7 +260,7 @@ test.describe.serial('D4 real business workflow', () => {
 
   test('partial, no-data, empty-filter, corrupt upload and real backend outage are explicit', async ({ page }) => {
     test.setTimeout(90_000)
-    await page.goto(baseURL)
+    await page.goto(`${baseURL}/?view=overview`)
     await expect(page.getByLabel('查询月份')).toBeEnabled()
     for (const [month, filter, label, expected] of [
       ['2011-12', '', '月份覆盖不完整', null], ['2012-01', '', '无数据', '—'], ['2011-09', 'NO_SUCH_COUNTRY_TEST', '筛选结果为空', '0.000'],

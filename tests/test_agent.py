@@ -52,7 +52,8 @@ def wait(client,run_id,statuses=('PASS','FAIL','WAITING_INPUT','CANCELLED')):
 
 
 def create(client,d,variant='B2',**more):
-    request=dict(dataset_id=d,variant=variant,question='2011-09净交易金额',idempotency_key=uuid4().hex,**more)
+    request=dict(dataset_id=d,variant=variant,question='2011-09净交易金额',idempotency_key=uuid4().hex)
+    request.update(more)
     response=client.post('/api/v1/runs',json=request,headers=ORIGIN)
     assert response.status_code==202,response.text
     return response.json()['run_id'],request
@@ -169,7 +170,8 @@ def test_budget_unknown_outcome_persist_and_total_limit(dataset):
     with TestClient(create_app(config,test_provider=first),base_url='http://127.0.0.1') as client:
         run_id,_=create(client,d); result=wait(client,run_id)
         assert result['attempts'][0]['status']=='UNKNOWN_OUTCOME'
-        assert result['usage']['confirmed_total_tokens'] is None and result['usage']['tokens_occupied']==32768
+        assert result['usage']['confirmed_total_tokens'] is None
+        assert 0 < result['usage']['tokens_occupied'] == result['attempts'][0]['reserved_tokens'] <= 32768
     second=ScriptedProvider([])
     with TestClient(create_app(config,test_provider=second),base_url='http://127.0.0.1') as client:
         run_id,_=create(client,d); result=wait(client,run_id)
@@ -278,7 +280,8 @@ def test_success_with_missing_usage_is_unknown_and_reservation_kept(dataset):
     with TestClient(create_app(agent_settings(settings),test_provider=provider),base_url='http://127.0.0.1') as client:
         run_id,_=create(client,d); result=wait(client,run_id)
         assert result['run_status']=='PASS' and result['attempts'][0]['status']=='SUCCEEDED'
-        assert result['usage']['confirmed_total_tokens'] is None and result['usage']['tokens_occupied']==32768
+        assert result['usage']['confirmed_total_tokens'] is None
+        assert 0 < result['usage']['tokens_occupied'] == result['attempts'][0]['reserved_tokens'] <= 32768
 
 
 def test_cached_success_after_checkpoint_lag_never_reissues_call(dataset):

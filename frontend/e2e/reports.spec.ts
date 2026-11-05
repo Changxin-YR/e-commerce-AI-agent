@@ -163,6 +163,7 @@ test.describe.serial('D7 real data reports and scripted clarification', () => {
       MODEL_MAX_TOTAL_REQUESTS: '0', MODEL_MAX_TOTAL_TOKENS: '0', MODEL_MAX_TOKENS_PER_RUN: '0',
       AGENT_FIXTURE_DATABASE: path.join(evidenceDir, 'real-ui.sqlite3'), AGENT_FIXTURE_OUTPUT: evidenceDir,
       AGENT_FIXTURE_PORT: String(backendPort),
+      AGENT_FIXTURE_STREAM: '1',
     }
     await startBackend()
     frontend = launch('frontend', python, ['-X', 'utf8', 'scripts/manage.py', 'frontend'], projectRoot)
@@ -183,10 +184,11 @@ test.describe.serial('D7 real data reports and scripted clarification', () => {
     await page.getByRole('button', { name: '数据与导入', exact: true }).click()
     await page.getByLabel('源数据文件').setInputFiles(path.join(projectRoot, 'data/raw/Online_Retail.xlsx'))
     await page.getByRole('button', { name: '上传并导入' }).click()
-    await expect(page.getByTestId('import-message')).toContainText('复用已有批次')
+    // Align the browser assertion with the application's bounded 75s upload request.
+    await expect(page.getByTestId('import-message')).toContainText('复用已有批次', { timeout: 75_000 })
     await page.getByRole('button', { name: '智能分析', exact: true }).click()
     await expect(page.getByTestId('model-blocked')).toContainText('BLOCKED_AUTHORIZATION')
-    await expect(page.getByRole('button', { name: '提交分析任务' })).toBeDisabled()
+    await expect(page.getByRole('button', { name: '开始分析', exact: true })).toBeDisabled()
     await page.screenshot({ path: path.join(evidenceDir, 'no-model-b0.png'), fullPage: true })
     await page.getByLabel('起始日期', { exact: true }).fill('2011-10-01')
     await page.getByLabel('结束日期（不含）', { exact: true }).fill('2011-11-01')
@@ -243,7 +245,7 @@ test.describe.serial('D7 real data reports and scripted clarification', () => {
     await page.goto(`${baseURL}/?view=analysis`)
     await expect(page.getByTestId('fixture-banner')).toBeVisible()
     await page.getByLabel('经营问题').fill('test_fixture_case=clarify')
-    await page.getByRole('button', { name: '提交分析任务' }).click()
+    await page.getByRole('button', { name: '开始分析', exact: true }).click()
     await expect(page.getByTestId('run-status')).toHaveText('等待补充条件')
     waitingRunId = new URL(page.url()).searchParams.get('run')!
     const waiting = await (await page.request.get(`${baseURL}/api/v1/runs/${waitingRunId}`)).json()
@@ -258,7 +260,7 @@ test.describe.serial('D7 real data reports and scripted clarification', () => {
     const completed = await (await page.request.get(`${baseURL}/api/v1/runs/${waitingRunId}`)).json()
     expect(completed.thread_id).toBe(waitingThreadId)
     expect(completed.usage.requests_reserved).toBe(3)
-    await page.getByRole('button', { name: '查看报告', exact: true }).click()
+    await page.getByRole('button', { name: '查看完整报告与引用', exact: true }).click()
     await expect(page.getByTestId('report-fixture')).toBeVisible()
     await expect(page.getByTestId('report-detail')).toContainText('1019687.622')
     await page.screenshot({ path: path.join(evidenceDir, 'scripted-report.png'), fullPage: false })
@@ -269,6 +271,82 @@ test.describe.serial('D7 real data reports and scripted clarification', () => {
     expect(exported.content.claims[0].value).toBe('1019687.622')
     writeFileSync(path.join(evidenceDir, 'scripted-run.json'), JSON.stringify(completed, null, 2))
   })
+  test('cancel confirmation keeps focus, supports Escape and cancels only after explicit confirmation', async ({ page }) => {
+    await page.goto(`${baseURL}/?view=analysis`)
+    await expect(page.getByTestId('fixture-banner')).toBeVisible()
+    await page.getByLabel('经营问题').fill('cancellation UI check test_fixture_case=clarify')
+    await page.getByRole('button', { name: '开始分析', exact: true }).click()
+    await expect(page.getByTestId('run-status')).toHaveText('等待补充条件')
+    const cancellations: string[] = []
+    page.on('request', request => { if (request.url().endsWith('/cancel')) cancellations.push(request.url()) })
+    await page.getByRole('button', { name: '取消任务', exact: true }).click()
+    const dialog = page.getByRole('dialog')
+    await expect(dialog).toBeVisible()
+    await expect(page.getByRole('button', { name: '继续保留任务' })).toBeFocused()
+    await page.keyboard.press('Escape')
+    await expect(dialog).not.toBeVisible()
+    expect(cancellations).toHaveLength(0)
+    await expect(page.getByRole('button', { name: '取消任务', exact: true })).toBeFocused()
+    await page.getByRole('button', { name: '取消任务', exact: true }).click()
+    await page.screenshot({ path: path.join(evidenceDir, 'cancel-confirmation.png'), fullPage: false })
+    await page.getByRole('button', { name: '确认取消任务', exact: true }).click()
+    await expect(page.getByTestId('run-status')).toHaveText('已取消')
+    expect(cancellations).toHaveLength(1)
+  })
+  test('streamed conversation grows before completion, survives refresh and supports follow-up at four widths', async ({ page }) => {
+    test.setTimeout(90000)
+    const consoleErrors: string[] = []
+    page.on('pageerror', error => consoleErrors.push(error.message))
+    await page.goto(`${baseURL}/?view=analysis`)
+    await page.getByLabel('经营问题').fill('test_fixture_case=stream')
+    await page.getByRole('button', { name: '开始分析', exact: true }).click()
+    const streamText = page.locator('.message-text.is-streaming')
+    await expect(streamText).toBeVisible()
+    const first = (await streamText.textContent())!.length
+    await expect.poll(async () => (await streamText.textContent())!.length).toBeGreaterThan(first)
+    const runId = new URL(page.url()).searchParams.get('run')!
+    await page.screenshot({ path: path.join(evidenceDir, 'streaming-in-progress.png') })
+    await page.reload()
+    await expect(page.getByTestId('run-status')).toHaveText('已完成', { timeout: 20000 })
+    expect(new URL(page.url()).searchParams.get('run')).toBe(runId)
+    const complete = await (await page.request.get(`${baseURL}/api/v1/runs/${runId}`)).json()
+    expect(complete.usage.requests_reserved).toBe(2)
+    await expect(page.getByTestId('run-detail')).toContainText('1019687.622')
+    await page.getByLabel('经营问题').fill('继续追问 test_fixture_case=unsupported')
+    await page.getByLabel('经营问题').press('Enter')
+    await expect.poll(() => new URL(page.url()).searchParams.get('run')).not.toBe(runId)
+    await expect(page.getByTestId('run-status')).toHaveText('已完成', { timeout: 20000 })
+    const childId = new URL(page.url()).searchParams.get('run')!
+    expect(childId).not.toBe(runId)
+    const child = await (await page.request.get(`${baseURL}/api/v1/runs/${childId}`)).json()
+    expect(child.conversation_history[0].run_id).toBe(runId)
+    expect(child.result.message).toContain('采购成本')
+    for (const width of [1440, 1280, 768, 390]) {
+      await page.setViewportSize({ width, height: 900 })
+      await expect(page.getByLabel('经营问题')).toBeVisible()
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
+      expect(await page.evaluate(() => document.querySelector('.conversation-scroll')!.getBoundingClientRect().bottom
+        <= document.querySelector('.chat-composer')!.getBoundingClientRect().top)).toBe(true)
+      await page.screenshot({ path: path.join(evidenceDir, `conversation-${width}.png`), fullPage: false })
+    }
+    await page.setViewportSize({ width: 1280, height: 712 })
+    expect(await page.evaluate(() => document.querySelector('.conversation-scroll')!.getBoundingClientRect().bottom
+      <= document.querySelector('.chat-composer')!.getBoundingClientRect().top)).toBe(true)
+    expect(consoleErrors).toEqual([])
+    writeFileSync(path.join(evidenceDir, 'streaming-followup.json'), JSON.stringify({ complete, child, consoleErrors }, null, 2))
+  })
+  test('stopping an in-flight stream preserves its draft and does not invent a report', async ({ page }) => {
+    await page.goto(`${baseURL}/?view=analysis`)
+    await page.getByLabel('经营问题').fill('停止流式测试 test_fixture_case=unsupported')
+    await page.getByRole('button', { name: '开始分析', exact: true }).click()
+    await expect(page.locator('.message-text.is-streaming')).toBeVisible()
+    await page.getByRole('button', { name: '停止执行', exact: true }).click()
+    await expect(page.getByTestId('run-status')).toHaveText('已取消')
+    await expect(page.getByText('未完成草稿', { exact: true })).toBeVisible()
+    const id = new URL(page.url()).searchParams.get('run')!
+    const stopped = await (await page.request.get(`${baseURL}/api/v1/runs/${id}`)).json()
+    expect(stopped.result_ref).toBeNull(); expect(stopped.usage.confirmed_total_tokens).toBeNull()
+  })
   test('D8 browser escapes stored questions and rejects an actual foreign-origin form', async ({ page }) => {
     const dialogs: string[] = []
     page.on('dialog', dialog => { dialogs.push(dialog.message()); void dialog.dismiss() })
@@ -277,7 +355,7 @@ test.describe.serial('D7 real data reports and scripted clarification', () => {
     expect(home?.headers()['content-security-policy']).toContain("frame-ancestors 'none'")
     const attack = '<img src=x onerror=alert(1)> test_fixture_case=unsupported'
     await page.getByLabel('经营问题').fill(attack)
-    await page.getByRole('button', { name: '提交分析任务' }).click()
+    await page.getByRole('button', { name: '开始分析', exact: true }).click()
     await expect(page.getByTestId('run-status')).toHaveText('已完成')
     await expect(page.getByTestId('run-detail')).toContainText(attack)
     expect(await page.locator('img[src="x"]').count()).toBe(0)

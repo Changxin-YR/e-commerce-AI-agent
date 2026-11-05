@@ -1,6 +1,7 @@
 """Reserve before send; unknown outcomes retain their entire token reservation."""
 from datetime import datetime, timezone
 import json
+import time
 from uuid import uuid4
 from sqlalchemy import select, text
 from sqlalchemy.orm import Session
@@ -47,7 +48,8 @@ class BudgetGateway:
                 raise AppError(error, 'Model authorization, credentials and positive budgets are required.', 409)
         # UTF-8 bytes plus fixed framing overhead is a deliberately conservative preflight bound.
         request=dict(messages=messages, tools=schemas, model=provider.model_id, max_tokens=cfg['output_tokens'])
-        if len(json.dumps(request,ensure_ascii=False).encode('utf-8'))+2048+cfg['output_tokens']>cfg['tokens_per_request']:
+        reserve=len(json.dumps(request,ensure_ascii=False).encode('utf-8'))+2048+cfg['output_tokens']
+        if reserve>cfg['tokens_per_request']:
             raise AppError('MODEL_CONTEXT_LIMIT', 'The bounded model context is full.', 409)
         request_hash=digest(request)
         with Session(svc.write_engine) as session:
@@ -67,7 +69,6 @@ class BudgetGateway:
             if ledger is None:
                 ledger=ModelBudget(scope=cfg['budget_scope'],requests_consumed=0,tokens_occupied=0)
                 session.add(ledger)
-            reserve=cfg['tokens_per_request']
             if (run.requests_consumed>=cfg['requests_per_run'] or ledger.requests_consumed>=cfg['total_requests']
                 or run.tokens_occupied+reserve>cfg['tokens_per_run'] or ledger.tokens_occupied+reserve>cfg['total_tokens']):
                 raise AppError('MODEL_BUDGET_EXHAUSTED','Model request or token budget is exhausted.',409)
@@ -82,7 +83,34 @@ class BudgetGateway:
         with Session(svc.write_engine) as session:
             attempt=session.get(ModelAttempt,attempt_id); attempt.status='SENT'; session.commit()
         try:
-            reply=provider.complete(messages,schemas,cfg['output_tokens']).as_dict()
+            last_saved = 0.0
+            def on_update(message):
+                nonlocal last_saved
+                stamp = time.monotonic()
+                if stamp - last_saved < .1:
+                    return
+                secret = svc.settings.model_api_key.get_secret_value()
+                safe_message = redact(message, secret)
+                # Withhold an unfinished secret prefix across provider chunk boundaries.
+                content = safe_message.get('content') or ''
+                for length in range(min(len(secret)-1, len(content)), 0, -1):
+                    if content.endswith(secret[:length]):
+                        content = content[:-length]
+                        break
+                # Partial tool arguments/IDs are not useful UI text and may contain secrets.
+                draft = {'role': 'assistant', 'content': content}
+                with Session(svc.write_engine) as session:
+                    run = session.get(AnalysisRun, run_id)
+                    if run.cancel_requested:
+                        raise AppError('CANCELLED', 'Streaming response cancelled.', 409)
+                    attempt = session.get(ModelAttempt, attempt_id)
+                    attempt.response = {'message': draft, 'streaming': True}
+                    session.commit()
+                last_saved = stamp
+            if callable(getattr(provider, 'stream', None)):
+                reply=provider.stream(messages,schemas,cfg['output_tokens'],on_update).as_dict()
+            else:
+                reply=provider.complete(messages,schemas,cfg['output_tokens']).as_dict()
             if not isinstance(reply.get('message'),dict) or reply['message'].get('role')!='assistant':
                 raise ProviderFailure('MODEL_INVALID_RESPONSE')
             reply=redact(reply,svc.settings.model_api_key.get_secret_value())

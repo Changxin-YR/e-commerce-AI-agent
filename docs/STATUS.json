@@ -1,10 +1,10 @@
 {
   "project_id": "ecommerce-agent-thesis",
-  "updated_at": "2026-11-03T01:11:43.723508+08:00",
+  "updated_at": "2026-11-05T07:08:00.000000+00:00",
   "implementation_ready": {
     "status": "PARTIAL",
-    "blocker_code": "BLOCKED_AUTHORIZATION",
-    "scope": "D0-D9 offline engineering and clean reproduction PASS; real model F06-F09 and final user acceptance pending",
+    "blocker_code": "MODEL_HTTP_ERROR",
+    "scope": "Local engineering and initial live report pass; live followup remains incomplete.",
     "evidence": [
       "docs/D9_ACCEPTANCE.md",
       "docs/evidence/d9/verification.json"
@@ -21,12 +21,14 @@
     ]
   },
   "live_model_verified": {
-    "status": "BLOCKED",
-    "blocker_code": "BLOCKED_AUTHORIZATION",
-    "scope": "Real external calls zero; F06-F09 blocked, scripted evidence proves engineering mechanisms only.",
+    "status": "PARTIAL",
+    "blocker_code": "MODEL_HTTP_ERROR",
+    "scope": "Initial streaming/tool/validated-report chain PASS; followup output schema failure and repair HTTP error remain. Final empty-tools omission is offline-tested only.",
     "evidence": [
-      "docs/D9_ACCEPTANCE.md",
-      "docs/D6_AGENT.md"
+      "docs/ai-streaming-upgrade.md",
+      "D:\\codex产出\\电商智能体_AI前端全面优化_20261103\\交付\\流式对话升级\\live-profile-final.json",
+      "D:\\codex产出\\电商智能体_AI前端全面优化_20261103\\交付\\流式对话升级\\live-keepalive.json",
+      "D:\\codex产出\\电商智能体_AI前端全面优化_20261103\\交付\\流式对话升级\\live-followup-repair.json"
     ]
   },
   "gold_verified": {
@@ -51,7 +53,7 @@
   },
   "handoff_version": "1.5",
   "handoff_status": "READY_FOR_USER_ACCEPTANCE",
-  "implementation_status": "D9_ENGINEERING_COMPLETE_LIVE_MODEL_BLOCKED",
+  "implementation_status": "STREAMING_INITIAL_LIVE_PASS_FOLLOWUP_PARTIAL_SYNTAX_RECOVERY_LOCAL_PASS",
   "execution_mode": "FEATURE_FIRST",
   "current_dev_step": "D9",
   "paper_work_mode": "DEFERRED_BY_USER",
@@ -152,9 +154,10 @@
     "transform_version": "uci352-ooxml-milligbp-v1"
   },
   "model": {
-    "status": "NOT_RUN",
-    "external_calls": 0,
-    "paid_model_calls_authorized": false
+    "status": "PARTIAL",
+    "paid_model_calls_authorized": true,
+    "external_request_attempts": 17,
+    "scope": "Limited user-requested streaming upgrade checks only; not formal experiments. Earlier stage snapshots retained below."
   },
   "stage_statuses": {
     "D0": "VERIFIED_USER_AUTHORIZED_D1",
@@ -871,5 +874,76 @@
       "First refreshed metrics verifier could not import backend when launched as script; added project sys.path, rerun 85 checks passed.",
       "Patch application initially rejected delete/add of README in one operation; reapplied sequentially, no source data affected."
     ]
+  },
+  "ui_optimization": {
+    "date": "2026-11-03T13:32:14.692475+08:00",
+    "ui_acceptance": "PASS",
+    "scope": "UI and local engineering regression; not live model verification or final human acceptance",
+    "baseline_sha": "9b1ebf40643f4e1ed7ed95308f37b35b82bfbed0",
+    "frontend_tests": 35,
+    "backend_tests": 263,
+    "edge_tests": 10,
+    "viewport_combinations": 28,
+    "viewports": [
+      1440,
+      1280,
+      768,
+      390
+    ],
+    "model": "CONFIGURED_UNVERIFIED observed on existing server; no paid requests from this task",
+    "evidence": [
+      "docs/ui-validation-results.md",
+      "D:\\codex产出\\电商智能体_AI前端全面优化_20261103\\交付\\validation-summary.json"
+    ],
+    "runtime_note": "Old D9 authorization fields describe historical acceptance; the existing service currently reports CONFIGURED_UNVERIFIED. UI task did not change its model settings or verify paid inference."
+  },
+  "streaming_upgrade": {
+    "status": "PARTIAL",
+    "engineering": "PASS",
+    "provider_end_to_end": "PARTIAL",
+    "blocker_code": "MODEL_HTTP_ERROR",
+    "tests": {
+      "pytest": 282,
+      "vitest": 39,
+      "edge_full": 12,
+      "edge_final_targeted": 7,
+      "build": "PASS",
+      "pytest_final_targeted": 43,
+      "pytest_tolerant_targeted": 5
+    },
+    "syntax_recovery": {
+      "status": "IMPLEMENTED_LOCAL_PASS",
+      "scope": "Syntax-only recovery for unescaped quotes/newlines in the model's final message; strict schema, evidence, numeric and B2 checks unchanged",
+      "live_verified": false,
+      "tests": 5,
+      "evidence": [
+        "backend/app/agent/tolerant_json.py",
+        "tests/test_tolerant_json.py",
+        "docs/fix-and-targeted-tests-20261105.md"
+      ]
+    },
+    "environment_repair": {
+      "status": "PASS",
+      "scope": "Low-integrity sandbox ACLs removed from project tree; frontend deps reinstalled; audited official source files restored locally",
+      "first_failed_run": "pytest 196 setup errors; Edge 3 failed / 9 did not run",
+      "rerun": "pytest 282 passed; Edge 12 passed"
+    },
+    "real_validation": {
+      "live_requests": 17,
+      "live_known_tokens": 88728,
+      "live_unknown_attempts": 4,
+      "live_occupied_tokens": 156180,
+      "requests_in_this_round": 0
+    },
+    "environment_unchanged": true,
+    "database_schema_changed": false,
+    "evidence": [
+      "docs/ai-streaming-upgrade.md",
+      "docs/fix-and-targeted-tests-20261105.md",
+      "D:\\codex产出\\电商智能体_AI前端全面优化_20261103\\交付\\流式对话升级\\streaming-summary.json"
+    ],
+    "initial_live_report": "PASS",
+    "followup_live": "BLOCKED",
+    "final_optional_tools_omission_live_verified": false
   }
 }

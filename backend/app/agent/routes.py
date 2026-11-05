@@ -1,6 +1,8 @@
 from typing import Annotated
 from fastapi import APIRouter, Query, Request, Response
+from fastapi.responses import StreamingResponse
 from .contracts import CreateRun, AnswerRun, ResumeRun
+from .streaming import run_events
 
 router=APIRouter(prefix='/api/v1',tags=['agent'])
 
@@ -25,6 +27,14 @@ def list_runs(request: Request,limit: Annotated[int,Query(ge=1,le=100)]=20,offse
 @router.get('/runs/{run_id}')
 def get_run(run_id: str,request: Request):
     return request.app.state.agent_service.get(run_id)
+
+
+@router.get('/runs/{run_id}/events')
+def stream_run(run_id: str, request: Request):
+    service = request.app.state.agent_service
+    service.get(run_id)  # Preserve ordinary 404/503 handling before starting the stream.
+    return StreamingResponse(run_events(service, run_id, request), media_type='text/event-stream',
+        headers={'Cache-Control': 'no-store', 'X-Accel-Buffering': 'no'})
 
 
 @router.post('/runs/{run_id}/input')

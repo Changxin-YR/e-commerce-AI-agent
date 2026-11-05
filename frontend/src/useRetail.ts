@@ -1,18 +1,18 @@
-import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { api, errorText } from './api/retail'
 import type { Batch, Dataset, Definitions, HistoryItem, Monthly, Quality, Saved, Series } from './api/retail'
+import { currentView } from './navigation'
 
 const storage = {
   get(key: string) { try { return localStorage.getItem(`retail.${key}`) } catch { return null } },
   set(key: string, value: string) { try { localStorage.setItem(`retail.${key}`, value) } catch { /* URL and server history remain usable. */ } },
 }
 export function useRetail() {
-  const requestedView = new URL(location.href).searchParams.get('view')
-  const tab = ref(requestedView && ['overview', 'datasets', 'history', 'analysis', 'reports', 'tasks'].includes(requestedView) ? requestedView : 'overview'), datasets = ref<Dataset[]>([]), selected = ref('')
+  const tab = ref(currentView()), datasets = ref<Dataset[]>([]), selected = ref('')
   const quality = ref<Quality | null>(null), definitions = ref<Definitions | null>(null)
   const history = ref<HistoryItem[]>([]), historyTotal = ref(0), historyOffset = ref(0)
   const saved = ref<Saved | null>(null), month = ref(''), country = ref(''), stock = ref('')
-  const busy = ref(false), queryBusy = ref(false), uploadBusy = ref(false)
+  const busy = ref(false), queryBusy = ref(false), uploadBusy = ref(false), historyBusy = ref(false)
   const error = ref(''), queryError = ref(''), importError = ref(''), historyError = ref('')
   const batch = ref<Batch | null>(null), importMessage = ref(''), file = ref<File | null>(null)
   const dataset = computed(() => datasets.value.find(item => item.dataset_id === selected.value))
@@ -21,6 +21,9 @@ export function useRetail() {
   let alive = true, queryGeneration = 0, datasetGeneration = 0
   let pollTimer: ReturnType<typeof setTimeout> | undefined
   let submission: { signature: string; key: string } | undefined
+  watch(tab, (view, previous) => {
+    if (previous === 'overview' && view !== previous) { queryGeneration++; queryBusy.value = false }
+  }, { flush: 'sync' })
   function current(generation: number) { return alive && generation === queryGeneration }
   function clearResult() {
     queryGeneration++
@@ -37,19 +40,20 @@ export function useRetail() {
   }
   async function loadHistory(offset = 0) {
     const id = selected.value
-    historyError.value = ''
+    historyError.value = ''; historyBusy.value = true
     try {
       const page = await api.history(id, offset)
       if (!alive || selected.value !== id) return
       history.value = page.items; historyTotal.value = page.total; historyOffset.value = offset
     } catch (cause) { if (alive && selected.value === id) historyError.value = errorText(cause) }
+    finally { if (alive && selected.value === id) historyBusy.value = false }
   }
   async function selectDataset(id: string, restore = true) {
     const generation = ++datasetGeneration
     selected.value = id; storage.set('dataset', id)
-    clearResult(); quality.value = null; history.value = []; historyTotal.value = 0; error.value = ''; busy.value = true
+    clearResult(); quality.value = null; history.value = []; historyTotal.value = 0; error.value = ''; historyError.value = ''; busy.value = true; historyBusy.value = true
     const item = datasets.value.find(value => value.dataset_id === id)
-    if (!item || item.status !== 'READY') { busy.value = false; return }
+    if (!item || item.status !== 'READY') { busy.value = false; historyBusy.value = false; return }
     month.value = item.source_time_min?.slice(0, 7) ?? ''; country.value = ''; stock.value = ''
     const results = await Promise.allSettled([api.quality(id), api.history(id)])
     if (!alive || generation !== datasetGeneration) return
@@ -59,14 +63,14 @@ export function useRetail() {
     if (h.status === 'fulfilled') {
       history.value = h.value.items; historyTotal.value = h.value.total; historyOffset.value = 0
     } else historyError.value = errorText(h.reason)
-    busy.value = false
+    busy.value = false; historyBusy.value = false
     const queryId = new URL(location.href).searchParams.get('query')
     if (restore && tab.value === 'overview' && queryId) await openHistory(queryId)
     else if (restore && tab.value === 'overview' && history.value[0]) await openHistory(history.value[0].query_id)
   }
   async function openHistory(id: string) {
     clearResult()
-    const generation = queryGeneration
+    let generation = queryGeneration
     queryBusy.value = true
     try {
       const result = await api.saved(id)
@@ -75,6 +79,7 @@ export function useRetail() {
         // Explicit URLs must never display a result under an unrelated dataset.
         await selectDataset(result.dataset_id, false)
         if (!alive || selected.value !== result.dataset_id) return
+        generation = queryGeneration
       }
       month.value = result.parameters.month ?? ''
       country.value = result.parameters.country ?? ''; stock.value = result.parameters.stock_code ?? ''
@@ -91,7 +96,7 @@ export function useRetail() {
       const preferred = selected.value || storage.get('dataset')
       const item = page.items.find(value => value.dataset_id === preferred) ?? page.items.find(value => value.status === 'READY') ?? page.items[0]
       if (item) await selectDataset(item.dataset_id)
-      else { selected.value = ''; quality.value = null; saved.value = null; tab.value = 'datasets' }
+      else { selected.value = ''; quality.value = null; saved.value = null }
     } catch (cause) { if (alive) error.value = errorText(cause) }
     finally { if (alive) busy.value = false }
   }
@@ -142,7 +147,7 @@ export function useRetail() {
       batch.value = value; storage.set('batch', value.batch_id)
       if (value.status === 'READY') {
         importMessage.value = '相同工作簿已导入，已复用已有批次，未增加交易行。'
-        uploadBusy.value = false; await refresh(); await selectDataset(value.dataset_id, false); tab.value = 'datasets'
+        uploadBusy.value = false; await refresh(); await selectDataset(value.dataset_id, false)
       } else await pollBatch(value.batch_id)
     } catch (cause) { if (alive) { uploadBusy.value = false; importError.value = errorText(cause) } }
   }
@@ -159,8 +164,14 @@ export function useRetail() {
       } catch (cause) { if (alive) importError.value = errorText(cause) }
     }
   })
-  onUnmounted(() => { alive = false; queryGeneration++; datasetGeneration++; if (pollTimer) clearTimeout(pollTimer) })
+  function restoreLocation() {
+    tab.value = currentView()
+    const query = new URL(location.href).searchParams.get('query')
+    if (tab.value === 'overview' && query) void openHistory(query)
+  }
+  onMounted(() => window.addEventListener('popstate', restoreLocation))
+  onUnmounted(() => { alive = false; queryGeneration++; datasetGeneration++; if (pollTimer) clearTimeout(pollTimer); window.removeEventListener('popstate', restoreLocation) })
   return { tab, datasets, selected, dataset, quality, definitions, history, historyTotal, historyOffset, saved, monthly, series,
-    month, country, stock, busy, queryBusy, uploadBusy, error, queryError, importError, historyError, batch, importMessage, file,
+    month, country, stock, busy, queryBusy, uploadBusy, historyBusy, error, queryError, importError, historyError, batch, importMessage, file,
     refresh, selectDataset, clearResult, queryMonth, openHistory, loadHistory, upload, pollBatch }
 }

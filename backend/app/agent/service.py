@@ -23,6 +23,7 @@ from .budget import BudgetGateway, now, redact
 from .contracts import CreateRun
 from .provider import DeepSeekProvider, authorization_error
 from .workflow import build_graph, SYSTEM_PROMPT, PROMPT_VERSION
+from .streaming import visible_message
 
 
 TERMINAL={'PASS','FAIL','CANCELLED'}
@@ -49,6 +50,7 @@ class AgentService:
             tokens_per_run=s.model_max_tokens_per_run,total_requests=s.model_max_total_requests,
             total_tokens=s.model_max_total_tokens,tokens_per_request=s.model_max_tokens_per_request,
             output_tokens=s.model_max_output_tokens,temperature=0,automatic_retries=0,
+            streaming=True,budget_reservation='utf8_request_bound_v1',
             base_url=s.model_base_url,checkpoint_schema='sqlite-v1')
 
     def start(self):
@@ -79,6 +81,9 @@ class AgentService:
         if self.pool:
             self.pool.shutdown(wait=True)
             self.pool=None
+        close_provider = getattr(self.provider, 'close', None)
+        if close_provider is not None:
+            close_provider()
         if self.connection:
             self.connection.close(); self.connection=None
         self.lease.close()
@@ -108,7 +113,16 @@ class AgentService:
     def create(self, request, *, parent_run_id=None):
         self._ready()
         profile=self.metrics.profile(request.dataset_id)
+        if request.conversation_parent_run_id:
+            previous = self.get(request.conversation_parent_run_id)
+            if previous['run_status'] not in TERMINAL:
+                raise AppError('RUN_STATE_CONFLICT', 'Finish or cancel the previous turn first.', 409)
+            if previous['dataset_id'] != request.dataset_id:
+                raise AppError('DATASET_SCOPE_VIOLATION', 'A conversation must use the same dataset.', 422)
+            parent_run_id = parent_run_id or request.conversation_parent_run_id
         body=request.model_dump(mode='json',exclude={'idempotency_key'})
+        if body.get('conversation_parent_run_id') is None:
+            body.pop('conversation_parent_run_id', None)
         body=redact(body,self.settings.model_api_key.get_secret_value())
         request_hash=digest(dict(input=body,parent_run_id=parent_run_id))
         with Session(self.write_engine) as session:
@@ -143,11 +157,33 @@ class AgentService:
             calls=list(session.scalars(select(AgentToolCall).where(AgentToolCall.run_id==run_id).order_by(AgentToolCall.step,AgentToolCall.position)))
             reviews=list(session.scalars(select(AgentReview).where(AgentReview.run_id==run_id).order_by(AgentReview.step)))
             report=session.get(Report,run.result_ref) if run.result_ref else None
+            messages = [dict(id=run_id + ':question', role='user', text=run.input.get('question', ''),
+                             created_at=run.created_at, status='complete')]
+            submissions = session.scalars(select(RunSubmission).where(RunSubmission.run_id==run_id,
+                RunSubmission.kind=='input').order_by(RunSubmission.created_at)).all()
+            for reply in submissions:
+                messages.append(dict(id=reply.id,role='user',text='\n'.join(reply.payload.get('answers', {}).values()),
+                    created_at=reply.created_at,status='complete'))
+            for attempt in attempts:
+                content = visible_message((attempt.response or {}).get('message', {}).get('content'))
+                if content:
+                    rejected = any(r.step==attempt.step and r.kind=='answer' and r.result.get('errors') for r in reviews)
+                    messages.append(dict(id=attempt.attempt_id,role='assistant',text=content,step=attempt.step,
+                        created_at=attempt.created_at,status='rejected' if rejected else 'draft' if attempt.status=='SENT'
+                        else 'complete' if attempt.status=='SUCCEEDED' else 'interrupted'))
+            for call in calls:
+                messages.append(dict(id=call.id,role='tool',text=call.tool_name,created_at=call.created_at,
+                    status=call.result.get('status','UNKNOWN'),arguments=call.arguments,
+                    error_code=(call.result.get('error') or {}).get('code'),evidence_ref=call.result.get('tool_call_id')))
+            messages.sort(key=lambda item:item['created_at'])
+            conversation = self._conversation(session, run.input.get('conversation_parent_run_id'))
             known=[a.usage['total_tokens'] for a in attempts if a.usage is not None]
             return dict(run_id=run_id,thread_id=run.thread_id,parent_run_id=run.parent_run_id,dataset_id=run.dataset_id,
                 variant=run.variant,run_status=run.status,phase=run.phase,revision=run.revision,input=run.input,
                 data_version=run.data_version,config=run.config,config_hash=run.config_hash,checkpoint_id=run.checkpoint_id,
                 pending_input=run.pending_input,error_code=run.error_code,result_ref=run.result_ref,
+                cancel_requested=bool(run.cancel_requested),messages=messages,conversation_history=conversation,
+                result=report.content if report else None,
                 business_result=report.content['business_result'] if report else None,
                 action=report.content['action'] if report else ('clarify' if run.status=='WAITING_INPUT' else None),
                 warnings=report.content['warnings'] if report else [],
@@ -165,6 +201,19 @@ class AgentService:
                     arguments=c.arguments,result=c.result) for c in calls],
                 reviews=[dict(step=r.step,kind=r.kind,**r.result) for r in reviews],
                 created_at=run.created_at,started_at=run.started_at,updated_at=run.updated_at,ended_at=run.ended_at)
+
+    def _conversation(self, session, parent_id):
+        """Bounded previous turns; historical reads never resume or issue model calls."""
+        turns=[]; seen=set()
+        while parent_id and parent_id not in seen and len(turns)<8:
+            seen.add(parent_id)
+            parent=self._get(session,parent_id)
+            report=session.get(Report,parent.result_ref) if parent.result_ref else None
+            turns.append(dict(run_id=parent.run_id,question=parent.input.get('question',''),
+                message=report.content['message'] if report else '',
+                claims=report.content.get('claims',[]) if report else [],status=parent.status))
+            parent_id=parent.input.get('conversation_parent_run_id')
+        return list(reversed(turns))
 
     def list(self,limit=20,offset=0):
         self.metrics.require_database()
@@ -237,6 +286,11 @@ class AgentService:
                 initial=dict(run_id=run_id,dataset_id=run.dataset_id,variant=run.variant,step=0,repairs=0,results=[],
                     messages=[dict(role='system',content=SYSTEM_PROMPT),dict(role='user',content=json.dumps(dict(
                         **run.input,data_version=run.data_version,source_coverage={k:profile.get(k) for k in ('source_time_min','source_time_max')}),ensure_ascii=False))])
+                history=self._conversation(session,run.input.get('conversation_parent_run_id'))
+                if history:
+                    # Context is bounded and explicitly untrusted; new numeric claims still require fresh tools.
+                    initial['messages'].insert(1,dict(role='user',content='Previous conversation for context only. '
+                        'Obtain fresh tool evidence for this turn; do not cite earlier tool IDs.\n'+json.dumps(history,ensure_ascii=False)))
                 resume=run.resume_payload; session.commit()
             snapshot=self.graph.get_state(config)
             if snapshot.values:
